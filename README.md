@@ -86,7 +86,7 @@
     * You can switch between branches or create a new one from this menu
 
 ### Notes
-* **Always create a new branch when making something new: an idea, concept, component, etc.**
+* **Always create a new branch when making something new (an idea, concept, component, etc.) or proposing a change**
     * Please do not edit the `main` branch directly
     * When we meet up, we will review changes and merge them with the `main` branch (and resolve any conflicts)
     * Hopefully, pushing to the `main` branch will trigger the deployment to the sci-project server
@@ -94,5 +94,8 @@
     * We all need to understand what does what and be able to track our progress
     * It's important to have good commit messages because if we need to revert or reset to a previous commit, we know where to look
     * If a bug is also discovered, we can locate in which commit it has likely been created
+* If you are committing multiple files but you think a single commit message won't cover all the changes, split up the commit
+    * Only stage the files you want for each commit so that mutiple files with differing changes can be represented by separate commits
 * An asterisk next to a branch name indicates that this is the branch you are currently on
+    * Or in VS Code it means that the branch has uncommited changes
 * Checking out a branch means moving from one branch to another
