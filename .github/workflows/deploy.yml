@@ -15,18 +15,19 @@ jobs:
 
     - name: Setup SSH
       run: |
-        echo "$SSH_PRIVATE_KEY" > ssh_key
-        chmod 600 ssh_key
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/ssh_key
+        chmod 600 ~/.ssh/ssh_key
         ssh-keyscan -t rsa ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Deploy to Web Server
       run: |
-        scp -i ssh_key -r * ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_TARGET }}
+        scp -i ~/.ssh/ssh_key -r * ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_TARGET }}
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
     - name: Clean up
       run: |
-        rm -f ssh_key
+        rm -f ~/.ssh/ssh_key
