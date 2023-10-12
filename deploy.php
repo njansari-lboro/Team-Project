@@ -1,12 +1,12 @@
 <?php
     $commands = array(
-      'echo $PWD',
-      'whoami',
-      'git pull',
-      'git status',
-      'git submodule sync',
-      'git submodule update',
-      'git submodule status',
+      'cd; echo $PWD',
+      'cd; whoami',
+      'cd; git pull',
+      'cd; git status',
+      'cd; git submodule sync',
+      'cd; git submodule update',
+      'cd; git submodule status',
     );
 
     $output = '';
