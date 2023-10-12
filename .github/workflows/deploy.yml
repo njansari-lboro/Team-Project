@@ -31,3 +31,4 @@ jobs:
     - name: Clean up
       run: |
         rm -f ~/.ssh/ssh_key
+
