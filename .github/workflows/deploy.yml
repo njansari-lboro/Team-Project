@@ -21,5 +21,5 @@ jobs:
       - name: Deploy to server
         run: |
           echo "Starting deployment..."
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no team02@sci-project.lboro.ac.uk "cd /home/team02 && git pull origin main"
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no team02@sci-project.lboro.ac.uk "cd ${{ secrets.REMOTE_TARGET }} && git pull origin main"
           echo "Deployment completed."
