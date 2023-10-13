@@ -40,7 +40,7 @@ function validateAndDisplayEmail() {
 }
 
 function validatePasswordAndLogin() {
-    // Add your logic here to validate the password and perform login.
+
 }
 
 function restart() {
@@ -48,10 +48,6 @@ function restart() {
     $("#passwordField").hide();
     $('#mainBtn').html('Next');
     $('#emailDisplay').hide();
-}
-
-function validEmail() {
-    // Code for when an email is valid. This is handled in validateAndDisplayEmail, so it might not be necessary.
 }
 
 function notRecognised() {
