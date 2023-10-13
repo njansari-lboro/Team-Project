@@ -4,5 +4,6 @@ body {
 
 h1 {
     color: #FF7A00;
-    font-weight: bolder
+    font-weight: bold;
+    background-color: aliceblue;
 }
