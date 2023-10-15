@@ -1,3 +1,4 @@
+// DEALS WITH LOGIN LOGIC/SCREENS AND REDIRECTS TO MAIN INDEX, PAGE DASHBOARD
 jQuery(document).ready(function($) {
     $("#passwordField, #emailDisplay").hide();
 
@@ -54,7 +55,8 @@ function validatePasswordAndLogin() {
             console.log(response);
             if (response == 'true') {
                 console.log('success');
-                window.location = 'pages/dashboard.php';
+                window.location = 'pages/index.php?page=dashboard';
+                // window.location = 'pages/dashboard.php';
             } else {
                 console.log('wrong');
                 alert('Login failed. Please check your email/password and try again.');

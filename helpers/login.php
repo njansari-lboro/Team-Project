@@ -1,10 +1,12 @@
 <?php
 session_start();
-include('db_conn.php');
+// include('db_conn.php');  
 $username = $_POST['email'];
 $password = $_POST['password'];
 session_regenerate_id();
 $_SESSION['email'] = $username;
+
+$_SESSION['NAME'] = $username;
 //CONNECT TO DB HERE WHEN WE ARE ALLOWED FOR NOW JUST ALLOW ANY USER
 echo 'true';
 //SET $_SESSION VARIABLES I.E. ID, USER TYPE AND NAME

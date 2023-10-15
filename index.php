@@ -1,5 +1,8 @@
+<!-- LOGIN INDEX. THIS IS SHOWN TO THE USER AS THEY FIRST FOLLOW THE URL -->
 <?php
 session_start();
+// if (isset($_SESSION['UID']))
+//     header('location:tabs/index.php');
 ?>
 
 <head>
