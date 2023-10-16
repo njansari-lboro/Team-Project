@@ -1,0 +1,53 @@
+:root {
+    --accent-color: rgba(255, 122, 0, 1);
+    --secondary-accent-color: rgba(255, 122, 0, 0.5);
+    --tertiary-accent-color: rgba(255, 122, 0, 0.25);
+    --quaternary-accent-color: rgba(255, 122, 0, 0.18);
+
+    --text-color: rgba(0, 0, 0, 0.85);
+    --secondary-text-color: rgba(0, 0, 0, 0.5);
+    --tertiary-text-color: rgba(0, 0, 0, 0.26);
+    --quaternary-text-color: rgba(0, 0, 0, 0.1);
+
+    --fill-color: rgba(0, 0, 0, 0.1);
+    --secondary-fill-color: rgba(0, 0, 0, 0.08);
+    --tertiary-fill-color: rgba(0, 0, 0, 0.05);
+    --quaternary-fill-color: rgba(0, 0, 0, 0.03);
+
+    --placeholder-text-color: rgba(0, 0, 0, 0.25);
+    --disabled-text-color: rgba(0, 0, 0, 0.25);
+    --selected-text-background-color: rgba(255, 205, 165, 1);
+    --link-color: rgba(209, 100, 0, 1);
+    --keyboard-focus-indicator-color: rgba(241, 97, 0, 0.5);
+    --selected-content-color: rgba(217, 94, 0, 1);
+    --selected-content-text-color: rgba(255, 255, 255, 0.85);
+    --unemphasised-selected-content-color: rgba(0, 0, 0, 0.1);
+    --separator-color: rgba(0, 0, 0, 0.1);
+    --grid-color: rgba(224, 224, 224, 1);
+    --toolbar-background-color: rgba(241, 242, 242, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: rgba(255, 255, 255, 0.85);
+        --secondary-text-color: rgba(255, 255, 255, 0.55);
+        --tertiary-text-color: rgba(255, 255, 255, 0.25);
+        --quaternary-text-color: rgba(255, 255, 255, 0.1);
+
+        --fill-color: rgba(255, 255, 255, 0.1);
+        --secondary-fill-color: rgba(255, 255, 255, 0.08);
+        --tertiary-fill-color: rgba(255, 255, 255, 0.05);
+        --quaternary-fill-color: rgba(255, 255, 255, 0.03);
+
+        --placeholder-text-color: rgba(255, 255, 255, 0.25);
+        --disabled-text-color: rgba(255, 255, 255, 0.25);
+        --selected-text-background-color: rgba(220, 179, 149, 1);
+        --link-color: rgba(194, 87, 0, 1);
+        --keyboard-focus-indicator-color: rgba(255, 78, 0, 0.5);
+        --selected-content-color: rgba(198, 81, 0, 1);
+        --unemphasised-selected-content-color: rgba(255, 255, 255, 0.15);
+        --separator-color: rgba(255, 255, 255, 0.1);
+        --grid-color: rgba(20, 20, 20, 1);
+        --toolbar-background-color: rgba(42, 42, 42, 1);
+    }
+}
