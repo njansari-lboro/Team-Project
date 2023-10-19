@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "image_url": "https://example.com/image1.jpg",
+      "heading": "Technical Item 1",
+      "duration": "10 min"
+    },
+    {
+      "id": 2,
+      "image_url": "https://example.com/image2.jpg",
+      "heading": "Technical Item 2",
+      "duration": "15 min"
+    },
+    {
+      "id": 3,
+      "image_url": "https://example.com/image3.jpg",
+      "heading": "Item 3",
+      "duration": "12 min"
+    },
+    {
+      "id": 4,
+      "image_url": "https://example.com/image4.jpg",
+      "heading": "Item 4",
+      "duration": "8 min"
+    }
+  ]
+  
