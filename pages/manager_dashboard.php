@@ -50,7 +50,7 @@
         </script>
     </h1>
 
-    <div class="container-fluid pt-2 border rounded" id="dashboard">
+    <div class="container-fluid pt-2 pb-2 border rounded" id="dashboard">
         <div class="row">
             <div class="col-md-2">
                 <select id="project_dropdown" class="form-control px-2 border-0 display-1"></select>
