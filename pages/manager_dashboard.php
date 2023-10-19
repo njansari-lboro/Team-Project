@@ -67,33 +67,41 @@
                 <div class="pt-1"></div>
                 <div class="row px-2 border rounded" id="overdue_tasks">
                     <h4 class="text-center pt-1">Overdue</h4>
-                    <table class="table">
-                        <tr>
-                            <th>Employee</th>
-                            <th>Task</th>
-                            <th>Days Overdue</th>
-                        </tr>
-                        <tr>
-                            <td>John Cena</td>
-                            <td>UI Design</td>
-                            <td>4</td>
-                        </tr>
+                    <table class="table" id="overdue_table">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Task</th>
+                                <th>Days Overdue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Cena</td>
+                                <td>UI Design</td>
+                                <td>4</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div class="pt-1"></div>
                 <div class="row px-2 border rounded" id="imminent_tasks">
                     <h4 class="text-center pt-1">Imminent</h4>
-                    <table class="table">
-                        <tr>
-                            <th>Employee</th>
-                            <th>Task</th>
-                            <th>Deadline</th>
-                        </tr>
-                        <tr>
-                            <td>Jean Sienna</td>
-                            <td>Unit Testing</td>
-                            <td>11/10/2023</td>
-                        </tr>
+                    <table class="table" id="imminent_table">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Task</th>
+                                <th>Deadline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jean Sienna</td>
+                                <td>Unit Testing</td>
+                                <td>11/10/2023</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div class="pt-1"></div>
@@ -103,14 +111,18 @@
         <div class="row px-2 border rounded" id="upcoming_tasks">
             <h3 class="text-center pt-1">Your Upcoming Tasks</h3>
             <table class="table">
-                <tr>
-                    <th>Task</th>
-                    <th>Due Date</th>
-                </tr>
-                <tr>
-                    <td>Complete Project Report</td>
-                    <td>06/11/2023</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Complete Project Report</td>
+                        <td>06/11/2023</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>
@@ -128,9 +140,29 @@
             const projectData = {
                 project1: {
                     data: [64, 18, 12],
+                    overdue: [
+                        ["John Cena", "UI Design", "4"],
+                        ["Jawn Seyna", "API Integration", "41"],
+                        ["Sion Cena", "Database Design and Optimisation", "1"]
+                    ],
+                    imminent: [
+                        ["Jean Sienna", "Unit Testing", "19/10/2023"],
+                        ["Zhong Xina", "Bug Fixing", "31/10/2023"],
+                        ["Giannis Sina", "Get Manager a Coffee", "19/11/2023"]
+                    ],
                 },
                 project2: {
                     data: [10, 96, 7],
+                    overdue: [
+                        ["Yohan Zena", "Cross-Platform Optimisation", "6"],
+                        ["Janos Szena", "Documentation", "91"],
+                        ["Jan Sina", "Security Assessment", "11"]
+                    ],
+                    imminent: [
+                        ["Juan Senna", "Performance Optimisation", "19/10/2023"],
+                        ["Zhong Xina", "Code Refactoring", "23/10/2023"],
+                        ["Jone Sainah", "Code Review", "1/11/2023"]
+                    ],
                 },
             };
             
@@ -138,6 +170,35 @@
             
             let defaultProject = "project1";
             let data = projectData[defaultProject].data;
+            let overdue = projectData[defaultProject].overdue;
+            let imminent = projectData[defaultProject].imminent; 
+
+            function populateTables(){
+                $("#overdue_table tbody tr").remove();
+                $("#imminent_table tbody tr").remove();
+                for (var i = 0; i < overdue.length; i++){
+                    var row = "<tr>";
+                    for (var j = 0; j < overdue[i].length; j++){
+                        row += "<td>";
+                        row += overdue[i][j];
+                        row += "</td>";
+                    }
+                    row += "</tr>";
+                    $("#overdue_table").append(row);
+                }
+                for (var i = 0; i < imminent.length; i++){
+                    var row = "<tr>";
+                    for (var j = 0; j < imminent[i].length; j++){
+                        row += "<td>";
+                        row += imminent[i][j];
+                        row += "</td>";
+                    }
+                    row += "</tr>";
+                    $("#imminent_table").append(row);
+                }
+            }
+
+            populateTables();
 
             let progressChart = new Chart(ctx, {
                 type: "doughnut",
@@ -160,6 +221,10 @@
                 selectedProject = selectedProject.split(" ").join("").toLowerCase();
                 // console.log(selectedProject);
                 data = projectData[selectedProject].data;
+                overdue = projectData[selectedProject].overdue;
+                imminent = projectData[selectedProject].imminent;
+
+                populateTables();
 
                 progressChart.data.datasets[0].data = data;
                 progressChart.update();
