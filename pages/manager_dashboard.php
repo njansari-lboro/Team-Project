@@ -4,6 +4,7 @@
     
 <head>   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
@@ -13,13 +14,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="style.css">
 
     <!-- move these into their own seperate file -->
     <style>
+        input {
+            text-align: left;
+        }
+
         div.container-fluid {
             max-width: 95%;
-            max-height: 95%;
         }
 
         div.row {
@@ -31,9 +36,30 @@
             max-height: 295px;
             margin: 20px;
         }
+        
+        #project_dropdown, #date_picker {
+            font-size: 200%;
+            font-weight: bold;
+        }
 
+        #date_picker {
+            color: rgba(255, 122, 0, 1);
+        }
+
+        /* table styling */
         th, td {
             border-left: 1px solid #D9D9D9;
+            border-bottom: 1px solid #D9D9D9;
+            padding: 10px;
+        }
+
+        tr:last-child > td {
+            border-bottom: 0px;
+        }
+
+        th {
+            font-weight: normal;
+            color:#D9D9D9;
         }
 
         th:first-child, td:first-child {
@@ -43,20 +69,20 @@
 </head>
 
 <body>
-    <h1 class="px-3 pt-1">
+    <h2 class="px-5 pt-3 pb-1">
         <script>
             let today = moment().format("dddd, Do MMMM");
             document.write(today);  
         </script>
-    </h1>
+    </h2>
 
     <div class="container-fluid pt-2 pb-2 border rounded" id="dashboard">
         <div class="row">
-            <div class="col-md-2">
-                <select id="project_dropdown" class="form-control px-2 border-0 display-1"></select>
+            <div class="col-lg-3 pb-1">
+                <select id="project_dropdown" class="form-control border-0 display-1"></select>
             </div>
-            <div class="col-md-10">
-                <h3 class="px-1">06/11/2023</h3>
+            <div class="col-lg-3 pb-1">
+                <input class="form-control border-0" type="text" id="date_picker">
             </div>
         </div>
         <div class="row px-1 border rounded" id="graph_deadlines">
@@ -128,7 +154,7 @@
     </div>
 
     <script>
-        $(document).ready(() => {
+        $(document).ready(() => {            
             let projectDropdown = $("#project_dropdown").get(0);
             let projectNames = ["Project 1", "Project 2"];
             projectNames.forEach((projectName) =>{
@@ -137,6 +163,7 @@
                 projectDropdown.add(option);
             });
 
+            // Example data
             const projectData = {
                 project1: {
                     data: [64, 18, 12],
@@ -150,6 +177,7 @@
                         ["Zhong Xina", "Bug Fixing", "31/10/2023"],
                         ["Giannis Sina", "Get Manager a Coffee", "19/11/2023"]
                     ],
+                    deadline: "06/11/2023",
                 },
                 project2: {
                     data: [10, 96, 7],
@@ -161,8 +189,9 @@
                     imminent: [
                         ["Juan Senna", "Performance Optimisation", "19/10/2023"],
                         ["Zhong Xina", "Code Refactoring", "23/10/2023"],
-                        ["Jone Sainah", "Code Review", "1/11/2023"]
+                        ["Jone Sainah", "Code Review", "01/11/2023"]
                     ],
+                    deadline: "23/12/2023",
                 },
             };
             
@@ -172,34 +201,33 @@
             let data = projectData[defaultProject].data;
             let overdue = projectData[defaultProject].overdue;
             let imminent = projectData[defaultProject].imminent; 
+            let deadline = projectData[defaultProject].deadline;
+           
+            $("#date_picker").datepicker({ 
+                minDate: 0, 
+                dateFormat: "dd/mm/yy",
+            });
 
-            function populateTables(){
-                $("#overdue_table tbody tr").remove();
-                $("#imminent_table tbody tr").remove();
-                for (var i = 0; i < overdue.length; i++){
-                    var row = "<tr>";
-                    for (var j = 0; j < overdue[i].length; j++){
-                        row += "<td>";
-                        row += overdue[i][j];
-                        row += "</td>";
-                    }
-                    row += "</tr>";
-                    $("#overdue_table").append(row);
-                }
-                for (var i = 0; i < imminent.length; i++){
-                    var row = "<tr>";
-                    for (var j = 0; j < imminent[i].length; j++){
-                        row += "<td>";
-                        row += imminent[i][j];
-                        row += "</td>";
-                    }
-                    row += "</tr>";
-                    $("#imminent_table").append(row);
-                }
+            function populateTable(tableId, data){
+                let table = $(tableId).get(0);
+                // clear table body
+                $(tableId).find("td").remove();
+
+                data.forEach((rowData) => {
+                    let row = document.createElement("tr");
+                    rowData.forEach((cellData) => {
+                        let cell = document.createElement("td");
+                        cell.textContent = cellData;
+                        row.appendChild(cell);
+                    });
+                    table.appendChild(row);
+                });
             }
-
-            populateTables();
-
+    
+            populateTable("#overdue_table", overdue); 
+            populateTable("#imminent_table", imminent);
+            $("#date_picker").datepicker("setDate", deadline);
+            
             let progressChart = new Chart(ctx, {
                 type: "doughnut",
                 data: {
@@ -216,15 +244,16 @@
             projectDropdown.on
 
             $("#project_dropdown").change(()=>{
-                // console.log("Change");
                 let selectedProject = $("#project_dropdown").val();
                 selectedProject = selectedProject.split(" ").join("").toLowerCase();
-                // console.log(selectedProject);
                 data = projectData[selectedProject].data;
                 overdue = projectData[selectedProject].overdue;
                 imminent = projectData[selectedProject].imminent;
+                deadline = projectData[selectedProject].deadline;
 
-                populateTables();
+                populateTable("#overdue_table", overdue); 
+                populateTable("#imminent_table", imminent);
+                $("#date_picker").datepicker("setDate", deadline);
 
                 progressChart.data.datasets[0].data = data;
                 progressChart.update();
