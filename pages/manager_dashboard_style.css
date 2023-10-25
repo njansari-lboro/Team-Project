@@ -57,6 +57,11 @@ h4 {
   color: var(--text-color);
 }
 
+.form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem var(--keyboard-focus-indicator-color);
+}
+
 #project_dropdown, #date_picker, #spacing_col {
   font-size: var(--large-title);
   font-weight: bold;
