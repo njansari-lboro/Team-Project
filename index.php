@@ -16,7 +16,7 @@ session_start();
 
 <body>
 
-    <div class="container h-100 d-flex align-items-center justify-content-center">
+    <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
         <div class="centered-content">
             <h1 class="mb-4 text-center">Make-It-All</h1>
             <form id="emailForm">
