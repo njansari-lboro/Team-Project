@@ -1,67 +1,220 @@
-<!-- THE LOGGED IN INDEX. THIS KEEPS NAV BAR, SIDEBAR ETC CONSISTENT -->
-<!-- LOGIC AT THE BOTTOM ALSO HELPS US SELECT THE PAGE TO CHANGE TO -->
-<?php
-session_start();
-?>
+<?php session_start() ?>
+
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<html lang="en-GB">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="global.css">
+        <link rel="stylesheet" href="style.css">
 
-    <title>Make-It-All!</title>
-</head>
+        <title>Make-It-All</title>
+    </head>
 
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.php?page=dashboard"><b>Make It All</b></a>
+    <body>
+        <div class="nav-bar">
+            <load-svg id="sidebar-toggle" src="assets/sidebarToggleIcon.svg">
+                <style shadowRoot>
+                    svg {
+                        height: 2em;
+                    }
+
+                    .fill {
+                        fill: var(--text-color);
+                    }
+                </style>
+            </load-svg>
+
+            <div>
+                <load-svg id="title-logo" class="logo" src="assets/titleLogo.svg">
+                    <style shadowRoot>
+                        svg {
+                            height: 4em;
+                        }
+
+                        .fill {
+                            fill: var(--text-color);
+                        }
+                    </style>
+                </load-svg>
+
+                <load-svg id="simple-logo" class="logo" src="assets/logo.svg">
+                    <style shadowRoot>
+                        svg {
+                            height: 4em;
+                        }
+
+                        .fill {
+                            fill: var(--text-color);
+                        }
+                    </style>
+                </load-svg>
+            </div>
+
+            <div id="profile-details">
+                <div id="profile-name">
+                    <span id="name">John Cena</span>
+                    <span id="role">Employee</span>
+                </div>
+
+                <div id="profile-menu">
+                    <button id="profile-menu-button">
+                        <load-svg id="profile-icon" src="assets/profileIcon.svg">
+                            <style shadowRoot>
+                                svg {
+                                    height: 3em;
+                                }
+
+                                .fill {
+                                    fill: var(--text-color)
+                                }
+                            </style>
+                        </load-svg>
+
+                        <load-svg id="profile-menu-arrow" src="assets/menuArrow.svg">
+                            <style shadowRoot>
+                                svg {
+                                    height: 0.8em;
+                                }
+
+                                .fill {
+                                    fill: var(--text-color)
+                                }
+                            </style>
+                        </load-svg>
+                    </button>
+
+                    <div id="profile-menu-items" class="menu-items">
+                        <button id="edit-profile-button" class="menu-item">Edit Profile</button>
+                        <div class="divider horizontal" style="width: calc(100% - 16px); margin: 8px"></div>
+                        <a href="#" class="menu-item">Logout</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <ul class="nav navbar-right top-nav">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
-                    <?php echo $_SESSION['NAME'] ?>
-                    <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="../helpers/logout.php"><i class="fa fa-fw fa-power-off"></i>Log Out</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
 
-    <h1>Title</h1>
-    <h2>Nav Bar</h2>
-    <p>Links below <br></p>
-    <a href="index.php?page=tutorials">Go to Tutorials</a><br>
-    <a href="index.php?page=assignments">Go to Assignments</a><br>
-    <a href="index.php?page=todo">Go to To-DO List</a><br>
-    <a href="index.php?page=forums">Go to Forums</a><br>
+        <div id="sidebar">
+            <div id="sidebar-links">
+                <a id="dashboard-sidebar-item" class="sidebar-item" href="?page=dashboard">
+                    <load-svg class="sidebar-item-icon" src="assets/dashboardSidebarItemIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 2.4em;
+                                margin-bottom: 0.1em;
+                            }
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="framework.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+                            .fill {
+                                fill: var(--fill-color);
+                            }
+                        </style>
+                    </load-svg>
+                    <span class="sidebar-item-text">Dashboard</span>
+                </a>
 
+                <a id="tasks-sidebar-item" class="sidebar-item" href="?page=tasks">
+                    <load-svg class="sidebar-item-icon" src="assets/tasksSidebarItemIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                height: 2.6em;
+                                margin: 0 0.3em;
+                            }
 
-<?php
-//page decider logic
-//must add page to array here and the pages file to redirect!
-$page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'dashboard';
-$pages = array('dashboard', 'assignments', 'todo', 'tutorials', 'forums');
-if (!empty($page)) {
-    if (in_array($page, $pages)) {
-        $page .= '.php';
-        include($page);
-    } else {
-        echo 'Page not found. Return
-        <a href="index.php?page=dashboard">dashboard</a>';
-    }
-}
+                            .fill {
+                                fill: var(--fill-color);
+                            }
+                        </style>
+                    </load-svg>
+                    <span class="sidebar-item-text">Tasks</span>
+                </a>
 
-?>
+                <a id="todo-sidebar-item" class="sidebar-item" href="?page=todo">
+                    <load-svg class="sidebar-item-icon" src="assets/todoSidebarItemIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 2.2em;
+                            }
+
+                            .fill {
+                                fill: var(--fill-color);
+                            }
+                        </style>
+                    </load-svg>
+                    <span class="sidebar-item-text">To-do List</span>
+                </a>
+
+                <a id="tutorials-sidebar-item" class="sidebar-item" href="?page=tutorials">
+                    <load-svg class="sidebar-item-icon" src="assets/tutorialsSidebarItemIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 2.4em;
+                            }
+
+                            .fill {
+                                fill: var(--fill-color);
+                            }
+                        </style>
+                    </load-svg>
+                    <span class="sidebar-item-text">Tutorials</span>
+                </a>
+
+                <a id="forums-sidebar-item" class="sidebar-item" href="?page=forums">
+                    <load-svg class="sidebar-item-icon" src="assets/forumsSidebarItemIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 2.4em;
+                            }
+
+                            .fill {
+                                fill: var(--fill-color);
+                            }
+                        </style>
+                    </load-svg>
+                    <span class="sidebar-item-text">Forums</span>
+                </a>
+            </div>
+
+            <div style="flex-grow: 1"></div>
+
+            <div id="sidebar-bottom-content">
+                <div class="divider horizontal"></div>
+
+                <button id="invite-button">
+                    <load-svg src="assets/inviteIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 3em;
+                            }
+
+                            .fill {
+                                fill: var(--accent-color);
+                            }
+                        </style>
+                    </load-svg>
+                    <span>Invite</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="dimmed-overlay"></div>
+
+        <div id="main-content">
+            <?php 
+                $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
+
+                $page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'dashboard';
+                if (!empty($page)) {
+                    if (in_array($page, $pages)) {
+                        $page .= '.php';
+                        include($page);
+                    } else {
+                        echo "Page not found. Return <a href=\"?page=dashboard\">dashboard</a>";
+                    }
+                }
+            ?>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
