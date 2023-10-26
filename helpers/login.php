@@ -4,15 +4,14 @@ $users = [
         'email' => 'ben@make-it-all.co.uk',
         'fullName' => 'Ben Hamblin',
         'password' => 'password123',
-        'type' => 'employee'
+        'type' => 'Employee'
     ],
     [
         'email' => 'admin@make-it-all.co.uk',
         'fullName' => 'Jane Smith',
         'password' => 'password123',
-        'type' => 'admin'
+        'type' => 'Admin'
     ],
-
 ];
 
 
@@ -26,6 +25,8 @@ $isValidUser = false;
 foreach ($users as $user) {
     if ($user['email'] == $username && $user['password'] == $password) {
         $isValidUser = true;
+        $_SESSION["name"] = $user["fullName"];
+        $_SESSION["role"] = $user["type"];
         break;
     }
 }
@@ -37,7 +38,7 @@ if ($isValidUser) {
 session_regenerate_id();
 $_SESSION['email'] = $username;
 
-$_SESSION['NAME'] = $username;
+// $_SESSION['NAME'] = $username;
 
 //CONNECT TO DB HERE WHEN WE ARE ALLOWED FOR NOW JUST ALLOW ANY USER
 // echo 'true';

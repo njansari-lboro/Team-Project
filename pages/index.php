@@ -54,8 +54,8 @@
 
             <div id="profile-details">
                 <div id="profile-name">
-                    <span id="name">John Cena</span>
-                    <span id="role">Employee</span>
+                    <span id="name"><?php echo $_SESSION["name"] ?></span>
+                    <span id="role"><?php echo $_SESSION["role"] ?></span>
                 </div>
 
                 <div id="profile-menu">
