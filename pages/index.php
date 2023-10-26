@@ -88,7 +88,7 @@
                     <div id="profile-menu-items" class="menu-items">
                         <button id="edit-profile-button" class="menu-item">Edit Profile</button>
                         <div class="divider horizontal" style="width: calc(100% - 16px); margin: 8px"></div>
-                        <a href="#" class="menu-item">Logout</a>
+                        <a href="../helpers/logout.php" class="menu-item">Logout</a>
                     </div>
                 </div>
             </div>

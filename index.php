@@ -16,12 +16,12 @@ session_start();
 
 <body>
 
-    <div class="container h-100 d-flex align-items-center justify-content-center">
+    <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
         <div class="centered-content">
             <h1 class="mb-4 text-center">Make-It-All</h1>
             <form id="emailForm">
                 <div class="form-group">
-                    <p id="emailDisplay"><span style="font-weight: bold;" id="displayedEmail">employee@make-it-all.co.uk</span> <a href="#" id="changeEmail">Change?</a></p>
+                    <p id="emailDisplay"><span style="font-weight: bold;" id="displayedEmail"></span> <a href="#" id="changeEmail">Change?</a></p>
                     <input type="email" class="form-control" id="emailInput" placeholder="Company Email Address">
                 </div>
                 <div id="passwordField">
@@ -31,7 +31,19 @@ session_start();
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary" id="mainBtn">Next</button>
+                <a href="#" id="forgotPassword">Forgot Password?</a>
             </form>
+
+            <form id="resetPassword">
+                <p>Sorry, please <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color:orange;">Contact Support</span></a> to help reset your password</p>
+
+            </form>
+
+            <form id="notRegistered">
+                <p>Sorry the email <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color:orange;">EMAIL</span></a> is not linked to any registered account.</p>
+            </form>
+            <a id="tryAgain" href="#">Try Again</a>
+
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
