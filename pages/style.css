@@ -298,8 +298,8 @@ body {
 #main-content {
     margin-left: 0;
     position: relative;
+    padding: 1.5em;
     box-sizing: border-box;
-    padding: 0.5em;
     top: 5.6em;
     height: calc(100% - 5.6em);
     width: 100%;
@@ -470,5 +470,5 @@ body {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 20px;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
