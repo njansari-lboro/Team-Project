@@ -94,7 +94,7 @@ $(document).ready(() => {
         }
     })
 
-    $("#edit-profile-button").click()
+    // $("#edit-profile-button").click()
 
     $(".dismiss-edit-profile-button").click(() => $("#edit-profile-modal").fadeOut())
 })

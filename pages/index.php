@@ -27,7 +27,7 @@
             </load-svg>
 
             <div>
-                <load-svg id="title-logo" class="logo" src="/assets/titleLogo.svg">
+                <load-svg id="title-logo" class="logo center" src="/assets/titleLogo.svg">
                     <style shadowRoot>
                         svg {
                             height: 4em;
@@ -39,7 +39,7 @@
                     </style>
                 </load-svg>
 
-                <load-svg id="simple-logo" class="logo" src="/assets/logo.svg">
+                <load-svg id="simple-logo" class="logo center" src="/assets/logo.svg">
                     <style shadowRoot>
                         svg {
                             height: 4em;
@@ -211,19 +211,105 @@
 
         <div id="dimmed-overlay"></div>
 
-        <div id="main-content">
-            <?php 
-                $pages = array("empdashboard", "tasks", "todo", "tutorials", "forums");
+        <div id="main-content-wrapper">
+            <div id="main-content">
+                <?php
+                    $pages = array("empdashboard", "tasks", "todo", "tutorials", "forums");
 
-                $page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'empdashboard';
+                    $page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'empdashboard';
 
-                if (!empty($page)) {
-                    if (in_array($page, $pages)) {
+                    if (!empty($page)) {
+                        if (in_array($page, $pages)) {
+                        }
                     }
-                }
 
-                include("$page.php")
-            ?>
+                    include("$page.php")
+                ?>
+            </div>
+        </div>
+
+        <div id="edit-profile-modal">
+            <script>
+                const firstName = "John"
+                const lastName = "Cena"
+                const emailAddress = "johncena@make-it-all.co.uk"
+                const password = "password123"
+            </script>
+
+            <div class="dimmed-overlay"></div>
+
+            <div id="edit-profile-card" class="center">
+                <div id="edit-profile-image">
+                    <load-svg id="edit-profile-icon" src="assets/profileIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                height: 10em;
+                            }
+
+                            .fill {
+                                fill: var(--text-color)
+                            }
+                        </style>
+                    </load-svg>
+                </div>
+
+                <div id="edit-first-name" class="edit-profile-detail">
+                    <span id="edit-first-name-label">First Name</span>
+                    <input id="edit-first-name-input" type="text">
+                </div>
+
+                <div id="edit-last-name" class="edit-profile-detail">
+                    <span id="edit-last-name-label">Last Name</span>
+                    <input id="edit-last-name-input" type="text">
+                </div>
+
+                <div id="edit-email" class="edit-profile-detail">
+                    <span id="edit-email-label">Email Address</span>
+                    <input id="edit-email-input" type="email" readonly>
+                </div>
+
+                <div id="edit-password" class="edit-profile-detail">
+                    <span id="edit-password-label">Password</span>
+
+                    <div id="edit-password-input-container">
+                        <input id="edit-password-input" type="password" readonly>
+
+                        <button id="show-hide-password-button">
+                            <load-svg id="show-password-icon" src="assets/showIcon.svg">
+                                <style shadowRoot>
+                                    svg {
+                                        /* width: var(--body); */
+                                        height: var(--body);
+                                    }
+
+                                    .fill {
+                                        fill: var(--secondary-label-color)
+                                    }
+                                </style>
+                            </load-svg>
+
+                            <load-svg id="hide-password-icon" src="assets/hideIcon.svg">
+                                <style shadowRoot>
+                                    svg {
+                                        /* width: var(--body); */
+                                        height: var(--body);
+                                    }
+
+                                    .fill {
+                                        fill: var(--secondary-label-color)
+                                    }
+                                </style>
+                            </load-svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="dismiss-buttons">
+                    <button id="cancel-button" class="dismiss-edit-profile-button">Cancel</button>
+
+                    <button id="save-button" class="dismiss-edit-profile-button" disabled>Save</button>
+                </div>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
