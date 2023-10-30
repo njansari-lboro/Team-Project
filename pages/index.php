@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="../global.css">
+        <link rel="stylesheet" href="/global.css">
         <link rel="stylesheet" href="style.css">
 
         <title>Make-It-All</title>
@@ -14,7 +14,7 @@
 
     <body>
         <div class="nav-bar">
-            <load-svg id="sidebar-toggle" src="../assets/sidebarToggleIcon.svg">
+            <load-svg id="sidebar-toggle" src="/assets/sidebarToggleIcon.svg">
                 <style shadowRoot>
                     svg {
                         height: 2em;
@@ -27,7 +27,7 @@
             </load-svg>
 
             <div>
-                <load-svg id="title-logo" class="logo" src="../assets/titleLogo.svg">
+                <load-svg id="title-logo" class="logo" src="/assets/titleLogo.svg">
                     <style shadowRoot>
                         svg {
                             height: 4em;
@@ -39,7 +39,7 @@
                     </style>
                 </load-svg>
 
-                <load-svg id="simple-logo" class="logo" src="../assets/logo.svg">
+                <load-svg id="simple-logo" class="logo" src="/assets/logo.svg">
                     <style shadowRoot>
                         svg {
                             height: 4em;
@@ -54,13 +54,17 @@
 
             <div id="profile-details">
                 <div id="profile-name">
-                    <span id="name"><?php echo $_SESSION["name"] ?></span>
-                    <span id="role"><?php echo $_SESSION["role"] ?></span>
+                    <span id="name">
+                        <?php echo $_SESSION["name"] ?>
+                    </span>
+                    <span id="role">
+                        <?php echo $_SESSION["role"] ?>
+                    </span>
                 </div>
 
                 <div id="profile-menu">
                     <button id="profile-menu-button">
-                        <load-svg id="profile-icon" src="../assets/profileIcon.svg">
+                        <load-svg id="profile-icon" src="/assets/profileIcon.svg">
                             <style shadowRoot>
                                 svg {
                                     height: 3em;
@@ -72,7 +76,7 @@
                             </style>
                         </load-svg>
 
-                        <load-svg id="profile-menu-arrow" src="../assets/menuArrow.svg">
+                        <load-svg id="profile-menu-arrow" src="/assets/menuArrow.svg">
                             <style shadowRoot>
                                 svg {
                                     height: 0.8em;
@@ -86,9 +90,18 @@
                     </button>
 
                     <div id="profile-menu-items" class="menu-items">
+                        <div id="profile-menu-name">
+                            <span id="name">
+                                <?php echo $_SESSION["name"] ?>
+                            </span>
+                            <span id="role">
+                                <?php echo $_SESSION["role"] ?>
+                            </span>
+                        </div>
+
                         <button id="edit-profile-button" class="menu-item">Edit Profile</button>
                         <div class="divider horizontal" style="width: calc(100% - 16px); margin: 8px"></div>
-                        <a href="../helpers/logout.php" class="menu-item">Logout</a>
+                        <a href="/helpers/logout.php" class="menu-item">Logout</a>
                     </div>
                 </div>
             </div>
@@ -96,8 +109,8 @@
 
         <div id="sidebar">
             <div id="sidebar-links">
-                <a id="dashboard-sidebar-item" class="sidebar-item" href="?page=dashboard">
-                    <load-svg class="sidebar-item-icon" src="../assets/dashboardSidebarItemIcon.svg">
+                <a id="dashboard-sidebar-item" class="sidebar-item" href="?page=empdashboard">
+                    <load-svg class="sidebar-item-icon" src="/assets/dashboardSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
                                 width: 2.4em;
@@ -113,7 +126,7 @@
                 </a>
 
                 <a id="tasks-sidebar-item" class="sidebar-item" href="?page=tasks">
-                    <load-svg class="sidebar-item-icon" src="../assets/tasksSidebarItemIcon.svg">
+                    <load-svg class="sidebar-item-icon" src="/assets/tasksSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
                                 height: 2.6em;
@@ -129,7 +142,7 @@
                 </a>
 
                 <a id="todo-sidebar-item" class="sidebar-item" href="?page=todo">
-                    <load-svg class="sidebar-item-icon" src="../assets/todoSidebarItemIcon.svg">
+                    <load-svg class="sidebar-item-icon" src="/assets/todoSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
                                 width: 2.2em;
@@ -144,7 +157,7 @@
                 </a>
 
                 <a id="tutorials-sidebar-item" class="sidebar-item" href="?page=tutorials">
-                    <load-svg class="sidebar-item-icon" src="../assets/tutorialsSidebarItemIcon.svg">
+                    <load-svg class="sidebar-item-icon" src="/assets/tutorialsSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
                                 width: 2.4em;
@@ -159,7 +172,7 @@
                 </a>
 
                 <a id="forums-sidebar-item" class="sidebar-item" href="?page=forums">
-                    <load-svg class="sidebar-item-icon" src="../assets/forumsSidebarItemIcon.svg">
+                    <load-svg class="sidebar-item-icon" src="/assets/forumsSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
                                 width: 2.4em;
@@ -180,7 +193,7 @@
                 <div class="divider horizontal"></div>
 
                 <button id="invite-button">
-                    <load-svg src="../assets/inviteIcon.svg">
+                    <load-svg src="/assets/inviteIcon.svg">
                         <style shadowRoot>
                             svg {
                                 width: 3em;
@@ -200,9 +213,9 @@
 
         <div id="main-content">
             <?php 
-                $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
+                $pages = array("empdashboard", "tasks", "todo", "tutorials", "forums");
 
-                $page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'dashboard';
+                $page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'empdashboard';
                 if (!empty($page)) {
                     if (in_array($page, $pages)) {
                         $page .= '.php';
