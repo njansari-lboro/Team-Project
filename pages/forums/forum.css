@@ -16,7 +16,7 @@ main {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    
+
 }
 
 #forum-topics {
@@ -25,7 +25,7 @@ main {
     padding: 20px;
     box-shadow: 0 0 10px rgba(255, 122, 0, 1);
 
-    
+
 }
 
 #topic-dropdown {
@@ -40,7 +40,7 @@ main {
     -moz-appearance: none;
     -webkit-appearance: none;
     padding: 5px;
-    padding-right: 20px;  
+    padding-right: 20px;
     position: relative;
 }
 
@@ -49,7 +49,7 @@ main {
 .dropdown-wrapper {
     position: relative;
     display: inline-block;
-    margin-left: -10px;  
+    margin-left: -10px;
 }
 
 .dropdown-wrapper::after {
@@ -108,7 +108,7 @@ h1 {
 }
 
 .question-title {
-    color: rgba(0, 0, 0, 0.85); 
+    color: rgba(0, 0, 0, 0.85);
 }
 
 .topic-content h3 {
@@ -123,12 +123,12 @@ h1 {
 }
 
 .topic-content a {
-    color:rgba(255, 122, 0, 1);
-    text-decoration:underline;
+    color: rgba(255, 122, 0, 1);
+    text-decoration: underline;
 }
 
 .read-link:hover {
-    color: rgba(217,94,0,1);
+    color: rgba(217, 94, 0, 1);
 }
 
 
@@ -143,7 +143,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative; 
+    position: relative;
 }
 
 
@@ -153,29 +153,26 @@ h1 {
     height: 16px;
     background-image: url('plane-icon.png');
     background-size: cover;
-    position: absolute; 
-    right: 10px; 
-    top: 50%; 
-    transform: translateY(-50%); 
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
-.topic-content button:hover, 
+.topic-content button:hover,
 #post-topic:hover {
     background-color: rgba(217, 94, 0, 1);
     color: #fff;
 }
 
 .forum-topic:hover {
-    background-color: #f7f7f7; 
+    background-color: #f7f7f7;
 }
 
 
-button, 
-.read-link, 
+button,
+.read-link,
 #topic-dropdown {
     transition: all 0.3s ease;
 }
-
-
-

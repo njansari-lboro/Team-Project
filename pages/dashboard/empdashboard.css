@@ -1,21 +1,12 @@
-
-
-*{
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-
-
-
-.main{
+.main {
     /*margin-left: 180px;*/
     transition: margin-left .5s;
 }
 
-.general{
-    border:solid;
+.general {
+    border: solid;
     /* height: 100vh; */
-    height:100vh;
+    height: 100vh;
     border-width: 1px;
     border-radius: 25px;
     border-color: #0000001a;
@@ -26,10 +17,10 @@
     padding: 25px;
 }
 
-.taskpreview{
-    border:solid;
+.taskpreview {
+    border: solid;
     /* height: 100px; */
-    height:40%;
+    height: 40%;
     border-width: 1px;
     border-radius: 25px;
     border-color: #0000001a;
@@ -45,13 +36,13 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-  }
+}
 
 th, td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #0000001a;
-  }
+}
 
 table td {
     border-left: 1px solid #0000001a;
@@ -66,15 +57,13 @@ table td:last-child {
     border-right: none;
 }
 
-
-#taskname{
-    width:70%;
+#taskname {
+    width: 70%;
 }
 
-
-.projectpreview{
-    border:solid;
-    height:auto;
+.projectpreview {
+    border: solid;
+    height: auto;
     /* width: 300px; */
     width: 35%;
     border-width: 1px;
@@ -85,13 +74,13 @@ table td:last-child {
     margin-top: 10px;
     margin-bottom: 30px;
     padding: 20px;
-    float:left;
+    float: left;
     text-align: center;
 }
 
-.forumspreview{
-    border:solid;
-    height:auto;
+.forumspreview {
+    border: solid;
+    height: auto;
     /* width: 300px; */
     width: 35%;
     border-width: 1px;
@@ -102,28 +91,26 @@ table td:last-child {
     margin-top: 10px;
     margin-bottom: 30px;
     padding: 20px;
-    float:left;
+    float: left;
     text-align: center;
 }
 
-
-@media (max-width:800px){
-    .taskpreview{
-        height:auto;
-    }
-    .forumspreview{
-        width:60%;
-        height:auto;
+@media (max-width: 800px) {
+    .taskpreview {
+        height: auto;
     }
 
-    .projectpreview{
-        width:60%;
-        height:auto;
+    .forumspreview {
+        width: 60%;
+        height: auto;
     }
 
-    .general{
-        height:150vh;
+    .projectpreview {
+        width: 60%;
+        height: auto;
     }
 
-
+    .general {
+        height: 150vh;
+    }
 }
