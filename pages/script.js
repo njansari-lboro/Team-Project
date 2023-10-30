@@ -49,9 +49,43 @@ $(document).ready(() => {
 
     document.body.offsetHeight // Force reflow
 
-    $("#profile-menu-button").click(() => $("#profile-menu-items").toggleClass("show"))
+    $("#profile-menu-button").click(() => {
+        $("#profile-menu-items").show()
+        $("#profile-menu-button").css("background-color", "var(--unemphasised-selected-content-background-color)")
+    })
+
     $("#edit-profile-button").click(() => {
         dismissProfileMenu()
+        $("#edit-profile-modal").fadeIn(500, "swing")
+
+        $("#edit-first-name-input").val(firstName)
+        $("#edit-last-name-input").val(lastName)
+        $("#edit-email-input").val(emailAddress)
+        $("#edit-password-input").val(password)
+
+        $("#edit-first-name-input").change(checkIfEditProfileCanSave)
+        $("#edit-last-name-input").change(checkIfEditProfileCanSave)
+        $("#edit-email-input").change(checkIfEditProfileCanSave)
+
+        $("#edit-password-input").mouseout(() => {
+            $("#edit-password-input").attr("type", "password")
+            $("#show-password-icon").show()
+            $("#hide-password-icon").hide()
+        })
+
+        $("#show-hide-password-button").click(() => {
+            $("#show-password-icon").toggle()
+            $("#hide-password-icon").toggle()
+
+            if ($("#show-password-icon").is(":visible")) {
+                $("#edit-password-input").attr("type", "password")
+            } else {
+                $("#edit-password-input").attr("type", "text")
+            }
+        })
+
+        $("#hide-password-icon").hide()
+        checkIfEditProfileCanSave()
     })
 
     $(window).click((event) => {
@@ -59,6 +93,10 @@ $(document).ready(() => {
             dismissProfileMenu()
         }
     })
+
+    $("#edit-profile-button").click()
+
+    $(".dismiss-edit-profile-button").click(() => $("#edit-profile-modal").fadeOut())
 })
 
 function toggleSidebar() {
@@ -67,5 +105,30 @@ function toggleSidebar() {
 }
 
 function dismissProfileMenu() {
-    $("#profile-menu-items").removeClass("show")
+    $("#profile-menu-items").hide()
+    $("#profile-menu-button:not(:hover)").css("background-color", "var(--bar-background-color)")
+}
+
+function checkIfEditProfileCanSave() {
+    const firstName = $("#edit-first-name-input").val()
+    const lastName = $("#edit-last-name-input").val()
+    const emailAddress = $("#edit-email-input").val()
+    // $("#edit-password-input")
+
+    let saveIsDisabled = true
+    setTimeout(() => $("#save-button").prop("disabled", saveIsDisabled), 0);
+
+    if (firstName.trim().length === 0) {
+        return
+    }
+
+    if (lastName.trim().length === 0) {
+        return
+    }
+
+    if (emailAddress.trim().length === 0) {
+        return
+    }
+
+    saveIsDisabled = false
 }

@@ -54,8 +54,12 @@
 
             <div id="profile-details">
                 <div id="profile-name">
-                    <span id="name"><?php echo $_SESSION["name"] ?></span>
-                    <span id="role"><?php echo $_SESSION["role"] ?></span>
+                    <span id="name">
+                        <?php echo $_SESSION["name"] ?>
+                    </span>
+                    <span id="role">
+                        <?php echo $_SESSION["role"] ?>
+                    </span>
                 </div>
 
                 <div id="profile-menu">
@@ -86,6 +90,15 @@
                     </button>
 
                     <div id="profile-menu-items" class="menu-items">
+                        <div id="profile-menu-name">
+                            <span id="name">
+                                <?php echo $_SESSION["name"] ?>
+                            </span>
+                            <span id="role">
+                                <?php echo $_SESSION["role"] ?>
+                            </span>
+                        </div>
+
                         <button id="edit-profile-button" class="menu-item">Edit Profile</button>
                         <div class="divider horizontal" style="width: calc(100% - 16px); margin: 8px"></div>
                         <a href="/helpers/logout.php" class="menu-item">Logout</a>
@@ -202,7 +215,8 @@
             <?php 
                 $pages = array("empdashboard", "tasks", "todo", "tutorials", "forums");
 
-                $page = isset($_GET["page"]) && !empty($_GET["page"]) ? $_GET["page"] : "dashboard";
+                $page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'empdashboard';
+
                 if (!empty($page)) {
                     if (in_array($page, $pages)) {
                     }
