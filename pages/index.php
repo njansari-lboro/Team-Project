@@ -240,7 +240,7 @@
 
             <div id="edit-profile-card" class="center">
                 <div id="edit-profile-image">
-                    <load-svg id="edit-profile-icon" src="assets/profileIcon.svg">
+                    <load-svg id="edit-profile-icon" src="/assets/profileIcon.svg">
                         <style shadowRoot>
                             svg {
                                 height: 10em;
@@ -275,7 +275,7 @@
                         <input id="edit-password-input" type="password" readonly>
 
                         <button id="show-hide-password-button">
-                            <load-svg id="show-password-icon" src="assets/showIcon.svg">
+                            <load-svg id="show-password-icon" src="/assets/showIcon.svg">
                                 <style shadowRoot>
                                     svg {
                                         /* width: var(--body); */
@@ -288,7 +288,7 @@
                                 </style>
                             </load-svg>
 
-                            <load-svg id="hide-password-icon" src="assets/hideIcon.svg">
+                            <load-svg id="hide-password-icon" src="/assets/hideIcon.svg">
                                 <style shadowRoot>
                                     svg {
                                         /* width: var(--body); */
