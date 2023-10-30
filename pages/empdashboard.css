@@ -1,0 +1,129 @@
+
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+
+
+.main{
+    /*margin-left: 180px;*/
+    transition: margin-left .5s;
+}
+
+.general{
+    border:solid;
+    /* height: 100vh; */
+    height:100vh;
+    border-width: 1px;
+    border-radius: 25px;
+    border-color: #0000001a;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 25px;
+}
+
+.taskpreview{
+    border:solid;
+    /* height: 100px; */
+    height:40%;
+    border-width: 1px;
+    border-radius: 25px;
+    border-color: #0000001a;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 25px;
+    text-align: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #0000001a;
+  }
+
+table td {
+    border-left: 1px solid #0000001a;
+    border-right: 1px solid #0000001a;
+}
+
+table td:first-child {
+    border-left: none;
+}
+
+table td:last-child {
+    border-right: none;
+}
+
+
+#taskname{
+    width:70%;
+}
+
+
+.projectpreview{
+    border:solid;
+    height:auto;
+    /* width: 300px; */
+    width: 35%;
+    border-width: 1px;
+    border-radius: 25px;
+    border-color: #0000001a;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    float:left;
+    text-align: center;
+}
+
+.forumspreview{
+    border:solid;
+    height:auto;
+    /* width: 300px; */
+    width: 35%;
+    border-width: 1px;
+    border-radius: 25px;
+    border-color: #0000001a;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    float:left;
+    text-align: center;
+}
+
+
+@media (max-width:800px){
+    .taskpreview{
+        height:auto;
+    }
+    .forumspreview{
+        width:60%;
+        height:auto;
+    }
+
+    .projectpreview{
+        width:60%;
+        height:auto;
+    }
+
+    .general{
+        height:150vh;
+    }
+
+
+}

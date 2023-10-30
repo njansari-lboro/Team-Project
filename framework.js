@@ -47,7 +47,7 @@ function validateAndDisplayEmail() {
     var email = $("#emailInput").val();
 
     if (!validateEmail(email) || !email.endsWith('@make-it-all.co.uk')) {
-        alert('Please enter a valid @make-it-all email address');
+        alert('Please enter a valid @make-it-all.co.uk email address');
         notRecognised();
         return false;
     }
@@ -104,7 +104,7 @@ function validatePasswordAndLogin() {
             console.log(response);
             if (response == 'true') {
                 console.log('success');
-                window.location = 'pages/index.php?page=dashboard';
+                window.location = 'pages/?page=dashboard';
             } else {
                 alert('Login failed. Please check your email/password and try again.');
             }

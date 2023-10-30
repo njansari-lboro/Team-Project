@@ -216,14 +216,13 @@
                 $pages = array("empdashboard", "tasks", "todo", "tutorials", "forums");
 
                 $page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'empdashboard';
+
                 if (!empty($page)) {
                     if (in_array($page, $pages)) {
-                        $page .= '.php';
-                        include($page);
-                    } else {
-                        echo "Page not found. Return <a href=\"?page=dashboard\">dashboard</a>";
                     }
                 }
+
+                include("$page.php")
             ?>
         </div>
 

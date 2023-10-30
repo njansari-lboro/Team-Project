@@ -1,0 +1,133 @@
+body {
+  font-family: var(--font-family);
+  background-color: var(--window-background);
+  color: var(--text-color); 
+}
+
+div {
+  background-color: var(--window-background);
+  color: var(--text-color); 
+}
+
+.container {
+  background-color: var(--window-background);
+  color: var(--text-color); 
+}
+
+input, select {
+  text-align: left;
+  color: var(--text-color); 
+}
+
+#project-col, #date-col, #spacing-col {
+  width: auto;
+  margin: 0;
+  color: var(--text-color); 
+}
+
+div.container-fluid {
+  max-width: 95%;
+  color: var(--text-color); 
+}
+
+div.row {
+  margin: 10px;
+  color: var(--text-color); 
+}
+
+/* chart styling */
+.chart-canvas {
+  max-width: 295px;
+  max-height: 295px;
+  margin: 20px;
+  color: var(--text-color); 
+}
+
+/* heading styling */
+h2 {
+  font-size: var(--title-1);
+  color: var(--text-color);
+}
+h3 {
+  font-size: var(--title-2);
+  color: var(--text-color);
+}
+h4 {
+  font-size: var(--title-3);
+  color: var(--text-color);
+}
+
+.form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem var(--keyboard-focus-indicator-color);
+}
+
+#project-dropdown, #date-picker, #spacing-col {
+  font-size: var(--large-title);
+  font-weight: bold;
+  color: var(--text-color); 
+  background-color: var(--window-background);
+}
+
+/* datepicker default view styling */
+#date-picker {
+  color: var(--accent-color);
+}
+/* datepicker widget styling */
+.ui-datepicker {
+  font-size: 16px;
+  background-color: var(--window-background);
+  color: var(--text-color); 
+}
+/* datepicker header styling */
+.ui-datepicker-header {
+  background-color: var(--secondary-fill-color);
+  color: var(--window-background);
+  color: var(--text-color); 
+}
+/* datepicker cells styling */
+.ui-state-default {
+  background-color: var(--accent-color);
+  color: var(--window-background);
+  border: 0px;
+  color: var(--text-color); 
+}
+/* selected date cell styling */
+.ui-state-active {
+  background-color: var(--accent-color);
+  color: var(--window-background);
+  color: var(--text-color); 
+}
+
+/* table styling */
+.table {
+  font-size: var(--body);
+  border-color: var(--grid-color);
+  background-color: var(--window-background);
+}
+/* this is literal vomit and I hate it - Max */
+td, #upcoming-table td {
+  
+  border-left: 1px solid var(--grid-color);
+  border-bottom: 1px solid var(--grid-color);
+  padding: 5px;
+  color: var(--text-color); 
+}
+#upcoming-table td {
+  background-color: var(--window-background);
+}
+#overdue-table th, #imminent-table th, #upcoming-table th {
+  background-color: var(--window-background);
+  color: var(--secondary-label-color); 
+  font-weight: lighter;  
+  border-bottom: 1px solid var(--grid-color);
+  padding: 5px;
+}
+tr:last-child > td, #upcoming-table tr:last-child > td {
+  border-bottom: 0px;
+}
+th:first-child, td:first-child, #upcoming-table td:first-child {
+  border-left: 0px;
+}
+
+
