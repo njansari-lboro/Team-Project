@@ -1,5 +1,5 @@
 $(document).ready(() => {            
-    let projectDropdown = $("#project_dropdown").get(0);
+    let projectDropdown = $("#project-dropdown").get(0);
     let projectNames = ["Project 1", "Project 2"];
     projectNames.forEach((projectName) =>{
         let option = document.createElement("option");
@@ -39,7 +39,7 @@ $(document).ready(() => {
         },
     };
 
-    let ctx = $("#progress_chart").get(0).getContext("2d");        
+    let ctx = $("#progress-chart").get(0).getContext("2d");        
 
     let defaultProject = "project1";
     let data = projectData[defaultProject].data;
@@ -47,7 +47,7 @@ $(document).ready(() => {
     let imminent = projectData[defaultProject].imminent; 
     let deadline = projectData[defaultProject].deadline;
 
-    $("#date_picker").datepicker({ 
+    $("#date-picker").datepicker({ 
         minDate: 0, 
         dateFormat: "dd/mm/yy",
     });
@@ -68,9 +68,9 @@ $(document).ready(() => {
         });
     }
 
-    populateTable("#overdue_table", overdue); 
-    populateTable("#imminent_table", imminent);
-    $("#date_picker").datepicker("setDate", deadline);
+    populateTable("#overdue-table", overdue); 
+    populateTable("#imminent-table", imminent);
+    $("#date-picker").datepicker("setDate", deadline);
 
     let progressChart = new Chart(ctx, {
         type: "doughnut",
@@ -87,17 +87,17 @@ $(document).ready(() => {
 
     projectDropdown.on
 
-    $("#project_dropdown").change(()=>{
-        let selectedProject = $("#project_dropdown").val();
+    $("#project-dropdown").change(()=>{
+        let selectedProject = $("#project-dropdown").val();
         selectedProject = selectedProject.split(" ").join("").toLowerCase();
         data = projectData[selectedProject].data;
         overdue = projectData[selectedProject].overdue;
         imminent = projectData[selectedProject].imminent;
         deadline = projectData[selectedProject].deadline;
 
-        populateTable("#overdue_table", overdue); 
-        populateTable("#imminent_table", imminent);
-        $("#date_picker").datepicker("setDate", deadline);
+        populateTable("#overdue-table", overdue); 
+        populateTable("#imminent-table", imminent);
+        $("#date-picker").datepicker("setDate", deadline);
 
         progressChart.data.datasets[0].data = data;
         progressChart.update();

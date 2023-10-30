@@ -19,7 +19,7 @@ input, select {
   color: var(--text-color); 
 }
 
-#project_col, #date_col, #spacing_col {
+#project-col, #date-col, #spacing-col {
   width: auto;
   margin: 0;
   color: var(--text-color); 
@@ -62,7 +62,7 @@ h4 {
   box-shadow: 0 0 0 0.2rem var(--keyboard-focus-indicator-color);
 }
 
-#project_dropdown, #date_picker, #spacing_col {
+#project-dropdown, #date-picker, #spacing-col {
   font-size: var(--large-title);
   font-weight: bold;
   color: var(--text-color); 
@@ -70,7 +70,7 @@ h4 {
 }
 
 /* datepicker default view styling */
-#date_picker {
+#date-picker {
   color: var(--accent-color);
 }
 /* datepicker widget styling */
@@ -106,27 +106,27 @@ h4 {
   background-color: var(--window-background);
 }
 /* this is literal vomit and I hate it - Max */
-td, #upcoming_table td {
+td, #upcoming-table td {
   
   border-left: 1px solid var(--grid-color);
   border-bottom: 1px solid var(--grid-color);
   padding: 5px;
   color: var(--text-color); 
 }
-#upcoming_table td {
+#upcoming-table td {
   background-color: var(--window-background);
 }
-#overdue_table th, #imminent_table th, #upcoming_table th {
+#overdue-table th, #imminent-table th, #upcoming-table th {
   background-color: var(--window-background);
   color: var(--secondary-label-color); 
   font-weight: lighter;  
   border-bottom: 1px solid var(--grid-color);
   padding: 5px;
 }
-tr:last-child > td, #upcoming_table tr:last-child > td {
+tr:last-child > td, #upcoming-table tr:last-child > td {
   border-bottom: 0px;
 }
-th:first-child, td:first-child, #upcoming_table td:first-child {
+th:first-child, td:first-child, #upcoming-table td:first-child {
   border-left: 0px;
 }
 
