@@ -330,9 +330,9 @@ body {
     width: calc(100% - 250px);
 }
 
-/* #edit-profile-modal:not(.show) {
+#edit-profile-modal {
     display: none;
-} */
+}
 
 #edit-profile-card {
     position: fixed;
