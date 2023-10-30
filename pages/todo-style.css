@@ -1,10 +1,3 @@
-body {
-  font-family: "Arial";
-  margin: 0;
-  font-size: 16px;
-  overflow: hidden;
-}
-
 .to-do-container {
   margin-left: 5vw;
   margin-top: 10vh;

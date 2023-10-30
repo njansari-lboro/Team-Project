@@ -96,7 +96,7 @@
 
         <div id="sidebar">
             <div id="sidebar-links">
-                <a id="dashboard-sidebar-item" class="sidebar-item" href="?page=dashboard">
+                <a id="dashboard-sidebar-item" class="sidebar-item" href="?page=empdashboard">
                     <load-svg class="sidebar-item-icon" src="/assets/dashboardSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
