@@ -101,11 +101,12 @@ button {
 }
 
 .dropdown {
+    transform: rotate(-90deg);
     transition: transform .5s ease;
 }
 
 .rotated { 
-    transform: rotate(-90deg);
+    transform: rotate(0deg);
 }
 
 .dropdown-content {
