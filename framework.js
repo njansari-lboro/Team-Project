@@ -46,8 +46,13 @@ function validateEmail(email) {
 function validateAndDisplayEmail() {
     var email = $("#emailInput").val();
 
-    if (!validateEmail(email) || !email.endsWith('@make-it-all.co.uk')) {
-        alert('Please enter a valid @make-it-all.co.uk email address');
+    if (!email) {
+        alert('Email cannot be blank.');
+        return false;
+    } else if (!email.endsWith('@make-it-all.co.uk')) {
+        alert('Please enter an email ending with @make-it-all.co.uk');
+        return false;
+    } else if (!validateEmail(email)) {
         notRecognised();
         return false;
     }
