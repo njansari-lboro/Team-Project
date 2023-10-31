@@ -238,20 +238,34 @@ button:hover {
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
+    width: 20px;
+    scrollbar-width: thin;
+    margin: none;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+    background-color: transparent;
 }
 
+/* draggable part of scrollbar */
 ::-webkit-scrollbar-thumb {
-  background-color: var(--label-color);
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
+    background-color: var(--label-color);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--text-color);
+    background-color: var(--text-color);
 }
+
+/* customise scrollbar appearance for Firefox */
+::-webkit-scrollbar-track-piece:start {
+    background-color: transparent;
+}
+
+/* track of the scrollbar when thumb is at the top */
+::-webkit-scrollbar-thumb:vertical:active {
+    background-color: var(--text-color);
+}
+
