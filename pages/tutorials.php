@@ -29,8 +29,8 @@ function display_default()
         <title>Make-It-All!</title>
     </head>
 
-    <body>
-        <h1 style="font-family: Arial, Helvetica, sans-serif;">Technical Information</h1>
+    <body class="customBody">
+        <h1 class="tutHeader">Technical Information</h1>
         <a href="index.php?page=tutorials&task=new_tut&technical=1" class="plus-icon-link">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 11H13V5C13 4.45 12.55 4 12 4C11.45 4 11 4.45 11 5V11H5C4.45 11 4 11.45 4 12C4 12.55 4.45 13 5 13H11V19C11 19.55 11.45 20 12 20C12.55 20 13 19.55 13 19V13H19C19.55 13 20 12.55 20 12C20 11.45 19.55 11 19 11Z" />
@@ -38,7 +38,7 @@ function display_default()
         </a>
         <?php include('../helpers/dynamic_carousel.php'); ?>
         <br><br>
-        <h1 style="font-family: Arial, Helvetica, sans-serif">Non Technical Information</h1>
+        <h1 class="tutHeader">Non Technical Information</h1>
         <!-- IF NOT TECHINICAL HIDE -->
         <a href="index.php?page=tutorials&task=new_tut&technical=0" class="plus-icon-link">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -157,7 +157,7 @@ function view_tut()
                         <div class="step-counter">Step <?php echo $stepNumber; ?></div>
                         <div class="default-image-radio">
                             <input type="radio" name="defaultImage" value="<?php echo $stepNumber; ?>" required>
-                            <label>Set as cover image</label>
+                            <label class="radioLabel">Set as cover image</label>
                         </div>
                         <img src="<?php echo $step['image']; ?>" class="step-image corner">
                     </div>
@@ -168,7 +168,7 @@ function view_tut()
                 <?php $stepNumber++; ?>
             <?php endforeach; ?>
         </div>
-        <a class="btn btn-primary" href="index.php?page=tutorials">Go back</a>
+        <a class="go-back" href="index.php?page=tutorials">Go back</a>
     </body>
 
 
@@ -213,15 +213,20 @@ function new_tut()
                             <div class="step-counter">Step 1</div>
                             <div class="default-image-radio">
                                 <input type="radio" name="defaultImage" value="1" required>
-                                <label>Set as cover image</label>
+                                <label class="radioLabel">Set as cover image</label>
                             </div>
                             <img src="../img/placeholder.jpg" alt="Placeholder" onChange="readURL(this)" class="placeholder" id="img1">
+                            <picture>
+                                <source srcset="../img/placeholderDARK.jpg" media="(prefers-color-scheme: dark)">
+                                <img src="../img/placeholder.jpg" alt="Placeholder" class="placeholder">
+                            </picture>
                             <input type="file" name="step1-image" required>
                         </div>
                         <textarea placeholder="Enter step description" name="step1-text" rows="4" class="form-control1" required></textarea>
                         <button type="button" class="remove-step-btn">Remove Step</button>
                     </div>
                 </div>
+                <a class="go-back" href="index.php?page=tutorials">Go back</a>
                 <button type="button" id="add-step" class="">Add Step</button>
                 <input id="submitBtn" type="submit" value="Post Tutorial!" class="">
             </form>
@@ -238,9 +243,13 @@ function new_tut()
                                 <div class="step-counter">Step ${stepCount}</div>
                                 <div class="default-image-radio">
                                     <input type="radio" name="defaultImage" value="${stepCount}" required>
-                                    <label>Set as cover image</label>
+                                    <label class="radioLabel">Set as cover image</label>
                                 </div>
                                 <img src="../img/placeholder.jpg" alt="Placeholder" class="placeholder">
+                                <picture>
+                                    <source srcset="../img/placeholderDARK.jpg" media="(prefers-color-scheme: dark)">
+                                    <img src="../img/placeholder.jpg" alt="Placeholder" class="placeholder">
+                                </picture>
                                 <input type="file" name="step${stepCount}-image" required>
                             </div>
                             <textarea placeholder="Enter step description" name="step${stepCount}-text" rows="4" class="form-control1" required></textarea>
@@ -259,16 +268,19 @@ function new_tut()
                         var ext = file.name.split('.').pop().toLowerCase();
                         if (["gif", "png", "jpeg", "jpg"].includes(ext)) {
                             var reader = new FileReader();
-                            var imgElement = $(this).siblings('img.placeholder');
+                            var imgElement = $(this).siblings('picture').find('img.placeholder');
                             reader.onload = function(e) {
                                 imgElement.attr('src', e.target.result);
+                                imgElement.siblings('source').attr('srcset', e.target.result);
                             }
                             reader.readAsDataURL(file);
                         } else {
-                            imgElement.attr('src', '../img/placeholder.jpg');
+                            $(this).siblings('picture').find('img.placeholder').attr('src', '../img/placeholder.jpg');
+                            $(this).siblings('picture').find('source').attr('srcset', '../img/placeholderDARK.jpg');
                         }
                     }
                 });
+
 
 
 

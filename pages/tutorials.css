@@ -1,3 +1,5 @@
+@import url("global.css");
+
 *, *::after, *::before {
   box-sizing: unset;
 }
@@ -7,15 +9,21 @@
   --img-gap: .25rem;
 }
 
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
+body{
+  background-color: var(--window-background);
+}
+
+.tutHeader {
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-size: var(--title-2);
   display: inline; 
   margin-left: 2rem;
+  color: var(--text-color);
 }
 
 #main-content {
-  background-color: white;
-  color: black;
+  background-color: var(--window-background);
+  color: var(--text-color);
   margin: 1rem;
 }
 
@@ -58,7 +66,7 @@ h1 {
   color: inherit; 
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(#FFA500,#FFA500);
+  background-image: linear-gradient(var(--accent-color), var(--accent-color));
   background-size: 100% 0; 
   background-repeat: no-repeat;
   background-position: 0 0; 
@@ -117,7 +125,7 @@ h1 {
 .left-handle {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,0.9046475279564951) 16%, rgba(255,255,255,0) 99%);
+  background: var(--left-handle-gradient);
   transform: translateX(-2rem);
   outline: none;
 }
@@ -125,7 +133,7 @@ h1 {
 .right-handle {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  background: linear-gradient(-90deg, rgba(255,255,255,0.9046475279564951) 16%, rgba(255,255,255,0) 99%);
+  background: var(--right-handle-gradient);
   transform: translateX(2rem);
   outline: none;
 }
@@ -171,21 +179,52 @@ h1 {
   }
 }
 
-@media (max-width: 768px){
+@media (max-width: 780px){
   .right-handle{
-      transform: translateX(2rem);
+      transform: translateX(-1.1rem);
   }
   .left-handle{
-      transform: translateX(-2rem);
+      transform: translateX(1.1rem);
+  }
+}
+
+
+@media (max-width: 768px){
+  .right-handle{
+      transform: translateX(-1rem);
+  }
+  .left-handle{
+      transform: translateX(1rem);
+  }
+  .default-image-radio {
+    position: static; /* Or you can use 'relative' based on your layout */
+    margin-top: 10px; /* Add some space above the div */
+    width: 100%; /* Make the div take full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-align: center; /* Center the text inside the div */
+    top: -10px;
+    right: 0px ;
+  }
+
+  .step-counter {
+    position: static;
+    margin-bottom: 10px; /* Add some space below the div */
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Optionally, hide the step counter on smaller screens if it's not needed */
+  .step-counter {
+    display: none;
   }
 }
 
 @media (max-width: 690px){
   .right-handle{
-      transform: translateX(1rem);
+      transform: translateX(-2rem);
   }
   .left-handle{
-      transform: translateX(-1rem);
+      transform: translateX(2rem);
   }
 }
 
@@ -218,21 +257,21 @@ a.plus-icon-link {
   height: 25px;
   border-radius: 4px;
   text-align: center;
-  line-height: 25px; /* Match this with height */
+  line-height: 25px; 
   vertical-align: middle;
   transition: background-color 0.3s ease; 
 }
 
 a.plus-icon-link:hover {
-  background-color: orange;
+  background-color: var(--accent-color) ;
 }
 
 svg {
   width: 25px;
   height: 25px;
-  stroke: #FFA500;
+  stroke: var(--accent-color);
   stroke-width: 2px;
-  fill: #FFA500;
+  fill: var(--accent-color);
   /* vertical-align: middle; */
   transition: stroke 0.3s ease; 
 }
@@ -244,14 +283,14 @@ svg:hover{
 
 
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  display: inline;  
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* display: inline;   */
   vertical-align: middle;
 }
 
 .tutspan{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
+  font-size: var(--sub-headline);
+  color: var(--text-color);
 }
 
 .step {
@@ -339,19 +378,21 @@ h1 {
   border: none;
   background-color: transparent; 
   color: gray;
-  font-size: 2rem; 
+  font-size: var(--title-3); 
   margin-bottom: 20px; 
   width: auto;
 }
 
-#tutorialTitle:focus { outline: none; }
+#tutorialTitle:focus {
+   outline: none; 
+}
 
 .image-container {
   position: relative;
 }
 
 .default-image-radio, .step-counter {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--grid-color);
   padding: 5px;
   border-radius: 5px;
   position: absolute;
@@ -360,22 +401,24 @@ h1 {
 }
 
 .default-image-radio {
-  right: 10px;
+  /* right: 10px; */
+  /* top: 10px; */
 }
 
 .step-counter {
   left: 10px;
   font-weight: bold;
+  top: 10px;
 }
 
-#add-step {
+#add-step{
   color: white;
-  background-color: #FFA500;
+  background-color: var(--accent-color);
   /* padding: 10px 20px; */
   border: none;
   border-radius: 30px;
-  font-size: 16px;
-  box-shadow: 0px 3px #d48600;
+  font-size: var(--sub-headline);
+  box-shadow: 0px 3px var(--secondary-accent-color);
   cursor: pointer;
   position: fixed;     
   bottom: 120px;       
@@ -385,8 +428,31 @@ h1 {
   padding: 15px 30px;
 }
 
+.go-back {
+  color: white;
+  background-color: var(--accent-color);
+  /* padding: 10px 20px; */
+  border: none;
+  border-radius: 30px;
+  font-size: var(--sub-headline);
+  box-shadow: 0px 3px var(--secondary-accent-color);
+  cursor: pointer;
+  position: fixed;     
+  top: 80px;       
+  right: 40px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+
+.go-back:hover{
+  text-decoration: none;
+}
+
 #add-step:hover {
-  background-color: #FFC472;  
+  background-color: var(--secondary-accent-color);
+  color: var(--selected-content-text-color);
 }
 
 #add-step:active {
@@ -402,12 +468,12 @@ h1 {
 
 #submitBtn {
   color: white;
-  background-color: #FFA500;
+  background-color: var(--accent-color);
   padding: 15px 30px;
   border: none;
-  font-size: 20px;
+  font-size: var(--title-3);
   overflow: hidden;   
-  box-shadow: 0px 4px #d48600; 
+  box-shadow: 0px 4px var(--secondary-accent-color);
   cursor: pointer;
   transition: all 0.3s ease-in-out;  
   position: fixed;     
@@ -459,7 +525,7 @@ h1 {
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: var(--callout);
   box-shadow: 0px 3px #B93D30;
   cursor: pointer;
   transition: all 0.3s ease-in-out; 
@@ -480,16 +546,23 @@ h1 {
   box-shadow: 0 0 0 2px #FFA7A7; 
 }
 
-.form-control1 {
-  font-size: 16px;
+.form-control1{
+  font-size: var(--callout);
+  color: var(--placeholder-text-color);
+  background-color: var(--window-background);
 }
 
 .form-control1::placeholder {
   text-align: center;
+  color: var(--placeholder-text-color);
 }
 
-.step-description {
+.step-description{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 2rem;
+  font-size: var(--body);
+}
+
+.radioLabel{
+  color: var(--text-color);
 }
 

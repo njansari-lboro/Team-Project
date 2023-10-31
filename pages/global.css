@@ -174,7 +174,7 @@
         --selected-control-color: rgba(220, 179, 149, 1);
         --selected-control-text-color: rgba(255, 255, 255, 0.85);
         --window-background: rgba(30, 30, 30, 1);
-        --bar-background-color: rgba(42, 42, 42, 1)
+        --bar-background-color: rgba(42, 42, 42, 1);
     }
 }
 
@@ -235,4 +235,9 @@
 
 button:hover {
     cursor: pointer
+}
+
+:root{
+    --left-handle-gradient: linear-gradient(90deg, rgba(255,255,255,0.9046475279564951) 16%, rgba(255,255,255,0) 99%);
+    --right-handle-gradient:linear-gradient(-90deg, rgba(255,255,255,0.9046475279564951) 16%, rgba(255,255,255,0) 99%);
 }
