@@ -47,7 +47,6 @@
                 </div>
               </div>
               <div class="comments hidden">
-                <input type="text" placeholder="Due date" class="due-date-input input datepicker small-screen-date">
                 <textarea name="comments-input" class="comments-input"></textarea>
               </div>
             </form>
