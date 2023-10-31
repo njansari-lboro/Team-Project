@@ -23,7 +23,7 @@ th {
     font-weight: normal;
     color: var(--tertiary-label-color);
     text-align: left;
-    border-top: 1px solid var(--grid-color);
+    border-top: 1px solid var(--tertiary-label-color);
     padding: 5px;
 }
 
@@ -33,11 +33,11 @@ td {
 }
 
 td, th {
-    border-bottom: 1px solid var(--grid-color);
+    border-bottom: 1px solid var(--tertiary-label-color);
 }
 
 hr {
-    color: var(--grid-color);
+    color: var(--tertiary-label-color);
 }
 
 button {
@@ -154,7 +154,7 @@ table td.ui-progresbar {
 
 td.progress-bar.ui-progressbar.ui-corner-all.ui-widget.ui-widget-content {
     border: 0;
-    border-bottom: 1px solid var(--grid-color);
+    border-bottom: 1px solid var(--tertiary-label-color);
     border-radius: 0px;
 }
 
