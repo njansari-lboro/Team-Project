@@ -237,7 +237,3 @@ button:hover {
     cursor: pointer
 }
 
-:root{
-    --left-handle-gradient: linear-gradient(90deg, rgba(255,255,255,0.9046475279564951) 16%, rgba(255,255,255,0) 99%);
-    --right-handle-gradient:linear-gradient(-90deg, rgba(255,255,255,0.9046475279564951) 16%, rgba(255,255,255,0) 99%);
-}
