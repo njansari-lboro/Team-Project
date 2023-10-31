@@ -1,100 +1,83 @@
-document.addEventListener("click", e => {
-  let handle
-  if (e.target.matches(".handle")) {
-    handle = e.target
-  } else {
-    handle = e.target.closest(".handle")
-  }
-  if (handle != null) onHandleClick(handle)
-})
+$(document).on("click", ".handle", function() {
+  handleClicked($(this));
+});
 
-const throttleProgressBar = throttle(() => {
-  document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
-}, 250)
-window.addEventListener("resize", throttleProgressBar)
+const resizeThrottle = throttle(function() {
+  $(".progress-bar").each(updateProgressBar);
+}, 250);
+$(window).on("resize", resizeThrottle);
+$(".progress-bar").each(updateProgressBar);
 
-document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
+function updateProgressBar() {
+  const $pBar = $(this);
+  $pBar.empty();
 
-function calculateProgressBar(progressBar) {
-  progressBar.innerHTML = ""
-  const slider = progressBar.closest(".row").querySelector(".slider")
-  const itemCount = slider.children.length
-  const itemsPerScreen = parseInt(
-    getComputedStyle(slider).getPropertyValue("--items-per-screen")
-  )
-  let sliderIndex = parseInt(
-    getComputedStyle(slider).getPropertyValue("--slider-index")
-  )
-  const progressBarItemCount = Math.ceil(itemCount / itemsPerScreen)
+  const $sliderElem = $pBar.closest(".row").find(".slider");
+  const totalItems = $sliderElem.children().length;
+  const itemsInView = parseInt($sliderElem.css("--items-per-screen"), 10);
+  let currentSliderIndex = parseInt($sliderElem.css("--slider-index"), 10);
+  const barItemsCount = Math.ceil(totalItems / itemsInView);
 
-  if (sliderIndex >= progressBarItemCount) {
-    slider.style.setProperty("--slider-index", progressBarItemCount - 1)
-    sliderIndex = progressBarItemCount - 1
+  if (currentSliderIndex >= barItemsCount) {
+    $sliderElem.css("--slider-index", barItemsCount - 1);
+    currentSliderIndex = barItemsCount - 1;
   }
 
-  for (let i = 0; i < progressBarItemCount; i++) {
-    const barItem = document.createElement("div")
-    barItem.classList.add("progress-item")
-    if (i === sliderIndex) {
-      barItem.classList.add("active")
+  for (let idx = 0; idx < barItemsCount; idx++) {
+    const $indicator = $("<div>").addClass("progress-item");
+    if (idx === currentSliderIndex) {
+      $indicator.addClass("active");
     }
-    progressBar.append(barItem)
+    $pBar.append($indicator);
   }
 }
 
-function onHandleClick(handle) {
-  const progressBar = handle.closest(".row").querySelector(".progress-bar")
-  const slider = handle.closest(".container1").querySelector(".slider")
-  const sliderIndex = parseInt(
-    getComputedStyle(slider).getPropertyValue("--slider-index")
-  )
-  const progressBarItemCount = progressBar.children.length
-  if (handle.classList.contains("left-handle")) {
-    if (sliderIndex - 1 < 0) {
-      slider.style.setProperty("--slider-index", progressBarItemCount - 1)
-      progressBar.children[sliderIndex].classList.remove("active")
-      progressBar.children[progressBarItemCount - 1].classList.add("active")
-    } else {
-      slider.style.setProperty("--slider-index", sliderIndex - 1)
-      progressBar.children[sliderIndex].classList.remove("active")
-      progressBar.children[sliderIndex - 1].classList.add("active")
-    }
+function handleClicked($detectedHandle) {
+  const $pBar = $detectedHandle.closest(".row").find(".progress-bar");
+  const $sliderElem = $detectedHandle.closest(".container1").find(".slider");
+  const currentSliderIndex = parseInt($sliderElem.css("--slider-index"), 10);
+  const barItemsCount = $pBar.children().length;
+
+  const setActiveIndicator = (index) => {
+    $pBar.children().eq(currentSliderIndex).removeClass("active");
+    $pBar.children().eq(index).addClass("active");
+  };
+
+  if ($detectedHandle.hasClass("left-handle")) {
+    const newIndex = currentSliderIndex - 1 < 0 ? barItemsCount - 1 : currentSliderIndex - 1;
+    $sliderElem.css("--slider-index", newIndex);
+    setActiveIndicator(newIndex);
   }
 
-  if (handle.classList.contains("right-handle")) {
-    if (sliderIndex + 1 >= progressBarItemCount) {
-      slider.style.setProperty("--slider-index", 0)
-      progressBar.children[sliderIndex].classList.remove("active")
-      progressBar.children[0].classList.add("active")
-    } else {
-      slider.style.setProperty("--slider-index", sliderIndex + 1)
-      progressBar.children[sliderIndex].classList.remove("active")
-      progressBar.children[sliderIndex + 1].classList.add("active")
-    }
+  if ($detectedHandle.hasClass("right-handle")) {
+    const newIndex = currentSliderIndex + 1 >= barItemsCount ? 0 : currentSliderIndex + 1;
+    $sliderElem.css("--slider-index", newIndex);
+    setActiveIndicator(newIndex);
   }
 }
 
-function throttle(cb, delay = 1000) {
-  let shouldWait = false
-  let waitingArgs
-  const timeoutFunc = () => {
-    if (waitingArgs == null) {
-      shouldWait = false
+function throttle(func, waitTime = 1000) {
+  let isThrottled = false;
+  let savedArgs;
+
+  const delayedExecution = () => {
+    if (!savedArgs) {
+      isThrottled = false;
     } else {
-      cb(...waitingArgs)
-      waitingArgs = null
-      setTimeout(timeoutFunc, delay)
+      func(...savedArgs);
+      savedArgs = null;
+      setTimeout(delayedExecution, waitTime);
     }
-  }
+  };
 
-  return (...args) => {
-    if (shouldWait) {
-      waitingArgs = args
-      return
+  return function(...args) {
+    if (isThrottled) {
+      savedArgs = args;
+      return;
     }
 
-    cb(...args)
-    shouldWait = true
-    setTimeout(timeoutFunc, delay)
+    func(...args);
+    isThrottled = true;
+    setTimeout(delayedExecution, waitTime);
   }
 }
