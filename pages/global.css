@@ -241,6 +241,7 @@ button:hover {
     width: 20px;
     scrollbar-width: thin;
     margin: none;
+    z-index: 2;
 }
 
 ::-webkit-scrollbar-track {
