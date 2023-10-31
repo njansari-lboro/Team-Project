@@ -1,12 +1,4 @@
-body {
-    font-family: var(--font-family);
-    background-color: var(--window-background);
-    color: var(--text-color);
-}
-
-@media (max-width: 100%){
-
-}
+@media (max-width: 100%) {}
 
 select:focus {
     outline: 0;
@@ -97,7 +89,7 @@ button {
 }
 
 .dropdown:focus {
-    outline: none; 
+    outline: none;
 }
 
 .dropdown {
@@ -105,7 +97,7 @@ button {
     transition: transform .5s ease;
 }
 
-.rotated { 
+.rotated {
     transform: rotate(0deg);
 }
 
@@ -130,7 +122,8 @@ button {
 .progress-bar::before {
     content: attr(data-value);
     position: absolute;
-    top: -20px; /* Adjust this value to control the tooltip's position */
+    top: -20px;
+    /* Adjust this value to control the tooltip's position */
     left: 50%;
     transform: translate(-50%, 110%);
     background: rgba(0, 0, 0, 0.7);
