@@ -248,22 +248,12 @@ button:hover {
     background-color: transparent;
 }
 
-@keyframes squish {
-    0%, 100% {
-        transform: scaleY(1);
-    }
-    50% {
-        transform: scaleY(0.5);
-    }
-}
-
 /* draggable part of scrollbar */
 ::-webkit-scrollbar-thumb {
     background-color: var(--label-color);
     border-radius: 20px;
     border: 6px solid transparent;
     background-clip: content-box;
-    animation: squish 1s infinite;
 }
 
 ::-webkit-scrollbar-thumb:hover {
