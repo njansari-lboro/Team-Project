@@ -19,7 +19,7 @@
                     </h1>
 
                     <div class="author-info">
-                        <img src="User.jpg" alt="Author Avatar" class="author-avatar">
+                        <img src="/assets/user.jpg" alt="Author Avatar" class="author-avatar">
 
                         <div class="author-text">
                             <span class="author-name">John Cena</span>
@@ -34,7 +34,7 @@
 
                 <div class="reply">
                     <div class="reply-user">
-                        <img src="User.jpg" alt="Replier Avatar" class="user-avatar">
+                        <img src="/assets/user.jpg" alt="Replier Avatar" class="user-avatar">
                         <span class="user-name">Jean Sienna</span>
                     </div>
 
