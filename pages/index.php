@@ -1,29 +1,26 @@
 <?php
-    error_reporting(E_ALL);
-    session_start();
+    // session_start();
 
-    if (empty($_SESSION["user"])) {
-        header("Location: /helpers/logout.php");
-        die();
-    }
+    // if (empty($_SESSION["user"])) {
+    //     header("Location: /helpers/logout.php");
+    //     die();
+    // }
 
-    var_dump($_SESSION["user"]);
-
-    switch ($_SESSION["user"]["role"]) {
-    case "Employee":
-        $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
-        break;
-    case "Admin":
-        $pages = array("dashboard", "todo", "tutorials", "forums");
-        break;
-    case "Manager":
-        $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
-        break;
-    default:
-        echo "Invalid role: " . $_SESSION["user"]["role"];
-        die();
-        break;
-    }
+    // switch ($_SESSION["user"]["role"]) {
+    // case "Employee":
+    //     $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
+    //     break;
+    // case "Admin":
+    //     $pages = array("dashboard", "todo", "tutorials", "forums");
+    //     break;
+    // case "Manager":
+    //     $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
+    //     break;
+    // default:
+    //     echo "Invalid role: " . $_SESSION["user"]["role"];
+    //     die();
+    //     break;
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -82,11 +79,11 @@
             <div id="profile-details">
                 <div id="profile-name">
                     <span id="name">
-                        <?php echo "$_SESSION['user']['firstName'] $_SESSION['user']['lastName']" ?>
+                        <?php /*echo "$_SESSION['user']['firstName'] $_SESSION['user']['lastName']"*/ ?>
                     </span>
 
                     <span id="role">
-                        <?php echo $_SESSION["user"]["role"] ?>
+                        <?php /*echo $_SESSION["user"]["role"]*/ ?>
                     </span>
                 </div>
 
@@ -120,11 +117,11 @@
                     <div id="profile-menu-items" class="menu-items">
                         <div id="profile-menu-name">
                             <span id="name">
-                                <?php echo "$_SESSION['user']['firstName'] $_SESSION['user']['lastName']" ?>
+                                <?php /*echo "$_SESSION['user']['firstName'] $_SESSION['user']['lastName']"*/ ?>
                             </span>
 
                             <span id="role">
-                                <?php echo $_SESSION["user"]["role"] ?>
+                                <?php /*echo $_SESSION["user"]["role"]*/ ?>
                             </span>
                         </div>
 
@@ -243,33 +240,33 @@
         <div id="main-content-wrapper">
             <div id="main-content">
                 <?php
-                    $page = isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages) ? $_GET["page"] : "dashboard";
+                    // $page = isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages) ? $_GET["page"] : "dashboard";
 
-                    $dir = $page;
+                    // $dir = $page;
 
-                    if ($page == "dashboard") {
-                        switch ($_SESSION["user"]["role"]) {
-                        case "Employee":
-                            $page = "employee-dashboard";
-                            break;
-                        case "Manager":
-                            $page = "manager-dashboard";
-                        default:
-                            break;
-                        }
-                    }
+                    // if ($page == "dashboard") {
+                    //     switch ($_SESSION["user"]["role"]) {
+                    //     case "Employee":
+                    //         $page = "employee-dashboard";
+                    //         break;
+                    //     case "Manager":
+                    //         $page = "manager-dashboard";
+                    //     default:
+                    //         break;
+                    //     }
+                    // }
 
-                    include("$dir/$page.php")
+                    // include("$dir/$page.php")
                 ?>
             </div>
         </div>
 
         <div id="edit-profile-modal">
             <script>
-                const firstName = "<?php echo $_SESSION['user']['firstName'] ?>"
-                const lastName = "<?php echo $_SESSION['user']['lastName'] ?>"
-                const emailAddress = "<?php echo $_SESSION['user']['email'] ?>"
-                const password = "<?php echo $_SESSION['user']['password'] ?>"
+                const firstName = "<?php /*echo $_SESSION['user']['firstName']*/ ?>"
+                const lastName = "<?php /*echo $_SESSION['user']['lastName']*/ ?>"
+                const emailAddress = "<?php /*echo $_SESSION['user']['email']*/ ?>"
+                const password = "<?php /*echo $_SESSION['user']['password']*/ ?>"
             </script>
 
             <div class="dimmed-overlay"></div>
