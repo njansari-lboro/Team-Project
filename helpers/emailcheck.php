@@ -1,6 +1,7 @@
 <?php
     $emails = [
         "admin@make-it-all.co.uk",
+        "dilip@make-it-all.co.uk",
         "employee@make-it-all.co.uk",
         "ben@make-it-all.co.uk",
         "nayan@make-it-all.co.uk",
