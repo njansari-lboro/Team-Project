@@ -1,28 +1,26 @@
 <?php
     session_start();
-    header("Location: /pages/tutorials/tutorials.php");
-    die();
 
-    // if (isempty($_SESSION["user"])) {
-        // header("Location: /helpers/logout.php");
-    //     die();
-    // }
+    if (empty($_SESSION["user"])) {
+        header("Location: /helpers/logout.php");
+        die();
+    }
 
-    // switch ($_SESSION["user"]["role"]) {
-    // case "Employee":
-    //     $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
-    //     break;
-    // case "Admin":
-    //     $pages = array("dashboard", "todo", "tutorials", "forums");
-    //     break;
-    // case "Manager":
-    //     $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
-    //     break;
-    // default:
-    //     echo "Invalid role: $_SESSION['user']['role']";
-    //     die();
-    //     break;
-    // }
+    switch ($_SESSION["user"]["role"]) {
+    case "Employee":
+        $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
+        break;
+    case "Admin":
+        $pages = array("dashboard", "todo", "tutorials", "forums");
+        break;
+    case "Manager":
+        $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
+        break;
+    default:
+        echo "Invalid role: $_SESSION['user']['role']";
+        die();
+        break;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -242,7 +240,6 @@
         <div id="main-content-wrapper">
             <div id="main-content">
                 <?php
-                    $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
                     $page = isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages) ? $_GET["page"] : "dashboard";
 
                     if ($page == "dashboard") {
