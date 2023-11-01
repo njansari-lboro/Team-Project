@@ -108,6 +108,7 @@ function validatePasswordAndLogin() {
             if (response == "true") {
                 console.log("success")
                 window.location = "pages/?page=dashboard"
+                alert("Login success.")
             } else {
                 alert("Login failed. Please check your email/password and try again.")
             }
