@@ -259,12 +259,12 @@
         </div>
 
         <div id="edit-profile-modal">
-            <script>
+            <!-- <script>
                 const firstName = <?php echo $_SESSION["user"]["firstName"] ?>
                 const lastName = <?php echo $_SESSION["user"]["lastName"] ?>
                 const emailAddress = <?php echo $_SESSION["user"]["email"] ?>
                 const password = <?php echo $_SESSION["user"]["password"] ?>
-            </script>
+            </script> -->
 
             <div class="dimmed-overlay"></div>
 
