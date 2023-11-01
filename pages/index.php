@@ -6,21 +6,21 @@
         die();
     }
 
-    switch ($_SESSION["user"]["role"]) {
-    case "Employee":
+    // switch ($_SESSION["user"]["role"]) {
+    // case "Employee":
         $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
-        break;
-    case "Admin":
-        $pages = array("dashboard", "todo", "tutorials", "forums");
-        break;
-    case "Manager":
-        $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
-        break;
-    default:
-        echo "Invalid role: $_SESSION['user']['role']";
-        die();
-        break;
-    }
+    //     break;
+    // case "Admin":
+    //     $pages = array("dashboard", "todo", "tutorials", "forums");
+    //     break;
+    // case "Manager":
+    //     $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
+    //     break;
+    // default:
+    //     echo "Invalid role: $_SESSION['user']['role']";
+    //     die();
+    //     break;
+    // }
 ?>
 
 <!DOCTYPE html>
