@@ -155,6 +155,6 @@
 
         <div><hr></div>
         
-        <script src="projects.js"></script>
+        <script src="/pages/projects/projects.js"></script>
     </body>
 </html>

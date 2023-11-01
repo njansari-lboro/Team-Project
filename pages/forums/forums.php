@@ -99,14 +99,14 @@
 
         <script>
             document.getElementById("post-topic").addEventListener("click", () => {
-                window.location.href = "post.php"
+                window.location.href = "/pages/forums/post.php"
             })
 
             let replyLinks = document.querySelectorAll(".reply")
             replyLinks.forEach((link) => {
                 link.addEventListener("click", (event) => {
                     event.preventDefault()
-                    window.location.href = "viewpost.php"
+                    window.location.href = "/pages/forums/viewpost.php"
                 })
             })
 
@@ -114,7 +114,7 @@
             readMoreLinks.forEach((link) => {
                 link.addEventListener("click", (event) => {
                     event.preventDefault()
-                    window.location.href = "viewpost.php"
+                    window.location.href = "/pages/forums/viewpost.php"
                 })
             })
         </script>

@@ -31,7 +31,7 @@
     <script>
         let exitButton = document.querySelector(".exit-btn")
         exitButton.addEventListener("click", () => {
-            window.location.href = "forums.php"
+            window.location.href = "/pages/forums/forums.php"
         })
     </script>
 </html>

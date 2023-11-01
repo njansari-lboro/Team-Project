@@ -14,7 +14,7 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-        <script src="manager-dashboard.js"></script>
+        <script src="/pages/dashboard/manager-dashboard.js"></script>
     </head>
 
     <body>

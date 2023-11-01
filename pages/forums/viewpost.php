@@ -51,12 +51,12 @@
     <script>
         let exitButton = document.querySelector(".exit-button")
         exitButton.addEventListener("click", () => {
-            window.location.href = "forums.php"
+            window.location.href = "/pages/forums/forums.php"
         })
 
         let replyButton = document.querySelector(".button")
         replyButton.addEventListener("click", () => {
-            window.location.href = "reply.php"
+            window.location.href = "/pages/forums/reply.php"
         })
     </script>
 </html>
