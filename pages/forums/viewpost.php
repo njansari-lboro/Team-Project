@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="viewpost.css">
+        <link rel="stylesheet" href="/pages/forums/viewpost.css">
     </head>
 
     <main>

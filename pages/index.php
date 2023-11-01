@@ -79,7 +79,7 @@
             <div id="profile-details">
                 <div id="profile-name">
                     <span id="name">
-                        <?php echo $_SESSION["user"]["firstName"] . " " . $_SESSION["user"]["lastName"] ?>
+                        <?php echo "{$_SESSION['user']['firstName']} {$_SESSION['user']['lastName']}" ?>
                     </span>
 
                     <span id="role">
@@ -117,7 +117,7 @@
                     <div id="profile-menu-items" class="menu-items">
                         <div id="profile-menu-name">
                             <span id="name">
-                                <?php echo $_SESSION["user"]["firstName"] . " " . $_SESSION["user"]["lastName"] ?>
+                                <?php echo "{$_SESSION['user']['firstName']} {$_SESSION['user']['lastName']}" ?>
                             </span>
 
                             <span id="role">

@@ -12,7 +12,7 @@
 
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="/global.css">
-        <link rel="stylesheet" href="projects.css">
+        <link rel="stylesheet" href="/pages/projects/projects.css">
     </head>
 
     <body>
