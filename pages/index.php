@@ -8,7 +8,7 @@
 
     // switch ($_SESSION["user"]["role"]) {
     // case "Employee":
-        $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
+    //     $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
     //     break;
     // case "Admin":
     //     $pages = array("dashboard", "todo", "tutorials", "forums");
@@ -239,6 +239,7 @@
         <div id="main-content-wrapper">
             <div id="main-content">
                 <?php
+                    $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
                     $page = isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages) ? $_GET["page"] : "dashboard";
 
                     if ($page == "dashboard") {
@@ -259,12 +260,12 @@
         </div>
 
         <div id="edit-profile-modal">
-            <!-- <script>
+            <script>
                 const firstName = <?php echo $_SESSION["user"]["firstName"] ?>
                 const lastName = <?php echo $_SESSION["user"]["lastName"] ?>
                 const emailAddress = <?php echo $_SESSION["user"]["email"] ?>
                 const password = <?php echo $_SESSION["user"]["password"] ?>
-            </script> -->
+            </script>
 
             <div class="dimmed-overlay"></div>
 
