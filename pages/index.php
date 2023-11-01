@@ -12,8 +12,10 @@
         break;
     case "Admin":
         $pages = array("dashboard", "todo", "tutorials", "forums");
+        break;
     case "Manager":
         $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
+        break;
     default:
         echo "Invalid role: $_SESSION['user']['role']";
         die();
