@@ -79,11 +79,11 @@
             <div id="profile-details">
                 <div id="profile-name">
                     <span id="name">
-                        <?php /*echo "$_SESSION['user']['firstName'] $_SESSION['user']['lastName']"*/ ?>
+                        <?php echo "$_SESSION['user']['firstName'] $_SESSION['user']['lastName']" ?>
                     </span>
 
                     <span id="role">
-                        <?php /*echo $_SESSION["user"]["role"]*/ ?>
+                        <?php echo $_SESSION["user"]["role"] ?>
                     </span>
                 </div>
 
