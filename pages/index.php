@@ -1,10 +1,13 @@
 <?php
+    error_reporting(E_ALL);
     session_start();
 
     if (empty($_SESSION["user"])) {
         header("Location: /helpers/logout.php");
         die();
     }
+
+    var_dump($_SESSION["user"]);
 
     switch ($_SESSION["user"]["role"]) {
     case "Employee":
@@ -17,7 +20,7 @@
         $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
         break;
     default:
-        echo "Invalid role: $_SESSION['user']['role']";
+        echo "Invalid role: " . $_SESSION["user"]["role"];
         die();
         break;
     }
