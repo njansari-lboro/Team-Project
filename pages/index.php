@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    if (isempty($_SESSION["user"])) {
-        header("Location: /helpers/logout.php");
-        die();
-    }
+    // if (isempty($_SESSION["user"])) {
+    //     header("Location: /helpers/logout.php");
+    //     die();
+    // }
 
     // switch ($_SESSION["user"]["role"]) {
     // case "Employee":
