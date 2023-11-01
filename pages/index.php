@@ -1,26 +1,26 @@
 <?php
-    // session_start();
+    session_start();
 
-    // if (empty($_SESSION["user"])) {
-    //     header("Location: /helpers/logout.php");
-    //     die();
-    // }
+    if (empty($_SESSION["user"])) {
+        header("Location: /helpers/logout.php");
+        die();
+    }
 
-    // switch ($_SESSION["user"]["role"]) {
-    // case "Employee":
-    //     $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
-    //     break;
-    // case "Admin":
-    //     $pages = array("dashboard", "todo", "tutorials", "forums");
-    //     break;
-    // case "Manager":
-    //     $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
-    //     break;
-    // default:
-    //     echo "Invalid role: " . $_SESSION["user"]["role"];
-    //     die();
-    //     break;
-    // }
+    switch ($_SESSION["user"]["role"]) {
+    case "Employee":
+        $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
+        break;
+    case "Admin":
+        $pages = array("dashboard", "todo", "tutorials", "forums");
+        break;
+    case "Manager":
+        $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
+        break;
+    default:
+        echo "Invalid role: " . $_SESSION["user"]["role"];
+        die();
+        break;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -135,7 +135,7 @@
 
         <div id="sidebar">
             <div id="sidebar-links">
-                <a id="dashboard-sidebar-item" class="sidebar-item" href="?page=empdashboard">
+                <a id="dashboard-sidebar-item" class="sidebar-item" href="?page=dashboard">
                     <load-svg class="sidebar-item-icon" src="/assets/dashboardSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
