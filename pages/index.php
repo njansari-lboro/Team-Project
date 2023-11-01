@@ -1,11 +1,33 @@
-<?php session_start() ?>
+<?php
+    session_start();
+
+    if (isempty($_SESSION["user"])) {
+        header("Location: /helpers/logout.php");
+        die();
+    }
+
+    switch ($_SESSION["user"]["role"]) {
+    case "Employee":
+        $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
+        break;
+    case "Admin":
+        $pages = array("dashboard", "todo", "tutorials", "forums");
+    case "Manager":
+        $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
+    default:
+        echo "Invalid role: $_SESSION['user']['role']";
+        die();
+        break;
+    }
+?>
 
 <!DOCTYPE html>
 
-<html lang="en-GB">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <link rel="stylesheet" href="/global.css">
         <link rel="stylesheet" href="style.css">
 
@@ -55,10 +77,10 @@
             <div id="profile-details">
                 <div id="profile-name">
                     <span id="name">
-                        <?php echo $_SESSION["name"] ?>
+                        <?php echo "$_SESSION['user']['firstName'] $_SESSION['user']['lastName']" ?>
                     </span>
                     <span id="role">
-                        <?php echo $_SESSION["role"] ?>
+                        <?php echo $_SESSION["user"]["role"] ?>
                     </span>
                 </div>
 
@@ -92,10 +114,11 @@
                     <div id="profile-menu-items" class="menu-items">
                         <div id="profile-menu-name">
                             <span id="name">
-                                <?php echo $_SESSION["name"] ?>
+                                <?php echo "$_SESSION['user']['firstName'] $_SESSION['user']['lastName']" ?>
                             </span>
+
                             <span id="role">
-                                <?php echo $_SESSION["role"] ?>
+                                <?php echo $_SESSION["user"]["role"] ?>
                             </span>
                         </div>
 
@@ -214,12 +237,17 @@
         <div id="main-content-wrapper">
             <div id="main-content">
                 <?php
-                    $pages = array("empdashboard", "tasks", "todo", "tutorials", "forums");
+                    $page = isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages) ? $_GET["page"] : "dashboard";
 
-                    $page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 'empdashboard';
-
-                    if (!empty($page)) {
-                        if (in_array($page, $pages)) {
+                    if ($page == "dashboard") {
+                        switch ($_SESSION["user"]["role"]) {
+                        case "Employee":
+                            $page = "employee-dashboard";
+                            break;
+                        case "Manager":
+                            $page = "manager-dashboard";
+                        default:
+                            break;
                         }
                     }
 
@@ -230,10 +258,10 @@
 
         <div id="edit-profile-modal">
             <script>
-                const firstName = "John"
-                const lastName = "Cena"
-                const emailAddress = "johncena@make-it-all.co.uk"
-                const password = "password123"
+                const firstName = <?php echo $_SESSION["user"]["firstName"] ?>
+                const lastName = <?php echo $_SESSION["user"]["lastName"] ?>
+                const emailAddress = <?php echo $_SESSION["user"]["email"] ?>
+                const password = <?php echo $_SESSION["user"]["password"] ?>
             </script>
 
             <div class="dimmed-overlay"></div>
@@ -306,7 +334,6 @@
 
                 <div id="dismiss-buttons">
                     <button id="cancel-button" class="dismiss-edit-profile-button">Cancel</button>
-
                     <button id="save-button" class="dismiss-edit-profile-button" disabled>Save</button>
                 </div>
             </div>

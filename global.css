@@ -174,7 +174,7 @@
         --selected-control-color: rgba(220, 179, 149, 1);
         --selected-control-text-color: rgba(255, 255, 255, 0.85);
         --window-background: rgba(30, 30, 30, 1);
-        --bar-background-color: rgba(42, 42, 42, 1)
+        --bar-background-color: rgba(42, 42, 42, 1);
     }
 }
 
@@ -218,7 +218,7 @@
 }
 
 :focus {
-    outline: 1px solid var(--keyboard-focus-indicator-color);
+    outline: 0.2em solid var(--keyboard-focus-indicator-color);
     outline-offset: 0;
 }
 
@@ -236,3 +236,33 @@
 button:hover {
     cursor: pointer
 }
+
+/* ::-webkit-scrollbar {
+    width: 20px;
+    scrollbar-width: thin;
+    margin: none;
+    z-index: 2;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--label-color);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color);
+}
+
+::-webkit-scrollbar-track-piece:start {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+    background-color: var(--text-color);
+} */
