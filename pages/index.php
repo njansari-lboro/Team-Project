@@ -245,6 +245,8 @@
                 <?php
                     $page = isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages) ? $_GET["page"] : "dashboard";
 
+                    $dir = $page;
+
                     if ($page == "dashboard") {
                         switch ($_SESSION["user"]["role"]) {
                         case "Employee":
@@ -257,17 +259,17 @@
                         }
                     }
 
-                    include("$page.php")
+                    include("$dir/$page.php")
                 ?>
             </div>
         </div>
 
         <div id="edit-profile-modal">
             <script>
-                const firstName = <?php echo $_SESSION["user"]["firstName"] ?>
-                const lastName = <?php echo $_SESSION["user"]["lastName"] ?>
-                const emailAddress = <?php echo $_SESSION["user"]["email"] ?>
-                const password = <?php echo $_SESSION["user"]["password"] ?>
+                const firstName = "<?php echo $_SESSION['user']['firstName'] ?>"
+                const lastName = "<?php echo $_SESSION['user']['lastName'] ?>"
+                const emailAddress = "<?php echo $_SESSION['user']['email'] ?>"
+                const password = "<?php echo $_SESSION['user']['password'] ?>"
             </script>
 
             <div class="dimmed-overlay"></div>
