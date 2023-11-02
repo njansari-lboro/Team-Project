@@ -17,7 +17,7 @@
         $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
         break;
     default:
-        echo "Invalid role: " . $_SESSION["user"]["role"];
+        echo "Invalid role: {$_SESSION['user']['role']}";
         die();
         break;
     }
@@ -135,6 +135,7 @@
 
         <div id="sidebar">
             <div id="sidebar-links">
+                <?php function dashboard_sidebar_item() { ?>
                 <a id="dashboard-sidebar-item" class="sidebar-item" href="?page=dashboard">
                     <load-svg class="sidebar-item-icon" src="/assets/dashboardSidebarItemIcon.svg">
                         <style shadowRoot>
@@ -150,7 +151,9 @@
                     </load-svg>
                     <span class="sidebar-item-text">Dashboard</span>
                 </a>
+                <?php } ?>
 
+                <?php function tasks_sidebar_item() { ?>
                 <a id="tasks-sidebar-item" class="sidebar-item" href="?page=tasks">
                     <load-svg class="sidebar-item-icon" src="/assets/tasksSidebarItemIcon.svg">
                         <style shadowRoot>
@@ -166,7 +169,27 @@
                     </load-svg>
                     <span class="sidebar-item-text">Tasks</span>
                 </a>
+                <?php } ?>
 
+                <?php function projects_sidebar_item() { ?>
+                <a id="projects-sidebar-item" class="sidebar-item" href="?page=projects">
+                    <load-svg class="sidebar-item-icon" src="/assets/projectsSidebarItemIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                height: 2.6em;
+                                margin: 0 0.3em;
+                            }
+
+                            .fill {
+                                fill: var(--fill-color);
+                            }
+                        </style>
+                    </load-svg>
+                    <span class="sidebar-item-text">Projects</span>
+                </a>
+                <?php } ?>
+
+                <?php function todo_sidebar_item() { ?>
                 <a id="todo-sidebar-item" class="sidebar-item" href="?page=todo">
                     <load-svg class="sidebar-item-icon" src="/assets/todoSidebarItemIcon.svg">
                         <style shadowRoot>
@@ -181,7 +204,9 @@
                     </load-svg>
                     <span class="sidebar-item-text">To-do List</span>
                 </a>
+                <?php } ?>
 
+                <?php function tutorials_sidebar_item() { ?>
                 <a id="tutorials-sidebar-item" class="sidebar-item" href="?page=tutorials">
                     <load-svg class="sidebar-item-icon" src="/assets/tutorialsSidebarItemIcon.svg">
                         <style shadowRoot>
@@ -196,7 +221,9 @@
                     </load-svg>
                     <span class="sidebar-item-text">Tutorials</span>
                 </a>
+                <?php } ?>
 
+                <?php function forums_sidebar_item() { ?>
                 <a id="forums-sidebar-item" class="sidebar-item" href="?page=forums">
                     <load-svg class="sidebar-item-icon" src="/assets/forumsSidebarItemIcon.svg">
                         <style shadowRoot>
@@ -211,6 +238,25 @@
                     </load-svg>
                     <span class="sidebar-item-text">Forums</span>
                 </a>
+                <?php } ?>
+
+                <?php
+                    $sidebarItems = [
+                        "dashboard" => "dashboard_sidebar_item",
+                        "projects" => "projects_sidebar_item",
+                        "tasks" => "tasks_sidebar_item",
+                        "todo" => "todo_sidebar_item",
+                        "tutorials" => "tutorials_sidebar_item",
+                        "forums" => "forums_sidebar_item",
+                    ];
+
+                    foreach ($pages as $page) {
+                        if (array_key_exists($page, $sidebarItems)) {
+                            $sidebarItem = $sidebarItems[$page];
+                            $sidebarItem();
+                        }
+                    }
+                ?>
             </div>
 
             <div style="flex-grow: 1"></div>
@@ -235,12 +281,17 @@
             </div>
         </div>
 
-        <div id="dimmed-overlay"></div>
+        <div id="sidebar-dim" class="dimmed-overlay"></div>
 
         <div id="main-content-wrapper">
             <div id="main-content">
                 <?php
-                    $page = isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages) ? $_GET["page"] : "dashboard";
+                    if (isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages)) {
+                        $page = $_GET["page"];
+                    } else {
+                        header("Location: ?page=dashboard");
+                        die();
+                    }
 
                     $dir = $page;
 
@@ -251,7 +302,6 @@
                             break;
                         case "Manager":
                             $page = "manager-dashboard";
-                        default:
                             break;
                         }
                     }

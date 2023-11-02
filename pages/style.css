@@ -270,7 +270,8 @@ body {
     height: 100%;
     width: 100%;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.25);
+    /* background-color: rgba(0, 0, 0, 0.25); */
+    background-color: var(--background-material);
     /* backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(1px); */
     transition: 0.5s;
@@ -279,7 +280,7 @@ body {
 #sidebar-dim.dimmed-overlay {
     display: none;
     z-index: 1;
-    background-color: var(--background-material);
+    /* background-color: var(--background-material); */
     top: 5.6em;
 }
 
@@ -315,19 +316,9 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-    body.sidebar-expanded {
-        background-color: var(--unemphasised-selected-content-background-color);
-        transition: 0.5s;
-    }
-
     .sidebar-expanded #main-content {
         margin-left: 0;
-        width: 150%;
     }
-}
-
-.sidebar-expanded #main-content {
-    width: calc(100% - 250px);
 }
 
 #edit-profile-modal {

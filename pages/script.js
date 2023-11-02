@@ -112,8 +112,6 @@ function dismissProfileMenu() {
 function checkIfEditProfileCanSave() {
     const firstName = $("#edit-first-name-input").val()
     const lastName = $("#edit-last-name-input").val()
-    const emailAddress = $("#edit-email-input").val()
-    // $("#edit-password-input")
 
     let saveIsDisabled = true
     setTimeout(() => $("#save-button").prop("disabled", saveIsDisabled), 0);
@@ -123,10 +121,6 @@ function checkIfEditProfileCanSave() {
     }
 
     if (lastName.trim().length === 0) {
-        return
-    }
-
-    if (emailAddress.trim().length === 0) {
         return
     }
 
