@@ -1,11 +1,11 @@
 $(document).ready(() => {
-    let projectDropdown = $("#project-dropdown").get(0)
-    let projectNames = ["Project 1", "Project 2"]
+    let projectDropdown = $("#project-dropdown").get(0);
+    let projectNames = ["Project 1", "Project 2"];
     projectNames.forEach((projectName) => {
-        let option = document.createElement("option")
-        option.text = projectName
-        projectDropdown.add(option)
-    })
+        let option = document.createElement("option");
+        option.text = projectName;
+        projectDropdown.add(option);
+    });
 
     // Example data
     const projectData = {
@@ -37,42 +37,42 @@ $(document).ready(() => {
             ],
             deadline: "23/12/2023",
         },
-    }
+    };
 
-    let ctx = $("#progress-chart").get(0).getContext("2d")
+    let ctx = $("#progress-chart").get(0).getContext("2d");
 
-    let defaultProject = "project1"
-    let data = projectData[defaultProject].data
-    let overdue = projectData[defaultProject].overdue
-    let imminent = projectData[defaultProject].imminent
-    let deadline = projectData[defaultProject].deadline
+    let defaultProject = "project1";
+    let data = projectData[defaultProject].data;
+    let overdue = projectData[defaultProject].overdue;
+    let imminent = projectData[defaultProject].imminent;
+    let deadline = projectData[defaultProject].deadline;
 
     $("#date-picker").datepicker({
         minDate: 0,
         dateFormat: "dd/mm/yy",
-    })
+    });
 
     function populateTable(tableId, data) {
-        let table = $(tableId).get(0)
+        let table = $(tableId).get(0);
         // clear table body
-        $(tableId).find("td").remove()
+        $(tableId).find("td").remove();
 
         data.forEach((rowData) => {
-            let row = document.createElement("tr")
+            let row = document.createElement("tr");
 
             rowData.forEach((cellData) => {
-                let cell = document.createElement("td")
-                cell.textContent = cellData
-                row.appendChild(cell)
+                let cell = document.createElement("td");
+                cell.textContent = cellData;
+                row.appendChild(cell);
             })
 
-            table.appendChild(row)
-        })
+            table.appendChild(row);
+        });
     }
 
-    populateTable("#overdue-table", overdue)
-    populateTable("#imminent-table", imminent)
-    $("#date-picker").datepicker("setDate", deadline)
+    populateTable("#overdue-table", overdue);
+    populateTable("#imminent-table", imminent);
+    $("#date-picker").datepicker("setDate", deadline);
 
     let progressChart = new Chart(ctx, {
         type: "doughnut",
@@ -85,23 +85,21 @@ $(document).ready(() => {
                 },
             ],
         },
-    })
-
-    projectDropdown.on
+    });
 
     $("#project-dropdown").change(() => {
-        let selectedProject = $("#project-dropdown").val()
-        selectedProject = selectedProject.split(" ").join("").toLowerCase()
-        data = projectData[selectedProject].data
-        overdue = projectData[selectedProject].overdue
-        imminent = projectData[selectedProject].imminent
-        deadline = projectData[selectedProject].deadline
+        let selectedProject = $("#project-dropdown").val();
+        selectedProject = selectedProject.split(" ").join("").toLowerCase();
+        data = projectData[selectedProject].data;
+        overdue = projectData[selectedProject].overdue;
+        imminent = projectData[selectedProject].imminent;
+        deadline = projectData[selectedProject].deadline;
 
-        populateTable("#overdue-table", overdue)
-        populateTable("#imminent-table", imminent)
-        $("#date-picker").datepicker("setDate", deadline)
+        populateTable("#overdue-table", overdue);
+        populateTable("#imminent-table", imminent);
+        $("#date-picker").datepicker("setDate", deadline);
 
-        progressChart.data.datasets[0].data = data
-        progressChart.update()
-    })
-})
+        progressChart.data.datasets[0].data = data;
+        progressChart.update();
+    });
+});
