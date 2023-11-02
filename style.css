@@ -6,7 +6,6 @@
 html, body {
     height: 100%;
     overflow: hidden;
-    font-size: var(--body) !important;
     /* background-image: url('img/bgfinal.jpg');
     background-repeat: no-repeat; 
     background-size: cover; 
@@ -58,6 +57,7 @@ form {
 }
 
 .btn.btn-primary {
+    font-size: var(--body);
     text-align: center;
     border-radius: 30px;
     display: block;
@@ -69,6 +69,11 @@ form {
 .btn.btn-primary:hover {
     background-color: white;
     color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.btn.btn-primary:active {
+    background-color: var(--accent-color);
     border: 1px solid var(--accent-color);
 }
 
