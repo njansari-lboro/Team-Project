@@ -70,17 +70,13 @@ form {
     box-shadow: 0 10px 10px var(--shadow-color);
 }
 
-/* p {
-    font-size: var(--body);
+a {
+    color: var(--link-color);
 }
 
-:not(p) > a {
-    font-size: var(--callout);
+a:hover {
+    text-decoration: none;
 }
-
-:not(p) > span {
-    font-size: var(--callout);
-} */
 
 input.form-control {
     font-size: var(--title-3);
@@ -92,10 +88,14 @@ input.form-control:focus {
     box-shadow: none;
 }
 
+#emailDisplay {
+    font-size: var(--body);
+}
+
 #changeEmail {
     text-decoration: none;
     color: var(--accent-color);
-    font-size: var(--body);
+    font-size: var(--callout);
 }
 
 #forgotPassword {
@@ -117,6 +117,13 @@ input.form-control:focus {
 }
 
 #resetPassword {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: var(--body);
+}
+
+#notRegistered {
     text-decoration: none;
     display: block;
     text-align: center;
