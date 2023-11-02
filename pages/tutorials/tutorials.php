@@ -39,7 +39,7 @@
             </svg>
         </a>
 
-        <?php include("/helpers/dynamic-carousel.php") ?>
+        <?php require("/helpers/dynamic-carousel.php"); ?>
 
         <br><br>
 
@@ -52,7 +52,7 @@
             </svg>
         </a>
 
-        <?php include("/helpers/dynamic-carousel.php") ?>
+        <?php include("/helpers/dynamic-carousel.php"); ?>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
