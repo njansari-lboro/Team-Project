@@ -5,9 +5,10 @@
     --img-gap: .25rem;
 }
 
-/* body {
+body {
     background-color: var(--window-background);
-} */
+    color: var(--text-color);
+}
 
 .tutHeader {
     /* font-family: Arial, Helvetica, sans-serif; */
