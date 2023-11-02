@@ -39,11 +39,11 @@
             </div>
 
             <div class="row px-1 border rounded" id="graph-deadlines">
-                <div class="col-md-6 d-flex align-items-center justify-content-center" id="chart">
+                <div class="col-lg-6 d-flex align-items-center justify-content-center" id="chart">
                     <canvas class="chart-canvas " id="progress-chart"></canvas>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <div class="pt-1"></div>
                     <div class="row px-2 border rounded" id="overdue-tasks">
                         <h4 class="text-center pt-1">Overdue</h4>
