@@ -4,7 +4,7 @@
     color: var(--text-color);
 } */
 
-div {
+#dashboard div {
     background-color: var(--window-background);
     color: var(--text-color);
 }
