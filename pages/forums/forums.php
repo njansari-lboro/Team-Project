@@ -1,6 +1,28 @@
-<!DOCTYPE html>
+<?php
+//setting action - view new or default
+if (isset($_GET['task'])) {
+    $task = $_GET['task'];
+    if ($task == "new") {
+        new_post();
+    } elseif ($task == "view") {
+        view_post();
+    } elseif ($task == "reply") {
+        reply();
+    } else {
+        display_default();
+    }
+} else {
+    display_default();
+}
 
-<html lang="en">
+
+function display_default()
+{
+?>
+    <!DOCTYPE html>
+
+    <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,14 +121,14 @@
 
         <script>
             document.getElementById("post-topic").addEventListener("click", () => {
-                window.location.href = "/pages/forums/post.php"
+                window.location.href = "index.php?page=forums&task=new"
             })
 
             let replyLinks = document.querySelectorAll(".reply")
             replyLinks.forEach((link) => {
                 link.addEventListener("click", (event) => {
                     event.preventDefault()
-                    window.location.href = "/pages/forums/viewpost.php"
+                    window.location.href = "index.php?page=forums&task=view"
                 })
             })
 
@@ -114,9 +136,28 @@
             readMoreLinks.forEach((link) => {
                 link.addEventListener("click", (event) => {
                     event.preventDefault()
-                    window.location.href = "/pages/forums/viewpost.php"
+                    window.location.href = "index.php?page=forums&task=view"
                 })
             })
         </script>
     </body>
-</html>
+
+    </html>
+<?php
+}
+
+
+function view_post()
+{
+    include('forums/viewpost.php');
+}
+
+function new_post()
+{
+    include('forums/post.php');
+}
+
+function reply()
+{
+    include('forums/reply.php');
+}
