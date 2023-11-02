@@ -136,7 +136,6 @@ function notRecognised(email) {
     console.log("PUT HTML NOW!!")
 
     $("#notRegistered span").text(email)
-    $("#notRegistered a").attr("href", `mailto:${email}`)
     $("#emailForm").hide()
     $("#emailInput").hide()
     $("#passwordField").hide()

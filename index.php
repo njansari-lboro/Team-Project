@@ -64,7 +64,7 @@
 
                 <form id="notRegistered">
                     <p>
-                        Sorry the email <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: var(--accent-color)">EMAIL</span></a> is not linked to any registered account.
+                        Sorry the email <span style="font-weight: bold; color: var(--accent-color)">EMAIL</span> is not linked to any registered account.
                     </p>
                 </form>
 

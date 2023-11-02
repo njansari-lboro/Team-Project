@@ -35,7 +35,7 @@ form {
 }
 
 .btn.btn-primary {
-    font-size: var(--body);
+    font-size: var(--title-3);
     text-align: center;
     border-radius: 30px;
     display: block;
@@ -75,6 +75,10 @@ p {
 }
 
 :not(p) > a {
+    font-size: var(--callout);
+}
+
+:not(p) > span {
     font-size: var(--callout);
 }
 
