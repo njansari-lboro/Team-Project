@@ -8,13 +8,13 @@
 } */
 
 .modal-container {
-    background-color: white;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    background-color: var(--window-background);
+    box-shadow: 0px 0px 15px var(--shadow-color);
     width: 95%;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     padding: 15px 30px;
     padding-bottom: 60px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px var(--shadow-color);
     border-radius: 10px;
     position: relative;
 }
@@ -34,7 +34,7 @@
     border: none;
     font-size: 50px;
     cursor: pointer;
-    color: #999;
+    color: var(--secondary-label-color);
     width: 80px;
     height: 80px;
     display: flex;
@@ -44,16 +44,15 @@
     transition: background-color 0.3s;
 }
 
-
 .dropdown {
     flex: 0.2;
     padding: 8px 15px;
     margin-right: 10px;
     border: none;
-    color: rgba(255, 122, 0, 1);
-    font-size: 24px;
+    color: var(--accent-color);
+    font-size: var(--title-2);
     position: relative;
-    background-color: #fff;
+    background-color: var(--window-background);
 }
 
 .input {
@@ -62,7 +61,7 @@
     border: none;
     border-radius: 5px;
     flex: 2.2;
-    font-size: 28px;
+    font-size: var(--title-2);
     outline: none;
 }
 
@@ -70,28 +69,28 @@
     width: 100%;
     height: 600px;
     padding: 10px;
-    border: 1px solid #d0d0d0;
+    border: 1px solid var(--separator-color);
     border-radius: 5px;
-    font-size: 24px;
+    font-size: var(--body);
     resize: none;
 }
 
 .post-btn {
-    background-color: rgba(255, 122, 0, 1);
+    background-color: var(--accent-color);
     color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: var(--body);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 5px 8px var(--shadow-color);
     position: absolute;
     right: 20px;
     width: 150px;
     height: 50px;
-    margin-top:45px;
+    margin-top: 45px;
 }
 
 .envelope-icon {
