@@ -70,12 +70,8 @@ form {
     box-shadow: 0 10px 10px var(--shadow-color);
 }
 
-a {
-    color: var(--link-color);
-}
-
 a:hover {
-    text-decoration: none;
+    text-decoration-color: var(--link-color);
 }
 
 input.form-control {
@@ -88,7 +84,7 @@ input.form-control:focus {
     box-shadow: none;
 }
 
-#emailDisplay {
+#displayedEmail {
     font-size: var(--body);
 }
 
@@ -121,6 +117,7 @@ input.form-control:focus {
     display: block;
     text-align: center;
     font-size: var(--body);
+    color: var(--link-color);
 }
 
 #notRegistered {
