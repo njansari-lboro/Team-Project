@@ -178,8 +178,8 @@
                     <load-svg class="sidebar-item-icon" src="/assets/projectsSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
-                                height: 2.6em;
-                                margin: 0 0.3em;
+                                height: 2.5em;
+                                margin: 0 0.1em;
                             }
 
                             .fill {
