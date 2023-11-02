@@ -40,7 +40,7 @@
 
  $(document).ready(function (){
   $("#closebtn").click(function(){
-    window.location.href = "?page=projects"
+    window.location.href = "/pages/?page=projects"
   })
  })
 

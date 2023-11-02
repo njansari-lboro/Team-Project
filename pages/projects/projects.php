@@ -1,3 +1,21 @@
+<?php
+    if (isset($_GET["task"])) {
+        $task = $_GET["task"];
+
+        switch ($task) {
+        case "new_project":
+            new_project();
+        default:
+            display_default();
+        }
+    } else {
+        display_default();
+    }
+?>
+
+<?php
+    function display_default() {
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -158,3 +176,10 @@
         <script src="/pages/projects/projects.js"></script>
     </body>
 </html>
+<?php
+}
+
+function new_project() {
+    include "create-project.php"
+}
+?>
