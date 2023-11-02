@@ -33,6 +33,8 @@
         <link rel="stylesheet" href="/global.css">
         <link rel="stylesheet" href="style.css">
 
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
         <title>Make-It-All</title>
     </head>
 
@@ -394,7 +396,6 @@
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
