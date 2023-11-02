@@ -9,6 +9,10 @@ body {
     box-sizing: unset !important;
 }
 
+div {
+    background-color: var(--window-background);
+}
+
 .center {
     top: 50%;
     left: 50%;
