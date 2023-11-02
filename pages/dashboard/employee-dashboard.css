@@ -51,7 +51,8 @@ td, #tasks-table td {
     border-left: 1px solid var(--grid-color);
     border-bottom: 1px solid var(--grid-color);
     padding: 5px;
-    color: var(--text-color);
+    color: var(--text-color) !important;
+    background-color: var(--window-background) !important;
 }
 
 #tasks-table td {
