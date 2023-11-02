@@ -143,8 +143,11 @@ h1 {
     transform: translateY(-50%);
 }
 
-.topic-content button:hover, #post-topic:hover {
+.topic-content button:hover.reply-icon {
     --button-text-color: var(--selected-content-text-color);
+}
+
+.topic-content button:hover, #post-topic:hover {
     background-color: var(--accent-color);
     color: var(--selected-content-text-color);
 }

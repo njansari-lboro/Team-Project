@@ -66,30 +66,11 @@
 
                     <div class="topic-content">
                         <h2>John Cena</h2>
+                        
                         <h3><span class="topic-label">Topic</span> | <span class="question-title">Question Title</span></h3>
+                        
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a href="#" id="myLink" class="read-link">read more and view replies</a></p>
-                        <button class=reply id="reply">Reply</button>
-                    </div>
-                </article>
-
-                <article class="forum-topic">
-                    <load-svg class="topic-avatar" src="/assets/profileIcon.svg">
-                        <style shadowRoot>
-                            svg {
-                                width: 50px;
-                                height: 50px;
-                            }
-
-                            .fill {
-                                fill: var(--label-color)
-                            }
-                        </style>
-                    </load-svg>
-
-                    <div class="topic-content">
-                        <h2>John Cena</h2>
-                        <h3><span class="topic-label">Topic</span> | <span class="question-title">Question Title</span></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a href="#" id="myLink" class="read-link">read more and view replies</a></p>
+                        
                         <button class=reply id="reply">
                             Reply
                             
@@ -125,9 +106,27 @@
 
                     <div class="topic-content">
                         <h2>John Cena</h2>
+                        
                         <h3><span class="topic-label">Topic</span> | <span class="question-title">Question Title</span></h3>
+                        
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a href="#" id="myLink" class="read-link">read more and view replies</a></p>
-                        <button class=reply id="reply">Reply</button>
+                        
+                        <button class=reply id="reply">
+                            Reply
+                            
+                            <load-svg class="reply-icon" src="/assets/replyIcon.svg">
+                                <style shadowRoot>
+                                    svg {
+                                        width: 16px;
+                                        height: 16px;
+                                    }
+
+                                    .fill {
+                                        fill: var(--button-text-color)
+                                    }
+                                </style>
+                            </load-svg>
+                        </button>
                     </div>
                 </article>
 
@@ -147,9 +146,27 @@
 
                     <div class="topic-content">
                         <h2>John Cena</h2>
+                        
                         <h3><span class="topic-label">Topic</span> | <span class="question-title">Question Title</span></h3>
+                        
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a href="#" id="myLink" class="read-link">read more and view replies</a></p>
-                        <button class=reply id="reply">Reply</button>
+                        
+                        <button class=reply id="reply">
+                            Reply
+                            
+                            <load-svg class="reply-icon" src="/assets/replyIcon.svg">
+                                <style shadowRoot>
+                                    svg {
+                                        width: 16px;
+                                        height: 16px;
+                                    }
+
+                                    .fill {
+                                        fill: var(--button-text-color)
+                                    }
+                                </style>
+                            </load-svg>
+                        </button>
                     </div>
                 </article>
 
@@ -169,9 +186,67 @@
 
                     <div class="topic-content">
                         <h2>John Cena</h2>
+                        
                         <h3><span class="topic-label">Topic</span> | <span class="question-title">Question Title</span></h3>
+                        
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a href="#" id="myLink" class="read-link">read more and view replies</a></p>
-                        <button class=reply id="reply">Reply</button>
+                        
+                        <button class=reply id="reply">
+                            Reply
+                            
+                            <load-svg class="reply-icon" src="/assets/replyIcon.svg">
+                                <style shadowRoot>
+                                    svg {
+                                        width: 16px;
+                                        height: 16px;
+                                    }
+
+                                    .fill {
+                                        fill: var(--button-text-color)
+                                    }
+                                </style>
+                            </load-svg>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="forum-topic">
+                    <load-svg class="topic-avatar" src="/assets/profileIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 50px;
+                                height: 50px;
+                            }
+
+                            .fill {
+                                fill: var(--label-color)
+                            }
+                        </style>
+                    </load-svg>
+
+                    <div class="topic-content">
+                        <h2>John Cena</h2>
+                        
+                        <h3><span class="topic-label">Topic</span> | <span class="question-title">Question Title</span></h3>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a href="#" id="myLink" class="read-link">read more and view replies</a></p>
+                        
+                        <button class=reply id="reply">
+                            Reply
+                            
+                            <load-svg class="reply-icon" src="/assets/replyIcon.svg">
+                                <style shadowRoot>
+                                    svg {
+                                        width: 16px;
+                                        height: 16px;
+                                    }
+
+                                    .fill {
+                                        fill: var(--button-text-color)
+                                    }
+                                </style>
+                            </load-svg>
+                        </button>
                     </div>
                 </article>
             </section>
