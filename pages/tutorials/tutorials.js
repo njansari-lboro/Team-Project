@@ -1,6 +1,6 @@
 $(document).on("click", ".handle", () => handleClicked($(this)))
 
-const resizeThrottle = throttle(() => $(".progress-bar").each(updateProgressBar), 250)
+let resizeThrottle = throttle(() => $(".progress-bar").each(updateProgressBar), 250)
 $(window).on("resize", resizeThrottle)
 
 $(".progress-bar").each(updateProgressBar)
