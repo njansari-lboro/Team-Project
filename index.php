@@ -58,7 +58,7 @@
 
                 <form id="resetPassword">
                     <p>
-                        Sorry, please <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: var(--accent-color)">Contact Support</span></a> to help reset your password
+                        Sorry, please <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: var(--link-color)">Contact Support</span></a> to help reset your password
                     </p>
                 </form>
 

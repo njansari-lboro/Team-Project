@@ -86,12 +86,14 @@ input.form-control:focus {
 
 #displayedEmail {
     font-size: var(--body);
+    vertical-align: center;
 }
 
 #changeEmail {
     text-decoration: none;
     color: var(--accent-color);
     font-size: var(--callout);
+    vertical-align: center;
 }
 
 #forgotPassword {
@@ -117,7 +119,6 @@ input.form-control:focus {
     display: block;
     text-align: center;
     font-size: var(--body);
-    color: var(--link-color);
 }
 
 #notRegistered {
