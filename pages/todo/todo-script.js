@@ -101,7 +101,9 @@ function clearList() {
 function datePicker() {
   $(".items-container").on("focus", ".datepicker", function () {
     // Initialize datepicker for dynamically added elements
-    $(this).datepicker();
+    $(this).datepicker(
+      { dateFormat: "dd/mm/yy" }
+    );
   });
 }
 
