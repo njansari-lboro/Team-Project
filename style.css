@@ -79,7 +79,7 @@ form {
     box-shadow: 0 10px 10px var(--shadow-color);
 }
 
-span {
+a, span {
     font-size: var(--body);
 }
 
