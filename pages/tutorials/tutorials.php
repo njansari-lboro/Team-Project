@@ -218,7 +218,7 @@ function new_tut()
                             <img src="/img/placeholder.jpg" alt="Placeholder" onChange="readURL(this)" class="placeholder" id="img1">
                             <picture>
                                 <source srcset="/img/placeholderDARK.jpg" media="(prefers-color-scheme: dark)">
-                                <img src="../img/placeholder.jpg" alt="Placeholder" class="placeholder">
+                                <img src="/img/placeholder.jpg" alt="Placeholder" class="placeholder">
                             </picture>
                             <input type="file" name="step1-image" required>
                         </div>
@@ -245,10 +245,10 @@ function new_tut()
                                     <input type="radio" name="defaultImage" value="${stepCount}" required>
                                     <label class="radioLabel">Set as cover image</label>
                                 </div>
-                                <img src="../img/placeholder.jpg" alt="Placeholder" class="placeholder">
+                                <img src="/img/placeholder.jpg" alt="Placeholder" class="placeholder">
                                 <picture>
-                                    <source srcset="../img/placeholderDARK.jpg" media="(prefers-color-scheme: dark)">
-                                    <img src="../img/placeholder.jpg" alt="Placeholder" class="placeholder">
+                                    <source srcset="/img/placeholderDARK.jpg" media="(prefers-color-scheme: dark)">
+                                    <img src="/img/placeholder.jpg" alt="Placeholder" class="placeholder">
                                 </picture>
                                 <input type="file" name="step${stepCount}-image" required>
                             </div>
@@ -275,8 +275,8 @@ function new_tut()
                             }
                             reader.readAsDataURL(file);
                         } else {
-                            $(this).siblings('picture').find('img.placeholder').attr('src', '../img/placeholder.jpg');
-                            $(this).siblings('picture').find('source').attr('srcset', '../img/placeholderDARK.jpg');
+                            $(this).siblings('picture').find('img.placeholder').attr('src', '/img/placeholder.jpg');
+                            $(this).siblings('picture').find('source').attr('srcset', '/img/placeholderDARK.jpg');
                         }
                     }
                 });

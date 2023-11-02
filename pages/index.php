@@ -312,6 +312,10 @@
                         $page = "todo-php";
                     }
 
+                    if ($page === "tasks") {
+                        $page = "assignments";
+                    }
+
                     include("$dir/$page.php")
                 ?>
             </div>
