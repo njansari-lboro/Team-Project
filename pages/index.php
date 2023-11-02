@@ -173,7 +173,7 @@
 
                 <?php function projects_sidebar_item() { ?>
                 <a id="projects-sidebar-item" class="sidebar-item" href="?page=projects">
-                    <load-svg class="sidebar-item-icon" src="/assets/projectsSidebarItemIcon.svg">
+                    <load-svg class="sidebar-item-icon" src="/assets/tasksSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
                                 height: 2.6em;
