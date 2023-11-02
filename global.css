@@ -222,8 +222,9 @@
 }
 
 :focus {
-    outline: 0.2em solid var(--keyboard-focus-indicator-color);
+    outline: 0.2em solid var(--keyboard-focus-indicator-color) !important;
     outline-offset: 0;
+    transition: 0.2s;
 }
 
 ::selection {
