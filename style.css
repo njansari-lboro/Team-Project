@@ -6,7 +6,7 @@
 html, body {
     height: 100%;
     overflow: hidden;
-    font-size: var(--body);
+    font-size: var(--body) !important;
     /* background-image: url('img/bgfinal.jpg');
     background-repeat: no-repeat; 
     background-size: cover; 
@@ -50,7 +50,7 @@ form {
 }
 
 /* h1 */
-title-logo {
+#title-logo {
     margin-top: 10px;
     text-align: center;
     font-family: blippoBlackFont;
