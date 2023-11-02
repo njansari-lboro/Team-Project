@@ -1,28 +1,26 @@
 <?php
-//setting action - view new or default
-if (isset($_GET['task'])) {
-    $task = $_GET['task'];
-    if ($task == "new") {
+    $task = isset($_GET["task"]) ? $_GET["task"] : "default";
+    
+    switch ($task) {
+    case "new":
         new_post();
-    } elseif ($task == "view") {
+        break;
+    case "view":
         view_post();
-    } elseif ($task == "reply") {
+        break;
+    case "reply":
         reply();
-    } else {
+        break;
+    default:
         display_default();
     }
-} else {
-    display_default();
-}
 
-
-function display_default()
-{
+    function display_default() {
 ?>
-    <!DOCTYPE html>
 
-    <html lang="en">
+<!DOCTYPE html>
 
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,8 +31,6 @@ function display_default()
     </head>
 
     <body>
-        <header></header>
-
         <main>
             <section id="forum-topics">
                 <h1>
@@ -141,23 +137,20 @@ function display_default()
             })
         </script>
     </body>
+</html>
 
-    </html>
 <?php
-}
+    }
+    
+    function view_post() {
+        include("forums/viewpost.php");
+    }
 
+    function new_post() {
+        include("forums/post.php");
+    }
 
-function view_post()
-{
-    include('forums/viewpost.php');
-}
-
-function new_post()
-{
-    include('forums/post.php');
-}
-
-function reply()
-{
-    include('forums/reply.php');
-}
+    function reply() {
+        include("forums/reply.php");
+    }
+?>

@@ -1,24 +1,18 @@
-header, footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-}
-
 main {
     max-width: 1000px;
     margin: 0 auto;
 }
 
 #forum-topics {
-    background-color: #fff;
+    background-color: var(--window-background);
+    border: 2px solid var(--separator-color);
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(255, 122, 0, 1);
 }
 
 #topic-dropdown {
-    background-color: #fff;
-    color: rgba(255, 122, 0, 1);
+    /* background-color: #fff; */
+    color: var(--accent-color);
     font-size: inherit;
     font-weight: bold;
     border: 0;
@@ -46,18 +40,18 @@ main {
     transform: translateY(-50%);
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 7px solid rgba(255, 122, 0, 1);
+    border-top: 7px solid var(--accent-color);
     pointer-events: none;
 }
 
 h1 {
-    font-size: 30px;
+    font-size: var(--title-1);
     margin-bottom: 20px;
 }
 
 #post-topic {
     background-color: transparent;
-    color: rgba(255, 122, 0, 1);
+    color: var(--accent-color);
     border: none;
     font-size: 50px;
     float: right;
@@ -69,8 +63,9 @@ h1 {
     display: flex;
     margin-top: 20px;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #ccc;
+    background-color: var(--fill-color);
+    /* border-bottom: 1px solid #ccc; */
+    box-shadow: 0 5px 5px var(--shadow-color);
     margin-bottom: 20px;
 }
 
@@ -78,47 +73,47 @@ h1 {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #ddd;
+    /* background-color: #ddd; */
     margin-right: 20px;
 }
 
 .topic-content h2 {
-    font-size: 24px;
+    font-size: var(--title-2);
     margin: 0;
 }
 
 .topic-label {
     font-weight: bold;
-    color: rgba(255, 122, 0, 1);
+    color: var(--accent-color);
 }
 
 .question-title {
-    color: rgba(0, 0, 0, 0.85);
+    color: var(--label-color);
 }
 
 .topic-content h3 {
-    font-size: 22px;
+    font-size: var(--title-3);
     margin: 5px 0;
 }
 
 .topic-content p {
-    font-size: 19px;
+    font-size: var(--body);
     margin-top: 10px;
 }
 
 .topic-content a {
-    color: rgba(255, 122, 0, 1);
+    color: var(--accent-color);
     text-decoration: underline;
 }
 
-.read-link:hover {
-    color: rgba(217, 94, 0, 1);
+.read-link {
+    color: var(--link-color);
 }
 
 .topic-content button {
     background-color: transparent;
-    color: rgba(0, 0, 0, 0.85);
-    border: 1px solid black;
+    color: var(--label-color);
+    border: 1px solid var(--grid-color);
     padding: 3px 120px;
     border-radius: 5px;
     cursor: pointer;
@@ -141,11 +136,10 @@ h1 {
 }
 
 .topic-content button:hover, #post-topic:hover {
-    background-color: rgba(255, 122, 0, 1);
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--selected-content-text-color);
 }
 
-
-button, .read-link, #topic-dropdown {
+main button, .read-link, #topic-dropdown {
     transition: all 0.3s ease;
 }
