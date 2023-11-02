@@ -1,3 +1,5 @@
+@import url("/global.css");
+
 /* body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -33,7 +35,7 @@
 .exit-btn {
     background: none;
     border: none;
-    font-size: 60px;
+    font-size: 50px;
     cursor: pointer;
     color: #999;
     width: 80px;
@@ -45,9 +47,6 @@
     transition: background-color 0.3s;
 }
 
-.exit-btn:hover {
-    background-color: #e5e5e5;
-}
 
 .input {
     flex: 5;
@@ -72,7 +71,6 @@
 .post-btn {
     background-color: rgba(255, 122, 0, 1);
     color: white;
-    padding: 10px 25px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -82,13 +80,13 @@
     justify-content: center;
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.12);
     position: absolute;
-    bottom: 20px;
     right: 20px;
     width: 150px;
     height: 50px;
+    margin-top:45px;
 }
+
 
 .envelope-icon {
     margin-right: 8px;
-    font-size: 20px;
 }
