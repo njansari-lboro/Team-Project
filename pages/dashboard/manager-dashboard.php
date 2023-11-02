@@ -40,7 +40,9 @@
 
             <div class="row px-1 border rounded" id="graph-deadlines">
                 <div class="col-lg-6 d-flex align-items-center justify-content-center" id="chart">
-                    <canvas class="chart-canvas " id="progress-chart"></canvas>
+                    <div class="row">
+                        <canvas class="chart-canvas" id="progress-chart"></canvas>
+                    </div>
                 </div>
 
                 <div class="col-lg-6">
