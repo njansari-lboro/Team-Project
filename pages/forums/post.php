@@ -44,5 +44,10 @@
         exitButton.addEventListener("click", () => {
             window.location.href = "index.php?page=forums"
         })
+
+        let postButton = document.querySelector(".post-btn")
+        postButton.addEventListener("click", () => {
+            window.location.href = "index.php?page=forums"
+        })
     </script>
 </html>
