@@ -2,7 +2,7 @@
 
 $tutorials = [
     ["src" => "/img/bg.jpg", "id" => 1, "text" => "How to build relationships"],
-    ["src" => "https://via.placeholder.com/210/ff7a00?text=2", "id" => 2, "text" => "How to set up 2FA"],
+    ["src" => "/img/bgbw.jpg", "id" => 3, "text" => "Text for Image 2"],
     ["src" => "/img/bgbw.jpg", "id" => 3, "text" => "Text for Image 3"],
     ["src" => "/img/bgbw.jpg", "id" => 3, "text" => "Text for Image 4"],
     ["src" => "/img/bgbw.jpg", "id" => 3, "text" => "Text for Image 5"],
