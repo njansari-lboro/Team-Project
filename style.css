@@ -73,7 +73,7 @@ form {
 }
 
 .btn.btn-primary:active {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-accent-color);
     border: 1px solid var(--accent-color);
 }
 
@@ -94,7 +94,13 @@ form {
 }
 
 input {
+    font-size: var(--body);
     text-align: center;
+}
+
+input:focus {
+    border-color: none;
+    transition: 0.3s;
 }
 
 #changeEmail {
