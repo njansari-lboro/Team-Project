@@ -3,7 +3,6 @@
 $(document).ready(() => {
     $("#emailForm").show()
     $("#emailDisplay").hide()
-    $("emailInput").focus()
     $("#passwordInput").hide()
     $("#forgotPassword").hide()
     $("#passwordField").hide()
@@ -11,6 +10,8 @@ $(document).ready(() => {
     $("#tryAgain").hide()
     $("#mainBtn").show()
     $("#notRegistered").hide()
+
+    setTimeout(() => $("emailInput").focus(), 100)
 
     $("#emailForm").submit((e) => {
         e.preventDefault()
@@ -69,11 +70,12 @@ function validateAndDisplayEmail() {
                 $("#emailInput").hide()
                 $("#displayedEmail").text(email)
                 $("#passwordInput").show()
-                $("#passwordInput").focus()
                 $("#passwordField").show()
                 $("#emailDisplay").show()
                 $("#forgotPassword").show()
                 $("#mainBtn").html("Login")
+
+                setTimeout(() => $("#passwordInput").focus(), 100)
             } else {
                 console.log("false")
                 notRecognised(email) // Call the function if the email is not recognized
