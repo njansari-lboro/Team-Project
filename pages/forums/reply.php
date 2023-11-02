@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="/pages/forums/reply.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Question Modal</title>
-    </head>
+    <link rel="stylesheet" href="/pages/forums/reply.css">
 
-    <body>
-        <div class="modal-container">
-            <div class="row flex-row">
-                <button class="exit-btn">×</button>
-            </div>
+    <title>Question Modal</title>
+</head>
 
-            <div class="row">
-                <textarea class="textarea" placeholder="Enter your comment"></textarea>
-            </div>
-
-            <div class="row">
-                <button class="post-btn">
-                    <span class="envelope-icon">✉️</span> Post
-                </button>
-            </div>
+<body>
+    <div class="modal-container">
+        <div class="row flex-row">
+            <button class="exit-btn">×</button>
         </div>
-    </body>
 
-    <script>
-        let exitButton = document.querySelector(".exit-btn")
-        exitButton.addEventListener("click", () => {
-            window.location.href = "/pages/forums/forums.php"
-        })
-    </script>
+        <div class="row">
+            <textarea class="textarea" placeholder="Enter your comment"></textarea>
+        </div>
+
+        <div class="row">
+            <button class="post-btn">
+                <span class="envelope-icon">✉️</span> Post
+            </button>
+        </div>
+    </div>
+</body>
+
+<script>
+    let exitButton = document.querySelector(".exit-btn")
+    exitButton.addEventListener("click", () => {
+        window.location.href = "index.php?page=forums&task=view"
+    })
+</script>
+
 </html>
