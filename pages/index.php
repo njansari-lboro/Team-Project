@@ -281,12 +281,17 @@
             </div>
         </div>
 
-        <div id="dimmed-overlay"></div>
+        <div id="sidebar-dim" class="dimmed-overlay"></div>
 
         <div id="main-content-wrapper">
             <div id="main-content">
                 <?php
-                    $page = isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages) ? $_GET["page"] : "dashboard";
+                    if (isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages)) {
+                        $page = $_GET["page"];
+                    } else {
+                        header("Location: ?page=dashboard");
+                        die();
+                    }
 
                     $dir = $page;
 
@@ -297,7 +302,6 @@
                             break;
                         case "Manager":
                             $page = "manager-dashboard";
-                        default:
                             break;
                         }
                     }
