@@ -28,7 +28,8 @@
                     <style shadowRoot>
                         svg {
                             height: 5em;
-                            width: 100%
+                            width: 100%;
+                            margin-top: 0.5em
                         }
 
                         .fill {
