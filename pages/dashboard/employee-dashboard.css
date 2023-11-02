@@ -24,6 +24,10 @@ div.row {
     color: var(--text-color);
 }
 
+div.col-md-6 {
+    width: calc(50% - 15px);
+}
+
 /* heading styling */
 h2 {
     font-size: var(--title-1);
