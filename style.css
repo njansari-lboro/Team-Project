@@ -32,6 +32,7 @@ form {
 
 #title-logo {
     margin-top: 10px;
+    margin-left: -50px;
 }
 
 .btn.btn-primary {
@@ -55,8 +56,9 @@ form {
     border: 1px solid var(--accent-color) !important;
 }
 
-::placeholder {
+input.form-control::placeholder {
     text-align: center;
+    color: var(--placeholder-color);
 }
 
 .centered-content {
@@ -77,6 +79,7 @@ a:hover {
 input.form-control {
     font-size: var(--title-3);
     text-align: center;
+    margin: 20px auto;
 }
 
 input.form-control:focus {
