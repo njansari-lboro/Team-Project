@@ -121,14 +121,22 @@ h1 {
     position: relative;
 }
 
-.topic-content button::before {
+/* .topic-content button::before {
     content: "";
     width: 16px;
     height: 16px;
     background-image: url("/assets/replyIcon.svg");
-    fill: var(--label-color);
-    color: var(--label-color);
     background-size: cover;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+} */
+
+.reply-icon {
+    --button-text-color: var(--label-color);
+    width: 16px;
+    height: 16px;
     position: absolute;
     right: 10px;
     top: 50%;
@@ -136,6 +144,7 @@ h1 {
 }
 
 .topic-content button:hover, #post-topic:hover {
+    --button-text-color: var(--selected-content-text-color);
     background-color: var(--accent-color);
     color: var(--selected-content-text-color);
 }
