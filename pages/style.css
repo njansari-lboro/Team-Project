@@ -10,7 +10,7 @@ body {
 }
 
 div {
-    background-color: var(--window-background);
+    background-color: var(--window-background) !important;
 }
 
 .center {
