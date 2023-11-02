@@ -43,7 +43,7 @@
                     <canvas class="chart-canvas " id="progress-chart"></canvas>
                 </div>
 
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <div class="pt-1"></div>
 
                     <div class="row px-2 border rounded" id="overdue-tasks">
