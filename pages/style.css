@@ -1,7 +1,12 @@
 body {
     margin: 0;
     background-color: var(--window-background);
+    color: var(--label-color);
     overflow: hidden;
+}
+
+*, *::after, *::before {
+    box-sizing: unset;
 }
 
 .center {
