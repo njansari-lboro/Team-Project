@@ -27,7 +27,7 @@
                 <load-svg id="title-logo" class="mb-4 mx-auto" src="/assets/titleLogo.svg">
                     <style shadowRoot>
                         svg {
-                            height: 5em;
+                            height: 4.5em;
                             width: 100%;
                             margin-top: 0.5em
                         }
@@ -41,7 +41,7 @@
                 <form id="emailForm">
                     <div class="form-group">
                         <p id="emailDisplay">
-                            <span style="font-weight: bold" id="displayedEmail"></span>  <a href="#" id="changeEmail">Change?</a>
+                            <span style="font-weight: bold" id="displayedEmail"></span>&nbsp;&nbsp;<a href="#" id="changeEmail">Change?</a>
                         </p>
 
                         <input type="email" class="form-control" id="emailInput" placeholder="Company Email Address">
@@ -60,7 +60,7 @@
 
                 <form id="resetPassword">
                     <p>
-                        Sorry, please <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: var(--link-color)">Contact Support</span></a> to help reset your password
+                        Sorry, please <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: rgba(209, 100, 0, 1)">Contact Support</span></a> to help reset your password
                     </p>
                 </form>
 
