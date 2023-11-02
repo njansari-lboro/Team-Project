@@ -27,7 +27,8 @@
                 <load-svg id="title-logo" class="mb-4 text-center" src="/assets/titleLogo.svg">
                     <style shadowRoot>
                         svg {
-                            height: 2em;
+                            height: 4em;
+                            margin: auto
                         }
 
                         .fill {
