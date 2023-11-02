@@ -54,7 +54,7 @@ form {
 
 input.form-control::placeholder {
     text-align: center;
-    color: var(--placeholder-color);
+    color: var(--placeholder-color) !important;
 }
 
 .centered-content {
@@ -71,7 +71,7 @@ input.form-control::placeholder {
 }
 
 a:hover {
-    text-decoration-color: var(--link-color);
+    text-decoration-color: rgba(209, 100, 0, 1);
 }
 
 input.form-control {
@@ -93,7 +93,7 @@ input.form-control:focus {
 
 #changeEmail {
     text-decoration: none;
-    color: var(--accent-color);
+    color: rgba(209, 100, 0, 1);
     font-size: var(--callout);
     vertical-align: center;
 }

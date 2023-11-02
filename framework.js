@@ -3,6 +3,7 @@
 $(document).ready(() => {
     $("#emailForm").show()
     $("#emailDisplay").hide()
+    $("emailInput").focus()
     $("#passwordInput").hide()
     $("#forgotPassword").hide()
     $("#passwordField").hide()
@@ -68,6 +69,7 @@ function validateAndDisplayEmail() {
                 $("#emailInput").hide()
                 $("#displayedEmail").text(email)
                 $("#passwordInput").show()
+                $("#passwordInput").focus()
                 $("#passwordField").show()
                 $("#emailDisplay").show()
                 $("#forgotPassword").show()
