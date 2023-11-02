@@ -24,7 +24,7 @@
     <body>
         <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
             <div class="centered-content">
-                <load-svg id="title-logo" class="mb-4 text-center" src="/assets/titleLogo.svg">
+                <load-svg id="title-logo" class="mb-4 mx-auto" src="/assets/titleLogo.svg">
                     <style shadowRoot>
                         svg {
                             height: 4em;
@@ -32,7 +32,7 @@
                         }
 
                         .fill {
-                            fill: linear-gradient(0deg, rgba(255, 255, 255, 1) 33%, var(--secondary-accent-color) 100%);
+                            fill: rgba(0, 0, 0, 0.75);
                         }
                     </style>
                 </load-svg>
