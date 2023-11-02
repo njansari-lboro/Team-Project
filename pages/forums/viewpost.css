@@ -9,7 +9,6 @@ main {
     margin: 0 auto;
     padding: 20px;
     background-color: var(--window-background);
-    border-radius: 10px;
 }
 
 .header {
@@ -20,6 +19,7 @@ main {
 }
 
 .header h1 {
+    font-size: var(--title-2);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -67,13 +67,24 @@ main {
     margin-right: 10px;
 }
 
-.author {
+.author-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name .user-name {
+    font-size: var(--callout);
     font-weight: bold;
+}
+
+.author {
     font-size: var(--caption-1);
+    color: var(--secondary-label-color);
     margin-bottom: 5px;
 }
 
 .content-box p {
+    font-size: var(--body);
     position: relative;
     border: 1px solid var(--separator-color);
     padding: 20px 40px;
