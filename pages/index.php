@@ -311,7 +311,8 @@
                     if ($page === "todo") {
                         $page = "todo-php";
                     }
-
+                    
+                    echo get_include_path();
                     include("$dir/$page.php")
                 ?>
             </div>
