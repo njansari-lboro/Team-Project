@@ -1,9 +1,9 @@
 <?php
 
 $tutorials = [
-    ["src" => "../img/bg.jpg", "id" => 1, "text" => "How to build relationships"],
+    ["src" => "/img/bg.jpg", "id" => 1, "text" => "How to build relationships"],
     ["src" => "https://via.placeholder.com/210/ff7a00?text=2", "id" => 2, "text" => "How to set up 2FA"],
-    ["src" => "../img/bgbw.jpg", "id" => 3, "text" => "Text for Image 3"],
+    ["src" => "/img/bgbw.jpg", "id" => 3, "text" => "Text for Image 3"],
     ["src" => "https://via.placeholder.com/210/ff7a00?text=3", "id" => 4, "text" => "Text for Image 4"],
     ["src" => "https://via.placeholder.com/210/ff7a00?text=4", "id" => 5, "text" => "Text for Image 5"],
     ["src" => "https://via.placeholder.com/210/ff7a00?text=5", "id" => 6, "text" => "Text for Image 6"],
@@ -24,8 +24,8 @@ $tutorials = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tutorials.css">
-    <script src="tutorials.js" defer></script>
+    <link rel="stylesheet" href="/pages/tutorials/tutorials.css">
+    <script src="/pages/tutorials/tutorials.js" defer></script>
 </head>
 
 <body>
