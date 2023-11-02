@@ -9,12 +9,9 @@
 
 .modal-container {
     background-color: var(--window-background);
-    box-shadow: 0px 0px 15px var(--shadow-color);
     width: 95%;
-    /* max-width: 1200px; */
-    padding: 15px 30px;
+    padding: 0 15px;
     padding-bottom: 60px;
-    box-shadow: 0px 0px 10px var(--shadow-color);
     border-radius: 10px;
     position: relative;
 }

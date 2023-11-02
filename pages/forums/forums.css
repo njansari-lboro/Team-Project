@@ -1,11 +1,9 @@
 main {
-    /* max-width: 1000px; */
     margin: 0 auto;
 }
 
 #forum-topics {
     background-color: var(--window-background);
-    /* border: 2px solid var(--separator-color); */
     border-radius: 10px;
     padding: 20px;
 }
