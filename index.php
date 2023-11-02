@@ -22,7 +22,18 @@
     <body>
         <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
             <div class="centered-content">
-                <h1 class="mb-4 text-center">Make-It-All</h1>
+                <load-svg id="title-logo" class="mb-4 text-center" src="/assets/titleLogo.svg">
+                    <style shadowRoot>
+                        svg {
+                            height: 4em;
+                        }
+
+                        .fill {
+                            fill: black;
+                        }
+                    </style>
+                </load-svg>
+                <!-- <h1 class="mb-4 text-center">Make-It-All</h1> -->
 
                 <form id="emailForm">
                     <div class="form-group">
