@@ -180,6 +180,6 @@
 }
 
 function new_project() {
-    include "projects/create-project.php"
+    include "projects/create-project.php";
 }
 ?>
