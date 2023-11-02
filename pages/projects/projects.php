@@ -5,8 +5,10 @@
         switch ($task) {
         case "new_project":
             new_project();
+            break;
         default:
             display_default();
+            break;
         }
     } else {
         display_default();
