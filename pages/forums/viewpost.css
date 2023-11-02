@@ -72,7 +72,7 @@ main {
     flex-direction: column;
 }
 
-.author-name .user-name {
+.author-name, .user-name {
     font-size: var(--callout);
     font-weight: bold;
 }
@@ -135,7 +135,7 @@ main {
     transform: translateX(-50%);
     background-color: var(--window-background);
     padding: 0 10px;
-    font-size: 12px;
+    font-size: var(--footnote);
     color: var(--secondary-label-color);
 }
 
