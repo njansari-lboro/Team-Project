@@ -32,7 +32,7 @@
                         }
 
                         .fill {
-                            fill: black;
+                            fill: linear-gradient(0deg, rgba(255, 255, 255, 1) 33%, var(--secondary-accent-color) 100%);
                         }
                     </style>
                 </load-svg>
