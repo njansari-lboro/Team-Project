@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="global.css">
         <link rel="stylesheet" href="style.css">
 
+        <script type="text/javascript" src="/loadSvgCustomTag.js"></script>
+        
         <title>Make-It-All</title>
     </head>
 
