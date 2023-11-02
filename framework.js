@@ -11,7 +11,7 @@ $(document).ready(() => {
     $("#mainBtn").show()
     $("#notRegistered").hide()
 
-    setTimeout(() => $("emailInput").focus(), 100)
+    setTimeout(() => $("#emailInput").focus(), 100)
 
     $("#emailForm").submit((e) => {
         e.preventDefault()
