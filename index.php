@@ -27,7 +27,7 @@
                 <load-svg id="title-logo" class="mb-4 mx-auto" src="/assets/titleLogo.svg">
                     <style shadowRoot>
                         svg {
-                            height: 4em;
+                            height: 5em;
                             width: 100%
                         }
 

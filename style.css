@@ -79,7 +79,7 @@ a:hover {
 input.form-control {
     font-size: var(--title-3);
     text-align: center;
-    margin: 20px auto;
+    margin-bottom: 20px;
 }
 
 input.form-control:focus {
