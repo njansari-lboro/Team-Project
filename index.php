@@ -27,16 +27,14 @@
                 <load-svg id="title-logo" class="mb-4 mx-auto" src="/assets/titleLogo.svg">
                     <style shadowRoot>
                         svg {
-                            height: 3em;
+                            height: 4em;
                         }
 
                         .fill {
                             fill: rgba(0, 0, 0, 0.75);
-                            box-shadow: 1px 1px 1px #000000;
                         }
                     </style>
                 </load-svg>
-                <!-- <h1 class="mb-4 text-center">Make-It-All</h1> -->
 
                 <form id="emailForm">
                     <div class="form-group">

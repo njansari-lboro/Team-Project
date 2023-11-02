@@ -70,12 +70,16 @@ form {
     box-shadow: 0 10px 10px var(--shadow-color);
 }
 
-p, a, span {
+p {
     font-size: var(--body);
 }
 
+:not(p) > a {
+    font-size: var(--callout);
+}
+
 input.form-control {
-    font-size: var(--body);
+    font-size: var(--title-3);
     text-align: center;
 }
 
