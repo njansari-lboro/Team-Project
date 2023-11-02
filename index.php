@@ -41,7 +41,7 @@
                 <form id="emailForm">
                     <div class="form-group">
                         <p id="emailDisplay">
-                            <span style="font-weight: bold" id="displayedEmail"></span> <a href="#" id="changeEmail">Change?</a>
+                            <span style="font-weight: bold" id="displayedEmail"></span>  <a href="#" id="changeEmail">Change?</a>
                         </p>
 
                         <input type="email" class="form-control" id="emailInput" placeholder="Company Email Address">
