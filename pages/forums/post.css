@@ -63,6 +63,7 @@
     flex: 2.2;
     font-size: var(--title-2);
     outline: none;
+    background-color: var(--tertiary-fill-color);
 }
 
 .textarea {
@@ -73,6 +74,7 @@
     border-radius: 5px;
     font-size: var(--body);
     resize: none;
+    background-color: var(--quaternary-fill-color);
 }
 
 .post-btn {
