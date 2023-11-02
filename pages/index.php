@@ -8,7 +8,7 @@
 
     switch ($_SESSION["user"]["role"]) {
     case "Employee":
-        $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
+        $pages = array("dashboard", "tasks", "todo-php", "tutorials", "forums");
         break;
     case "Admin":
         $pages = array("dashboard", "todo", "tutorials", "forums");
@@ -192,7 +192,7 @@
                 <?php } ?>
 
                 <?php function todo_sidebar_item() { ?>
-                <a id="todo-sidebar-item" class="sidebar-item" href="?page=todo">
+                <a id="todo-sidebar-item" class="sidebar-item" href="?page=todo-php">
                     <load-svg class="sidebar-item-icon" src="/assets/todoSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
@@ -247,7 +247,7 @@
                         "dashboard" => "dashboard_sidebar_item",
                         "projects" => "projects_sidebar_item",
                         "tasks" => "tasks_sidebar_item",
-                        "todo" => "todo_sidebar_item",
+                        "todo-php" => "todo_sidebar_item",
                         "tutorials" => "tutorials_sidebar_item",
                         "forums" => "forums_sidebar_item",
                     ];
