@@ -6,12 +6,10 @@
 } */
 
 main {
-    max-width: 1500px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--window-background);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 122, 0, 1);
 }
 
 .header {
@@ -29,11 +27,11 @@ main {
 }
 
 .topic-color {
-    color: rgba(255, 122, 0, 1);
+    color: var(--accent-color);
 }
 
 .question-title-color {
-    color: rgba(0, 0, 0, 0.85);
+    color: var(--label-color);
 }
 
 .exit-button {
@@ -41,7 +39,7 @@ main {
     border: none;
     font-size: 50px;
     cursor: pointer;
-    color: #999;
+    color: var(--secondary-label-color);
     width: 80px;
     height: 80px;
     display: flex;
@@ -71,27 +69,27 @@ main {
 
 .author {
     font-weight: bold;
-    font-size: 14px;
+    font-size: var(--caption-1);
     margin-bottom: 5px;
 }
 
 .content-box p {
     position: relative;
-    border: 1px solid #ccc;
+    border: 1px solid var(--separator-color);
     padding: 20px 40px;
     border-radius: 25px;
     margin: 15px 20px;
     justify-content: center;
     line-height: 1.5;
-    max-width: 1500px;
+    /* max-width: 1500px; */
     margin-left: auto;
     margin-right: auto;
 }
 
 .button {
     background-color: transparent;
-    color: rgba(0, 0, 0, 0.85);
-    border: 1px solid black;
+    color: var(--label-color);
+    border: 1px solid var(--tertiary-label-color);
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -111,12 +109,10 @@ main {
     margin-left: 8px;
 }
 
-
-
 .reply {
     position: relative;
     padding: 20px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--separator-color);
     align-items: flex-start;
 }
 
@@ -126,10 +122,10 @@ main {
     top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #fff;
+    background-color: var(--window-background);
     padding: 0 10px;
     font-size: 12px;
-    color: #888;
+    color: var(--secondary-label-color);
 }
 
 .reply-user {
