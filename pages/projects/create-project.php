@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="global.css">
-<link rel="stylesheet" href="createproject.css">
+<link rel="stylesheet" href="/global.css">
+<link rel="stylesheet" href="/pages/projects/create-project.css">
 </head>
 
 <body>
@@ -40,7 +40,7 @@
 
  $(document).ready(function (){
   $("#closebtn").click(function(){
-    window.location.href = "projects.php"
+    window.location.href = "?page=projects"
   })
  })
 

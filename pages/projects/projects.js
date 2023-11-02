@@ -21,7 +21,7 @@ $(document).ready(() => {
 
     // bringing user to create-a-project page
     $("#new-project-button").click(() => {
-        window.location.href = "/pages/projects/new-project.php"
+        window.location.href = "/pages/projects/create-project.php"
     })
 
     // inserting JQuery progressbar into <td>

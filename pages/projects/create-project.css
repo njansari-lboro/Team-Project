@@ -1,33 +1,33 @@
-body {
+/* body {
     font-family: var(--font-family);
     background-color: var(--window-background);
     color: var(--text-color); 
     margin-left: 50px;
-  }
+  } */
 
-  h1{
+h1 {
     font-size: var(--title-1);
     color: var(--placeholder-text-color);
 
-  }
-
-#pname{
-    border:0;
-    font-size:var(--title-2);
 }
 
-#pbrief{
+#pname {
+    border: 0;
+    font-size: var(--title-2);
+}
+
+#pbrief {
     width: 90%;
-    font-size:var(--title-3);
-    margin-right:50px;
+    font-size: var(--title-3);
+    margin-right: 50px;
     border-radius: 5px;
-    
+
 }
 
-#closebtn{
+#closebtn {
     color: var(--placeholder-text-color);
-    font-size:var(--extra-large-title);
-    width:2%;
+    font-size: var(--extra-large-title);
+    width: 2%;
     cursor: pointer;
 }
 
@@ -51,24 +51,25 @@ body {
     background-color: #FFC472;
 }
 
-.container{
-        border:solid; 
-        border-color: #0000001a;
-        width:300px; 
-        height: 100px;
-        font-size:var(--body);
-        overflow-y: scroll; }
-
-::placeholder{
-    color:var(--placeholder-text-color);
+.container {
+    border: solid;
+    border-color: #0000001a;
+    width: 300px;
+    height: 100px;
+    font-size: var(--body);
+    overflow-y: scroll;
 }
 
-@media screen and (max-width:350px){
-    .container{
-        width:100%;
+::placeholder {
+    color: var(--placeholder-text-color);
+}
+
+@media screen and (max-width:350px) {
+    .container {
+        width: 100%;
     }
 
-    #pname{
-        width:100%;
+    #pname {
+        width: 100%;
     }
 }
