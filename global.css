@@ -182,13 +182,17 @@
 
 :root {
     /* A background material */
-    --background-material: rgba(255, 255, 255, 0.75)
+    --background-material: rgba(0, 0, 0, 0.25);
+
+    /* The background material for menus */
+    --menu-background-material: rgba(255, 255, 255, 0.75)
 }
 
 /* Dark variant material definitions */
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-material: rgba(30, 30, 30, 0.75)
+        --background-material: rgba(30, 30, 30, 0.75);
+        --menu-background-material: rgba(0, 0, 0, 0.5)
     }
 }
 
