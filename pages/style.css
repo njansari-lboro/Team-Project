@@ -291,6 +291,7 @@ body {
     z-index: 1;
     /* background-color: var(--background-material); */
     top: 5.6em;
+    right: 0;
     width: calc(100% - 250px);
 }
 
