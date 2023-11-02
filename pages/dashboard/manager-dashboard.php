@@ -45,7 +45,6 @@
 
                 <div class="col-md-6">
                     <div class="pt-1"></div>
-
                     <div class="row px-2 border rounded" id="overdue-tasks">
                         <h4 class="text-center pt-1">Overdue</h4>
                         <table class="table" id="overdue-table">
@@ -65,9 +64,7 @@
                             </tbody>
                         </table>
                     </div>
-
                     <div class="pt-1"></div>
-
                     <div class="row px-2 border rounded" id="imminent-tasks">
                         <h4 class="text-center pt-1">Imminent</h4>
                         <table class="table" id="imminent-table">
@@ -78,7 +75,6 @@
                                     <th>Deadline</th>
                                 </tr>
                             </thead>
-
                             <tbody>
                                 <tr>
                                 </tr>
