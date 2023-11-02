@@ -32,6 +32,7 @@
 
                         .fill {
                             fill: rgba(0, 0, 0, 0.75);
+                            box-shadow: 1px 1px 1px #000000;
                         }
                     </style>
                 </load-svg>
