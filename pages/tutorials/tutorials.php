@@ -39,7 +39,7 @@
             </svg>
         </a>
 
-        <?php require("/helpers/dynamic-carousel.php"); ?>
+        <?php include("../../helpers/dynamic-carousel.php"); ?>
 
         <br><br>
 
