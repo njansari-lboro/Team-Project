@@ -13,6 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="global.css">
         <link rel="stylesheet" href="style.css">
 
         <title>Make-It-All</title>
@@ -45,13 +46,13 @@
 
                 <form id="resetPassword">
                     <p>
-                        Sorry, please<a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: orange">Contact Support</span></a> to help reset your password
+                        Sorry, please <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: var(--accent-color)">Contact Support</span></a> to help reset your password
                     </p>
                 </form>
 
                 <form id="notRegistered">
                     <p>
-                        Sorry the email <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: orange">EMAIL</span></a> is not linked to any registered account.
+                        Sorry the email <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: var(--accent-color)">EMAIL</span></a> is not linked to any registered account.
                     </p>
                 </form>
 

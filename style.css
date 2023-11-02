@@ -1,10 +1,11 @@
-@font-face {
+/* @font-face {
     font-family: blippoBlackFont;
     src: url("Blippo Black Regular.otf");
-}
+} */
 
 html, body {
     height: 100%;
+    overflow: hidden;
     /* background-image: url('img/bgfinal.jpg');
     background-repeat: no-repeat; 
     background-size: cover; 
@@ -26,7 +27,8 @@ body {
 }
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--body);
+    /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 #main {
@@ -59,14 +61,14 @@ h1 {
     border-radius: 30px;
     display: block;
     width: 100%;
-    background-color: orange;
-    border: 1px solid orange;
+    background-color: var(--accent-color);
+    border: 1px solid var(--accent-color);
 }
 
 .btn.btn-primary:hover {
     background-color: white;
-    color: orange;
-    border: 1px solid orange;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
 }
 
 ::placeholder {
@@ -91,12 +93,12 @@ input {
 
 #changeEmail {
     text-decoration: none;
-    color: orange;
+    color: var(--accent-color);
 }
 
 #forgotPassword {
     text-decoration: none;
-    color: orange;
+    color: var(--accent-color);
     display: block;
     text-align: center;
     padding-top: 20px;
@@ -107,7 +109,7 @@ input {
     display: block;
     text-align: center;
     font-weight: bold;
-    color: orange;
+    color: var(--accent-color);
 }
 
 #resetPassword {
