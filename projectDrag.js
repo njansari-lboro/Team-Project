@@ -34,6 +34,7 @@ $(document).ready(function() {
             $("#task_input").val("");
             $("#box").append(task(text,desc));
             nextID++;
+            $(".btn-sub").prop("disabled", true);
         });
 
 
@@ -51,7 +52,7 @@ $(document).ready(function() {
     //defines a task
     function task(text, desc) {
         return ( `<li><button class="default" type="button" data-toggle="collapse" data-target="#collapseExample` + nextID + `" aria-expanded="false" aria-controls="collapseExample` + nextID + `">`
-        + text + `<span class="button-x">&times;</span></button><div class="collapse" id="collapseExample`+ nextID + `"><p class ="content">` + desc + `</p></div></li>`);
+        + text + `<span class="button-x">&times;</span></button><div class="collapse" id="collapseExample`+ nextID + `"><p class ="content">Description: ` + desc + `</p></div></li>`);
         }
 
     //enable submit button when all data fields entered
