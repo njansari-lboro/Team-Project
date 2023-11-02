@@ -131,7 +131,7 @@
     --window-background: rgba(255, 255, 255, 1);
 
     /* The colour to use for the background of bars, such as navigation bars, toolbars and sidebars */
-    --bar-background-color: rgba(241, 242, 242, 1)
+    --bar-background-color: rgba(241, 242, 242, 0.8)
 }
 
 /* Highlights and shadows */
