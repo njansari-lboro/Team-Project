@@ -45,8 +45,8 @@ button {
 
 #new-project-button {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 75px;
+    right: 25px;
     color: var(--accent-color);
     background-color: transparent;
     align-content: center;
