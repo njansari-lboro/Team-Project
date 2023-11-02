@@ -291,6 +291,7 @@ body {
     z-index: 1;
     /* background-color: var(--background-material); */
     top: 5.6em;
+    width: calc(100% - 250px);
 }
 
 @media screen and (max-width: 800px) {
