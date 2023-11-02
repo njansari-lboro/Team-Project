@@ -6,6 +6,7 @@
 html, body {
     height: 100%;
     overflow: hidden;
+    font-size: 16px;
     /* background-image: url('img/bgfinal.jpg');
     background-repeat: no-repeat; 
     background-size: cover; 
@@ -57,7 +58,8 @@ form {
 }
 
 .btn.btn-primary {
-    font-size: var(--body);
+    /* font-size: var(--body); */
+    font-size: 17px;
     text-align: center;
     border-radius: 30px;
     display: block;
@@ -93,11 +95,13 @@ form {
 }
 
 span {
-    font-size: var(--body);
+    /* font-size: var(--body); */
+    font-size: 17px;
 }
 
 input.form-control {
-    font-size: var(--body);
+    /* font-size: var(--body); */
+    font-size: 17px;
     text-align: center;
 }
 
