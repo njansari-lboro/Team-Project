@@ -125,7 +125,7 @@ h1 {
     content: "";
     width: 16px;
     height: 16px;
-    background-image: url("/assets/plane-icon.png");
+    background-image: url("/assets/reply.svg");
     background-size: cover;
     position: absolute;
     right: 10px;

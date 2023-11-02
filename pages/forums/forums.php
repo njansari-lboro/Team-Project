@@ -51,22 +51,18 @@
 
                 <!-- Forum Topic Example -->
                 <article class="forum-topic">
-                    <!-- <div class="topic-avatar"> -->
-                        <load-svg class="topic-avatar" src="/assets/profileIcon.svg">
-                            <style shadowRoot>
-                                svg {
-                                    width: 50px;
-                                    height: 50px;
-                                    /* height: 2em; */
-                                }
+                    <load-svg class="topic-avatar" src="/assets/profileIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 50px;
+                                height: 50px;
+                            }
 
-                                .fill {
-                                    fill: var(--label-color)
-                                }
-                            </style>
-                        </load-svg>
-                        <!-- <img src="/assets/user.jpg" alt="User Avatar"> -->
-                    <!-- </div> -->
+                            .fill {
+                                fill: var(--label-color)
+                            }
+                        </style>
+                    </load-svg>
 
                     <div class="topic-content">
                         <h2>John Cena</h2>
@@ -77,9 +73,18 @@
                 </article>
 
                 <article class="forum-topic">
-                    <div class="topic-avatar">
-                        <img src="/assets/user.jpg" alt="User Avatar">
-                    </div>
+                    <load-svg class="topic-avatar" src="/assets/profileIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 50px;
+                                height: 50px;
+                            }
+
+                            .fill {
+                                fill: var(--label-color)
+                            }
+                        </style>
+                    </load-svg>
 
                     <div class="topic-content">
                         <h2>John Cena</h2>
@@ -90,9 +95,18 @@
                 </article>
 
                 <article class="forum-topic">
-                    <div class="topic-avatar">
-                        <img src="/assets/user.jpg" alt="User Avatar">
-                    </div>
+                    <load-svg class="topic-avatar" src="/assets/profileIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 50px;
+                                height: 50px;
+                            }
+
+                            .fill {
+                                fill: var(--label-color)
+                            }
+                        </style>
+                    </load-svg>
 
                     <div class="topic-content">
                         <h2>John Cena</h2>
@@ -103,9 +117,18 @@
                 </article>
 
                 <article class="forum-topic">
-                    <div class="topic-avatar">
-                        <img src="/assets/user.jpg" alt="User Avatar">
-                    </div>
+                    <load-svg class="topic-avatar" src="/assets/profileIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 50px;
+                                height: 50px;
+                            }
+
+                            .fill {
+                                fill: var(--label-color)
+                            }
+                        </style>
+                    </load-svg>
 
                     <div class="topic-content">
                         <h2>John Cena</h2>
@@ -116,9 +139,18 @@
                 </article>
 
                 <article class="forum-topic">
-                    <div class="topic-avatar">
-                        <img src="/assets/user.jpg" alt="User Avatar">
-                    </div>
+                    <load-svg class="topic-avatar" src="/assets/profileIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 50px;
+                                height: 50px;
+                            }
+
+                            .fill {
+                                fill: var(--label-color)
+                            }
+                        </style>
+                    </load-svg>
 
                     <div class="topic-content">
                         <h2>John Cena</h2>
