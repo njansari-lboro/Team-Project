@@ -1,9 +1,5 @@
 @import url("/global.css");
 
-*, *::after, *::before {
-    box-sizing: unset;
-}
-
 :root {
     --handle-size: 3rem;
     --img-gap: .25rem;
