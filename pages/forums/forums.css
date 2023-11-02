@@ -5,7 +5,7 @@ main {
 
 #forum-topics {
     background-color: var(--window-background);
-    border: 2px solid var(--separator-color);
+    /* border: 2px solid var(--separator-color); */
     border-radius: 10px;
     padding: 20px;
 }
@@ -74,7 +74,7 @@ h1 {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    /* background-color: #ddd; */
+    background-color: transparent;
     margin-right: 20px;
 }
 
@@ -105,6 +105,10 @@ h1 {
 .read-link {
     color: var(--link-color);
     text-decoration: underline;
+}
+
+.read-link:hover {
+    color: var(--accent-color);
 }
 
 .topic-content button {
