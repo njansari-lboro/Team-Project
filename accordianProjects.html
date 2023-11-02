@@ -8,12 +8,12 @@
     <!-- Add Bootstrap CSS and JS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="jquery-ui-1.13.2.progress/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="project_kanban.css">
+    <link rel="stylesheet" type="text/css" href="projectDrag.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
         $( function() {
             $( "#accordion" ).accordion({
@@ -22,9 +22,7 @@
                     icons: { "header": "ui-icon-caret-1-s", "activeHeader": "ui-icon-caret-1-n" }
                 });
         });
-        
     </script>
-
 </head>
 <style>
 header {display: flex;justify-content: space-between;}
@@ -299,4 +297,5 @@ h2 {text-align: left; padding: 0.4em; margin: 10px;font-weight: normal;display: 
     </div>
 </div>
 </body>
+<script src="projectDrag.js"></script>
 </html>
