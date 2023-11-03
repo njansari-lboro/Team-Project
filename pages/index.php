@@ -427,9 +427,9 @@
 
                 <h1>Invite Member</h1>
 
-                <input id="invite-member-email" type="email">
+                <input id="invite-member-email" type="email" placeholder="Member email address">
 
-                <button id="invite-member-button" placeholder="Member email address" disabled>Invite</button>
+                <button id="invite-member-button" disabled>Invite</button>
 
                 <span id="invite-link"></span>
             </div>
