@@ -99,4 +99,3 @@
 * An asterisk next to a branch name indicates that this is the branch you are currently on
     * Or in VS Code it means that the branch has uncommited changes
 * Checking out a branch means moving from one branch to another
-* 
