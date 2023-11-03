@@ -49,13 +49,14 @@ h1 {
 }
 
 #post-topic {
+    --icon-color: var(--accent-color);
     background-color: transparent;
-    color: var(--accent-color);
     border: none;
     font-size: 50px;
     float: right;
     cursor: pointer;
     margin-top: -75px;
+    border-radius: 10px;
 }
 
 .forum-topic {
@@ -136,6 +137,7 @@ h1 {
 }
 
 .topic-content button:hover, #post-topic:hover {
+    --icon-color: var(--selected-content-text-color);
     background-color: var(--accent-color);
     color: var(--selected-content-text-color);
 }
