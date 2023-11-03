@@ -479,7 +479,7 @@ body {
     width: 40%;
     min-width: 300px;
     max-width: 600px;
-    height: 20%;
+    height: 25%;
     text-align: center;
     box-shadow: 0 8px 16px 0 var(--shadow-color);
     color: var(--label-color);
@@ -494,7 +494,6 @@ body {
 #invite-member-card div {
     display: flex;
     align-items: center;
-    margin: 10px auto
 }
 
 #close-invite-member-modal-button {
@@ -530,7 +529,7 @@ body {
     font-size: var(--body);
     border-radius: 10px;
     padding: 0.333em 20px;
-    margin-left: 10px;
+    margin: 10px 0 10px 10px;
     font-weight: bold;
     color: var(--alt-selected-control-text-color);
     background-color: var(--accent-color);
