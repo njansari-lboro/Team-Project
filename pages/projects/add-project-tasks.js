@@ -37,6 +37,9 @@ $(document).ready(function () {
             $(".btn-sub").prop("disabled", true);
         });
 
+        $(document).on("click", ".btn-complete", function () {
+            window.location.href = "/pages/?page=projects"
+        });
 
         //deletes a task
         $(document).on("click", ".button-x", function () {
