@@ -279,6 +279,7 @@
                             }
                         </style>
                     </load-svg>
+
                     <span>Invite</span>
                 </button>
             </div>
@@ -411,7 +412,7 @@
             <div id="invite-member-card" class="center">
                 <h1>Invite Member</h1>
 
-                <input id="invite-member-email" type="text">
+                <input id="invite-member-email" type="email">
 
                 <button id="invite-member-button" placeholder="Member email address" disabled>Invite</button>
             </div>

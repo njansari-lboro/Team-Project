@@ -479,7 +479,7 @@ body {
     width: 40%;
     min-width: 300px;
     max-width: 600px;
-    height: 75%;
+    height: 30%;
     text-align: center;
     box-shadow: 0 8px 16px 0 var(--shadow-color);
     color: var(--label-color);
@@ -495,4 +495,25 @@ body {
     font-size: var(--title-1);
 }
 
-#invite-member-button {}
+#invite-member-card input {
+    font-size: var(--callout);
+    border-radius: 10px;
+    border: 0.5em solid transparent;
+    color: var(--label-color);
+    background-color: var(--tertiary-fill-color);
+    width: 80%;
+    padding: 0 10px;
+    margin: auto;
+}
+
+#invite-member-button {
+    font-size: var(--body);
+    color: var(--label-color);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    width: 50%;
+    background-color: var(--disabled-control-text-color);
+    border-color: var(--disabled-control-text-color);
+}

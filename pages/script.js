@@ -78,6 +78,10 @@ $(document).ready(() => {
     $("#invite-button").click(() => {
         $("#invite-member-modal").fadeIn(500, "swing")
 
+        $("#edit-first-name-input").change(() => {
+            $("#edit-first-name-input").val()
+        })
+
         $("#invite-member-button").click(() => $("#invite-member-modal").fadeOut())
     })
 
