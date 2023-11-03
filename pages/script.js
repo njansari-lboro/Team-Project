@@ -102,6 +102,8 @@ $(document).ready(() => {
                 return
             }
 
+            console.log(name)
+
             $("#invite-link").val(`http://team02.sci-project.lboro.ac.uk/?invite_code=${btoa(name)}`)
         })
 
