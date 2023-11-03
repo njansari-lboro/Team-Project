@@ -49,8 +49,8 @@
                     <load-svg src="/assets/addIcon.svg">
                         <style shadowRoot>
                             svg {
-                                width: 40px;
-                                height: 40px;
+                                width: var(--title-1);
+                                height: var(--title-1);
                             }
 
                             .fill {
