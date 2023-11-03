@@ -24,6 +24,15 @@ $(document).ready(function () {
         window.location.href = "/pages/?page=projects&task=new_project";
     });
 
+    // bringing user to edit a project page
+    $("#project-1-link").click(function(){
+        window.location.href = "/pages/?page=projects&task=new_project&projectName=Project%20%31";
+    });
+
+    $("#project-2-link").click(function(){
+        window.location.href = "/pages/?page=projects&task=new_project&projectName=Project%20%32";
+    });
+
     // inserting JQuery progressbar into <td>
     $(".progress-bar").each(function () {
         let cell = $(this).get(0);
