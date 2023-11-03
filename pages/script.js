@@ -84,7 +84,7 @@ $(document).ready(() => {
             let inviteIsDisabled = true
 
             if (email.trim().length > 0) {
-                if (email.match(/@make-it-all\.co\.uk$/)) {
+                if (email.match(/^.+@make-it-all\.co\.uk$/)) {
                     inviteIsDisabled = false
                 }
             }
@@ -97,7 +97,7 @@ $(document).ready(() => {
 
         $("#invite-member-button").click(() => {
             const email = $("#invite-member-email").val()
-            const name = email.match(/([^@]+)/)
+            const name = email.match(/^(.+)@make-it-all\.co\.uk$/)
 
             if (!(name && name.length > 1)) {
                 return
