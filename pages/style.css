@@ -219,14 +219,14 @@ body {
     align-items: center;
 }
 
-.sidebar-item.selected {
-    background-color: var(--selected-content-background-color);
-}
-
 .sidebar-item:not(.selected):hover {
     color: var(--label-color);
     background-color: var(--unemphasised-selected-content-background-color);
     text-decoration: none;
+}
+
+.sidebar-item.selected {
+    background-color: var(--selected-content-background-color);
 }
 
 .sidebar-item-text {
