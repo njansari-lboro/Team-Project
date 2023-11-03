@@ -19,7 +19,18 @@
                     </h1>
 
                     <div class="author-info">
-                        <img src="/assets/user.jpg" alt="Author Avatar" class="author-avatar">
+                        <load-svg class="author-avatar" src="/assets/profileIcon.svg">
+                            <style shadowRoot>
+                                svg {
+                                    width: 40px;
+                                    height: 40px;
+                                }
+
+                                .fill {
+                                    fill: var(--label-color)
+                                }
+                            </style>
+                        </load-svg>
 
                         <div class="author-text">
                             <span class="author-name">John Cena</span>
@@ -34,7 +45,19 @@
 
                 <div class="reply">
                     <div class="reply-user">
-                        <img src="/assets/user.jpg" alt="Replier Avatar" class="user-avatar">
+                        <load-svg class="user-avatar" src="/assets/profileIcon.svg">
+                            <style shadowRoot>
+                                svg {
+                                    width: 40px;
+                                    height: 40px;
+                                }
+
+                                .fill {
+                                    fill: var(--label-color)
+                                }
+                            </style>
+                        </load-svg>
+                        
                         <span class="user-name">Jean Sienna</span>
                     </div>
 
@@ -43,7 +66,22 @@
                     </div>
                 </div>
 
-                <button class="button">Reply</button>
+                <button class="button">
+                    Reply
+
+                    <load-svg class="reply-icon" src="/assets/replyIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 16px;
+                                height: 16px;
+                            }
+
+                            .fill {
+                                fill: var(--button-text-color)
+                            }
+                        </style>
+                    </load-svg>
+                </button>
             </div>
         </body>
     </main>

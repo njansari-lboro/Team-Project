@@ -121,18 +121,6 @@ h1 {
     position: relative;
 }
 
-/* .topic-content button::before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    background-image: url("/assets/replyIcon.svg");
-    background-size: cover;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-} */
-
 .reply-icon {
     --button-text-color: var(--label-color);
     width: 16px;
