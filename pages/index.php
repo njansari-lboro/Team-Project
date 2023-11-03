@@ -414,8 +414,8 @@
                     <load-svg id="close-invite-member-modal-icon" src="/assets/closeIcon.svg">
                         <style shadowRoot>
                             svg {
-                                width: 2em;
-                                height: 2em;
+                                width: 1.5em;
+                                height: 1.5em;
                             }
 
                             .fill {
@@ -431,6 +431,7 @@
 
                 <button id="invite-member-button" disabled>Invite</button>
 
+                <br>
                 <span id="invite-link"></span>
             </div>
         </div>

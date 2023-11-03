@@ -491,9 +491,16 @@ body {
     }
 }
 
-#close-invite-member-modal-button:hover {
+#close-invite-member-modal-button {
     padding: 1em;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+#close-invite-member-modal-button:hover {
     background-color: var(--unemphasised-selected-content-background-color);
+    border-radius: 50px;
 }
 
 #invite-member-card h1 {
