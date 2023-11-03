@@ -405,6 +405,18 @@
             </div>
         </div>
 
+        <div id="invite-member-modal">
+            <div class="dimmed-overlay"></div>
+
+            <div id="invite-member-card" class="center">
+                <h1>Invite Member</h1>
+
+                <input id="invite-member-email" type="text">
+
+                <button id="invite-member-button" placeholder="Member email address" disabled>Invite</button>
+            </div>
+        </div>
+
         <script type="text/javascript" src="script.js"></script>
     </body>
 </html>

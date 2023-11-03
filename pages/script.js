@@ -69,8 +69,16 @@ $(document).ready(() => {
             }
         })
 
+        $(".dismiss-edit-profile-button").click(() => $("#edit-profile-modal").fadeOut())
+
         $("#hide-password-icon").hide()
         checkIfEditProfileCanSave()
+    })
+
+    $("invite-button").click(() => {
+        $("#invite-member-modal").fadeIn(500, "swing")
+
+        $("invite-member-button").click(() => $("#invite-member-modal").fadeOut())
     })
 
     $(window).click((event) => {
@@ -78,10 +86,6 @@ $(document).ready(() => {
             dismissProfileMenu()
         }
     })
-
-    // $("#edit-profile-button").click()
-
-    $(".dismiss-edit-profile-button").click(() => $("#edit-profile-modal").fadeOut())
 })
 
 function toggleSidebar() {

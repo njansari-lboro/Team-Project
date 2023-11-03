@@ -462,3 +462,31 @@ body {
     background-color: var(--disabled-control-text-color);
     border-color: var(--disabled-control-text-color);
 }
+
+#invite-member-modal {
+    display: none;
+}
+
+#invite-member-card {
+    position: fixed;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid var(--separator-color);
+    border-radius: 20px;
+    padding: 20px;
+    width: 40%;
+    min-width: 300px;
+    max-width: 600px;
+    height: 75%;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 var(--shadow-color);
+    color: var(--label-color);
+}
+
+#invite-member-card h1 {
+    font-size: var(--title-1);
+}
+
+#invite-member-button {}
