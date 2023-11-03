@@ -6,8 +6,6 @@
     </head>
 
     <body>
-
-
         <form method="post" id="details" action="?page=projects&task=new_project_tasks">
             <h2 id="closebtn">&times;</h2>
             <input type="text" id="pname" name="pname" placeholder="Enter a project name" required /><br><br>
@@ -29,21 +27,11 @@
             </div>
             <br><br>
             <input id="submitBtn" type="submit" value="Continue" class="">
-
         </form>
 
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-
-            $(document).ready(function () {
-                $("#closebtn").click(function () {
-                    window.location.href = "/pages/?page=projects"
-                })
-            })
-
-
-        </script>
+        <script src="/pages/projects/create-project.js"></script>
     </body>
 </html>
