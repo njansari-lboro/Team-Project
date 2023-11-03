@@ -78,13 +78,15 @@ $(document).ready(() => {
     $("#invite-button").click(() => {
         $("#invite-member-modal").fadeIn(500, "swing")
 
+        const emailMatch = /^(.+)@make-it-all\.co\.uk$/
+
         $("#invite-member-email").on("input", () => {
             const email = $("#invite-member-email").val()
 
             let inviteIsDisabled = true
 
             if (email.trim().length > 0) {
-                if (email.match(/^.+@make-it-all\.co\.uk$/)) {
+                if (email.match(emailMatch)) {
                     inviteIsDisabled = false
                 }
             }
@@ -97,7 +99,7 @@ $(document).ready(() => {
 
         $("#invite-member-button").click(() => {
             const email = $("#invite-member-email").val()
-            const name = email.match(/^(.+)@make-it-all\.co\.uk$/)
+            const name = email.match(emailMatch)
 
             if (!(name && name.length > 1)) {
                 return
