@@ -114,7 +114,10 @@ $(document).ready(() => {
             document.execCommand("copy")
         })
 
-        $("#close-invite-member-modal-button").click(() => $("#invite-member-modal").fadeOut())
+        $("#close-invite-member-modal-button").click(() => {
+            $("#invite-member-modal").fadeOut()
+            $("#invite-member-email").val("")
+        })
     })
 
     $(window).click((event) => {
