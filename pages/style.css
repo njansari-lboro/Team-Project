@@ -535,17 +535,6 @@ body {
     margin-left: -32px;
 }
 
-#copy-invite-link-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 1));
-    backdrop-filter: inherit;
-}
-
 #copy-invite-link-button:hover {
     --icon-color: var(--label-color);
     background-color: var(--secondary-fill-color);
@@ -558,8 +547,8 @@ body {
 
 #invite-member-button {
     font-size: var(--body);
-    border-radius: 20px;
-    padding: 10px 20px;
+    border-radius: 10px;
+    padding: 5px 20px;
     margin: 10px;
     font-weight: bold;
     color: var(--alt-selected-control-text-color);
