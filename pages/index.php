@@ -232,6 +232,7 @@
                         <style shadowRoot>
                             svg {
                                 width: 2.4em;
+                                padding-bottom: 0.1em
                             }
 
                             .fill {
