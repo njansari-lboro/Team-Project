@@ -87,11 +87,12 @@ $(document).ready(() => {
 
         $("#invite-member-button").click(() => {
             const email = $("#invite-member-email").val()
+            const name = email.match(/([^@]+)/)
 
             let emailHex = ""
 
-            for (let i = 0; i < email.length; i++) {
-                emailHex += email.charCodeAt(i).toString(16)
+            for (let i = 0; i < name.length; i++) {
+                emailHex += name.charCodeAt(i).toString(16)
             }
 
             $("#invite-link").text(`http://team02.sci-project.lboro.ac.uk/?invite_code=${emailHex}`)

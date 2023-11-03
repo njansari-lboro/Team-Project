@@ -510,12 +510,16 @@ body {
 
 #invite-member-button {
     font-size: var(--body);
-    color: var(--label-color);
-    border: none;
     border-radius: 20px;
     padding: 10px 20px;
     margin: 10px;
     width: 50%;
+    font-weight: bold;
+    color: var(--alt-selected-control-text-color);
+    background-color: var(--accent-color);
+}
+
+#invite-member-button:disabled {
     background-color: var(--disabled-control-text-color);
     border-color: var(--disabled-control-text-color);
 }
