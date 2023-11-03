@@ -35,7 +35,19 @@
 
             <div class="row">
                 <button class="post-btn">
-                    <span class="envelope-icon">✉️</span> Post
+                    <span class="envelope-icon">
+                        <load-svg src="/assets/postIcon.svg">
+                            <style shadowRoot>
+                                svg {
+                                    height: var(--title-3);
+                                }
+
+                                .fill {
+                                    fill: white
+                                }
+                            </style>
+                        </load-svg>
+                    </span> Post
                 </button>
             </div>
         </div>
