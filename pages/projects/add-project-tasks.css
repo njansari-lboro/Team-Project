@@ -28,7 +28,7 @@ h3 {
 p {
     padding: 0.4em;
     margin: 20px;
-    color: var(--placeholder-text-color);
+    color: var(--text-color);
     font-size: var(--body);
 }
 
@@ -113,7 +113,7 @@ ul {
 }
 
 #sortable li {
-    margin: 0 3px 3px 3px;
+    /* margin: 0 3px 3px 3px; */
     padding: 0.4em;
     font-size: var(--body);
     min-height: 30px;
@@ -123,6 +123,10 @@ ul {
     border: 1px dotted var(--placeholder-text-color);
     margin: 0 1em 1em 0;
     height: 50px;
+}
+
+.bruh{
+    padding-left: 1.65rem;
 }
 
 /* cards */
@@ -173,6 +177,15 @@ ul {
     font-size: var(--caption-2);
 }
 
+.container-custom{
+    justify-content: center !important;
+    display: flex !important;
+    /* flex-direction: column; */
+    align-content: center !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+}
+
 /* forms */
 form {
     padding: 0.4em;
@@ -183,7 +196,7 @@ form {
 form label {
     margin: 5px 10px 5px 0;
     font-weight: normal;
-    color: var(--placeholder-text-color);
+    color: var(--text-color);
     font-size: var(--caption-1);
 }
 
@@ -240,7 +253,8 @@ form button:hover {
 }
 
 .form-control {
-    margin: 25px;
+    margin: 0px;
+    margin-right: 20px;
     color: darkgray;
 }
 
@@ -385,20 +399,20 @@ form button:hover {
 #big-container {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid var(--separator-color);
+    border: 2px solid var(--separator-color);
     padding: 0.4em;
     margin: 20px;
     border-radius: 10px;
     justify-content: space-between;
-    box-shadow: 0 4px 6px var(--shadow-color);
+    /* box-shadow: 0 4px 6px var(--shadow-color); */
 }
 
 #small-container {
-    border: 1px solid var(--separator-color);
+    border: 2px solid var(--separator-color);
     padding: 0.4em;
     margin: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px var(--shadow-color);
+    /* box-shadow: 0 4px 6px var(--shadow-color); */
     list-style-type: none;
 }
 
@@ -415,7 +429,7 @@ form button:hover {
 
 
 .row {
-    display: flex;
+    display: block;
 }
 
 .column-2 {
@@ -435,7 +449,7 @@ form button:hover {
     background-color: var(--window-background);
     width: 150px;
     border-radius: 5px;
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 
 #flex-end {
@@ -444,4 +458,96 @@ form button:hover {
     padding: 10px 0;
     display: flex;
     justify-content: flex-end;
+}
+
+
+.col-md-3{
+    max-width: 100%;
+}
+
+.assign{
+    justify-content: center;
+}
+
+.paragraphdrag{
+    text-align: center;
+}
+
+.ui-datepicker {
+    font-size: 16px;
+    background-color: var(--secondary-fill-color);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+}
+
+.ui-datepicker-header {
+    background-color: var(--secondary-fill-color);
+    color: var(--window-background);
+    color: var(--text-color);
+}
+
+.ui-state-default {
+    background-color: var(--accent-color);
+    color: var(--window-background);
+    border: 0px;
+    color: var(--text-color);
+}
+
+.ui-state-active {
+    background-color: var(--accent-color);
+    color: var(--window-background);
+    color: var(--text-color);
+}
+
+.table {
+    font-size: var(--body);
+    border-color: var(--grid-color);
+    background-color: var(--window-background);
+}
+
+
+.ui-datepicker a {
+    text-decoration: none;
+}
+
+.ui-datepicker-calendar td a {
+    color: var(--text-color) !important; 
+}
+
+.ui-datepicker-calendar .ui-state-default {
+    border: none;
+    background-color: var(--control-color);
+    color: var(--label-color);
+}
+
+.ui-datepicker-calendar td a:hover {
+    background-color: var(--secondary-accent-color);
+    color: var(--selected-content-text-color);
+}
+
+.ui-datepicker-calendar .ui-state-active {
+    background-color: var(--accent-color);
+    color: var(--selected-content-text-color);
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+    display: block;
+    margin: 0;
+    color: var(--control-text-color);
+}
+
+.ui-datepicker .ui-datepicker-prev:hover,
+.ui-datepicker .ui-datepicker-next:hover {
+    background-color: var(--secondary-accent-color);
+}
+
+.ui-datepicker .ui-datepicker-prev {
+    float: left;
+    margin-left: 10px;
+}
+
+.ui-datepicker .ui-datepicker-next {
+    float: right;
+    margin-right: 10px;
 }
