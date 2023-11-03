@@ -91,7 +91,7 @@ $(document).ready(() => {
 
             $("#invite-member-button").prop("disabled", inviteIsDisabled)
 
-            $("#invite-link").text("")
+            $("#invite-link").val("")
         })
 
         $("#invite-member-button").click(() => {
@@ -102,13 +102,7 @@ $(document).ready(() => {
                 return
             }
 
-            let emailHex = ""
-
-            for (let i = 0; i < name[1].length; i++) {
-                emailHex += name[1].charCodeAt(i).toString(16)
-            }
-
-            $("#invite-link").text(`http://team02.sci-project.lboro.ac.uk/?invite_code=${emailHex}`)
+            $("#invite-link").val(`http://team02.sci-project.lboro.ac.uk/?invite_code=${btoa(name)}`)
         })
 
         $("#close-invite-member-modal-button").click(() => $("#invite-member-modal").fadeOut())

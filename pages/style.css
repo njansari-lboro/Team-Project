@@ -494,6 +494,8 @@ body {
 #close-invite-member-modal-button {
     padding: 1em;
     position: fixed;
+    width: 1.5em;
+    height: 1.5em;
     top: 10px;
     right: 10px;
 }
@@ -518,6 +520,10 @@ body {
     margin: auto;
 }
 
+#copy-invite-link-button {
+    margin-left: -50px;
+}
+
 #invite-member-button {
     font-size: var(--body);
     border-radius: 20px;
@@ -530,7 +536,7 @@ body {
     border: 2px solid var(--accent-color);
 }
 
-#save-button.dismiss-edit-profile-button:hover {
+#invite-member-button:hover {
     background-color: var(--secondary-accent-color);
 }
 

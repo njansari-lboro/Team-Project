@@ -431,8 +431,23 @@
 
                 <button id="invite-member-button" disabled>Invite</button>
 
-                <br>
-                <span id="invite-link"></span>
+                <div>
+                    <input id="invite-link" type="text" placeholder="Invite link" readonly>
+
+                    <button id="copy-invite-link-button">
+                        <load-svg id="copy-invite-link-icon" src="/assets/copyIcon.svg">
+                            <style shadowRoot>
+                                svg {
+                                    height: 1em;
+                                }
+
+                                .fill {
+                                    fill: var(--secondary-label-color)
+                                }
+                            </style>
+                        </load-svg>
+                    </button>
+                </div>
             </div>
         </div>
 
