@@ -39,8 +39,8 @@
                         <load-svg src="/assets/postIcon.svg">
                             <style shadowRoot>
                                 svg {
-                                    height: 1.2em;
-                                    margin-top: 2.5px
+                                    height: 1.1em;
+                                    margin-top: 3px
                                 }
 
                                 .fill {
