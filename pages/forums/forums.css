@@ -123,20 +123,6 @@ h1 {
     position: relative;
 }
 
-.reply-icon {
-    --button-text-color: var(--label-color);
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.topic-content button:hover .reply-icon {
-    --button-text-color: var(--selected-content-text-color);
-}
-
 .topic-content button:hover, #post-topic:hover {
     --icon-color: var(--selected-content-text-color);
     background-color: var(--accent-color);
