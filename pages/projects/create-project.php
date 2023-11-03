@@ -33,12 +33,5 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/pages/projects/create-project.js"></script>
-        <script>
-            $(document).ready(function () {
-                $("#closebtn").click(function () {
-                    window.location.href = "/pages/?page=projects"
-                })
-            })
-        </script>
     </body>
 </html>
