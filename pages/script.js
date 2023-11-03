@@ -85,7 +85,7 @@ $(document).ready(() => {
 
             if (email.trim().length > 0) {
                 if (name && name.length > 1) {
-                    inviteIsDisabled = true
+                    inviteIsDisabled = false
                 }
             }
 
@@ -96,15 +96,16 @@ $(document).ready(() => {
 
         $("#invite-member-button").click(() => {
             const email = $("#invite-member-email").val()
-            const name = email.match(/([^@]+)/)[1]
+            const name = email.match(/([^@]+)/)
 
-            if (name && name.length > 1) {
+            if (!(name && name.length > 1)) {
+                return
             }
 
             let emailHex = ""
 
-            for (let i = 0; i < name.length; i++) {
-                emailHex += name.charCodeAt(i).toString(16)
+            for (let i = 0; i < name[1].length; i++) {
+                emailHex += name[1].charCodeAt(i).toString(16)
             }
 
             $("#invite-link").text(`http://team02.sci-project.lboro.ac.uk/?invite_code=${emailHex}`)
