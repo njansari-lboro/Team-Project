@@ -52,7 +52,8 @@ h1 {
     --icon-color: var(--accent-color);
     background-color: transparent;
     border: none;
-    font-size: 50px;
+    width: 40px;
+    height: 40px;
     float: right;
     cursor: pointer;
     margin-top: -75px;
