@@ -540,7 +540,7 @@ body {
     background-color: var(--secondary-fill-color);
 }
 
-#copy-invite-link-button::after {
+#copy-invite-link-button {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
