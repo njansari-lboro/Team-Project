@@ -1,6 +1,12 @@
 // DEALS WITH LOGIN LOGIC/SCREENS AND REDIRECTS TO MAIN INDEX, PAGE DASHBOARD
 
 $(document).ready(() => {
+    if (inviteCode) {
+        checkInviteCode(inviteCode);
+    }
+
+
+
     $("#emailForm").show()
     $("#emailDisplay").hide()
     $("#passwordInput").hide()
@@ -159,4 +165,35 @@ function showResetPassword() {
     $("#mainBtn").hide()
     $("#resetPassword").show()
     $("#tryAgain").show()
+}
+
+function register(){
+    $("#emailForm").hide()
+    $("#emailInput").hide()
+    $("#passwordField").hide()
+    $("#emailDisplay").hide()
+    $("#forgotPassword").hide()
+    $("#mainBtn").hide()
+    $("#resetPassword").hide()
+    $("#tryAgain").hide()
+    $('#edit-profile-card').show()
+}
+
+
+function checkInviteCode(code) {
+    $.ajax({
+        type: "POST",
+        url: "helpers/emailcheck.php",
+        data: {
+            invite_code: code
+        },
+        success: function(response) {
+            alert(response);
+            if (response == "true") {
+                register();
+            } else {
+               restart();
+            }
+        }
+    });
 }
