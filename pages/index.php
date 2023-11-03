@@ -441,8 +441,6 @@
                             <style shadowRoot>
                                 svg {
                                     height: var(--body);
-                                    width: 2em;
-                                    padding-left: 0.2em;
                                     padding-top: 0.2em;
                                 }
 

@@ -543,6 +543,7 @@ body {
 }
 
 #invite-member-button:disabled {
+    color: var(--disabled-control-text-color);
     background-color: var(--disabled-control-text-color);
     border-color: transparent;
 }
