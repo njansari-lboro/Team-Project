@@ -223,7 +223,7 @@ body {
     background-color: var(--selected-content-background-color);
 }
 
-.sidebar-item:hover {
+.sidebar-item:not(.selected):hover {
     color: var(--label-color);
     background-color: var(--unemphasised-selected-content-background-color);
     text-decoration: none;
