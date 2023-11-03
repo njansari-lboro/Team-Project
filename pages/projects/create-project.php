@@ -9,7 +9,7 @@
 <body>
 
 
- <form method = "post" id = "details" action =  "receive-data-test.php">
+ <form method = "post" id = "details" action="add-tasks.php">
   <h2 id = "closebtn">&times;</h2>
   <input type="text" id="pname" name="pname" placeholder = "Enter a project name" required/><br><br>
   <textarea id="pbrief" name="pbrief" rows="4" cols="50" placeholder = "Enter project brief" required/></textarea>
