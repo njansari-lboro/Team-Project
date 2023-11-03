@@ -414,8 +414,8 @@
                     <load-svg id="close-invite-member-modal-icon" src="/assets/closeIcon.svg">
                         <style shadowRoot>
                             svg {
-                                width: 3em;
-                                height: 3em;
+                                width: 2em;
+                                height: 2em;
                             }
 
                             .fill {

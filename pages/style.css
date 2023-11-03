@@ -491,7 +491,10 @@ body {
     }
 }
 
-#close-invite-member-modal-button {}
+#close-invite-member-modal-button:hover {
+    padding: 1em;
+    background-color: var(--unemphasised-selected-content-background-color);
+}
 
 #invite-member-card h1 {
     font-size: var(--title-1);
