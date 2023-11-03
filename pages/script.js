@@ -78,7 +78,7 @@ $(document).ready(() => {
     $("#invite-button").click(() => {
         $("#invite-member-modal").fadeIn(500, "swing")
 
-        $("#invite-member-email").change(() => {
+        $("#invite-member-email").on("input", () => {
             const email = $("#invite-member-email").val()
 
             let inviteIsDisabled = true
