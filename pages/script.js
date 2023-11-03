@@ -78,11 +78,26 @@ $(document).ready(() => {
     $("#invite-button").click(() => {
         $("#invite-member-modal").fadeIn(500, "swing")
 
-        $("#edit-first-name-input").change(() => {
-            $("#edit-first-name-input").val()
+        $("#invite-member-email").change(() => {
+            const email = $("#invite-member-email").val()
+            $("#invite-member-button").prop("disabled", email.trim().length === 0)
+
+            $("#invite-link").text("")
         })
 
-        $("#invite-member-button").click(() => $("#invite-member-modal").fadeOut())
+        $("#invite-member-button").click(() => {
+            const email = $("#invite-member-email").val()
+
+            let emailHex = ""
+
+            for (let i = 0; i < email.length; i++) {
+                emailHex += email.charCodeAt(i).toString(16)
+            }
+
+            $("#invite-link").text(`http://team02.sci-project.lboro.ac.uk/?invite_code=${emailHex}`)
+        })
+
+        $("#close-invite-member-modal-button").click(() => $("#invite-member-modal").fadeOut())
     })
 
     $(window).click((event) => {

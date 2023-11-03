@@ -410,11 +410,28 @@
             <div class="dimmed-overlay"></div>
 
             <div id="invite-member-card" class="center">
+                <button id="close-invite-member-modal-button">
+                    <load-svg id="close-invite-member-modal-icon" src="/assets/closeIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 3em;
+                                height: 3em;
+                            }
+
+                            .fill {
+                                fill: var(--secondary-label-color)
+                            }
+                        </style>
+                    </load-svg>
+                </button>
+
                 <h1>Invite Member</h1>
 
                 <input id="invite-member-email" type="email">
 
                 <button id="invite-member-button" placeholder="Member email address" disabled>Invite</button>
+
+                <span id="invite-link"></span>
             </div>
         </div>
 
