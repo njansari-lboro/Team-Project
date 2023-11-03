@@ -92,14 +92,6 @@ $(document).ready(() => {
             $("#invite-member-button").prop("disabled", inviteIsDisabled)
 
             $("#invite-link").val("")
-
-            $("#copy-invite-link-button").click(() => {
-                $("#invite-link").focus()
-                $("#invite-link").select()
-                document.execCommand("copy")
-                // let inviteLink = $("#invite-link")
-                // navigator.clipboard.writeText(inviteLink.val())
-            })
         })
 
         $("#invite-member-button").click(() => {
@@ -111,6 +103,14 @@ $(document).ready(() => {
             }
 
             $("#invite-link").val(`http://team02.sci-project.lboro.ac.uk/?invite_code=${btoa(name)}`)
+        })
+
+        $("#copy-invite-link-button").click(() => {
+            $("#invite-link").focus()
+            $("#invite-link").select()
+            document.execCommand("copy")
+            // let inviteLink = $("#invite-link")
+            // navigator.clipboard.writeText(inviteLink.val())
         })
 
         $("#close-invite-member-modal-button").click(() => $("#invite-member-modal").fadeOut())
