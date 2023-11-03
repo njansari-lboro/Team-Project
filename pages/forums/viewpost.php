@@ -12,7 +12,20 @@
         <body>
             <div class="content-box">
                 <div class="header">
-                    <button class="exit-button">x</button>
+                    <button class="exit-button">
+                        <load-svg src="/assets/closeIcon.svg">
+                            <style shadowRoot>
+                                svg {
+                                    width: 60px;
+                                    height: 60px;
+                                }
+
+                                .fill {
+                                    fill: var(--secondary-label-color)
+                                }
+                            </style>
+                        </load-svg>
+                    </button>
 
                     <h1>
                         <span class="topic-color">Topic</span> | <span class="question-title-color">Question Title</span>
