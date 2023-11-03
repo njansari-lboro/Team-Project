@@ -517,6 +517,11 @@ body {
     font-weight: bold;
     color: var(--alt-selected-control-text-color);
     background-color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+#save-button.dismiss-edit-profile-button:hover {
+    background-color: var(--secondary-accent-color);
 }
 
 #invite-member-button:disabled {

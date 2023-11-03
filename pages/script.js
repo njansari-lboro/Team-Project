@@ -80,14 +80,26 @@ $(document).ready(() => {
 
         $("#invite-member-email").change(() => {
             const email = $("#invite-member-email").val()
-            $("#invite-member-button").prop("disabled", email.trim().length === 0)
+
+            let inviteIsDisabled = true
+
+            if (email.trim().length > 0) {
+                if (name && name.length > 1) {
+                    inviteIsDisabled = true
+                }
+            }
+
+            $("#invite-member-button").prop("disabled", inviteIsDisabled)
 
             $("#invite-link").text("")
         })
 
         $("#invite-member-button").click(() => {
             const email = $("#invite-member-email").val()
-            const name = email.match(/([^@]+)/)
+            const name = email.match(/([^@]+)/)[1]
+
+            if (name && name.length > 1) {
+            }
 
             let emailHex = ""
 
