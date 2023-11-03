@@ -27,8 +27,6 @@
 
         <link rel="stylesheet" href="/pages/forums/forums.css">
 
-        <script type="text/javascript" src="/loadSvgCustomTag.js"></script>
-
         <title>Forums</title>
     </head>
 
