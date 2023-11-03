@@ -1,16 +1,14 @@
 <?php
-    if (isset($_GET["task"])) {
-        $task = $_GET["task"];
+    $task = isset($_GET["task"]) ? $_GET["task"] : "dashboard";
 
-        switch ($task) {
-        case "new_project":
-            new_project();
-            break;
-        default:
-            display_default();
-            break;
-        }
-    } else {
+    switch ($task) {
+    case "new_project":
+        new_project();
+        break;
+    case "new_project_tasks":
+        new_project_tasks();
+        break;
+    default:
         display_default();
     }
 ?>
@@ -18,6 +16,7 @@
 <?php
     function display_default() {
 ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -178,10 +177,15 @@
         <script src="/pages/projects/projects.js"></script>
     </body>
 </html>
-<?php
-}
 
-function new_project() {
-    include "projects/create-project.php";
-}
+<?php
+    }
+
+    function new_project() {
+        include "projects/create-project.php";
+    }
+
+    function new_project_tasks() {
+        include "projects/add-tasks.php";
+    }
 ?>
