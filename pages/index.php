@@ -215,6 +215,8 @@
                         <style shadowRoot>
                             svg {
                                 width: 2.4em;
+                                margin-top: 0.1em;
+                                padding-bottom: 0.1em
                             }
 
                             .fill {
@@ -232,7 +234,8 @@
                         <style shadowRoot>
                             svg {
                                 width: 2.4em;
-                                margin-top: 0.1em;                                padding-bottom: 0.1em
+                                margin-top: 0.1em;
+                                padding-bottom: 0.1em
                             }
 
                             .fill {
