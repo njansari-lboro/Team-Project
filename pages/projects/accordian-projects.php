@@ -42,20 +42,20 @@
         }
 
         .btn-lg {
-            color: #ff7a00;
+            color: var(--accent-color);
             text-align: center;
             font-size: 30px;
             margin-top: -15px;
         }
 
         .button-add {
-            color: #ff7a00;
+            color: var(--accent-color);
             font-size: 46px;
             cursor: pointer;
         }
 
         .dropdown-item:active {
-            background-color: #ff7a00;
+            background-color: var(--accent-color);
         }
 
         .btn-group-left,
