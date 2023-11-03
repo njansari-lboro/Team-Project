@@ -238,7 +238,7 @@
 
 /* --- Additional styling --- */
 
-button:hover {
+button:not(:disabled):hover {
     cursor: pointer
 }
 
