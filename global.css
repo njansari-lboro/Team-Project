@@ -192,7 +192,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --background-material: rgba(30, 30, 30, 0.75);
-        --menu-background-material: none
+        --menu-background-material: rgba(30, 30, 30, 0.5)
     }
 }
 
