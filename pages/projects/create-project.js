@@ -5,4 +5,8 @@ $(document).ready(function() {
         var projectName = urlParams.get('projectName');
         $('#pname').val(projectName);
     }
+
+    $("#closebtn").click(function () {
+        window.location.href = "/pages/?page=projects"
+    });
 });
