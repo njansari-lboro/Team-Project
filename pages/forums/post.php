@@ -50,7 +50,8 @@
                         <load-svg src="/assets/postIcon.svg">
                             <style shadowRoot>
                                 svg {
-                                    height: var(--title-3);
+                                    height: 1.2em;
+                                    margin-top: 2.5px
                                 }
 
                                 .fill {
