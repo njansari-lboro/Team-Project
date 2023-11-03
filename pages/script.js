@@ -76,6 +76,7 @@ $(document).ready(() => {
     })
 
     $("invite-button").click(() => {
+        console.log("clicked invite")
         $("#invite-member-modal").fadeIn(500, "swing")
 
         $("invite-member-button").click(() => $("#invite-member-modal").fadeOut())

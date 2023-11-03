@@ -485,6 +485,12 @@ body {
     color: var(--label-color);
 }
 
+@media (prefers-color-scheme: dark) {
+    #invite-member-card {
+        background-color: rgba(30, 30, 30, 0.85);
+    }
+}
+
 #invite-member-card h1 {
     font-size: var(--title-1);
 }
