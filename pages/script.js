@@ -102,17 +102,13 @@ $(document).ready(() => {
                 return
             }
 
-            console.log(name)
-
-            $("#invite-link").val(`http://team02.sci-project.lboro.ac.uk/?invite_code=${btoa(name)}`)
+            $("#invite-link").val(`http://team02.sci-project.lboro.ac.uk/?invite_code=${btoa(name[1])}`)
         })
 
         $("#copy-invite-link-button").click(() => {
             $("#invite-link").focus()
             $("#invite-link").select()
             document.execCommand("copy")
-            // let inviteLink = $("#invite-link")
-            // navigator.clipboard.writeText(inviteLink.val())
         })
 
         $("#close-invite-member-modal-button").click(() => $("#invite-member-modal").fadeOut())
