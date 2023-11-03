@@ -75,11 +75,10 @@ $(document).ready(() => {
         checkIfEditProfileCanSave()
     })
 
-    $("invite-button").click(() => {
-        console.log("clicked invite")
+    $("#invite-button").click(() => {
         $("#invite-member-modal").fadeIn(500, "swing")
 
-        $("invite-member-button").click(() => $("#invite-member-modal").fadeOut())
+        $("#invite-member-button").click(() => $("#invite-member-modal").fadeOut())
     })
 
     $(window).click((event) => {
