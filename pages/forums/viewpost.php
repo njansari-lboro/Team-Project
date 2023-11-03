@@ -16,8 +16,8 @@
                         <load-svg src="/assets/closeIcon.svg">
                             <style shadowRoot>
                                 svg {
-                                    width: 60px;
-                                    height: 60px;
+                                    width: var(--title-1);
+                                    height: var(--title-1);
                                 }
 
                                 .fill {

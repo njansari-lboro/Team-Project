@@ -14,7 +14,20 @@
         <!-- Modal/Overlay Container -->
         <div class="modal-container">
             <div class="row flex-row">
-                <button class="exit-btn">×</button>
+                <button class="exit-btn">
+                    <load-svg src="/assets/closeIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: var(--title-1);
+                                height: var(--title-1);
+                            }
+
+                            .fill {
+                                fill: var(--secondary-label-color)
+                            }
+                        </style>
+                    </load-svg>
+                </button>
 
                 <select class="dropdown" id="topicDropdown">
                     <option value="default" disabled selected>Topic</option>
