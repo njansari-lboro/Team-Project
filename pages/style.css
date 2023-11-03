@@ -528,9 +528,10 @@ body {
 
 #copy-invite-link-button {
     --icon-color: var(--secondary-label-color);
-    background-color: var(--tertiary-fill-color);
+    background-color: transparent;
     border-radius: 10px;
-    height: 2em;
+    height: 2.8em;
+    width: 1.8em;
     margin-left: -32px;
 }
 

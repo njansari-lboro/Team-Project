@@ -427,13 +427,13 @@
 
                 <h1>Invite Member</h1>
 
-                <div>
+                <div style="display: flex; align-items: center">
                     <input id="invite-member-email" type="email" placeholder="Member email address">
 
                     <button id="invite-member-button" disabled>Invite</button>
                 </div>
 
-                <div style="width: 80%; display: flex; align-items: center">
+                <div style="display: flex; align-items: center">
                     <input id="invite-link" type="text" placeholder="Invite link" readonly>
 
                     <button id="copy-invite-link-button">
@@ -441,6 +441,7 @@
                             <style shadowRoot>
                                 svg {
                                     height: var(--body);
+                                    margin-bottom: 0.1em;
                                 }
 
                                 .fill {
