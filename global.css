@@ -164,7 +164,7 @@
         --link-color: rgba(194, 87, 0, 1);
         --separator-color: rgba(255, 255, 255, 0.1);
         --selected-content-background-color: rgba(198, 81, 0, 1);
-        --unemphasised-selected-background-content-color: rgba(255, 255, 255, 0.15);
+        --unemphasised-selected-content-background-color: rgba(255, 255, 255, 0.15);
         --grid-color: rgba(20, 20, 20, 1);
         --header-text-color: rgba(255, 255, 255, 1);
         --control-color: rgba(255, 255, 255, 0.25);
