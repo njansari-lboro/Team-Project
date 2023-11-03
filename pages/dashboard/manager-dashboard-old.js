@@ -59,7 +59,6 @@ $(document).ready(() => {
 
         data.forEach((rowData) => {
             let row = document.createElement("tr");
-            row.setAttribute("class", "table-data");
 
             rowData.forEach((cellData) => {
                 let cell = document.createElement("td");
@@ -83,20 +82,8 @@ $(document).ready(() => {
                 {
                     data: data,
                     backgroundColor: ["#888", "#D9D9D9", "#FF7A00"],
-                    borderColor: getComputedStyle(document.body).getPropertyValue("--window-background"),
                 },
             ],
-        },
-        options: {
-            responsive: true, 
-            maintainAspectRatio: true,
-            plugins: {
-                legend: {
-                    labels: {
-                        color: getComputedStyle(document.body).getPropertyValue("--text-color"),
-                    },
-                },
-            },
         },
     });
 
@@ -114,18 +101,5 @@ $(document).ready(() => {
 
         progressChart.data.datasets[0].data = data;
         progressChart.update();
-    });
-
-    $(window).on('resize', function() {
-        progressChart.resize(); 
-        progressChart.update(); 
-    });
-
-    // trying to add on-the-fly switching between themes, doesn't work...
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    isDarkMode.addEventListener("change", function() {
-        progressChart.data.datasets[0].borderColor = getComputedStyle(document.body).getPropertyValue("--window-background");
-        progressChart.options.plugins.legend.labels.color = getComputedStyle(document.body).getPropertyValue("--text-color");
     });
 });

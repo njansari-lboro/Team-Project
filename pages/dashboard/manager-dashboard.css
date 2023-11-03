@@ -1,49 +1,20 @@
-/* body {
-    font-family: var(--font-family);
-    background-color: var(--window-background);
-    color: var(--text-color);
-} */
-
-div {
+body {
     background-color: var(--window-background);
     color: var(--text-color);
 }
 
-.container {
-    background-color: var(--window-background);
-    color: var(--text-color);
+@media (max-width: 726px) {
+    #charts-tables {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #chart, #tables {
+        width: 100%;
+        max-width: none;
+    }
 }
 
-input, select {
-    text-align: left;
-    color: var(--text-color);
-}
-
-#project-col, #date-col, #spacing-col {
-    width: auto;
-    margin: 0;
-    color: var(--text-color);
-}
-
-div.container-fluid {
-    max-width: 95%;
-    color: var(--text-color);
-}
-
-div.row {
-    margin: 10px;
-    color: var(--text-color);
-}
-
-/* chart styling */
-.chart-canvas {
-    max-width: 295px;
-    max-height: 295px;
-    margin: 20px;
-    color: var(--text-color);
-}
-
-/* heading styling */
 h2 {
     font-size: var(--title-1);
     color: var(--text-color);
@@ -59,83 +30,142 @@ h4 {
     color: var(--text-color);
 }
 
-.form-control:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 0.2rem var(--keyboard-focus-indicator-color);
+.chart-canvas {
+    margin: auto;
+    color: var(--text-color);
 }
 
-#project-dropdown, #date-picker, #spacing-col {
+.table {
+    border-color: var(--secondary-label-color);
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.table th, .table td {
+    padding: 2%;
+}
+
+.table td {
+    border-left: 1px solid var(--secondary-label-color);
+    border-bottom: 1px solid var(--secondary-label-color);
+}
+
+.table td:first-child {
+    border-left: 0;
+}
+
+.table-heading {
+    color: var(--secondary-label-color);
+    font-size: var(--body);
+    font-weight: normal;
+}
+
+.table-data {
+    color: var(--text-color);
+    font-size: var(--body);
+    font-weight: normal;
+}
+
+.table th {
+    text-align: left;
+    border-bottom: 1px solid var(--secondary-label-color);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.inline-large-title {
     font-size: var(--large-title);
-    font-weight: bold;
+    border-radius: 2px;
+    padding: 1%;
+    margin: 2%
+}
+
+.container {
+    display: block;
+    margin: 2%;
+    padding: 1%;
+    border: 1px solid var(--secondary-label-color);
+    border-radius: 15px;
+}
+
+.container-no-border {
+    border: 0;
+}
+
+.container-inline {
+    padding: 5%;
+    align-items: center;
+    justify-content: center;
+}
+
+.ui-datepicker {
+    background-color: var(--window-background);
+    border: 1px solid var(--grid-color);
+}
+
+.ui-datepicker-header {
+    background-color: var(--background-material);
+    color: var(--label-color);
+    border: 1px solid var(--grid-color);
+}
+
+.ui-datepicker-calendar {
+    background-color: var(--window-background);
+    border: 1px solid var(--grid-color);
+}
+
+.ui-datepicker-calendar a {
+    color: var(--label-color);
+}
+
+.ui-datepicker-calendar a.ui-state-active {
+    background-color: var(--secondary-fill-color);
+    color: var(--label-color);
+    border: 1px solid var(--grid-color);
+}
+
+#project-dropdown {
     color: var(--text-color);
     background-color: var(--window-background);
+    border: 0;
+    width: auto;
 }
 
-/* datepicker default view styling */
+#progress-chart {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
 #date-picker {
     color: var(--accent-color);
-}
-
-/* datepicker widget styling */
-.ui-datepicker {
-    font-size: 16px;
     background-color: var(--window-background);
-    color: var(--text-color);
+    border: 0;
+    width: 50%;
 }
 
-/* datepicker header styling */
-.ui-datepicker-header {
-    background-color: var(--secondary-fill-color);
-    color: var(--window-background);
-    color: var(--text-color);
+#today {
+    font-size: var(--title-1);
 }
 
-/* datepicker cells styling */
-.ui-state-default {
-    background-color: var(--accent-color);
-    color: var(--window-background);
-    border: 0px;
-    color: var(--text-color);
+#charts-tables {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* selected date cell styling */
-.ui-state-active {
-    background-color: var(--accent-color);
-    color: var(--window-background);
-    color: var(--text-color);
+#chart {
+    display: inline-block;
+    width: 50%;
+    max-width: none;
 }
 
-/* table styling */
-.table {
-    font-size: var(--body);
-    border-color: var(--grid-color);
-    background-color: var(--window-background);
-}
-
-/* this is literal vomit and I hate it - Max */
-td, #upcoming-table td {
-    border-left: 1px solid var(--grid-color);
-    border-bottom: 1px solid var(--grid-color);
-    padding: 5px;
-    color: var(--text-color);
-}
-
-#upcoming-table td {
-    background-color: var(--window-background);
-}
-
-#overdue-table th, #imminent-table th, #upcoming-table th {
-    background-color: var(--window-background);
-    color: var(--secondary-label-color);
-    font-weight: lighter;
-    border-bottom: 1px solid var(--grid-color);
-    padding: 5px;
-}
-
-tr:last-child > td, #upcoming-table tr:last-child > td {
-    border-bottom: 0px;
-}
-
-th:first-child, td:first-child, #upcoming-table td:first-child {
-    border-left: 0px;
+#tables {
+    display: inline-block;
+    width: auto;
+    max-width: none;
 }
