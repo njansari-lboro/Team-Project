@@ -84,12 +84,13 @@ $(document).ready(() => {
             let inviteIsDisabled = true
 
             if (email.trim().length > 0) {
-                if (email.match(/@make-it-all\.co\.uk/)) {
+                if (email.match(/@make-it-all\.co\.uk$/)) {
                     inviteIsDisabled = false
                 }
             }
 
             $("#invite-member-button").prop("disabled", inviteIsDisabled)
+            $("#copy-invite-link-button").prop("disabled", inviteIsDisabled)
 
             $("#invite-link").val("")
         })
