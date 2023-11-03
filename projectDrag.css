@@ -6,7 +6,7 @@
 h1 {text-align: left; padding: 0.4em; margin: 10px;font-weight: normal;color: var(--text-color); font-size: var(--extra-large-title);}
 h3 {text-align: left; padding: 0.4em; margin: 10px;font-weight: normal;color: var(--text-color); font-size: var(--large-title);}
 p {padding: 0.4em; margin: 20px; color: var(--placeholder-text-color);font-size: var(--body);}
-header {display: flex;justify-content: space-between;font-size: var(--extra-large-title);color: var(--header-text-color);}
+header,footer {display: flex;justify-content: space-between;font-size: var(--extra-large-title);color: var(--header-text-color);}
 h2 {text-align: left; padding: 0.4em; margin: 10px;font-weight: normal;display: flex;justify-content: space-between;color: var(--text-color);font-size: var(--title-1);}
 ul {list-style-type: none;min-height: 50px;}
 
@@ -158,10 +158,19 @@ form button:hover {
 
 .button-add {color: var(--accent-color);font-size: var(--body);cursor: pointer;}
 
+.btn-complete {background: var(--secondary-accent-color);border: 1px solid var(--separator-color);
+  border-radius: 10px;margin: 25px;margin-left: 80px; margin-top: 40px; height: 30px; color: var(--text-color);
+  padding-left: 5%;padding-right: 5%;text-align: right;}
+ 
+  .btn-complete:active{background: var(--secondary-accent-color);border: 1px solid var(--separator-color);
+    border-radius: 10px;margin: 25px;margin-left: 80px; margin-top: 40px; height: 30px; color: var(--text-color);
+    padding-left: 5%;padding-right: 5%;text-align: right;}
+
 .btn-sub {background: var(--secondary-accent-color);border: 1px solid var(--separator-color);
         border-radius: 10px;margin: 25px;margin-left: 80px; margin-top: 40px; height: 30px; color: var(--text-color);
         padding-left: 5%;padding-right: 5%;}
-.btn-sub:hover {background-color: var(--accent-color);}
+       
+.btn-sub:hover, .btn-complete:hover {background-color: var(--accent-color);}
 .btn-sub:disabled {background-color: var(--secondary-accent-color); border: 1px solid var(--separator-color);}
 
 .btn-lg {color: var(--accent-color);text-align: center;font-size: 50px; margin-top: -15px;}
@@ -201,3 +210,10 @@ form button:hover {
     margin-top: 15px;
 }
 
+#flex-end {
+  background-color: var(--window-background);
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+}
