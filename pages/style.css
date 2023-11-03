@@ -540,6 +540,11 @@ body {
     background-color: var(--secondary-fill-color);
 }
 
+#copy-invite-link-button::after {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
 #invite-member-button {
     font-size: var(--body);
     border-radius: 20px;

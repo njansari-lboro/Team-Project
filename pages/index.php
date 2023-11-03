@@ -441,7 +441,7 @@
                             <style shadowRoot>
                                 svg {
                                     height: var(--body);
-                                    margin-bottom: 0.1em;
+                                    margin-top: 0.1em;
                                 }
 
                                 .fill {
