@@ -80,16 +80,11 @@ $(document).ready(() => {
 
         $("#invite-member-email").change(() => {
             const email = $("#invite-member-email").val()
-            console.log("yes1")
-            console.log(email)
 
             let inviteIsDisabled = true
 
             if (email.trim().length > 0) {
-                console.log("yes2")
-                let match = email.match(/@make-it-all\.co\.uk/)
-                if (match && match.length > 1) {
-                    console.log("yes3")
+                if (email.match(/@make-it-all\.co\.uk/)) {
                     inviteIsDisabled = false
                 }
             }
