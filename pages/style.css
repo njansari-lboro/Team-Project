@@ -520,12 +520,15 @@ body {
     margin: auto;
 }
 
+#invite-link {
+    font-size: var(--body);
+    color: var(--link-color);
+    flex: 1;
+}
+
 #copy-invite-link-button {
     --icon-color: var(--secondary-label-color);
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 10px;
 }
 
 #copy-invite-link-button:hover {
@@ -551,9 +554,4 @@ body {
 #invite-member-button:disabled {
     background-color: var(--disabled-control-text-color);
     border-color: var(--disabled-control-text-color);
-}
-
-#invite-link {
-    font-size: var(--body);
-    color: var(--link-color);
 }

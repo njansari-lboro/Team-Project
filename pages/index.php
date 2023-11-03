@@ -433,7 +433,7 @@
                     <button id="invite-member-button" disabled>Invite</button>
                 </div>
 
-                <div style="position: relative">
+                <div style="display: flex; align-items: center">
                     <input id="invite-link" type="text" placeholder="Invite link" readonly>
 
                     <button id="copy-invite-link-button">
