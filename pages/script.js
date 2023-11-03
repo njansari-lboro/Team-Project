@@ -92,6 +92,14 @@ $(document).ready(() => {
             $("#invite-member-button").prop("disabled", inviteIsDisabled)
 
             $("#invite-link").val("")
+
+            $("#copy-invite-link-button").click(() => {
+                let inviteLink = $("#invite-link")
+                inviteLink.select()
+                inviteLink[0].setSelectionRange(0, 99999)
+
+                navigator.clipboard.writeText(inviteLink.val())
+            })
         })
 
         $("#invite-member-button").click(() => {

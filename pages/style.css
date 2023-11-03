@@ -536,7 +536,6 @@ body {
     border-radius: 20px;
     padding: 10px 20px;
     margin: 10px;
-    width: 50%;
     font-weight: bold;
     color: var(--alt-selected-control-text-color);
     background-color: var(--accent-color);
