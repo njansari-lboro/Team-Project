@@ -427,13 +427,13 @@
 
                 <h1>Invite Member</h1>
 
-                <div style="display: flex; align-items: center">
+                <div>
                     <input id="invite-member-email" type="email" placeholder="Member email address">
 
                     <button id="invite-member-button" disabled>Invite</button>
                 </div>
 
-                <div style="display: flex; align-items: center">
+                <div>
                     <input id="invite-link" type="text" placeholder="Invite link" readonly>
 
                     <button id="copy-invite-link-button">
