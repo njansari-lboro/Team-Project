@@ -45,7 +45,24 @@
                     </span>
                 </h1>
 
-                <button id="post-topic">+</button>
+                <button id="post-topic">
+                    <load-svg src="/assets/addIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 50px;
+                                height: 50px;
+                            }
+
+                            :hover .fill {
+                                fill: var(--accent-color);
+                            }
+
+                            :hover .fill {
+                                fill: var(--selected-content-text-color)
+                            }
+                        </style>
+                    </load-svg>
+                </button>
 
                 <!-- Forum Topic Example -->
                 <article class="forum-topic">
