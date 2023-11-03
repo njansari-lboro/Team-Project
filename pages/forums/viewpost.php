@@ -77,7 +77,7 @@
                             }
 
                             .fill {
-                                fill: var(--button-text-color)
+                                fill: var(--label-color)
                             }
                         </style>
                     </load-svg>
