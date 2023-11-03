@@ -115,8 +115,12 @@ $(document).ready(() => {
         })
 
         $("#close-invite-member-modal-button").click(() => {
-            $("#invite-member-modal").fadeOut()
-            $("#invite-member-email").val("")
+            $("#invite-member-modal").fadeOut(() => {
+                $("#invite-member-email").val("")
+                $("#invite-member-button").prop("disabled", true)
+                $("#invite-link").val("")
+                $("#copy-invite-link-button").prop("disabled", true)
+            })
         })
     })
 
