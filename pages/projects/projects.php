@@ -54,7 +54,7 @@
         
         <!-- projects to be generated from backend data - filters affect order of retrieval? -->
         <div id="dropdown-div">
-            <span class="dropdown">Project 1</span>
+            <span class="dropdown" id="project-1-link">Project 1</span>
             
             <button class="dropdown" id="project-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -115,7 +115,7 @@
         <div><hr></div>
         
         <div id="dropdown-div">
-            <span class="dropdown">Project 2</span>
+            <span class="dropdown" id="project-2-link">Project 2</span>
             
             <button class="dropdown" id="project-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
