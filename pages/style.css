@@ -227,6 +227,7 @@ body {
 
 .sidebar-item.selected {
     background-color: var(--selected-content-background-color);
+    text-decoration: none;
 }
 
 .sidebar-item-text {
