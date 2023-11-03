@@ -512,6 +512,7 @@ body {
 
 #invite-member-card h1 {
     font-size: var(--title-1);
+    margin: 10px;
 }
 
 #invite-member-card input {
