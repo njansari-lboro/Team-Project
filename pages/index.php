@@ -427,9 +427,11 @@
 
                 <h1>Invite Member</h1>
 
-                <input id="invite-member-email" type="email" placeholder="Member email address">
+                <div>
+                    <input id="invite-member-email" type="email" placeholder="Member email address">
 
-                <button id="invite-member-button" disabled>Invite</button>
+                    <button id="invite-member-button" disabled>Invite</button>
+                </div>
 
                 <div>
                     <input id="invite-link" type="text" placeholder="Invite link" readonly>
@@ -438,11 +440,11 @@
                         <load-svg id="copy-invite-link-icon" src="/assets/copyIcon.svg">
                             <style shadowRoot>
                                 svg {
-                                    height: 1em;
+                                    height: var(--body);
                                 }
 
                                 .fill {
-                                    fill: var(--secondary-label-color)
+                                    fill: var(--icon-color)
                                 }
                             </style>
                         </load-svg>

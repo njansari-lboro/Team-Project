@@ -450,12 +450,12 @@ body {
 #save-button.dismiss-edit-profile-button {
     font-weight: bold;
     color: var(--alt-selected-control-text-color);
-    background-color: var(--secondary-accent-color);
-    border: 2px solid var(--secondary-accent-color);
+    background-color: var(--accent-color);
+    border: 2px solid var(--accent-color);
 }
 
 #save-button.dismiss-edit-profile-button:hover {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-accent-color);
 }
 
 #save-button.dismiss-edit-profile-button:disabled {
@@ -510,7 +510,7 @@ body {
 }
 
 #invite-member-card input {
-    font-size: var(--callout);
+    font-size: var(--body);
     border-radius: 10px;
     border: 0.5em solid transparent;
     color: var(--label-color);
@@ -521,7 +521,14 @@ body {
 }
 
 #copy-invite-link-button {
+    --icon-color: var(--secondary-label-color);
     margin-left: -50px;
+
+}
+
+#copy-invite-link-button:hover {
+    --icon-color: var(--label-color);
+    background-color: var(--secondary-fill-color);
 }
 
 #invite-member-button {
