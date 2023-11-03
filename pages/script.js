@@ -94,11 +94,11 @@ $(document).ready(() => {
             $("#invite-link").val("")
 
             $("#copy-invite-link-button").click(() => {
-                let inviteLink = $("#invite-link")
-                inviteLink.select()
-                inviteLink[0].setSelectionRange(0, 99999)
-
-                navigator.clipboard.writeText(inviteLink.val())
+                $("#invite-link").focus()
+                $("#invite-link").select()
+                document.execCommand("copy")
+                // let inviteLink = $("#invite-link")
+                // navigator.clipboard.writeText(inviteLink.val())
             })
         })
 
