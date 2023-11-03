@@ -186,6 +186,6 @@
     }
 
     function new_project_tasks() {
-        include "projects/add-tasks.php";
+        include "projects/add-project-tasks.php";
     }
 ?>
