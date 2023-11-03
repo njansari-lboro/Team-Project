@@ -2,6 +2,33 @@ $(document).on("click", ".handle", function() {
   handleClicked($(this));
 });
 
+$(document).on("touchstart", ".slider", function(event) {
+  const touchStartX = event.originalEvent.touches[0].pageX;
+  $(this).data('touchStartX', touchStartX);
+});
+
+$(document).on("touchmove", ".slider", function(event) {
+  event.preventDefault();
+  const touchEndX = event.originalEvent.touches[0].pageX;
+  $(this).data('touchDiffX', $(this).data('touchStartX') - touchEndX);
+});
+
+$(document).on("touchend", ".slider", function() {
+  const touchDiffX = $(this).data('touchDiffX');
+  const $container = $(this).closest('.container1');
+  
+  if (Math.abs(touchDiffX) > 50) { 
+    if (touchDiffX > 0) {
+      $container.find(".right-handle").trigger('click');
+    } else {
+      $container.find(".left-handle").trigger('click');
+    }
+  }
+  
+  $(this).removeData('touchStartX').removeData('touchDiffX');
+});
+
+
 const resizeThrottle = throttle(function() {
   $(".progress-bar").each(updateProgressBar);
 }, 250);
