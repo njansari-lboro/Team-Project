@@ -530,7 +530,7 @@ body {
     font-size: var(--body);
     border-radius: 10px;
     padding: 0.333em 20px;
-    margin: 10px 0 10px 10px;
+    margin: 20px 0 20px 20px;
     font-weight: bold;
     color: var(--alt-selected-control-text-color);
     background-color: var(--accent-color);
