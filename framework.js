@@ -50,22 +50,10 @@ $(() => {
     })
 })
 
-function validateEmail(email) {
-    let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return re.test(String(email).toLowerCase())
-}
-
 function validateAndDisplayEmail() {
     let email = $("#emailInput").val()
 
-    // if (!email.endsWith("@make-it-all.co.uk")) {
-    //     alert("Please enter a valid @make-it-all.co.uk email address.")
-    //     return false
-    // } else if (!validateEmail(email)) {
-    //     notRecognised()
-    //     return false
-    // }
-
+    console.log(email.match(/^\w+@make-it-all\.co\.uk$/))
     if (!email.match(/^\w+@make-it-all\.co\.uk$/)) {
         alert("Please enter a valid @make-it-all.co.uk email address.")
         return false
