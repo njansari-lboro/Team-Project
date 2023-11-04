@@ -98,9 +98,8 @@ $(document).ready(() => {
             }
 
             $("#invite-member-button").prop("disabled", inviteIsDisabled)
-            $("#copy-invite-link-button").prop("disabled", inviteIsDisabled)
-
             $("#invite-link").val("")
+            $("#copy-invite-link-button").prop("disabled", true)
         })
 
         $("#invite-member-button").click(() => {
@@ -112,6 +111,7 @@ $(document).ready(() => {
             }
 
             $("#invite-link").val(`http://team02.sci-project.lboro.ac.uk/?invite_code=${btoa(name[1])}`)
+            $("#copy-invite-link-button").prop("disabled", false)
         })
 
         $("#copy-invite-link-button").click(() => {
