@@ -439,13 +439,13 @@ body {
 }
 
 #cancel-button.dismiss-edit-profile-button {
-    background-color: var(--window-background);
-    border: 2px solid var(--secondary-label-color);
+    background-color: var(--tertiary-fill-color);
+    border: 2px solid var(--tertiary-fill-color);
 }
 
 #cancel-button.dismiss-edit-profile-button:hover {
     color: var(--alt-selected-control-text-color);
-    background-color: var(--label-color);
+    background-color: var(--secondary-label-color);
 }
 
 #save-button.dismiss-edit-profile-button {
