@@ -52,15 +52,19 @@ $(document).ready(() => {
         $("#edit-last-name-input").change(checkIfEditProfileCanSave)
         $("#edit-email-input").change(checkIfEditProfileCanSave)
 
-        $("#edit-password-input-container").mouseout(() => {
-            console.log("out")
-            // $("#edit-password-input").attr("type", "password")
-            // $("#show-password-icon").show()
-            // $("#hide-password-icon").hide()
+        let mouseInsideContainer = false
+
+        $("#edit-password-input-container").mouseover(() => {
+            mouseInsideContainer = true
+        }).mouseout(() => {
+            if (!mouseInsideContainer) {
+                $("#edit-password-input").attr("type", "password")
+                $("#show-password-icon").show()
+                $("#hide-password-icon").hide()
+            }
         })
 
         $("#show-hide-password-button").click(() => {
-            console.log("click")
             $("#show-password-icon").toggle()
             $("#hide-password-icon").toggle()
 
@@ -69,6 +73,8 @@ $(document).ready(() => {
             } else {
                 $("#edit-password-input").attr("type", "text")
             }
+
+            mouseInsideContainer = true
         })
 
         $(".dismiss-edit-profile-button").click(() => {
