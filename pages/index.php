@@ -292,11 +292,12 @@
         <div id="main-content-wrapper">
             <div id="main-content">
                 <?php
-                    if (!(isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages))) {
-                        $_GET["page"] = "dashboard";
+                    if ((isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages)) {
+                        $page = $_GET["page"];
+                    } else {
+                        $page = "dashboard";
                     }
                     
-                    $page = $_GET["page"];
                     $dir = $page;
 
                     if ($page == "dashboard") {
