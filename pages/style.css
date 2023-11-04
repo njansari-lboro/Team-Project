@@ -506,6 +506,7 @@ body {
     right: 10px;
     background-color: transparent;
     border-radius: 50px;
+    border: none;
 }
 
 #close-invite-member-modal-button:hover {
@@ -526,10 +527,6 @@ body {
     width: 80%;
     padding: 0 10px;
     margin: auto;
-}
-
-#invite-member-card button {
-    border: none;
 }
 
 #invite-member-button {
@@ -565,6 +562,7 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
+    border: none;
     height: 2.8em;
     width: 1.8em;
     margin-left: -32px;
