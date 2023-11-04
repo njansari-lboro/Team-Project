@@ -289,7 +289,7 @@
                         <p>End Date</p>
                     </div>
                     </div>
-                    <h2 class="title">Tasks:</h2>
+                    <!-- <h2 class="title">Tasks:</h2> -->
                     <div class="items-container-wrapper">
                         <div class="items-container">
                             <entry class="item">

@@ -568,7 +568,7 @@ body {
     margin-left: -32px;
 }
 
-#copy-invite-link-button:hover {
+#copy-invite-link-button:not(:disabled):hover {
     --icon-color: var(--label-color);
     background-color: var(--secondary-fill-color);
 }
