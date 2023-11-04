@@ -53,9 +53,9 @@ $(document).ready(() => {
         $("#edit-email-input").change(checkIfEditProfileCanSave)
 
         $("#edit-password-input-container").mouseout(() => {
-            $("#edit-password-input").attr("type", "password")
-            $("#show-password-icon").show()
-            $("#hide-password-icon").hide()
+            // $("#edit-password-input").attr("type", "password")
+            // $("#show-password-icon").show()
+            // $("#hide-password-icon").hide()
         })
 
         $("#show-hide-password-button").click(() => {
