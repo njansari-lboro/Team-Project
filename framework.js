@@ -11,6 +11,8 @@ $(document).ready(() => {
     $("#mainBtn").show()
     $("#notRegistered").hide()
 
+    $("#mainBtn").prop("disabled", true)
+
     setTimeout(() => $("#emailInput").focus(), 100)
 
     $("#emailForm").submit((e) => {
@@ -84,6 +86,8 @@ function validateAndDisplayEmail() {
                 $("#forgotPassword").show()
                 $("#mainBtn").html("Login")
 
+                $("#mainBtn").prop("disabled", true)
+
                 setTimeout(() => $("#passwordInput").focus(), 100)
             } else {
                 console.log("false")
@@ -142,6 +146,8 @@ function restart() {
     $("#tryAgain").hide()
     $("#mainBtn").show()
     $("#notRegistered").hide()
+
+    $("#mainBtn").prop("disabled", true)
 }
 
 function notRecognised(email) {
