@@ -25,7 +25,7 @@ $(document).ready(() => {
         }
     })
 
-    $(".form-control").on("input", function (e) {
+    $(".form-control").on("input", (e) => {
         e.preventDefault()
 
         $("#mainBtn").prop("disabled", $(this).val().length === 0)
@@ -144,6 +144,8 @@ function restart() {
     $("#notRegistered").hide()
 
     $("#mainBtn").prop("disabled", $("#emailInput").val().length === 0)
+
+    setTimeout(() => $("#emailInput").focus(), 100)
 }
 
 function notRecognised(email) {
