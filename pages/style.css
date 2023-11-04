@@ -410,12 +410,25 @@ body {
 }
 
 #show-hide-password-button {
-    vertical-align: center;
+    --icon-color: var(--secondary-label-color);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: none;
+    height: 2.8em;
+    width: 1.8em;
+    margin-left: -32px;
+    /* vertical-align: center;
     position: absolute;
     margin-left: -60px;
     border: none;
-    background-color: transparent;
-    /* border: 1px solid red; */
+    background-color: transparent; */
+}
+
+#show-hide-password-button:hover {
+    --icon-color: var(--label-color);
+    background-color: var(--secondary-fill-color);
 }
 
 #dismiss-buttons {

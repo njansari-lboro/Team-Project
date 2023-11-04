@@ -215,7 +215,6 @@
                         <style shadowRoot>
                             svg {
                                 width: 2.4em;
-                                margin-top: 0.1em;
                                 padding-bottom: 0.1em
                             }
 
@@ -368,12 +367,12 @@
                             <load-svg id="show-password-icon" src="/assets/showIcon.svg">
                                 <style shadowRoot>
                                     svg {
-                                        /* width: var(--body); */
                                         height: var(--body);
+                                        /* padding-top: 0.2em; */
                                     }
 
                                     .fill {
-                                        fill: var(--secondary-label-color)
+                                        fill: var(--icon-color)
                                     }
                                 </style>
                             </load-svg>
@@ -381,12 +380,12 @@
                             <load-svg id="hide-password-icon" src="/assets/hideIcon.svg">
                                 <style shadowRoot>
                                     svg {
-                                        /* width: var(--body); */
                                         height: var(--body);
+                                        /* padding-top: 0.2em; */
                                     }
 
                                     .fill {
-                                        fill: var(--secondary-label-color)
+                                        fill: var(--icon-color)
                                     }
                                 </style>
                             </load-svg>
