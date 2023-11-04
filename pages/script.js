@@ -54,6 +54,10 @@ $(document).ready(() => {
 
         let mouseInsideContainer = false
 
+        $("#edit-password-input-container")
+            .mouseenter(() => mouseInsideContainer = true)
+            .mouseleave(() => mouseInsideContainer = false)
+
         $("#edit-password-input-container").mouseover(() => {
             mouseInsideContainer = true
         }).mouseout(() => {
