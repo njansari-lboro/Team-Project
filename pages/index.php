@@ -367,8 +367,7 @@
                             <load-svg id="show-password-icon" src="/assets/showIcon.svg">
                                 <style shadowRoot>
                                     svg {
-                                        height: var(--body);
-                                        /* padding-top: 0.2em; */
+                                        height: 1.25em;
                                     }
 
                                     .fill {
@@ -381,7 +380,6 @@
                                 <style shadowRoot>
                                     svg {
                                         height: var(--body);
-                                        /* padding-top: 0.2em; */
                                     }
 
                                     .fill {
