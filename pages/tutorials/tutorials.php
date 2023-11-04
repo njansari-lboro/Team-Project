@@ -1,9 +1,6 @@
 <?php
-    if (isset($_SERVER["HTTP_REFERER"]) && !empty($_SERVER["HTTP_REFERER"])) {
-        echo "This page was included in another page.";
-    } else {
-        echo "This page was directly accessed.";
-        header("Location: /pages/");
+    if (!(isset($_SERVER["HTTP_REFERER"]) && !empty($_SERVER["HTTP_REFERER"]))) {
+        header("Location: /pages/?page=tutorials");
         die();
     }
 ?>

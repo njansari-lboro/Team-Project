@@ -1,4 +1,11 @@
 <?php
+    if (!(isset($_SERVER["HTTP_REFERER"]) && !empty($_SERVER["HTTP_REFERER"]))) {
+        header("Location: /pages/?page=projects");
+        die();
+    }
+?>
+
+<?php
     $task = isset($_GET["task"]) ? $_GET["task"] : "dashboard";
 
     switch ($task) {

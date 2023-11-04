@@ -1,3 +1,10 @@
+<?php
+    if (!(isset($_SERVER["HTTP_REFERER"]) && !empty($_SERVER["HTTP_REFERER"]))) {
+        header("Location: /pages/?page=tasks");
+        die();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
