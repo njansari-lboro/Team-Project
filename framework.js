@@ -25,7 +25,7 @@ $(document).ready(() => {
         }
     })
 
-    $(".form-control").on("input", (e) => {
+    $(".form-control").on("input", function (e) {
         e.preventDefault()
 
         $("#mainBtn").prop("disabled", $(this).val().length === 0)
