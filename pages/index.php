@@ -294,10 +294,12 @@
             <div id="main-content">
                 <?php
                     if (!(isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages))) {
+                        echo "No page";
                         $_GET["page"] = "dashboard";
                     }
                     
                     $page = $_GET["page"];
+                    echo $page;
                     $dir = $page;
 
                     if ($page == "dashboard") {
