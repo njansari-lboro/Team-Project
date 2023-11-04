@@ -52,20 +52,23 @@ $(document).ready(() => {
         $("#edit-last-name-input").change(checkIfEditProfileCanSave)
         $("#edit-email-input").change(checkIfEditProfileCanSave)
 
-        let mouseInsideContainer = false
+        // let mouseInsideContainer = false
+
+        // $("#edit-password-input-container")
+        //     .mouseenter(() => mouseInsideContainer = true)
+        //     .mouseleave(() => mouseInsideContainer = false)
 
         $("#edit-password-input-container")
-            .mouseenter(() => mouseInsideContainer = true)
-            .mouseleave(() => mouseInsideContainer = false)
-
-        $("#edit-password-input-container").mouseover(() => {
-            mouseInsideContainer = true
-        }).mouseout(() => {
-            if (!mouseInsideContainer) {
+            // .mouseover(() => {
+            // mouseInsideContainer = true
+            // })
+        // .mouseout(() => {
+        .mouseleave(() => {
+            // if (!mouseInsideContainer) {
                 $("#edit-password-input").attr("type", "password")
                 $("#show-password-icon").show()
                 $("#hide-password-icon").hide()
-            }
+            // }
         })
 
         $("#show-hide-password-button").click(() => {
@@ -78,7 +81,7 @@ $(document).ready(() => {
                 $("#edit-password-input").attr("type", "text")
             }
 
-            mouseInsideContainer = true
+            // mouseInsideContainer = true
         })
 
         $(".dismiss-edit-profile-button").click(() => {
