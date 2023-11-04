@@ -43,10 +43,10 @@ $(() => {
         dismissProfileMenu()
         $("#edit-profile-modal").fadeIn(500, "swing")
 
-        $("#edit-first-name-input").val(user.firstName)
-        $("#edit-last-name-input").val(user.lastName)
-        $("#edit-email-input").val(user.email)
-        $("#edit-password-input").val(user.password)
+        $("#edit-first-name-input").val(user["firstName"])
+        $("#edit-last-name-input").val(user["lastName"])
+        $("#edit-email-input").val(user["email"])
+        $("#edit-password-input").val(user["password"])
 
         $("#edit-first-name-input").change(checkIfEditProfileCanSave)
         $("#edit-last-name-input").change(checkIfEditProfileCanSave)
