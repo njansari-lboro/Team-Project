@@ -21,7 +21,7 @@ $(document).ready(() => {
     const page = params.get("page")
     $(`#${page}-sidebar-item`).addClass("selected")
 
-    $("#dimmed-overlay").click(toggleSidebar)
+    $("#sidebar-dim.dimmed-overlay").click(toggleSidebar)
 
     if (window.matchMedia("(max-width: 800px)").matches) {
         if ($(document.body).hasClass("sidebar-expanded")) {
