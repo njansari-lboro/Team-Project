@@ -47,6 +47,7 @@
     flex: 2.2;
     font-size: var(--title-2);
     outline: none;
+    color: var(--text-color);
     background-color: var(--tertiary-fill-color);
 }
 
@@ -58,6 +59,7 @@
     border-radius: 5px;
     font-size: var(--body);
     resize: none;
+    color: var(--text-color);
     background-color: var(--quaternary-fill-color);
 }
 
