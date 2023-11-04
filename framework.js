@@ -53,7 +53,6 @@ $(() => {
 function validateAndDisplayEmail() {
     let email = $("#emailInput").val()
 
-    console.log(email.match(/^\w+@make-it-all\.co\.uk$/))
     if (!email.match(/^\w+@make-it-all\.co\.uk$/)) {
         alert("Please enter a valid @make-it-all.co.uk email address.")
         return false
