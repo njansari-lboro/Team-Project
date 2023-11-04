@@ -23,6 +23,12 @@ $(document).ready(() => {
         }
     })
 
+    $(".form-control").on("input", function (e) {
+        e.preventDefault()
+
+        $("#mainBtn").prop("disabled", $(this).val().length === 0)
+    })
+
     $("#changeEmail").click((e) => {
         e.preventDefault()
         restart()
@@ -40,18 +46,21 @@ $(document).ready(() => {
 })
 
 function validateEmail(email) {
-    let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return re.test(String(email).toLowerCase())
+    // let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    // return re.test(String(email).toLowerCase())
+
+    const match = email.match(/^\w+@make-it-all\.co\.uk$/)
+    return match && match.length > 1
 }
 
 function validateAndDisplayEmail() {
     let email = $("#emailInput").val()
 
     if (!email) {
-        alert("Email cannot be blank")
+        alert("Email address cannot be blank.")
         return false
     } else if (!email.endsWith("@make-it-all.co.uk")) {
-        alert("Please enter an email ending with @make-it-all.co.uk")
+        alert("Please enter a valid @make-it-all.co.uk email address.")
         return false
     } else if (!validateEmail(email)) {
         notRecognised()
