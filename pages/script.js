@@ -52,13 +52,7 @@ $(document).ready(() => {
         $("#edit-last-name-input").change(checkIfEditProfileCanSave)
         $("#edit-email-input").change(checkIfEditProfileCanSave)
 
-        $("#edit-password-input").mouseout(() => {
-            $("#edit-password-input").attr("type", "password")
-            $("#show-password-icon").show()
-            $("#hide-password-icon").hide()
-        })
-
-        $("#show-hide-password-button").mouseout(() => {
+        $("#edit-password-input-container").mouseout(() => {
             $("#edit-password-input").attr("type", "password")
             $("#show-password-icon").show()
             $("#hide-password-icon").hide()
