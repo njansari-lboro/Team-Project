@@ -505,11 +505,11 @@ body {
     top: 10px;
     right: 10px;
     background-color: transparent;
+    border-radius: 50px;
 }
 
 #close-invite-member-modal-button:hover {
     background-color: var(--unemphasised-selected-content-background-color);
-    border-radius: 50px;
 }
 
 #invite-member-card h1 {
@@ -526,6 +526,10 @@ body {
     width: 80%;
     padding: 0 10px;
     margin: auto;
+}
+
+#invite-member-card button {
+    border: none;
 }
 
 #invite-member-button {
@@ -558,6 +562,8 @@ body {
 #copy-invite-link-button {
     --icon-color: var(--secondary-label-color);
     background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
     height: 2.8em;
     width: 1.8em;
@@ -567,9 +573,4 @@ body {
 #copy-invite-link-button:hover {
     --icon-color: var(--label-color);
     background-color: var(--secondary-fill-color);
-}
-
-#copy-invite-link-button {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
