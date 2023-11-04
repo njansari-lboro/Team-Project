@@ -12,8 +12,10 @@
     switch ($task) {
     case "new_tut":
         new_tut();
+        break;
     case "view":
         view_tut();
+        break;
     default:
         display_default();
     }
