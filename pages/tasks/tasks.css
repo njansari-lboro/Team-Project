@@ -1,15 +1,14 @@
-/* body {
-    font-family: var(--font-family);
+body {
     background-color: var(--window-background);
     color: var(--text-color);
-} */
+}
 
 h2 {
     font-size: var(--title-1);
 }
 
 p {
-    font-size: var(--title-3);
+    font-size: var(--body);
 }
 
 @media (max-width: 100%) {}
@@ -38,7 +37,8 @@ td {
     align-items: center;
 }
 
-td, th {
+td,
+th {
     border-bottom: 1px solid var(--grid-color);
 }
 
@@ -79,7 +79,8 @@ button {
     border-radius: 5px;
 }
 
-#projects-header, #projects-filter {
+#projects-header,
+#projects-filter {
     font-size: var(--large-title);
     display: inline;
     position: relative;

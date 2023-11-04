@@ -1,20 +1,20 @@
-@import url("/global.css");
-
 /* body {
-    font-family: "Arial" !important;
+    font-family: "Arial";
     margin: 0;
-    color: var(--text-color);
-    background-color: var(--window-background);
+    font-size: 16px;
     overflow: hidden;
 } */
 
 .to-do-container {
+    /* margin-left: 5vw;
+  margin-top: 10vh;
+  margin-right: 5vw; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     row-gap: 1rem;
-    height: 100vh;
+    height: 85vh;
+    font-size: var(--body);
 }
 
 .top-section {
@@ -23,13 +23,14 @@
 }
 
 .headers {
+    padding-left: 1rem;
+    padding-right: 1rem;
     display: flex;
     align-items: center;
     width: 100%;
-    height: 6rem;
-    font-size: 2rem;
+    height: 3rem;
 
-    border: solid 1.5px var(--tertiary-label-color);
+    border: solid 1.5px grey;
     border-left: none;
     border-right: none;
 }
@@ -47,12 +48,12 @@
 
 .header-task-name {
     width: 70%;
-    border-right: solid 1.5px var(--tertiary-label-color);
+    border-right: solid 1.5px grey;
 }
 
 .header-due-date {
     width: 15%;
-    border-right: solid 1.5px var(--tertiary-label-color);
+    border-right: solid 1.5px grey;
 }
 
 .header-priority {
@@ -61,18 +62,38 @@
 
 .title {
     width: 90%;
-    font-size: var(--title-1);
 }
 
 .items-container-wrapper {
     min-height: 60vh;
     max-height: 60vh;
     overflow-y: scroll;
-    /* margin-right: -17px; */
+    margin-right: -17px;
 }
 
+/* Hide the standard scrollbar */
+/* .items-container-wrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+} */
+
+/* Hide scrollbar track */
+/* .items-container-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+} */
+
+/* Hide scrollbar thumb (the draggable part) */
+/* .items-container-wrapper::-webkit-scrollbar-thumb {
+  background: transparent;
+} */
+
+/* Hide scrollbar corner */
+/* .items-container-wrapper::-webkit-scrollbar-corner {
+  background: transparent;
+} */
+
 .items-container {
-    /* width: 100%; */
+    width: 100%;
     display: flex;
     flex-direction: column;
     height: auto;
@@ -82,7 +103,7 @@
 .item {
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
+    width: 100%;
     height: auto;
     overflow: hidden;
 }
@@ -90,27 +111,25 @@
 .inputs {
     display: flex;
     flex-direction: row;
-    border-top: 1.5px solid var(--tertiary-label-color);
-    height: 5rem;
+    border-top: 1.5px solid grey;
+    height: 3rem;
 }
 
 .comments-input {
-    border: 2px solid var(--tertiary-label-color);
+    border: 2px solid black;
     width: 100%;
     border-radius: 10px;
     height: 8rem;
     vertical-align: top;
     padding-left: 0.5rem;
     padding-top: 0.2rem;
-    font-family: "Arial";
+    /* display: none; */
 }
 
 .comments {
-    /* width: 100%; */
+    width: 100%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 2rem;
 }
 
 .task-name {
@@ -119,7 +138,8 @@
     align-items: center;
 
     height: 100%;
-    border-right: solid 1.5px var(--tertiary-label-color);
+    border-right: solid 1.5px grey;
+    padding-right: 1rem;
 }
 
 .due-date {
@@ -128,7 +148,7 @@
     align-items: center;
 
     height: 100%;
-    border-right: solid 1.5px var(--tertiary-label-color);
+    border-right: solid 1.5px grey;
 }
 
 .priority {
@@ -149,21 +169,17 @@
 }
 
 .task-input {
-    width: 85%;
+    width: 100%;
     font-weight: bold;
-    color: var(--text-color);
 }
 
 .due-date-input {
     width: 100%;
-    color: var(--text-color);
 }
 
 .priority-input {
     width: 100%;
     border-radius: 10px;
-    color: var(--text-color);
-    background-color: var(--window-background);
 }
 
 select.high {
@@ -183,19 +199,19 @@ input::placeholder {
 }
 
 .item {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
     overflow-y: hidden;
 }
 
 .input {
     padding-left: 1rem;
     padding-right: 1rem;
-    height: 3rem;
-    font-size: var(--body);
 }
 
 .tick {
-    height: 3rem;
-    width: 5%;
+    height: 2rem;
 }
 
 .tick:hover {
@@ -203,20 +219,17 @@ input::placeholder {
 }
 
 .ellipsis {
-    height: 2rem;
+    height: 1rem;
     cursor: pointer;
-    width: 10%;
 }
 
 input {
     border: none;
     outline: none;
-    background-color: var(--window-background);
 }
 
 .add {
-    height: 3rem;
-    width: 5%;
+    height: 2rem;
 }
 
 .add:hover {
@@ -229,19 +242,25 @@ input {
     align-items: center;
 
     height: 100%;
+    padding-right: 1rem;
 }
 
 .add-div-container {
     display: flex;
     flex-direction: row;
-    border-top: 1.5px solid var(--tertiary-label-color);
+    border-top: 1.5px solid grey;
     height: 3rem;
+}
+
+.new-item {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .buttons-container {
     bottom: 5vh;
-    width: 95%;
-    height: 8rem;
+    width: 75%;
+    height: 5rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -250,13 +269,13 @@ input {
 
 .button {
     text-align: center;
-    height: 5rem;
+    height: 2.5rem;
     padding: 5px 20px;
-    border: 2px solid var(--tertiary-label-color);
+    border: 2px solid black;
     border-radius: 10px;
     background-color: white;
     cursor: pointer;
-    font-size: var(--body);
+    font-size: 1rem;
 }
 
 .complete {
@@ -289,10 +308,6 @@ input {
 
     .priority {
         width: 25%;
-    }
-
-    .tick {
-        height: 3rem;
     }
 }
 
