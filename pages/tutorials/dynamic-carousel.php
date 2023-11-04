@@ -41,7 +41,7 @@ $tutorials = [
             <div class="slider">
                 <?php foreach ($tutorials as $tutorial) : ?>
                     <div class="image-container">
-                        <a href="index.php?page=tutorials&task=view&id=<?php echo $tutorial['id']; ?>" class="card-link">
+                        <a href="?page=tutorials&task=view&id=<?php echo $tutorial['id']; ?>" class="card-link">
                             <img src="<?php echo $tutorial['src']; ?>">
                             <span class="tutspan"><?php echo $tutorial['text']; ?></span>
                         </a>

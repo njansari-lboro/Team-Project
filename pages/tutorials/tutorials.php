@@ -38,12 +38,12 @@ function display_default()
 
     <body class="customBody">
         <h1 class="tutHeader">Technical Information</h1>
-        <a href="index.php?page=tutorials&task=new_tut&technical=1" class="plus-icon-link">
+        <a href="?page=tutorials&task=new_tut&technical=1" class="plus-icon-link">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 11H13V5C13 4.45 12.55 4 12 4C11.45 4 11 4.45 11 5V11H5C4.45 11 4 11.45 4 12C4 12.55 4.45 13 5 13H11V19C11 19.55 11.45 20 12 20C12.55 20 13 19.55 13 19V13H19C19.55 13 20 12.55 20 12C20 11.45 19.55 11 19 11Z" />
             </svg>
         </a>
-        <?php include "../helpers/dynamic-carousel.php"; ?>
+        <?php include "/tutorials/dynamic-carousel.php"; ?>
         <br><br>
         <h1 class="tutHeader">Non Technical Information</h1>
         <!-- IF NOT TECHINICAL HIDE -->
@@ -52,7 +52,7 @@ function display_default()
                 <path d="M19 11H13V5C13 4.45 12.55 4 12 4C11.45 4 11 4.45 11 5V11H5C4.45 11 4 11.45 4 12C4 12.55 4.45 13 5 13H11V19C11 19.55 11.45 20 12 20C12.55 20 13 19.55 13 19V13H19C19.55 13 20 12.55 20 12C20 11.45 19.55 11 19 11Z" />
             </svg>
         </a>
-        <?php include("../helpers/dynamic-carousel.php"); ?>
+        <?php include("/tutorials/dynamic-carousel.php"); ?>
 
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -212,7 +212,7 @@ function new_tut()
             ?>
             <h2 style="margin-bottom: 2rem;">Make <?php echo $title; ?> Tutorial</h2>
 
-            <form class="txtform" action="/pages/index.php?page=tutorials" method="post" enctype="multipart/form-data">
+            <form class="txtform" action="/pages/?page=tutorials" method="post" enctype="multipart/form-data">
                 <input type="text" id="tutorialTitle" placeholder="Enter Task Name" required>
                 <div id="step-container" class="clearfix">
                     <div class="step" data-step="1">
@@ -233,7 +233,7 @@ function new_tut()
                         <button type="button" class="remove-step-btn">Remove Step</button>
                     </div>
                 </div>
-                <a class="go-back" href="index.php?page=tutorials">Go back</a>
+                <a class="go-back" href="?page=tutorials">Go back</a>
                 <button type="button" id="add-step" class="">Add Step</button>
                 <input id="submitBtn" type="submit" value="Post Tutorial!" class="">
             </form>
