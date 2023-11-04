@@ -431,7 +431,7 @@
                 <div>
                     <input id="invite-link" type="text" placeholder="Invite link" readonly>
 
-                    <button id="copy-invite-link-button">
+                    <button id="copy-invite-link-button" disabled>
                         <load-svg id="copy-invite-link-icon" src="/assets/copyIcon.svg">
                             <style shadowRoot>
                                 svg {

@@ -69,7 +69,13 @@ $(document).ready(() => {
             }
         })
 
-        $(".dismiss-edit-profile-button").click(() => $("#edit-profile-modal").fadeOut())
+        $(".dismiss-edit-profile-button").click(() => {
+            $("#edit-profile-modal").fadeOut(() => {
+                $("#edit-password-input").attr("type", "password")
+                $("#show-password-icon").show()
+                $("#hide-password-icon").hide()
+            })
+        })
 
         $("#hide-password-icon").hide()
         checkIfEditProfileCanSave()
