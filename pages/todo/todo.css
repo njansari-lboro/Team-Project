@@ -1,9 +1,10 @@
-/* body {
-    font-family: "Arial";
-    margin: 0;
-    font-size: 16px;
-    overflow: hidden;
-} */
+body {
+    /* font-family: "Arial";
+    margin: 0; */
+    /* font-size: 16px; */
+    font-size: var(--body);
+    /* overflow: hidden; */
+}
 
 .to-do-container {
     /* margin-left: 5vw;
@@ -14,7 +15,6 @@
     align-items: center;
     row-gap: 1rem;
     height: 85vh;
-    font-size: var(--body);
 }
 
 .top-section {

@@ -18,11 +18,6 @@ $(document).ready(function () {
         $(contentId).slideToggle();
     });
 
-    // bringing user to create-a-project page
-    $("#new-project-button").click(() => {
-        window.location.href = "new-project.php";
-    });
-
     // inserting JQuery progressbar into <td>
     $(".progress-bar").each(function () {
         let cell = $(this).get(0);
