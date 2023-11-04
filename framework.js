@@ -51,17 +51,13 @@ function validateEmail(email) {
     // let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     // return re.test(String(email).toLowerCase())
 
-    const match = email.match(/^\w+@make-it-all\.co\.uk$/)
-    return match && match.length > 0
+    return email.match(/^\w+@make-it-all\.co\.uk$/)
 }
 
 function validateAndDisplayEmail() {
     let email = $("#emailInput").val()
 
-    if (!email) {
-        alert("Email address cannot be blank.")
-        return false
-    } else if (!email.endsWith("@make-it-all.co.uk")) {
+    if (!email.endsWith("@make-it-all.co.uk")) {
         alert("Please enter a valid @make-it-all.co.uk email address.")
         return false
     } else if (!validateEmail(email)) {
@@ -126,7 +122,7 @@ function validatePasswordAndLogin() {
                 console.log("success")
                 window.location = "pages/?page=dashboard"
             } else {
-                alert("Login failed. Please check your email/password and try again.")
+                alert("Login failed.\nPlease check your email and password then try again.")
             }
         },
         error: (jqXHR, textStatus, errorThrown) => {
