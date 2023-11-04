@@ -13,7 +13,10 @@ $(document).ready(() => {
 
     $("#mainBtn").prop("disabled", $("#emailInput").val().length === 0)
 
-    setTimeout(() => $("#emailInput").focus().click(), 100)
+    setTimeout(() => {
+        $("#emailInput").focus()
+        setTimeout(() => $("#emailInput").click(), 100)
+    }, 100)
 
     $("#emailForm").submit((e) => {
         e.preventDefault()
@@ -84,7 +87,10 @@ function validateAndDisplayEmail() {
 
                 $("#mainBtn").prop("disabled", $("#passwordInput").val().length === 0)
 
-                setTimeout(() => $("#passwordInput").focus().click(), 100)
+                setTimeout(() => {
+                    $("#passwordInput").focus()
+                    setTimeout(() => $("#passwordInput").click(), 100)
+                }, 100)
             } else {
                 console.log("false")
                 notRecognised(email) // Call the function if the email is not recognized
@@ -145,7 +151,10 @@ function restart() {
 
     $("#mainBtn").prop("disabled", $("#emailInput").val().length === 0)
 
-    setTimeout(() => $("#emailInput").focus().click(), 100)
+    setTimeout(() => {
+        $("#emailInput").focus()
+        setTimeout(() => $("#emailInput").click(), 100)
+    }, 100)
 }
 
 function notRecognised(email) {
