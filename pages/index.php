@@ -318,7 +318,7 @@
 
         <div id="edit-profile-modal">
             <script>
-                const user = "<?php echo json_encode($_SESSION["user"]) ?>"
+                const user = <?php echo json_encode($_SESSION["user"]) ?>
             </script>
 
             <div class="dimmed-overlay"></div>
