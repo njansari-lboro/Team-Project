@@ -1,7 +1,17 @@
 <?php
+    if (isset($_SERVER["HTTP_REFERER"]) && !empty($_SERVER["HTTP_REFERER"])) {
+        echo "This page was included in another page.";
+    } else {
+        echo "This page was directly accessed.";
+        header("Location: /pages/");
+        die();
+    }
+?>
+
+<?php
 //setting action - view new or default
-if (isset($_GET['task'])) {
-    $task = $_GET['task'];
+if (isset($_GET["task"])) {
+    $task = $_GET["task"];
     if ($task == "new_tut") {
         new_tut();
     } elseif ($task == "view") {
@@ -36,7 +46,7 @@ function display_default()
                 <path d="M19 11H13V5C13 4.45 12.55 4 12 4C11.45 4 11 4.45 11 5V11H5C4.45 11 4 11.45 4 12C4 12.55 4.45 13 5 13H11V19C11 19.55 11.45 20 12 20C12.55 20 13 19.55 13 19V13H19C19.55 13 20 12.55 20 12C20 11.45 19.55 11 19 11Z" />
             </svg>
         </a>
-        <?php include '../helpers/dynamic-carousel.php'; ?>
+        <?php include "../helpers/dynamic-carousel.php"; ?>
         <br><br>
         <h1 class="tutHeader">Non Technical Information</h1>
         <!-- IF NOT TECHINICAL HIDE -->
@@ -45,7 +55,7 @@ function display_default()
                 <path d="M19 11H13V5C13 4.45 12.55 4 12 4C11.45 4 11 4.45 11 5V11H5C4.45 11 4 11.45 4 12C4 12.55 4.45 13 5 13H11V19C11 19.55 11.45 20 12 20C12.55 20 13 19.55 13 19V13H19C19.55 13 20 12.55 20 12C20 11.45 19.55 11 19 11Z" />
             </svg>
         </a>
-        <?php include('../helpers/dynamic-carousel.php'); ?>
+        <?php include("../helpers/dynamic-carousel.php"); ?>
 
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -62,61 +72,61 @@ function display_default()
 
 function view_tut()
 {
-    if (!isset($_GET['id'])) {
-        die('No tutorial ID provided.');
+    if (!isset($_GET["id"])) {
+        die("No tutorial ID provided.");
     }
 
-    $tutorialId = intval($_GET['id']);
+    $tutorialId = intval($_GET["id"]);
 
     $tutorials = [
         1 => [
-            'title' => 'How to build relationships',
-            'steps' => [
+            "title" => "How to build relationships",
+            "steps" => [
                 [
-                    'image' => '/img/bg.jpg',
-                    'description' => 'This is the first step of the technical tutorial 1.'
+                    "image" => "/img/bg.jpg",
+                    "description" => "This is the first step of the technical tutorial 1."
                 ],
                 [
-                    'image' => 'http://via.placeholder.com/400x300',
-                    'description' => 'This is the second step of the technical tutorial 1.'
+                    "image" => "http://via.placeholder.com/400x300",
+                    "description" => "This is the second step of the technical tutorial 1."
                 ],
                 [
-                    'image' => 'http://via.placeholder.com/400x300',
-                    'description' => 'This is the third step of the technical tutorial 1.'
+                    "image" => "http://via.placeholder.com/400x300",
+                    "description" => "This is the third step of the technical tutorial 1."
                 ],
             ]
         ],
         2 => [
-            'title' => 'How to set up 2FA',
-            'steps' => [
+            "title" => "How to set up 2FA",
+            "steps" => [
                 [
-                    'image' => 'http://via.placeholder.com/400x400',
-                    'description' => 'This is the first step of the technical tutorial 2.'
+                    "image" => "http://via.placeholder.com/400x400",
+                    "description" => "This is the first step of the technical tutorial 2."
                 ],
                 [
-                    'image' => 'http://via.placeholder.com/400x400',
-                    'description' => 'This is the second step of the technical tutorial 2.'
+                    "image" => "http://via.placeholder.com/400x400",
+                    "description" => "This is the second step of the technical tutorial 2."
                 ],
             ]
         ],
         3 => [
-            'title' => 'Non-Technical Tutorial',
-            'steps' => [
+            "title" => "Non-Technical Tutorial",
+            "steps" => [
                 [
-                    'image' => 'http://via.placeholder.com/300x300',
-                    'description' => 'This is the first step of the non-technical tutorial.'
+                    "image" => "http://via.placeholder.com/300x300",
+                    "description" => "This is the first step of the non-technical tutorial."
                 ],
                 [
-                    'image' => 'http://via.placeholder.com/300x300',
-                    'description' => 'This is the second step of the non-technical tutorial.'
+                    "image" => "http://via.placeholder.com/300x300",
+                    "description" => "This is the second step of the non-technical tutorial."
                 ],
                 [
-                    'image' => 'http://via.placeholder.com/300x300',
-                    'description' => 'This is the third step of the non-technical tutorial.'
+                    "image" => "http://via.placeholder.com/300x300",
+                    "description" => "This is the third step of the non-technical tutorial."
                 ],
                 [
-                    'image' => 'http://via.placeholder.com/300x300',
-                    'description' => 'This is the fourth step of the non-technical tutorial.'
+                    "image" => "http://via.placeholder.com/300x300",
+                    "description" => "This is the fourth step of the non-technical tutorial."
                 ],
             ]
         ],
@@ -124,7 +134,7 @@ function view_tut()
 
 
     if (!isset($tutorials[$tutorialId])) {
-        echo ('Tutorial not found.');
+        echo ("Tutorial not found.");
     }
 
     $tutorial = $tutorials[$tutorialId];
@@ -147,11 +157,11 @@ function view_tut()
     </head>
 
     <body>
-        <h2><?php echo $tutorial['title']; ?></h2>
+        <h2><?php echo $tutorial["title"]; ?></h2>
 
         <div id="step-container" class="clearfix">
             <?php $stepNumber = 1; ?>
-            <?php foreach ($tutorial['steps'] as $step) : ?>
+            <?php foreach ($tutorial["steps"] as $step) : ?>
                 <div class="step" data-step="<?php echo $stepNumber; ?>">
                     <div class="image-container">
                         <div class="step-counter">Step <?php echo $stepNumber; ?></div>
@@ -159,10 +169,10 @@ function view_tut()
                             <input type="radio" name="defaultImage" value="<?php echo $stepNumber; ?>" required>
                             <label class="radioLabel">Set as cover image</label>
                         </div>
-                        <img src="<?php echo $step['image']; ?>" class="step-image corner">
+                        <img src="<?php echo $step["image"]; ?>" class="step-image corner">
                     </div>
                     <p class="step-description">
-                        <?php echo $step['description']; ?>
+                        <?php echo $step["description"]; ?>
                     </p>
                 </div>
                 <?php $stepNumber++; ?>
@@ -201,7 +211,7 @@ function new_tut()
 
 
             <?php
-            $title = isset($_GET['technical']) && $_GET['technical'] ? 'Technical' : 'Non-Technical';
+            $title = isset($_GET["technical"]) && $_GET["technical"] ? "Technical" : "Non-Technical";
             ?>
             <h2 style="margin-bottom: 2rem;">Make <?php echo $title; ?> Tutorial</h2>
 
@@ -234,8 +244,8 @@ function new_tut()
 
         <script>
             $(document).ready(function() {
-                $('#add-step').click(function() {
-                    let stepCount = $('#step-container .step').length + 1;
+                $("#add-step").click(function() {
+                    let stepCount = $("#step-container .step").length + 1;
 
                     let stepTemplate = `
                         <div class="step" data-step="${stepCount}">
@@ -258,25 +268,25 @@ function new_tut()
                     `;
 
 
-                    $('#step-container').append(stepTemplate);
+                    $("#step-container").append(stepTemplate);
                 });
 
-                $('#step-container').on('change', 'input[type="file"]', function() {
-                    console.log('uploaded');
+                $("#step-container").on("change", "input[type='file']", function() {
+                    console.log("uploaded");
                     var file = this.files[0];
                     if (file) {
-                        var ext = file.name.split('.').pop().toLowerCase();
+                        var ext = file.name.split(".").pop().toLowerCase();
                         if (["gif", "png", "jpeg", "jpg"].includes(ext)) {
                             var reader = new FileReader();
-                            var imgElement = $(this).siblings('picture').find('img.placeholder');
+                            var imgElement = $(this).siblings("picture").find("img.placeholder");
                             reader.onload = function(e) {
-                                imgElement.attr('src', e.target.result);
-                                imgElement.siblings('source').attr('srcset', e.target.result);
+                                imgElement.attr("src", e.target.result);
+                                imgElement.siblings("source").attr("srcset", e.target.result);
                             }
                             reader.readAsDataURL(file);
                         } else {
-                            $(this).siblings('picture').find('img.placeholder').attr('src', '/img/placeholder.jpg');
-                            $(this).siblings('picture').find('source').attr('srcset', '/img/placeholderDARK.jpg');
+                            $(this).siblings("picture").find("img.placeholder").attr("src", "/img/placeholder.jpg");
+                            $(this).siblings("picture").find("source").attr("srcset", "/img/placeholderDARK.jpg");
                         }
                     }
                 });
@@ -285,23 +295,23 @@ function new_tut()
 
 
                 function checkSteps() {
-                    let stepCount = $('#step-container .step').length;
+                    let stepCount = $("#step-container .step").length;
                     if (stepCount < 1) {
-                        $('#submitBtn').hide();
+                        $("#submitBtn").hide();
                     } else {
-                        $('#submitBtn').show();
+                        $("#submitBtn").show();
                     }
                 }
 
-                $('#add-step').click(function() {
+                $("#add-step").click(function() {
                     checkSteps();
                 });
 
-                $('#step-container').on('click', '.remove-step-btn', function() {
-                    $(this).closest('.step').remove();
-                    $('.step').each(function(index, element) {
+                $("#step-container").on("click", ".remove-step-btn", function() {
+                    $(this).closest(".step").remove();
+                    $(".step").each(function(index, element) {
                         const stepNum = index + 1;
-                        $(element).attr('data-step', stepNum).find('.step-counter').text('Step ' + stepNum);
+                        $(element).attr("data-step", stepNum).find(".step-counter").text("Step " + stepNum);
                     });
 
                     checkSteps();

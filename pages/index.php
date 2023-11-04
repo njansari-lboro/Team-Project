@@ -297,7 +297,7 @@
                         $page = $_GET["page"];
                     } else {
                         header("Location: ?page=dashboard");
-                        die();
+                        // die();
                     }
 
                     $dir = $page;
