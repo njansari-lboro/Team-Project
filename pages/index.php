@@ -296,8 +296,8 @@
                     if (isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages)) {
                         $page = $_GET["page"];
                     } else {
-                        header("Location: ?page=dashboard");
-                        // die();
+                        header("Location: /pages/?page=dashboard");
+                        die();
                     }
 
                     $dir = $page;
