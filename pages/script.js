@@ -53,12 +53,14 @@ $(document).ready(() => {
         $("#edit-email-input").change(checkIfEditProfileCanSave)
 
         $("#edit-password-input-container").mouseout(() => {
+            console.log("out")
             // $("#edit-password-input").attr("type", "password")
             // $("#show-password-icon").show()
             // $("#hide-password-icon").hide()
         })
 
         $("#show-hide-password-button").click(() => {
+            console.log("click")
             $("#show-password-icon").toggle()
             $("#hide-password-icon").toggle()
 

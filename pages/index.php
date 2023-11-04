@@ -368,6 +368,7 @@
                                 <style shadowRoot>
                                     svg {
                                         height: 1.25em;
+                                        padding-top: 0.2em
                                     }
 
                                     .fill {
