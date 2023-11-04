@@ -295,6 +295,7 @@
                     if (!(isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages))) {
                         $_GET["page"] = "dashboard";
                         header("Refresh: 0");
+                        die();
                     }
                     
                     $page = $_GET["page"];
