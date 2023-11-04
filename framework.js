@@ -11,7 +11,7 @@ $(document).ready(() => {
     $("#mainBtn").show()
     $("#notRegistered").hide()
 
-    $("#mainBtn").prop("disabled", true)
+    $("#mainBtn").prop("disabled", $("#emailInput").val().length === 0)
 
     setTimeout(() => $("#emailInput").focus(), 100)
 
@@ -52,7 +52,7 @@ function validateEmail(email) {
     // return re.test(String(email).toLowerCase())
 
     const match = email.match(/^\w+@make-it-all\.co\.uk$/)
-    return match && match.length > 1
+    return match && match.length > 0
 }
 
 function validateAndDisplayEmail() {
@@ -86,7 +86,7 @@ function validateAndDisplayEmail() {
                 $("#forgotPassword").show()
                 $("#mainBtn").html("Login")
 
-                $("#mainBtn").prop("disabled", true)
+                $("#mainBtn").prop("disabled", $("#passwordInput").val().length === 0)
 
                 setTimeout(() => $("#passwordInput").focus(), 100)
             } else {
@@ -147,7 +147,7 @@ function restart() {
     $("#mainBtn").show()
     $("#notRegistered").hide()
 
-    $("#mainBtn").prop("disabled", true)
+    $("#mainBtn").prop("disabled", $("#emailInput").val().length === 0)
 }
 
 function notRecognised(email) {

@@ -44,6 +44,7 @@ form {
 .btn.btn-primary:disabled {
     color: var(--disabled-control-text-color);
     background-color: var(--disabled-control-text-color);
+    border: 1px solid var(--disabled-control-text-color);
 }
 
 .btn.btn-primary:not(:disabled):hover {
