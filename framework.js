@@ -15,7 +15,7 @@ $(document).ready(() => {
 
     setTimeout(() => {
         $("#emailInput").focus()
-        setTimeout(() => $("#emailInput").click(), 100)
+        setTimeout(() => $("#emailInput").click(), 500)
     }, 100)
 
     $("#emailForm").submit((e) => {
