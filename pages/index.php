@@ -318,10 +318,7 @@
 
         <div id="edit-profile-modal">
             <script>
-                const firstName = "<?php echo $_SESSION['user']['firstName'] ?>"
-                const lastName = "<?php echo $_SESSION['user']['lastName'] ?>"
-                const emailAddress = "<?php echo $_SESSION['user']['email'] ?>"
-                const password = "<?php echo $_SESSION['user']['password'] ?>"
+                const user = "<?php echo json_encode($_SESSION["user"]) ?>"
             </script>
 
             <div class="dimmed-overlay"></div>

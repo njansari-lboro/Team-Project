@@ -1,11 +1,12 @@
 <?php
-    if (!(isset($_SERVER["HTTP_REFERER"]) && !empty($_SERVER["HTTP_REFERER"]))) {
+    if (!isset($_SERVER["HTTP_REFERER"]) || empty($_SERVER["HTTP_REFERER"])) {
         header("Location: /pages/?page=projects");
         die();
     }
 ?>
 
 <!DOCTYPE html>
+
 <html>
     <head>
         <link rel="stylesheet" href="/global.css">
@@ -15,10 +16,14 @@
     <body>
         <form method="post" id="details" action="?page=projects&task=new_project_tasks">
             <h2 id="closebtn">&times;</h2>
-            <input type="text" id="pname" name="pname" placeholder="Enter a project name" required /><br><br>
-            <textarea id="pbrief" name="pbrief" rows="4" cols="50" placeholder="Enter project brief" required /></textarea>
+            
+            <input type="text" id="pname" name="pname" placeholder="Enter a project name" required />
+            
             <br><br>
-
+            
+            <textarea id="pbrief" name="pbrief" rows="4" cols="50" placeholder="Enter project brief" required></textarea>
+            
+            <br><br>
 
             <h1>Select Team Members</h1>
 
@@ -32,11 +37,11 @@
                 <input type="checkbox" class="nameCheck" name="names-list[]" value="Jerry Cena"> Jerry Cena <br>
                 <input type="checkbox" class="nameCheck" name="names-list[]" value="Jimmy Cena"> Jimmy Cena <br>
             </div>
+
             <br><br>
+            
             <input id="submitBtn" type="submit" value="Continue" class="">
         </form>
-
-
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/pages/projects/create-project.js"></script>

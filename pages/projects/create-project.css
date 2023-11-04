@@ -1,14 +1,13 @@
 /* body {
     font-family: var(--font-family);
     background-color: var(--window-background);
-    color: var(--text-color); 
+    color: var(--text-color);
     margin-left: 50px;
-  } */
+} */
 
 h1 {
     font-size: var(--title-1);
     color: var(--placeholder-text-color);
-
 }
 
 #pname {
@@ -21,7 +20,6 @@ h1 {
     font-size: var(--title-3);
     margin-right: 50px;
     border-radius: 5px;
-
 }
 
 #closebtn {
@@ -58,10 +56,6 @@ h1 {
     height: 100px;
     font-size: var(--body);
     overflow-y: scroll;
-}
-
-::placeholder {
-    color: var(--placeholder-text-color);
 }
 
 @media screen and (max-width:350px) {

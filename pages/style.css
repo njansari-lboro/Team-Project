@@ -317,6 +317,8 @@ body {
     height: calc(100% - 5.6em);
     width: 100%;
     transition: 0.5s;
+    background-color: var(--window-background);
+    color: var(--label-color);
 }
 
 .no-transition #main-content {

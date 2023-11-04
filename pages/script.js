@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
     const body = $(document.body)
     body.addClass("no-transition")
 
@@ -45,7 +45,7 @@ $(document).ready(() => {
 
         $("#edit-first-name-input").val(firstName)
         $("#edit-last-name-input").val(lastName)
-        $("#edit-email-input").val(emailAddress)
+        $("#edit-email-input").val(email)
         $("#edit-password-input").val(password)
 
         $("#edit-first-name-input").change(checkIfEditProfileCanSave)

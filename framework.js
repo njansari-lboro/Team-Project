@@ -1,6 +1,6 @@
 // DEALS WITH LOGIN LOGIC/SCREENS AND REDIRECTS TO MAIN INDEX, PAGE DASHBOARD
 
-$(document).ready(() => {
+$(() => {
     $("#emailForm").show()
     $("#emailDisplay").hide()
     $("#passwordInput").hide()
@@ -15,7 +15,7 @@ $(document).ready(() => {
 
     setTimeout(() => {
         $("#emailInput").focus()
-        setTimeout(() => $("#emailInput").click(), 500)
+        setTimeout(() => $("#emailInput").click(), 100)
     }, 100)
 
     $("#emailForm").submit((e) => {

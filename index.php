@@ -60,7 +60,7 @@
 
                 <form id="resetPassword">
                     <p>
-                        Sorry, please <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: rgba(209, 100, 0, 1)">Contact Support</span></a> to help reset your password
+                        <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: rgba(209, 100, 0, 1)">Contact Support</span></a> to help reset your password
                     </p>
                 </form>
 

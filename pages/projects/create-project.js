@@ -1,12 +1,12 @@
-$(document).ready(function() {
+$(() => {
     const urlParams = new URLSearchParams(window.location.search);
 
-    if (urlParams.has('projectName')) {
-        var projectName = urlParams.get('projectName');
-        $('#pname').val(projectName);
+    if (urlParams.has("projectName")) {
+        var projectName = urlParams.get("projectName");
+        $("#name").val(projectName);
     }
 
-    $("#closebtn").click(function () {
+    $("#closebtn").click(() => {
         window.location.href = "/pages/?page=projects"
     });
 });

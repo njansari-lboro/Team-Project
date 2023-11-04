@@ -1,8 +1,6 @@
-@import url("/global.css");
-
 :root {
     --handle-size: 3rem;
-    --img-gap: .25rem;
+    --img-gap: 0.25rem;
 }
 
 body {
@@ -11,18 +9,11 @@ body {
 }
 
 .tutHeader {
-    /* font-family: Arial, Helvetica, sans-serif; */
     font-size: var(--title-2);
     display: inline;
     margin-left: 2rem;
     color: var(--text-color);
 }
-
-/* #main-content {
-    background-color: var(--window-background);
-    color: var(--text-color);
-    margin: 1rem;
-} */
 
 .row {
     justify-content: center;
@@ -94,8 +85,8 @@ body {
     display: block;
     width: 100%;
     font-weight: bold;
-    padding-left: .5rem;
-    padding-top: .2rem;
+    padding-left: 0.5rem;
+    padding-top: 0.2rem;
 }
 
 .handle {
@@ -134,7 +125,7 @@ body {
 }
 
 .handle:hover, .handle:focus {
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, 0.5);
     outline: none;
 }
 
@@ -149,7 +140,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    padding: .5rem calc(var(--img-gap) * 2 + var(--handle-size));
+    padding: 0.5rem calc(var(--img-gap) * 2 + var(--handle-size));
     align-items: center;
 }
 
@@ -399,10 +390,10 @@ h1 {
     z-index: 1;
 }
 
-.default-image-radio {
-    /* right: 10px; */
-    /* top: 10px; */
-}
+/* .default-image-radio {
+    right: 10px;
+    top: 10px;
+} */
 
 .step-counter {
     left: 10px;
@@ -573,5 +564,5 @@ h1 {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 20px;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
