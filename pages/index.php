@@ -39,7 +39,7 @@
         <title>Make-It-All</title>
     </head>
 
-    <body>
+    <body class="sidebar-expanded">
         <div class="nav-bar">
             <load-svg id="sidebar-toggle" src="/assets/sidebarToggleIcon.svg">
                 <style shadowRoot>

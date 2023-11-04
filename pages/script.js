@@ -8,9 +8,9 @@ $(() => {
     const sidebarToggle = $("#sidebar-toggle")
 
     // Persist sidebar toggle between refreshes
-    if (localStorage.getItem("sidebarExpanded") === "true") {
-        body.toggleClass("sidebar-expanded")
-    }
+    // if (localStorage.getItem("sidebarExpanded") === "true") {
+    //     body.toggleClass("sidebar-expanded")
+    // }
 
     sidebarToggle.click(event => {
         event.preventDefault()
