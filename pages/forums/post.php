@@ -73,14 +73,29 @@
     </body>
 
     <script>
-        let exitButton = document.querySelector(".exit-btn")
-        exitButton.addEventListener("click", () => {
-            window.location.href = "index.php?page=forums"
-        })
-
         let postButton = document.querySelector(".post-btn")
         postButton.addEventListener("click", () => {
-            window.location.href = "index.php?page=forums"
+            let topicDropdown = document.getElementById("topicDropdown")
+            let titleInput = document.querySelector(".input")
+            let bodyTextarea = document.querySelector(".textarea")
+            
+            let post = {
+                topic: topicDropdown.value,
+                title: titleInput.value,
+                body: bodyTextarea.value
+            }
+
+            let posts = JSON.parse(localStorage.getItem("posts")) || []
+
+            posts.push(post)
+            
+            localStorage.setItem("posts", JSON.stringify(posts))
+            window.location.href = "?page=forums"
+        })
+
+        let exitButton = document.querySelector(".exit-btn")
+        exitButton.addEventListener("click", () => {
+            window.location.href = "?page=forums"
         })
     </script>
 </html>

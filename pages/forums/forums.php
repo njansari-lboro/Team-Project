@@ -186,15 +186,34 @@
         </main>
 
         <script>
+            document.addEventListener("DOMContentLoaded", (event) => {
+                let posts = JSON.parse(localStorage.getItem("posts")) || []
+                let forumTopics = document.getElementById("forum-topics")
+
+                posts.forEach((post) => {
+                    let article = document.createElement("article")
+                    article.className = "forum-topic"
+                    article.innerHTML = `
+                    <div class="topic-content">
+                        <h2>${post.title}</h2>
+                        <h3><span class="topic-label">${post.topic}</span></h3>
+                        <p>${post.body}</p>
+                    </div>
+                    `
+
+                    forumTopics.appendChild(article)
+                })
+            })
+
             document.getElementById("post-topic").addEventListener("click", () => {
-                window.location.href = "index.php?page=forums&task=new"
+                window.location.href = "?page=forums&task=new"
             })
 
             let replyLinks = document.querySelectorAll(".reply")
             replyLinks.forEach((link) => {
                 link.addEventListener("click", (event) => {
                     event.preventDefault()
-                    window.location.href = "index.php?page=forums&task=view"
+                    window.location.href = "?page=forums&task=view"
                 })
             })
 
@@ -202,7 +221,7 @@
             readMoreLinks.forEach((link) => {
                 link.addEventListener("click", (event) => {
                     event.preventDefault()
-                    window.location.href = "index.php?page=forums&task=view"
+                    window.location.href = "?page=forums&task=view"
                 })
             })
         </script>

@@ -62,9 +62,23 @@
     </body>
 
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let replyButton = document.querySelector(".post-btn")
+            replyButton.addEventListener("click", () => {
+                let replyTextarea = document.querySelector(".textarea")
+                let replyContent = replyTextarea.value
+
+                let replies = JSON.parse(localStorage.getItem("replies")) || []
+                replies.push(replyContent)
+                localStorage.setItem("replies", JSON.stringify(replies))
+
+                window.location.href = "?page=forums&task=view"
+            })
+        })
+
         let exitButton = document.querySelector(".exit-btn")
         exitButton.addEventListener("click", () => {
-            window.location.href = "index.php?page=forums&task=view"
+            window.location.href = "?page=forums&task=view"
         })
     </script>
 </html>

@@ -85,7 +85,7 @@
                         <p>ipsum dolor sit amet, consectetur adipiscing elit, ... leo vel orci porta. </p>
                     </div>
                 </div>
-
+            </div>
                 <button class="button">
                     Reply
 
@@ -102,19 +102,52 @@
                         </style>
                     </load-svg>
                 </button>
-            </div>
+            
         </body>
     </main>
 
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let replies = JSON.parse(localStorage.getItem("replies")) || []
+            let repliesContainer = document.querySelector(".content-box")
+
+            replies.forEach(replyContent => {
+                let replyDiv = document.createElement("div")
+                replyDiv.className = "reply"
+                replyDiv.innerHTML = `
+                <div class="reply-user">
+                    <load-svg class="user-avatar" src="/assets/profileIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 40px;
+                                height: 40px;
+                            }
+                            .fill {
+                                fill: var(--label-color);
+                            }
+                        </style>
+                    </load-svg>
+                    
+                    <span class="user-name">Default User</span>
+                </div>
+
+                <div class="reply-content">
+                    <p>${replyContent}</p>
+                </div>
+                `
+
+                repliesContainer.appendChild(replyDiv)
+            })
+        })
+
         let exitButton = document.querySelector(".exit-button")
         exitButton.addEventListener("click", () => {
-            window.location.href = "index.php?page=forums"
+            window.location.href = "?page=forums"
         })
 
         let replyButton = document.querySelector(".button")
         replyButton.addEventListener("click", () => {
-            window.location.href = "index.php?page=forums&task=reply"
+            window.location.href = "?page=forums&task=reply"
         })
     </script>
 </html>
