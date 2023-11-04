@@ -89,7 +89,7 @@ $(document).ready(() => {
         },
         options: {
             responsive: true, 
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     labels: {
@@ -116,9 +116,17 @@ $(document).ready(() => {
         progressChart.update();
     });
 
-    $(window).on('resize', function() {
+    function resizeChart() {
         progressChart.resize(); 
         progressChart.update(); 
+    }
+
+    $(window).on('resize', resizeChart);
+    $("#sidebar-toggle").click(resizeChart);
+    $(document).on("visibilitychange", function() {
+        if (document.visibilityState === 'visible') {
+            resizeChart();
+        }
     });
 
     // trying to add on-the-fly switching between themes, doesn't work...
