@@ -31,7 +31,7 @@
             <p>Priority</p>
           </div>
         </div>
-        <h2 class="title">To-do:</h2>
+        <!-- <h2 class="title">To-do:</h2> -->
         <div class="items-container-wrapper">
           <div class="items-container">
             <form class="item">

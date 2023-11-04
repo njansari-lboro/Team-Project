@@ -11,7 +11,7 @@
         $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
         break;
     case "Admin":
-        $pages = array("dashboard", "todo", "tutorials", "forums");
+        $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
         break;
     case "Manager":
         $pages = array("dashboard", "projects", "todo", "tutorials", "forums");

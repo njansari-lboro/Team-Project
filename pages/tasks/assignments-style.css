@@ -11,7 +11,7 @@ h2 {
 }
 
 p {
-  font-size: var(--title-3);
+  font-size: var(--body);
 }
 
 @media (max-width: 100%) {
