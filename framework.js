@@ -54,10 +54,16 @@ $(() => {
         restart()
     })
 
-    $("#save-button").click((event) => {
+    $("#register-button").click((event) => {
         event.preventDefault()
 
-        const password = $("#edit-password-input").val()
+        const password = $("#register-password-input").val()
+        const confirmPassword = $("#register-confirm-password-input").val()
+
+        if (password !== confirmPassword) {
+            alert("Passwords must match.")
+            return
+        }
 
         if (isValidPassword(password)) {
             window.location = "/"
@@ -185,16 +191,16 @@ function showResetPassword() {
 
 function register() {
     $(".centered-content").hide()
-    $('#edit-profile-card').show()
+    $('#register-profile-card').show()
 
-    $("#edit-first-name-input").change(checkIfEditProfileCanSave)
-    $("#edit-last-name-input").change(checkIfEditProfileCanSave)
-    $("#edit-email-input").change(checkIfEditProfileCanSave)
-    $("#edit-email-input").change(checkIfEditProfileCanSave)
-    $("#edit-password-input").change(checkIfEditProfileCanSave)
+    $("#register-first-name-input").change(checkIfEditProfileCanSave)
+    $("#register-last-name-input").change(checkIfEditProfileCanSave)
+    $("#register-email-input").change(checkIfEditProfileCanSave)
+    $("#register-email-input").change(checkIfEditProfileCanSave)
+    $("#register-password-input").change(checkIfEditProfileCanSave)
 
-    $("#edit-password-input-container").mouseleave(() => {
-        $("#edit-password-input").attr("type", "password")
+    $("#register-password-input-container").mouseleave(() => {
+        $("#register-password-input").attr("type", "password")
         $("#show-password-icon").show()
         $("#hide-password-icon").hide()
     })
@@ -204,15 +210,15 @@ function register() {
         $("#hide-password-icon").toggle()
 
         if ($("#show-password-icon").is(":visible")) {
-            $("#edit-password-input").attr("type", "password")
+            $("#register-password-input").attr("type", "password")
         } else {
-            $("#edit-password-input").attr("type", "text")
+            $("#register-password-input").attr("type", "text")
         }
     })
 
-    $(".dismiss-edit-profile-button").click(() => {
-        $("#edit-profile-modal").fadeOut(() => {
-            $("#edit-password-input").attr("type", "password")
+    $("#register-button").click(() => {
+        $("#register-profile-modal").fadeOut(() => {
+            $("#register-password-input").attr("type", "password")
             $("#show-password-icon").show()
             $("#hide-password-icon").hide()
         })
@@ -237,15 +243,15 @@ function checkInviteCode(code) {
     })
 }
 
-function checkIfEditProfileCanSave() {
-    const firstName = $("#edit-first-name-input").val().trim()
-    const lastName = $("#edit-last-name-input").val().trim()
-    const email = $("#edit-email-input").val().trim()
-    const password = $("#edit-password-input").val().trim()
+function checkIfAccountProfileCanRegister() {
+    const firstName = $("#register-first-name-input").val().trim()
+    const lastName = $("#register-last-name-input").val().trim()
+    const email = $("#register-email-input").val().trim()
+    const password = $("#register-password-input").val().trim()
 
     let saveIsDisabled = firstName.length === 0 || lastName.length === 0 || email.length === 0 || password.length === 0
 
-    setTimeout(() => $("#save-button").prop("disabled", saveIsDisabled), 0)
+    setTimeout(() => $("#register-button").prop("disabled", saveIsDisabled), 0)
 }
 
 function isValidPassword(password) {

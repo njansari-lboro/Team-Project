@@ -31,7 +31,7 @@
         </script>
 
         <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
-            <div id="edit-profile-card" class="center" style="display: none">
+            <div id="register-account-card" class="center" style="display: none">
                 <br>
                 
                 <h1>Register Your Account</h1>
@@ -42,26 +42,26 @@
                     Welcome <?php echo ucfirst($name) ?>
                 </h2>
                 
-                <div id="edit-first-name" class="edit-profile-detail">
-                    <span id="edit-first-name-label">First Name</span>
-                    <input id="edit-first-name-input" type="text">
+                <div id="register-first-name" class="register-profile-detail">
+                    <span id="register-first-name-label">First Name</span>
+                    <input id="register-first-name-input" type="text">
                 </div>
 
-                <div id="edit-last-name" class="edit-profile-detail">
-                    <span id="edit-last-name-label">Last Name</span>
-                    <input id="edit-last-name-input" type="text">
+                <div id="register-last-name" class="register-profile-detail">
+                    <span id="register-last-name-label">Last Name</span>
+                    <input id="register-last-name-input" type="text">
                 </div>
 
-                <div id="edit-email" class="edit-profile-detail">
-                    <span id="edit-email-label">Email Address</span>
-                    <input id="edit-email-input" type="email">
+                <div id="register-email" class="register-profile-detail">
+                    <span id="register-email-label">Email Address</span>
+                    <input id="register-email-input" type="email">
                 </div>
 
-                <div id="edit-password" class="edit-profile-detail">
-                    <span id="edit-password-label">Password</span>
+                <div id="register-password" class="register-profile-detail">
+                    <span id="register-password-label">Password</span>
 
-                    <div id="edit-password-input-container">
-                        <input id="edit-password-input" type="password">
+                    <div id="register-password-input-container">
+                        <input id="register-password-input" type="password">
 
                         <button id="show-hide-password-button">
                             <load-svg id="show-password-icon" src="/assets/showIcon.svg">
@@ -89,6 +89,14 @@
                                 </style>
                             </load-svg>
                         </button>
+                    </div>
+                </div>
+
+                <div id="register-confirm-password" class="register-profile-detail">
+                    <span id="register-confirm-password-label">Confirm Password</span>
+
+                    <div id="register-confirm-password-input-container">
+                        <input id="register-confirm-password-input" type="password">
                     </div>
                 </div>
 
