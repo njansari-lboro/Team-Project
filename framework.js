@@ -5,7 +5,7 @@ $(() => {
         checkInviteEmail(inviteEmail)
     }
 
-    $("#register-email-input").val(inviteName)
+    $("#register-first-name-input").val(inviteName)
     $("#register-email-input").val(inviteEmail).prop("readonly", true)
 
     $("#emailForm").show()
