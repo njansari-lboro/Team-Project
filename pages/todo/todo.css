@@ -259,8 +259,7 @@ input {
 .complete {
     /* text-decoration: line-through;
     text-decoration-thickness: 2px; */
-    background-color: var(--green-color);
-    opacity: 0.25;
+    background-color: var(--reduced-green-color);
 }
 
 .complete path:first-child {
