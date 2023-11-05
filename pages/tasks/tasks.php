@@ -343,6 +343,8 @@
                     </div>
                 </div>
             </div>
+
+            <div class="fade-out-overlay"></div>
         </div>
 
         <!-- to break inline display -->
@@ -660,6 +662,8 @@
                     </div>
                 </div>
             </div>
+
+            <div class="fade-out-overlay"></div>
         </div>
 
         <div><hr></div>
