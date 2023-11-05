@@ -249,7 +249,9 @@
                     <load-svg class="sidebar-item-icon" src="/assets/usersSidebarItemIcon.svg">
                         <style shadowRoot>
                             svg {
-                                width: 2.4em;
+                                width: 3.2em;
+                                padding-bottom: 0.15em;
+                                margin-left: -0.4em
                             }
 
                             .fill {
@@ -257,7 +259,7 @@
                             }
                         </style>
                     </load-svg>
-                    <span class="sidebar-item-text">Forums</span>
+                    <span class="sidebar-item-text">Users</span>
                 </a>
                 <?php } ?>
 
