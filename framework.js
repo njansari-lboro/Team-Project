@@ -1,12 +1,13 @@
 // DEALS WITH LOGIN LOGIC/SCREENS AND REDIRECTS TO MAIN INDEX, PAGE DASHBOARD
 
-$(document).ready(() => {
+$(() => {
     if (inviteCode) {
         checkInviteCode(inviteCode);
     }
 
 
-
+    
+    $("#edit-email-input").val(inviteCode).prop('readonly', true);
     $("#emailForm").show()
     $("#emailDisplay").hide()
     $("#passwordInput").hide()
@@ -17,7 +18,12 @@ $(document).ready(() => {
     $("#mainBtn").show()
     $("#notRegistered").hide()
 
-    setTimeout(() => $("#emailInput").focus(), 100)
+    $("#mainBtn").prop("disabled", $("#emailInput").val().length === 0)
+
+    setTimeout(() => {
+        $("#emailInput").focus()
+        setTimeout(() => $("#emailInput").click(), 100)
+    }, 100)
 
     $("#emailForm").submit((e) => {
         e.preventDefault()
@@ -27,6 +33,12 @@ $(document).ready(() => {
         } else {
             validatePasswordAndLogin()
         }
+    })
+
+    $(".form-control").on("input", function (e) {
+        e.preventDefault()
+
+        $("#mainBtn").prop("disabled", $(this).val().length === 0)
     })
 
     $("#changeEmail").click((e) => {
@@ -43,24 +55,25 @@ $(document).ready(() => {
         e.preventDefault()
         restart()
     })
-})
 
-function validateEmail(email) {
-    let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return re.test(String(email).toLowerCase())
-}
+    $('#save-button').click(function(event) {
+        event.preventDefault(); 
+        const password = $("#edit-password-input").val();
+        if (isValidPassword(password)) {
+            window.location = "pages/?page=dashboard";
+        } else {
+            alert("Password must be a minimum of 12 characters and contain a combination of uppercase letters, lowercase letters, numbers, and symbols.");
+        }
+    });
+
+
+})
 
 function validateAndDisplayEmail() {
     let email = $("#emailInput").val()
 
-    if (!email) {
-        alert("Email cannot be blank")
-        return false
-    } else if (!email.endsWith("@make-it-all.co.uk")) {
-        alert("Please enter an email ending with @make-it-all.co.uk")
-        return false
-    } else if (!validateEmail(email)) {
-        notRecognised()
+    if (!email.match(/^\w+@make-it-all\.co\.uk$/)) {
+        alert("Please enter a valid @make-it-all.co.uk email address.")
         return false
     }
 
@@ -81,7 +94,12 @@ function validateAndDisplayEmail() {
                 $("#forgotPassword").show()
                 $("#mainBtn").html("Login")
 
-                setTimeout(() => $("#passwordInput").focus(), 100)
+                $("#mainBtn").prop("disabled", $("#passwordInput").val().length === 0)
+
+                setTimeout(() => {
+                    $("#passwordInput").focus()
+                    setTimeout(() => $("#passwordInput").click(), 100)
+                }, 100)
             } else {
                 console.log("false")
                 notRecognised(email) // Call the function if the email is not recognized
@@ -92,13 +110,6 @@ function validateAndDisplayEmail() {
         }
     })
 
-    // $("#emailInput").hide()
-    // $("#displayedEmail").text(email)
-    // $("#passwordInput").show()
-    // $("#passwordField").show()
-    // $("#emailDisplay").show()
-    // $("#forgotPassword").show() 
-    // $("#mainBtn").html("Login")
 }
 
 function validatePasswordAndLogin() {
@@ -119,7 +130,7 @@ function validatePasswordAndLogin() {
                 console.log("success")
                 window.location = "pages/?page=dashboard"
             } else {
-                alert("Login failed. Please check your email/password and try again.")
+                alert("Login failed.\nPlease check your email and password then try again.")
             }
         },
         error: (jqXHR, textStatus, errorThrown) => {
@@ -139,11 +150,17 @@ function restart() {
     $("#tryAgain").hide()
     $("#mainBtn").show()
     $("#notRegistered").hide()
+    $('#passwordInput').val('')
+    $("#mainBtn").prop("disabled", $("#emailInput").val().length === 0)
+
+    setTimeout(() => {
+        $("#emailInput").focus()
+        setTimeout(() => $("#emailInput").click(), 100)
+    }, 100)
 }
 
 function notRecognised(email) {
     //show email isnt recognised screen (needs to be made in html first)
-    console.log("PUT HTML NOW!!")
 
     $("#notRegistered span").text(email)
     $("#emailForm").hide()
@@ -168,15 +185,46 @@ function showResetPassword() {
 }
 
 function register(){
-    $("#emailForm").hide()
-    $("#emailInput").hide()
-    $("#passwordField").hide()
-    $("#emailDisplay").hide()
-    $("#forgotPassword").hide()
-    $("#mainBtn").hide()
-    $("#resetPassword").hide()
-    $("#tryAgain").hide()
+    $('.centered-content').hide()
     $('#edit-profile-card').show()
+
+    $("#edit-first-name-input").change(checkIfEditProfileCanSave)
+    $("#edit-last-name-input").change(checkIfEditProfileCanSave)
+    $("#edit-email-input").change(checkIfEditProfileCanSave)
+    $("#edit-email-input").change(checkIfEditProfileCanSave);
+    $("#edit-password-input").change(checkIfEditProfileCanSave);
+
+
+    $("#edit-password-input-container").mouseleave(() => {
+        $("#edit-password-input").attr("type", "password")
+        $("#show-password-icon").show()
+        $("#hide-password-icon").hide()
+    })
+
+    $("#show-hide-password-button").click(() => {
+        $("#show-password-icon").toggle()
+        $("#hide-password-icon").toggle()
+
+        if ($("#show-password-icon").is(":visible")) {
+            $("#edit-password-input").attr("type", "password")
+        } else {
+            $("#edit-password-input").attr("type", "text")
+        }
+    })
+
+    $(".dismiss-edit-profile-button").click(() => {
+        $("#edit-profile-modal").fadeOut(() => {
+            $("#edit-password-input").attr("type", "password")
+            $("#show-password-icon").show()
+            $("#hide-password-icon").hide()
+        })
+    })
+
+
+
+    $("#hide-password-icon").hide()
+    checkIfEditProfileCanSave()
+
 }
 
 
@@ -188,7 +236,6 @@ function checkInviteCode(code) {
             invite_code: code
         },
         success: function(response) {
-            alert(response);
             if (response == "true") {
                 register();
             } else {
@@ -196,4 +243,31 @@ function checkInviteCode(code) {
             }
         }
     });
+}
+
+function checkIfEditProfileCanSave() {
+    const firstName = $("#edit-first-name-input").val().trim();
+    const lastName = $("#edit-last-name-input").val().trim();
+    const email = $("#edit-email-input").val().trim();
+    const password = $("#edit-password-input").val().trim();
+    
+    let saveIsDisabled = firstName.length === 0 || lastName.length === 0 || email.length === 0 || password.length === 0;
+    
+    setTimeout(() => $("#save-button").prop("disabled", saveIsDisabled), 0);
+}
+
+function isValidPassword(password) {
+    const minLengthRegex = /.{12,}/; 
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const numberRegex = /[0-9]/; 
+    const symbolRegex = /[\W_]/; 
+
+    const isLongEnough = minLengthRegex.test(password);
+    const hasUppercase = uppercaseRegex.test(password);
+    const hasLowercase = lowercaseRegex.test(password);
+    const hasNumber = numberRegex.test(password);
+    const hasSymbol = symbolRegex.test(password);
+
+    return isLongEnough && hasUppercase && hasLowercase && hasNumber && hasSymbol;
 }
