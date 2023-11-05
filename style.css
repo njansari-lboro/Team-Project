@@ -67,8 +67,6 @@ input.form-control::placeholder {
     max-width: 400px;
     width: 100%;
     padding: 1.5rem;
-    border-radius: 30px;
-    background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.85) 33%, var(--secondary-accent-color) 100%);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -149,26 +147,16 @@ input.form-control:focus {
 #edit-profile-card {
     position: fixed;
     padding: 1.5rem;
-    border-radius: 30px;
-    background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.85) 33%, var(--secondary-accent-color) 100%);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 30px;
     box-shadow: 0 10px 10px var(--shadow-color);
-    /* background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 2px solid var(--separator-color);
-    border-radius: 20px; */
-    /* padding: 20px; */
     width: 40%;
     min-width: 300px;
     max-width: 600px;
     height: 75%;
     text-align: center;
-    /* box-shadow: 0 8px 16px 0 var(--shadow-color); */
-    /* color: var(--label-color); */
 }
 
 #edit-profile-image {
@@ -195,8 +183,8 @@ input.form-control:focus {
     font-size: var(--callout);
     border-radius: 10px;
     border: 0.5em solid transparent;
-    color: var(--label-color);
-    background-color: var(--tertiary-fill-color);
+    color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.05);
     width: 80%;
     padding: 0 10px;
     margin: auto;
@@ -214,7 +202,7 @@ input.form-control:focus {
 }
 
 #show-hide-password-button {
-    --icon-color: var(--secondary-label-color);
+    --icon-color: rgba(0, 0, 0, 0.5);
     background-color: transparent;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -226,52 +214,32 @@ input.form-control:focus {
 }
 
 #show-hide-password-button:hover {
-    --icon-color: var(--label-color);
-    background-color: var(--secondary-fill-color);
+    --icon-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.08);
 }
 
-#dismiss-buttons {
-    /* display: flex; */
+#register-button {
+    font-size: var(--body);
+    border-radius: 20px;
+    padding: 10px 20px;
+    /* margin: 10px; */
     width: 85%;
     bottom: 20px;
     left: 0;
     right: 0;
     margin: 0 auto;
     position: fixed;
-}
-
-.dismiss-edit-profile-button {
-    font-size: var(--body);
-    color: var(--label-color);
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin: 10px;
-    width: 50%;
-}
-
-#cancel-button.dismiss-edit-profile-button {
-    background-color: var(--fill-color);
-    border: 2px solid var(--fill-color);
-}
-
-#cancel-button.dismiss-edit-profile-button:hover {
-    color: var(--alt-selected-control-text-color);
-    background-color: var(--secondary-label-color);
-}
-
-#save-button.dismiss-edit-profile-button {
     font-weight: bold;
     color: var(--alt-selected-control-text-color);
     background-color: var(--accent-color);
     border: 2px solid var(--accent-color);
 }
 
-#save-button.dismiss-edit-profile-button:hover {
+#register-button:hover {
     background-color: var(--secondary-accent-color);
 }
 
-#save-button.dismiss-edit-profile-button:disabled {
-    background-color: var(--disabled-control-text-color);
-    border-color: var(--disabled-control-text-color);
+#register-button:disabled {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-color: rgba(0, 0, 0, 0.25);
 }
