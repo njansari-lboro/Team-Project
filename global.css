@@ -14,10 +14,10 @@
     --quaternary-accent-color: rgba(255, 122, 0, 0.18);
 
     /* A red colour adapted to the current environment */
-    --red-colour: rgba(255, 59, 48, 1);
+    --red-color: rgba(255, 59, 48, 1);
 
     /* A green colour adapted to the current environment */
-    --green-colour: rgba(40, 205, 65, 1)
+    --green-color: rgba(40, 205, 65, 1)
 }
 
 /* Label colours */
