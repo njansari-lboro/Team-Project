@@ -1,332 +1,332 @@
 .to-do-container {
-  font-size: var(--body);
-  background-color: var(--window-background);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 1rem;
-  height: 100vh;
+    font-size: var(--body);
+    background-color: var(--window-background);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    height: 100vh;
 }
 
 .headers {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 5rem;
-  border-top: solid 1.5px var(--text-color);
-  font-weight: 500;
-  font-size: 2rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    border-top: solid 1.5px var(--text-color);
+    font-weight: 500;
+    font-size: 2rem;
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  height: 100%;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .header p {
-  margin: 0;
-  padding-left: 1rem;
+    margin: 0;
+    padding-left: 1rem;
 }
 
 .header-task-name {
-  width: 70%;
-  border-right: solid 1.5px var(--text-color);
+    width: 70%;
+    border-right: solid 1.5px var(--text-color);
 }
 
 .header-due-date {
-  width: 15%;
-  border-right: solid 1.5px var(--text-color);
+    width: 15%;
+    border-right: solid 1.5px var(--text-color);
 }
 
 .header-priority {
-  width: 15%;
+    width: 15%;
 }
 
 .title {
-  width: 90%;
+    width: 90%;
 }
 
 .items-container-wrapper {
-  width: 100%;
-  min-height: 60vh;
-  max-height: 60vh;
-  overflow-y: scroll;
+    width: 100%;
+    min-height: 60vh;
+    max-height: 60vh;
+    overflow-y: scroll;
 }
 
 .items-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  max-height: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-height: 800px;
 }
 
 .item {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
 .inputs {
-  display: flex;
-  flex-direction: row;
-  border-top: 1.5px solid var(--text-color);
-  height: 5rem;
+    display: flex;
+    flex-direction: row;
+    border-top: 1.5px solid var(--text-color);
+    height: 5rem;
 }
 
 .comments-input {
-  border: 2px solid var(--text-color);
-  background-color: var(--window-background);
-  color: var(--text-color);
-  /* text-decoration: line-through; */
-  font-family: "Arial";
-  width: 96%;
-  border-radius: 10px;
-  height: 8rem;
-  vertical-align: top;
-  margin-left: 2rem;
-  margin-right: 1rem;
+    border: 2px solid var(--text-color);
+    background-color: var(--window-background);
+    color: var(--text-color);
+    /* text-decoration: line-through; */
+    font-family: "Arial";
+    width: 96%;
+    border-radius: 10px;
+    height: 8rem;
+    vertical-align: top;
+    margin-left: 2rem;
+    margin-right: 1rem;
 }
 
 .comments {
-  width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .task-name {
-  width: 70%;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  border-right: solid 1.5px var(--text-color);
-  /* padding-right: 1rem; */
+    width: 70%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-right: solid 1.5px var(--text-color);
+    /* padding-right: 1rem; */
 }
 
 .due-date {
-  width: 15%;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  border-right: solid 1.5px var(--text-color);
+    width: 15%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-right: solid 1.5px var(--text-color);
 }
 
 .priority {
-  width: 15%;
-  display: flex;
-  align-items: center;
-  height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .select-input {
-  border: none;
-  background: transparent;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+    border: none;
+    background: transparent;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .task-input {
-  width: 100%;
-  font-weight: bold;
-  color: var(--text-color);
+    width: 100%;
+    font-weight: bold;
+    color: var(--text-color);
 }
 
 .due-date-input {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  width: 100%;
-  color: var(--text-color);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: 100%;
+    color: var(--text-color);
 }
 
 .priority-input {
-  width: 100%;
-  border-radius: 10px;
-  background-color: var(--text-color) !important;
-  padding-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--text-color) !important;
+    padding-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 select.high {
-  background-color: rgba(255, 182, 193, 0.5) !important;
+    background-color: rgba(255, 182, 193, 0.5) !important;
 }
 
 select.medium {
-  background-color: rgba(255, 215, 0, 0.5) !important;
+    background-color: rgba(255, 215, 0, 0.5) !important;
 }
 
 select.low {
-  background-color: rgba(152, 251, 152, 0.5) !important;
+    background-color: rgba(152, 251, 152, 0.5) !important;
 }
 
 input::placeholder {
-  font-weight: normal;
+    font-weight: normal;
 }
 
 .item {
-  overflow-y: hidden;
+    overflow-y: hidden;
 }
 
 .input {
-  background-color: var(--window-background);
-  height: 3.5rem;
+    background-color: var(--window-background);
+    height: 3.5rem;
 }
 
 .tick {
-  height: 3rem;
+    height: 3rem;
 }
 
 .tick:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .ellipsis {
-  height: 2rem;
-  cursor: pointer;
-  padding-right: 1rem;
+    height: 2rem;
+    cursor: pointer;
+    padding-right: 1rem;
 }
 
 input {
-  border: none;
-  outline: none;
+    border: none;
+    outline: none;
 }
 
 .add {
-  height: 3rem;
+    height: 3rem;
 }
 
 .add:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .add-div {
-  width: 70%;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding-right: 1rem;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-right: 1rem;
 }
 
 .add-div-container {
-  display: flex;
-  flex-direction: row;
-  border-top: 1.5px solid var(--text-color);
-  height: 5rem;
+    display: flex;
+    flex-direction: row;
+    border-top: 1.5px solid var(--text-color);
+    height: 5rem;
 }
 
 .buttons-container {
-  bottom: 5vh;
-  width: 90%;
-  height: 5rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
+    bottom: 5vh;
+    width: 90%;
+    height: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
 }
 
 .button {
-  text-align: center;
-  height: 4rem;
-  padding: 5px 20px;
-  border: 2px solid var(--text-color);
-  border-radius: 10px;
-  background-color: var(--window-background);
-  cursor: pointer;
-  font-size: 1rem;
+    text-align: center;
+    height: 4rem;
+    padding: 5px 20px;
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    background-color: var(--window-background);
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 .complete {
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
 }
 
 .clear-list {
-  background-color: var(--label-color);
-  font-weight: 600;
-  font-size: 2rem;
+    background-color: var(--label-color);
+    font-weight: 600;
+    font-size: 2rem;
 }
 
 .clear-list:hover {
-  background-color: var(--tertiary-label-color);
+    background-color: var(--tertiary-label-color);
 }
 
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 750px) and (min-width: 600px) {
-  .header-task-name {
-    width: 50%;
-  }
+    .header-task-name {
+        width: 50%;
+    }
 
-  .header-due-date {
-    width: 25%;
-  }
+    .header-due-date {
+        width: 25%;
+    }
 
-  .header-priority {
-    width: 25%;
-  }
+    .header-priority {
+        width: 25%;
+    }
 
-  .task-name {
-    width: 50%;
-  }
+    .task-name {
+        width: 50%;
+    }
 
-  .due-date {
-    width: 25%;
-  }
+    .due-date {
+        width: 25%;
+    }
 
-  .priority {
-    width: 25%;
-  }
+    .priority {
+        width: 25%;
+    }
 
-  .comments-input {
-    width: 93%;
-  }
+    .comments-input {
+        width: 93%;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .header-task-name {
-    width: 60%;
-  }
+    .header-task-name {
+        width: 60%;
+    }
 
-  .header-due-date {
-    width: 20%;
-  }
+    .header-due-date {
+        width: 20%;
+    }
 
-  .header-priority {
-    width: 20%;
-  }
+    .header-priority {
+        width: 20%;
+    }
 
-  .task-name {
-    width: 60%;
-    font-size: 0.8rem;
-  }
+    .task-name {
+        width: 60%;
+        font-size: 0.8rem;
+    }
 
-  .due-date {
-    width: 20%;
-    font-size: 0.8rem;
-  }
+    .due-date {
+        width: 20%;
+        font-size: 0.8rem;
+    }
 
-  .priority {
-    width: 20%;
-    font-size: 0.8rem;
-  }
+    .priority {
+        width: 20%;
+        font-size: 0.8rem;
+    }
 
-  .comments-input {
-    width: 93%;
-  }
+    .comments-input {
+        width: 93%;
+    }
 }
 
 textarea:disabled {
-  text-decoration: line-through;
-  background-color: var(--tertiary-label-color);
+    text-decoration: line-through;
+    background-color: var(--tertiary-label-color);
 }
 
 select:disabled {
-  background-color: var(--tertiary-label-color) !important;
-  border: 2px solid var(--text-color);
+    background-color: var(--tertiary-label-color) !important;
+    border: 2px solid var(--text-color);
 }
