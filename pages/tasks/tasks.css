@@ -516,7 +516,7 @@ input {
 
 .fade-out-overlay {
     position: absolute;
-    width: 95%;
+    width: calc(100% - 4rem);
     height: 2rem;
     margin-top: -2rem;
     background: linear-gradient(to bottom, transparent, var(--window-background));
