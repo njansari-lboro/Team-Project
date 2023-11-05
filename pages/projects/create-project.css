@@ -13,6 +13,7 @@ h1 {
 #pname {
     border: 0;
     font-size: var(--title-2);
+    background-color: var(--window-background);
 }
 
 #pbrief {
@@ -20,6 +21,7 @@ h1 {
     font-size: var(--title-3);
     margin-right: 50px;
     border-radius: 5px;
+    background-color: var(--window-background);
 }
 
 #closebtn {
@@ -49,6 +51,13 @@ h1 {
     background-color: #FFC472;
 }
 
+#project-deadline{
+    color: var(--accent-color);
+    font-size: var(--title-3);
+    background-color: var(--window-background);
+}
+
+
 .container {
     border: solid;
     border-color: #0000001a;
@@ -67,3 +76,11 @@ h1 {
         width: 100%;
     }
 }
+
+@media screen and (max-width:500px){
+    #project-deadline{
+        width:100%;
+    }
+}
+
+
