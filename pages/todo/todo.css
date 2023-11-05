@@ -329,6 +329,5 @@ textarea:disabled {
 }
 
 select:disabled {
-    background-color: var(--tertiary-label-color) !important;
-    border: 2px solid var(--text-color);
+    color: var(--disabled-control-text-color) !important;
 }
