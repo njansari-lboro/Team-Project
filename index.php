@@ -22,7 +22,7 @@ if (isset($_GET['invite_code'])) {
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="style.css">
 
-    <script type="text/javascript" src="loadSvgCustomTag.js"></script>
+    <script type="text/javascript" src="/loadSvgCustomTag.js"></script>
 
     <title>Make-It-All</title>
 </head>
@@ -32,8 +32,81 @@ if (isset($_GET['invite_code'])) {
         var inviteCode = "<?php echo $name . '@make-it-all.co.uk'; ?>";
     </script>
     <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
+        <div id="edit-profile-card" class="center" style="display: none;">
+            <div id="edit-profile-image">
+                <load-svg id="edit-profile-icon" src="/assets/profileIcon.svg">
+                    <style shadowRoot>
+                        svg {
+                            height: 10em;
+                        }
+
+                        .fill {
+                            fill: var(--text-color)
+                        }
+                    </style>
+                </load-svg>
+            </div>
+            <br>
+            <h1>Register Your Account</h1>
+            <br>
+            <h2> Welcome <?php echo ucfirst($name) ?></h2>
+            <div id="edit-first-name" class="edit-profile-detail">
+                <span id="edit-first-name-label">First Name</span>
+                <input id="edit-first-name-input" type="text">
+            </div>
+
+            <div id="edit-last-name" class="edit-profile-detail">
+                <span id="edit-last-name-label">Last Name</span>
+                <input id="edit-last-name-input" type="text">
+            </div>
+
+            <div id="edit-email" class="edit-profile-detail">
+                <span id="edit-email-label">Email Address</span>
+                <input id="edit-email-input" type="email">
+            </div>
+
+            <div id="edit-password" class="edit-profile-detail">
+                <span id="edit-password-label">Password</span>
+
+                <div id="edit-password-input-container">
+                    <input id="edit-password-input" type="password">
+
+                    <button id="show-hide-password-button">
+                        <load-svg id="show-password-icon" src="/assets/showIcon.svg">
+                            <style shadowRoot>
+                                svg {
+                                    height: 1.25em;
+                                    padding-top: 0.2em
+                                }
+
+                                .fill {
+                                    fill: var(--icon-color)
+                                }
+                            </style>
+                        </load-svg>
+
+                        <load-svg id="hide-password-icon" src="/assets/hideIcon.svg">
+                            <style shadowRoot>
+                                svg {
+                                    height: var(--body);
+                                }
+
+                                .fill {
+                                    fill: var(--icon-color)
+                                }
+                            </style>
+                        </load-svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="dismiss-buttons">
+                <!-- <button id="cancel-button" class="dismiss-edit-profile-button">Cancel</button> -->
+                <button id="save-button" class="dismiss-edit-profile-button" disabled>Register</button>
+            </div>
+        </div>
         <div class="centered-content">
-            <load-svg id="title-logo" class="mb-4 mx-auto" src="assets/titleLogo.svg">
+            <load-svg id="title-logo" class="mb-4 mx-auto" src="/assets/titleLogo.svg">
                 <style shadowRoot>
                     svg {
                         height: 4.5em;
@@ -46,8 +119,6 @@ if (isset($_GET['invite_code'])) {
                     }
                 </style>
             </load-svg>
-
-
 
             <form id="emailForm">
                 <div class="form-group">
@@ -71,7 +142,7 @@ if (isset($_GET['invite_code'])) {
 
             <form id="resetPassword">
                 <p>
-                    Sorry, please <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: rgba(209, 100, 0, 1)">Contact Support</span></a> to help reset your password
+                    <a href="mailto:admin@make-it-all.co.uk"><span style="font-weight: bold; color: rgba(209, 100, 0, 1)">Contact Support</span></a> to help reset your password
                 </p>
             </form>
 
@@ -85,78 +156,7 @@ if (isset($_GET['invite_code'])) {
         </div>
     </div>
 
-    <div id="edit-profile-card" style="display: none;" class="center">
-        <div id="edit-profile-image">
-            <load-svg id="edit-profile-icon" src="assets/profileIcon.svg">
-                <style shadowRoot>
-                    svg {
-                        height: 10em;
-                    }
 
-                    .fill {
-                        fill: var(--text-color)
-                    }
-                </style>
-            </load-svg>
-        </div>
-
-        <div id="edit-first-name" class="edit-profile-detail">
-            <span id="edit-first-name-label">First Name</span>
-            <input id="edit-first-name-input" type="text">
-        </div>
-
-        <div id="edit-last-name" class="edit-profile-detail">
-            <span id="edit-last-name-label">Last Name</span>
-            <input id="edit-last-name-input" type="text">
-        </div>
-
-        <div id="edit-email" class="edit-profile-detail">
-            <span id="edit-email-label">Email Address</span>
-            <input id="edit-email-input" type="email" readonly>
-        </div>
-
-        <div id="edit-password" class="edit-profile-detail">
-            <span id="edit-password-label">Password</span>
-
-            <div id="edit-password-input-container">
-                <input id="edit-password-input" type="password" readonly>
-
-                <button id="show-hide-password-button">
-                    <load-svg id="show-password-icon" src="assets/showIcon.svg">
-                        <style shadowRoot>
-                            svg {
-                                /* width: var(--body); */
-                                height: var(--body);
-                            }
-
-                            .fill {
-                                fill: var(--secondary-label-color)
-                            }
-                        </style>
-                    </load-svg>
-
-                    <load-svg id="hide-password-icon" src="assets/hideIcon.svg">
-                        <style shadowRoot>
-                            svg {
-                                /* width: var(--body); */
-                                height: var(--body);
-                            }
-
-                            .fill {
-                                fill: var(--secondary-label-color)
-                            }
-                        </style>
-                    </load-svg>
-                </button>
-            </div>
-        </div>
-
-        <div id="dismiss-buttons">
-            <button id="cancel-button" class="dismiss-edit-profile-button">Cancel</button>
-            <button id="save-button" class="dismiss-edit-profile-button" disabled>Save</button>
-        </div>
-    </div>
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="framework.js"></script>
