@@ -5,13 +5,12 @@ $(() => {
         checkInviteCode(inviteCode)
     }
 
-    const uppercaseFirst = ((str) => {
-        const firstChar = str.charAt(0).toUpperCase()
-        const remainingChars = str.slice(1)
-        return `${firstChar}${remainingChars}`
-    })()
+    const firstChar = inviteCode.charAt(0).toUpperCase()
+    const remainingChars = inviteCode.slice(1)
+    const name = `${firstChar}${remainingChars}`
+    console.log(name)
 
-    $("#register-email-input").val(uppercaseFirst(inviteCode))
+    $("#register-email-input").val(name)
     $("#register-email-input").val(inviteCode).prop("readonly", true)
 
     $("#emailForm").show()
