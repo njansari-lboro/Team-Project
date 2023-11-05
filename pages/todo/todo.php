@@ -12,7 +12,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="stylesheet" href="/pages/todo/todo.css" />
+        <link rel="stylesheet" href="to-do.css" />
         <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
         <title>To-Do List</title>
@@ -20,23 +20,21 @@
 
     <body>
         <div class="to-do-container">
-            <div class="top-section">
-                <div class="headers">
-                    <div class="header header-task-name">
-                        <p>Task Name</p>
-                    </div>
-
-                    <div class="header header-due-date">
-                        <p>Due Date</p>
-                    </div>
-
-                    <div class="header header-priority">
-                        <p>Priority</p>
-                    </div>
-                </div>
-
-                <div class="items-container-wrapper">
+            <div class="items-container-wrapper">
                     <div class="items-container">
+                        <div class="headers">
+                            <div class="header header-task-name">
+                                <p>Task Name</p>
+                            </div>
+
+                            <div class="header header-due-date">
+                                <p>Due Date</p>
+                            </div>
+
+                            <div class="header header-priority">
+                                <p>Priority</p>
+                            </div>
+                        </div>
                         <form class="item">
                             <div class="inputs">
                                 <div class="task-name">
@@ -85,20 +83,16 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
 
             <div class="buttons-container">
-                <!-- <button class="save-list button">Save</button> -->
                 <button class="clear-list button">Clear list</button>
             </div>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="/pages/todo/todo.js"></script>
+        <script src="to-do.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     </body>
 </html>
-
-<!-- jQuery toggle for animation when clicking on to-do list item -->
