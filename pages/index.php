@@ -10,11 +10,11 @@
     case "Employee":
         $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
         break;
-    case "Admin":
-        $pages = array("dashboard", "projects", "todo", "tutorials", "forums", "users");
-        break;
     case "Manager":
         $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
+        break;
+    case "Admin":
+        $pages = array("dashboard", "projects", "todo", "tutorials", "forums", "users");
         break;
     default:
         echo "Invalid role: {$_SESSION['user']['role']}";
@@ -321,11 +321,11 @@
 
                     if ($page == "dashboard") {
                         switch ($_SESSION["user"]["role"]) {
+                        case "Admin": case "Manager": 
+                            $page = "manager-dashboard";
+                            break;
                         case "Employee":
                             $page = "employee-dashboard";
-                            break;
-                        case "Manager":
-                            $page = "manager-dashboard";
                             break;
                         }
                     }
