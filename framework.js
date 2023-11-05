@@ -1,17 +1,12 @@
 // DEALS WITH LOGIN LOGIC/SCREENS AND REDIRECTS TO MAIN INDEX, PAGE DASHBOARD
 
 $(() => {
-    if (inviteCode) {
-        checkInviteCode(inviteCode)
+    if (inviteEmail) {
+        checkInviteEmail(inviteEmail)
     }
 
-    const firstChar = inviteCode.charAt(0).toUpperCase()
-    const remainingChars = inviteCode.slice(1)
-    const name = `${firstChar}${remainingChars}`
-    console.log(name)
-
-    $("#register-email-input").val(name)
-    $("#register-email-input").val(inviteCode).prop("readonly", true)
+    $("#register-email-input").val(inviteName)
+    $("#register-email-input").val(inviteEmail).prop("readonly", true)
 
     $("#emailForm").show()
     $("#emailDisplay").hide()
@@ -233,11 +228,11 @@ function register() {
     $("#hide-password-icon").hide()
 }
 
-function checkInviteCode(code) {
+function checkInviteEmail(email) {
     $.ajax({
         type: "POST",
         url: "helpers/emailcheck.php",
-        data: { invite_code: code },
+        data: { email: email },
         success: (response) => {
             if (response == "true") {
                 register()

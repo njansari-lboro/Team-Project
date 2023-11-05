@@ -27,7 +27,8 @@
 
     <body>
         <script type="text/javascript">
-            const inviteCode = "<?php echo "$name@make-it-all.co.uk" ?>"
+            const inviteName = "<?php echo ucfirst($name) ?>"
+            const inviteEmail = "<?php echo "$name@make-it-all.co.uk" ?>"
         </script>
 
         <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
