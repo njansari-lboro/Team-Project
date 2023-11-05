@@ -205,6 +205,14 @@ input {
     cursor: pointer;
 }
 
+.minus {
+  height: 3rem;
+}
+
+.minus:hover {
+  cursor: pointer;
+}
+
 .add-div {
     width: 70%;
     display: flex;
