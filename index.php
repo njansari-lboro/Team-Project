@@ -32,7 +32,7 @@
 
         <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
             <div id="edit-profile-card" class="center" style="display: none;">
-                <div id="edit-profile-image">
+                <!-- <div id="edit-profile-image">
                     <load-svg id="edit-profile-icon" src="/assets/profileIcon.svg">
                         <style shadowRoot>
                             svg {
@@ -44,7 +44,7 @@
                             }
                         </style>
                     </load-svg>
-                </div>
+                </div> -->
 
                 <br>
                 
@@ -106,10 +106,7 @@
                     </div>
                 </div>
 
-                <div id="dismiss-buttons">
-                    <!-- <button id="cancel-button" class="dismiss-edit-profile-button">Cancel</button> -->
-                    <button id="save-button" class="dismiss-edit-profile-button" disabled>Register</button>
-                </div>
+                <button id="register-button" disabled>Register</button>
             </div>
 
             <div class="centered-content">
