@@ -9,4 +9,6 @@ $(() => {
     $("#closebtn").click(() => {
         window.location.href = "/pages/?page=projects"
     });
+
+    $("#project-deadline").datepicker({ dateFormat: "dd/mm/yy" });
 });

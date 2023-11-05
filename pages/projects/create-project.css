@@ -51,12 +51,11 @@ h1 {
     background-color: #FFC472;
 }
 
-#project-deadline{
+#project-deadline {
     color: var(--accent-color);
     font-size: var(--title-3);
     background-color: var(--window-background);
 }
-
 
 .container {
     border: solid;
@@ -77,10 +76,8 @@ h1 {
     }
 }
 
-@media screen and (max-width:500px){
-    #project-deadline{
-        width:100%;
+@media screen and (max-width:500px) {
+    #project-deadline {
+        width: 100%;
     }
 }
-
-
