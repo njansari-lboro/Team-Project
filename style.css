@@ -148,7 +148,6 @@ input.form-control:focus {
 
 #edit-profile-card {
     position: fixed;
-    width: 100%;
     padding: 1.5rem;
     border-radius: 30px;
     background: rgb(255, 255, 255);
@@ -163,7 +162,7 @@ input.form-control:focus {
     border: 2px solid var(--separator-color);
     border-radius: 20px; */
     /* padding: 20px; */
-    /* width: 40%; */
+    width: 40%;
     /* min-width: 300px;
     max-width: 600px; */
     height: 75%;
