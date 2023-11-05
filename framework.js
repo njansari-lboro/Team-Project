@@ -5,6 +5,13 @@ $(() => {
         checkInviteCode(inviteCode)
     }
 
+    const uppercaseFirst = (() => {
+        const firstChar = str.charAt(0).toUpperCase()
+        const remainingChars = str.slice(1)
+        return `${firstChar}${remainingChars}`
+    })()
+
+    $("#register-email-input").val(uppercaseFirst(inviteCode))
     $("#register-email-input").val(inviteCode).prop("readonly", true)
 
     $("#emailForm").show()
@@ -195,7 +202,6 @@ function register() {
 
     $("#register-first-name-input").change(checkIfAccountProfileCanRegister)
     $("#register-last-name-input").change(checkIfAccountProfileCanRegister)
-    $("#register-email-input").change(checkIfAccountProfileCanRegister)
     $("#register-email-input").change(checkIfAccountProfileCanRegister)
     $("#register-password-input").change(checkIfAccountProfileCanRegister)
     $("#register-confirm-password-input").change(checkIfAccountProfileCanRegister)
