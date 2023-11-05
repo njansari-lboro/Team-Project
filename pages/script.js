@@ -144,7 +144,7 @@ function toggleSidebar() {
 
 function dismissProfileMenu() {
     $("#profile-menu-items").hide()
-    $("#profile-menu-button:not(:hover)").css("background-color", "var(--bar-background-color)")
+    $("#profile-menu-button:not(:hover)").css("background-color", "transparent")
 }
 
 function checkIfEditProfileCanSave() {
