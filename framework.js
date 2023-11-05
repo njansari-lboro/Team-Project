@@ -5,7 +5,7 @@ $(() => {
         checkInviteCode(inviteCode)
     }
 
-    $("#edit-email-input").val(inviteCode).prop("readonly", true)
+    $("#register-email-input").val(inviteCode).prop("readonly", true)
 
     $("#emailForm").show()
     $("#emailDisplay").hide()
@@ -193,11 +193,12 @@ function register() {
     $(".centered-content").hide()
     $('#register-profile-card').show()
 
-    $("#register-first-name-input").change(checkIfEditProfileCanSave)
-    $("#register-last-name-input").change(checkIfEditProfileCanSave)
-    $("#register-email-input").change(checkIfEditProfileCanSave)
-    $("#register-email-input").change(checkIfEditProfileCanSave)
-    $("#register-password-input").change(checkIfEditProfileCanSave)
+    $("#register-first-name-input").change(checkIfAccountProfileCanRegister)
+    $("#register-last-name-input").change(checkIfAccountProfileCanRegister)
+    $("#register-email-input").change(checkIfAccountProfileCanRegister)
+    $("#register-email-input").change(checkIfAccountProfileCanRegister)
+    $("#register-password-input").change(checkIfAccountProfileCanRegister)
+    $("#register-confirm-password-input").change(checkIfAccountProfileCanRegister)
 
     $("#register-password-input-container").mouseleave(() => {
         $("#register-password-input").attr("type", "password")
@@ -225,7 +226,6 @@ function register() {
     })
 
     $("#hide-password-icon").hide()
-    //     checkIfEditProfileCanSave()
 }
 
 function checkInviteCode(code) {
@@ -248,8 +248,9 @@ function checkIfAccountProfileCanRegister() {
     const lastName = $("#register-last-name-input").val().trim()
     const email = $("#register-email-input").val().trim()
     const password = $("#register-password-input").val().trim()
+    const password = $("#register-confirm-password-input").val().trim()
 
-    let saveIsDisabled = firstName.length === 0 || lastName.length === 0 || email.length === 0 || password.length === 0
+    let saveIsDisabled = firstName.length === 0 || lastName.length === 0 || email.length === 0 || password.length === 0 || confirmPassword.length === 0
 
     setTimeout(() => $("#register-button").prop("disabled", saveIsDisabled), 0)
 }
