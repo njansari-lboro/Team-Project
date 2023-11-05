@@ -19,7 +19,6 @@
     default:
         echo "Invalid role: {$_SESSION['user']['role']}";
         die();
-        break;
     }
 ?>
 
