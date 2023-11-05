@@ -20,7 +20,7 @@
     --green-color: rgba(40, 205, 65, 1);
 
     /* A green colour in a reduced context adapted to the current environment */
-    --reduced-green-color: rgba(40, 205, 65, 0.26)
+    --reduced-green-color: rgba(40, 205, 65, 0.2)
 }
 
 /* Label colours */
@@ -151,7 +151,7 @@
     :root {
         --red-colour: rgba(255, 69, 58, 1);
         --green-colour: rgba(50, 215, 75, 1);
-        --reduced-green-color: rgba(50, 215, 75, 0.25);
+        --reduced-green-color: rgba(50, 215, 75, 0.2);
         --label-color: rgba(255, 255, 255, 0.85);
         --secondary-label-color: rgba(255, 255, 255, 0.55);
         --tertiary-label-color: rgba(255, 255, 255, 0.25);

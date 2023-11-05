@@ -264,7 +264,6 @@ input {
 
 .complete path:first-child {
     fill: var(--green-color);
-    stroke: var(--green-color);
 }
 
 .complete path:last-child {
@@ -278,7 +277,7 @@ input {
 }
 
 .clear-list:hover {
-    background-color: var(--secondary-fill-color);
+    background-color: var(--secondary-accent-color);
 }
 
 /* MEDIA QUERIES */
@@ -348,7 +347,7 @@ input {
 }
 
 textarea:disabled {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     color: var(--disabled-control-text-color);
     background-color: var(--quaternary-fill-color);
 }
