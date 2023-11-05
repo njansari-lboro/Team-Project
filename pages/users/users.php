@@ -60,36 +60,36 @@
         <script>
             $(() => {
                 function validateForm() {
-                    const fullname = $("#fullname").val().trim();
-                    const email = $("#email").val().trim();
-                    const user_type = $("#user_type").val();
-                    const isFormValid = fullname && email && user_type;
+                    const fullName = $("#fullname").val().trim()
+                    const email = $("#email").val().trim()
+                    const userType = $("#user_type").val()
+                    const isFormValid = fullName && email && userType
 
-                    $("#add-user-btn").prop("disabled", !isFormValid);
+                    $("#add-user-btn").prop("disabled", !isFormValid)
                 }
 
-                validateForm();
-                $("#add-user-form input, #add-user-form select").on("change keyup", validateForm);
+                validateForm()
+                $("#add-user-form input, #add-user-form select").on("input", validateForm)
 
                 $("#add-user-btn").click(() => {
-                    const fullname = $("#fullname").val().trim();
-                    const email = $("#email").val().trim();
-                    const registered = $("#registered").is(":checked");
-                    const userType = $("#user_type").val();
+                    const fullName = $("#fullname").val().trim()
+                    const email = $("#email").val().trim()
+                    const registered = $("#registered").is(":checked")
+                    const userType = $("#user_type").val()
 
                     const userDiv = $("<div>").addClass("user").html(`
-                    <p>Name: ${fullname}</p>
+                    <p>Name: ${fullName}</p>
                     <p>Email: ${email}</p>
                     <p>Registered: No</p>
                     <p>User Type: ${userType}</p>
-                    `);
+                    `)
 
-                    $("#users-container").append(userDiv);
+                    $("#users-container").append(userDiv)
 
-                    $("#add-user-form")[0].reset();
-                    validateForm();
-                });
-            });
+                    $("#add-user-form")[0].reset()
+                    validateForm()
+                })
+            })
         </script>
     </body>
 </html>

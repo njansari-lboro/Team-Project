@@ -70,7 +70,7 @@ h1, h2 {
     background-color: var(--accent-color);
     border: none;
     border-radius: 8px;
-    color: var(--control-color);
+    color: var(--control-text-color);
     font-size: var(--sub-headline);
     transition: background-color 0.3s ease;
     grid-column: span 2;

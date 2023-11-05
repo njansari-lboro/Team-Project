@@ -4,7 +4,7 @@ $(() => {
     if (inviteCode) {
         checkInviteCode(inviteCode)
     }
-    
+
     $("#edit-email-input").val(inviteCode).prop("readonly", true)
 
     $("#emailForm").show()
@@ -56,11 +56,11 @@ $(() => {
 
     $("#save-button").click((event) => {
         event.preventDefault()
-      
+
         const password = $("#edit-password-input").val()
-        
+
         if (isValidPassword(password)) {
-            window.location = "pages/?page=dashboard"
+            window.location = "/"
         } else {
             alert("Password must be a minimum of 12 characters and contain a combination of uppercase letters, lowercase letters, numbers, and symbols.")
         }
@@ -183,16 +183,15 @@ function showResetPassword() {
     $("#tryAgain").show()
 }
 
-function register(){
-    $('.centered-content').hide()
+function register() {
+    $(".centered-content").hide()
     $('#edit-profile-card').show()
 
     $("#edit-first-name-input").change(checkIfEditProfileCanSave)
     $("#edit-last-name-input").change(checkIfEditProfileCanSave)
     $("#edit-email-input").change(checkIfEditProfileCanSave)
-    $("#edit-email-input").change(checkIfEditProfileCanSave);
-    $("#edit-password-input").change(checkIfEditProfileCanSave);
-
+    $("#edit-email-input").change(checkIfEditProfileCanSave)
+    $("#edit-password-input").change(checkIfEditProfileCanSave)
 
     $("#edit-password-input-container").mouseleave(() => {
         $("#edit-password-input").attr("type", "password")
@@ -219,53 +218,48 @@ function register(){
         })
     })
 
-
-
     $("#hide-password-icon").hide()
-//     checkIfEditProfileCanSave()
+    //     checkIfEditProfileCanSave()
 }
-
 
 function checkInviteCode(code) {
     $.ajax({
         type: "POST",
         url: "helpers/emailcheck.php",
-        data: {
-            invite_code: code
-        },
-        success: function(response) {
+        data: { invite_code: code },
+        success: (response) => {
             if (response == "true") {
-                register();
+                register()
             } else {
-               restart();
+                restart()
             }
         }
-    });
+    })
 }
 
 function checkIfEditProfileCanSave() {
-    const firstName = $("#edit-first-name-input").val().trim();
-    const lastName = $("#edit-last-name-input").val().trim();
-    const email = $("#edit-email-input").val().trim();
-    const password = $("#edit-password-input").val().trim();
-    
-    let saveIsDisabled = firstName.length === 0 || lastName.length === 0 || email.length === 0 || password.length === 0;
-    
-    setTimeout(() => $("#save-button").prop("disabled", saveIsDisabled), 0);
+    const firstName = $("#edit-first-name-input").val().trim()
+    const lastName = $("#edit-last-name-input").val().trim()
+    const email = $("#edit-email-input").val().trim()
+    const password = $("#edit-password-input").val().trim()
+
+    let saveIsDisabled = firstName.length === 0 || lastName.length === 0 || email.length === 0 || password.length === 0
+
+    setTimeout(() => $("#save-button").prop("disabled", saveIsDisabled), 0)
 }
 
 function isValidPassword(password) {
-    const minLengthRegex = /.{12,}/; 
-    const uppercaseRegex = /[A-Z]/;
-    const lowercaseRegex = /[a-z]/;
-    const numberRegex = /[0-9]/; 
-    const symbolRegex = /[\W_]/; 
+    const minLengthRegex = /.{12,}/
+    const uppercaseRegex = /[A-Z]/
+    const lowercaseRegex = /[a-z]/
+    const numberRegex = /[0-9]/
+    const symbolRegex = /[\W_]/
 
-    const isLongEnough = minLengthRegex.test(password);
-    const hasUppercase = uppercaseRegex.test(password);
-    const hasLowercase = lowercaseRegex.test(password);
-    const hasNumber = numberRegex.test(password);
-    const hasSymbol = symbolRegex.test(password);
+    const isLongEnough = minLengthRegex.test(password)
+    const hasUppercase = uppercaseRegex.test(password)
+    const hasLowercase = lowercaseRegex.test(password)
+    const hasNumber = numberRegex.test(password)
+    const hasSymbol = symbolRegex.test(password)
 
-    return isLongEnough && hasUppercase && hasLowercase && hasNumber && hasSymbol;
+    return isLongEnough && hasUppercase && hasLowercase && hasNumber && hasSymbol
 }
