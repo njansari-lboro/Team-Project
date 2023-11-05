@@ -180,10 +180,12 @@ input::placeholder {
 }
 
 .tick {
+    color: var(--secondary-label-color);
     height: 3rem;
 }
 
 .tick:hover {
+    color: var(--label-color);
     cursor: pointer;
 }
 
@@ -217,14 +219,6 @@ input {
 .new-item svg:hover path:last-child {
     stroke: white;
 }
-
-/* .minus {
-    height: 3rem;
-}
-
-.minus:hover {
-    cursor: pointer;
-} */
 
 .add-div {
     width: 70%;
@@ -265,6 +259,14 @@ input {
 .complete {
     text-decoration: line-through;
     text-decoration-thickness: 2px;
+}
+
+.complete path:first-child {
+    fill: var(--green-color);
+}
+
+.complete path:last-child {
+    stroke: white;
 }
 
 .clear-list {
