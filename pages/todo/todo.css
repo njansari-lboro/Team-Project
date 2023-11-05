@@ -198,21 +198,33 @@ input {
     outline: none;
 }
 
-.add {
+.new-item path {
+    color: var(--accent-color)
+}
+
+.new-item svg {
     height: 3rem;
 }
 
-.add:hover {
+.new-item svg:hover {
     cursor: pointer;
 }
 
-.minus {
+.new-item svg:hover path:first-child {
+    fill: var(--accent-color);
+}
+
+.new-item svg:hover path:last-child {
+    stroke: white;
+}
+
+/* .minus {
     height: 3rem;
 }
 
 .minus:hover {
     cursor: pointer;
-}
+} */
 
 .add-div {
     width: 70%;
@@ -253,10 +265,6 @@ input {
 .complete {
     text-decoration: line-through;
     text-decoration-thickness: 2px;
-}
-
-.new-item path {
-    color: var(--accent-color)
 }
 
 .clear-list {
@@ -337,7 +345,8 @@ input {
 
 textarea:disabled {
     text-decoration: line-through;
-    background-color: var(--tertiary-label-color);
+    color: var(--disabled-control-text-color);
+    background-color: var(--quaternary-fill-color);
 }
 
 select:disabled {
