@@ -175,7 +175,7 @@ input::placeholder {
 
 .input {
     font-size: var(--body);
-    background-color: var(--window-background);
+    background-color: transparent;
     height: 3.5rem;
 }
 
@@ -257,12 +257,15 @@ input {
 }
 
 .complete {
-    text-decoration: line-through;
-    text-decoration-thickness: 2px;
+    /* text-decoration: line-through;
+    text-decoration-thickness: 2px; */
+    background-color: var(--green-color);
+    opacity: 0.25;
 }
 
 .complete path:first-child {
     fill: var(--green-color);
+    stroke: var(--green-color);
 }
 
 .complete path:last-child {
