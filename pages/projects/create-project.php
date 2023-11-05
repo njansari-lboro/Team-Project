@@ -11,6 +11,10 @@
     <head>
         <link rel="stylesheet" href="/global.css">
         <link rel="stylesheet" href="/pages/projects/create-project.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     </head>
 
     <body>
@@ -24,6 +28,8 @@
             <textarea id="pbrief" name="pbrief" rows="4" cols="50" placeholder="Enter project brief" required></textarea>
             
             <br><br>
+
+            <input type="text" id="project-deadline" placeholder = "Enter Project Deadline">
 
             <h1>Select Team Members</h1>
 
@@ -43,7 +49,12 @@
             <input id="submitBtn" type="submit" value="Continue" class="">
         </form>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
         <script src="/pages/projects/create-project.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('#project-deadline').datepicker({ dateFormat: 'dd/mm/yy' });
+            });
+        </script>
     </body>
 </html>
