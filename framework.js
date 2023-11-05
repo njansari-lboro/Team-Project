@@ -191,7 +191,7 @@ function showResetPassword() {
 
 function register() {
     $(".centered-content").hide()
-    $('#register-profile-card').show()
+    $("#register-account-card").show()
 
     $("#register-first-name-input").change(checkIfAccountProfileCanRegister)
     $("#register-last-name-input").change(checkIfAccountProfileCanRegister)
