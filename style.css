@@ -163,18 +163,12 @@ input.form-control:focus {
     border-radius: 20px; */
     /* padding: 20px; */
     width: 40%;
-    /* min-width: 300px;
-    max-width: 600px; */
+    min-width: 300px;
+    max-width: 600px;
     height: 75%;
     text-align: center;
     /* box-shadow: 0 8px 16px 0 var(--shadow-color); */
     color: var(--label-color);
-}
-
-@media (prefers-color-scheme: dark) {
-    #edit-profile-card {
-        background-color: rgba(30, 30, 30, 0.85);
-    }
 }
 
 #edit-profile-image {
