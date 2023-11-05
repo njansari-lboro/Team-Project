@@ -8,7 +8,7 @@ html, body {
 }
 
 .container-fluid {
-    background-image: url("img/bgfinal.jpg");
+    background-image: url("/img/bgfinal.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -37,19 +37,25 @@ form {
     display: block;
     width: 100%;
     background-color: var(--accent-color);
-    border: 1px solid var(--accent-color);
+    border: 2px solid var(--accent-color);
     padding: 0.25em;
 }
 
-.btn.btn-primary:hover {
-    background-color: white;
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
+.btn.btn-primary:disabled {
+    color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
 }
 
-.btn.btn-primary:active {
+.btn.btn-primary:not(:disabled):hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+.btn.btn-primary:not(:disabled):active {
     background-color: var(--secondary-accent-color) !important;
-    border: 1px solid var(--accent-color) !important;
+    border: 2px solid var(--accent-color) !important;
 }
 
 input.form-control::placeholder {
@@ -134,8 +140,10 @@ input.form-control:focus {
     border-radius: 20px !important;
 }
 
-#edit-profile-modal {
-    display: none;
+.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #edit-profile-card {
@@ -205,16 +213,24 @@ input.form-control:focus {
 }
 
 #show-hide-password-button {
-    vertical-align: center;
-    position: absolute;
-    margin-left: -60px;
-    border: none;
+    --icon-color: var(--secondary-label-color);
     background-color: transparent;
-    /* border: 1px solid red; */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: none;
+    height: 2.6em;
+    width: 2.8em;
+    margin-left: -42px;
+}
+
+#show-hide-password-button:hover {
+    --icon-color: var(--label-color);
+    background-color: var(--secondary-fill-color);
 }
 
 #dismiss-buttons {
-    display: flex;
+    /* display: flex; */
     width: 85%;
     bottom: 20px;
     left: 0;
@@ -234,27 +250,27 @@ input.form-control:focus {
 }
 
 #cancel-button.dismiss-edit-profile-button {
-    background-color: var(--window-background);
-    border: 2px solid var(--secondary-label-color);
+    background-color: var(--fill-color);
+    border: 2px solid var(--fill-color);
 }
 
 #cancel-button.dismiss-edit-profile-button:hover {
     color: var(--alt-selected-control-text-color);
-    background-color: var(--label-color);
+    background-color: var(--secondary-label-color);
 }
 
 #save-button.dismiss-edit-profile-button {
     font-weight: bold;
     color: var(--alt-selected-control-text-color);
-    background-color: var(--secondary-accent-color);
-    border: 2px solid var(--secondary-accent-color);
+    background-color: var(--accent-color);
+    border: 2px solid var(--accent-color);
 }
 
 #save-button.dismiss-edit-profile-button:hover {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-accent-color);
 }
 
 #save-button.dismiss-edit-profile-button:disabled {
     background-color: var(--disabled-control-text-color);
     border-color: var(--disabled-control-text-color);
-}
+}   
