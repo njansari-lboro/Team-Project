@@ -1,0 +1,135 @@
+body {
+    font-family: var(--font-family);
+    background-color: var(--window-background);
+    color: var(--text-color);
+}
+
+.chart {
+    display: inline-block;
+    width: 33%;
+}
+
+.timeline, .timeline-bar {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.ui-progresbar {
+    padding: 10px;
+    border-spacing: 0px;
+}
+
+.progress-bar.ui-progressbar.ui-corner-all.ui-widget.ui-widget-content {
+    border: 0;
+    border-bottom: 1px solid var(--tertiary-label-color);
+    border-radius: 0px;
+}
+
+.ui-progressbar-value.ui-corner-left.ui-widget-header {
+    height: 100%;
+    border-radius: 25px;
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+}
+
+/* outer border radius */
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 15px;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 15px;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 15px;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 15px;
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid var(--secondary-fill-color);
+}
+
+.ui-widget-content {
+    background: var(--secondary-fill-color);
+}
+
+#report-container, #charts-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#report-container {
+    justify-content: space-between;
+}
+
+#charts-container {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    border: 0;
+}
+
+#table-container {
+    display: block;
+    max-width: 100%;
+}
+
+#project-timeline {
+    margin: 2.5%;
+    width: 100%;
+    max-width: 100%;
+}
+
+.timeline-bar::before {
+    content: attr(date);
+    position: absolute;
+    top: -50px;
+    /* Adjust this value to control the tooltip's position */
+    left: 50%;
+    transform: translate(-50%, 110%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+}
+
+.timeline-bar:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 726px) {
+    .chart {
+        width: auto;
+        max-width: 100%;
+    }
+
+    #report-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #charts-container {
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        max-width: 100%;
+    }
+
+    #table-container {
+        width: auto;
+        max-width: 100%;
+    }
+
+    #project-timeline {
+        margin: 2.5%;
+        width: 80%;
+        max-width: 100%;
+    }
+}
