@@ -1,6 +1,12 @@
 // DEALS WITH LOGIN LOGIC/SCREENS AND REDIRECTS TO MAIN INDEX, PAGE DASHBOARD
 
 $(() => {
+    if (inviteCode) {
+        checkInviteCode(inviteCode)
+    }
+    
+    $("#edit-email-input").val(inviteCode).prop("readonly", true)
+
     $("#emailForm").show()
     $("#emailDisplay").hide()
     $("#passwordInput").hide()
@@ -47,6 +53,18 @@ $(() => {
         e.preventDefault()
         restart()
     })
+
+    $("#save-button").click((event) => {
+        event.preventDefault()
+      
+        const password = $("#edit-password-input").val()
+        
+        if (isValidPassword(password)) {
+            window.location = "pages/?page=dashboard"
+        } else {
+            alert("Password must be a minimum of 12 characters and contain a combination of uppercase letters, lowercase letters, numbers, and symbols.")
+        }
+    })
 })
 
 function validateAndDisplayEmail() {
@@ -90,13 +108,6 @@ function validateAndDisplayEmail() {
         }
     })
 
-    // $("#emailInput").hide()
-    // $("#displayedEmail").text(email)
-    // $("#passwordInput").show()
-    // $("#passwordField").show()
-    // $("#emailDisplay").show()
-    // $("#forgotPassword").show() 
-    // $("#mainBtn").html("Login")
 }
 
 function validatePasswordAndLogin() {
@@ -137,6 +148,7 @@ function restart() {
     $("#tryAgain").hide()
     $("#mainBtn").show()
     $("#notRegistered").hide()
+    $("#passwordInput").val("")
 
     $("#mainBtn").prop("disabled", $("#emailInput").val().length === 0)
 
@@ -148,7 +160,6 @@ function restart() {
 
 function notRecognised(email) {
     //show email isnt recognised screen (needs to be made in html first)
-    console.log("PUT HTML NOW!!")
 
     $("#notRegistered span").text(email)
     $("#emailForm").hide()
@@ -170,4 +181,91 @@ function showResetPassword() {
     $("#mainBtn").hide()
     $("#resetPassword").show()
     $("#tryAgain").show()
+}
+
+function register(){
+    $('.centered-content').hide()
+    $('#edit-profile-card').show()
+
+    $("#edit-first-name-input").change(checkIfEditProfileCanSave)
+    $("#edit-last-name-input").change(checkIfEditProfileCanSave)
+    $("#edit-email-input").change(checkIfEditProfileCanSave)
+    $("#edit-email-input").change(checkIfEditProfileCanSave);
+    $("#edit-password-input").change(checkIfEditProfileCanSave);
+
+
+    $("#edit-password-input-container").mouseleave(() => {
+        $("#edit-password-input").attr("type", "password")
+        $("#show-password-icon").show()
+        $("#hide-password-icon").hide()
+    })
+
+    $("#show-hide-password-button").click(() => {
+        $("#show-password-icon").toggle()
+        $("#hide-password-icon").toggle()
+
+        if ($("#show-password-icon").is(":visible")) {
+            $("#edit-password-input").attr("type", "password")
+        } else {
+            $("#edit-password-input").attr("type", "text")
+        }
+    })
+
+    $(".dismiss-edit-profile-button").click(() => {
+        $("#edit-profile-modal").fadeOut(() => {
+            $("#edit-password-input").attr("type", "password")
+            $("#show-password-icon").show()
+            $("#hide-password-icon").hide()
+        })
+    })
+
+
+
+    $("#hide-password-icon").hide()
+//     checkIfEditProfileCanSave()
+}
+
+
+function checkInviteCode(code) {
+    $.ajax({
+        type: "POST",
+        url: "helpers/emailcheck.php",
+        data: {
+            invite_code: code
+        },
+        success: function(response) {
+            if (response == "true") {
+                register();
+            } else {
+               restart();
+            }
+        }
+    });
+}
+
+function checkIfEditProfileCanSave() {
+    const firstName = $("#edit-first-name-input").val().trim();
+    const lastName = $("#edit-last-name-input").val().trim();
+    const email = $("#edit-email-input").val().trim();
+    const password = $("#edit-password-input").val().trim();
+    
+    let saveIsDisabled = firstName.length === 0 || lastName.length === 0 || email.length === 0 || password.length === 0;
+    
+    setTimeout(() => $("#save-button").prop("disabled", saveIsDisabled), 0);
+}
+
+function isValidPassword(password) {
+    const minLengthRegex = /.{12,}/; 
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const numberRegex = /[0-9]/; 
+    const symbolRegex = /[\W_]/; 
+
+    const isLongEnough = minLengthRegex.test(password);
+    const hasUppercase = uppercaseRegex.test(password);
+    const hasLowercase = lowercaseRegex.test(password);
+    const hasNumber = numberRegex.test(password);
+    const hasSymbol = symbolRegex.test(password);
+
+    return isLongEnough && hasUppercase && hasLowercase && hasNumber && hasSymbol;
 }
