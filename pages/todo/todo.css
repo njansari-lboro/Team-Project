@@ -82,13 +82,11 @@
     border: 2px solid var(--text-color);
     background-color: var(--window-background);
     color: var(--text-color);
-    /* text-decoration: line-through; */
     font-size: var(--callout);
     width: 96%;
     border-radius: 10px;
     height: 8rem;
     vertical-align: top;
-    margin-left: 2rem;
     margin-right: 1rem;
     padding: 1rem;
 }
