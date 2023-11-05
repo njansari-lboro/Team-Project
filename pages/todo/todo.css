@@ -131,7 +131,8 @@
 }
 
 .task-input {
-    width: 100%;
+    width: calc(100% - 10px);
+    margin: auto 5px;
     font-weight: bold;
     color: var(--text-color);
 }
@@ -252,6 +253,10 @@ input {
 .complete {
     text-decoration: line-through;
     text-decoration-thickness: 2px;
+}
+
+.new-item path {
+    color: var(--accent-color)
 }
 
 .clear-list {
