@@ -63,9 +63,8 @@ function addButton() {
             <div class="add-div-container">
                 <div class="add-div">
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon add" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 176v160M336 256H176"/></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon minus" viewBox="0 0 512 512">
-                                        <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M336 256H176"/>
-                                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon minus" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M336 256H176"/></svg>
                 </div>
             </div>
         </div>
@@ -87,15 +86,15 @@ function addButton() {
 }
 
 function minusButton() {
-  $(".minus").click(() => {
-    const container = $(".items-container");
+    $(".minus").click(() => {
+        const container = $(".items-container");
 
-    const element = container.children().eq(-2);
+        const element = container.children().eq(-2);
 
-    if (element.hasClass("item")) {
-      container.children().eq(-2).remove();
-    }
-  });
+        if (element.hasClass("item")) {
+            container.children().eq(-2).remove();
+        }
+    });
 }
 
 function clearList() {
@@ -171,10 +170,7 @@ function checkMediaQuery() {
                 $(this).hide();
 
                 let dueDate = $(this).find("input").val();
-                let smallScreenDateInput = $(this)
-                    .parent()
-                    .siblings(".comments")
-                    .find(".small-screen-date");
+                let smallScreenDateInput = $(this).parent().siblings(".comments").find(".small-screen-date");
 
                 smallScreenDateInput.show();
                 smallScreenDateInput.val(dueDate);

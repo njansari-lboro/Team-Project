@@ -206,11 +206,11 @@ input {
 }
 
 .minus {
-  height: 3rem;
+    height: 3rem;
 }
 
 .minus:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .add-div {
