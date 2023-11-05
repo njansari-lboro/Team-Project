@@ -320,6 +320,7 @@ input {
 
     .comments-input {
         width: 93%;
+        margin-left: 0;
     }
 }
 
