@@ -102,7 +102,8 @@ $(() => {
         })
 
         $("#invite-member-email").change(function () {
-            $(this).blur(() => $("#invite-member-button").click())
+            $(this).blur()
+            $("#invite-member-button").click()
         })
 
         $("#invite-member-button").click(() => {
