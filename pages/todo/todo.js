@@ -1,32 +1,32 @@
 $(() => {
-    hideComments();
-    clearList();
-    datePicker();
-    setPriorityBackgroundColours();
-    toggleComplete();
-    addButton();
-    hideSmallScreenInputs();
-    checkMediaQuery();
+  hideComments();
+  clearList();
+  datePicker();
+  setPriorityBackgroundColours();
+  toggleComplete();
+  addButton();
+  hideSmallScreenInputs();
+  checkMediaQuery();
 
-    $(".items-container").on("click", ".ellipsis", addToggles);
+  $(".items-container").on("click", ".ellipsis", addToggles);
 });
 
 function hideComments() {
-    $(".comments").hide();
+  $(".comments").hide();
 }
 
 function hideSmallScreenInputs() {
-    $(".small-screen-date").hide();
+  $(".small-screen-date").hide();
 }
 
 function addToggles() {
-    const comments = $(this).closest(".item").find(".comments");
-    comments.slideToggle();
+  const comments = $(this).closest(".item").find(".comments");
+  comments.slideToggle();
 }
 
 function addButton() {
-    $(".add").click(() => {
-        const newItemHtml = `
+  $(".add").click(() => {
+    const newItemHtml = `
         <form class="item">
             <div class="inputs">
                 <div class="task-name">
@@ -57,7 +57,7 @@ function addButton() {
         </form>
         `;
 
-        const btnAddItemHtml = `
+    const btnAddItemHtml = `
         <div class="new-item">
             <div class="add-div-container">
                 <div class="add-div">
@@ -67,25 +67,23 @@ function addButton() {
         </div>
         `;
 
-        const container = $(".items-container");
+    const container = $(".items-container");
 
-        container.children().last().remove();
+    container.children().last().remove();
 
-        container.append(newItemHtml);
-        container.append(btnAddItemHtml);
+    container.append(newItemHtml);
+    container.append(btnAddItemHtml);
 
-        addButton();
-        hideComments();
-        datePicker();
-        addToggles();
-
-        // $(".ellipsis").click(addToggles);
-    });
+    addButton();
+    hideComments();
+    datePicker();
+    addToggles();
+  });
 }
 
 function clearList() {
-    $(".clear-list").click(() => {
-        const btnAddItemHtml = `
+  $(".clear-list").click(() => {
+    const btnAddItemHtml = `
         <div class="new-item">
             <div class="add-div-container">
                 <div class="add-div">
@@ -95,93 +93,76 @@ function clearList() {
         </div>
         `;
 
-        const container = $(".items-container");
+    const container = $(".items-container");
 
-        container.children().remove();
-        container.append(btnAddItemHtml);
-        addButton();
-    });
+    container.children().slice(1).remove();
+    container.append(btnAddItemHtml);
+    addButton();
+  });
 }
 
 function datePicker() {
-    $(".items-container").on("focus", ".datepicker", function () {
-        // Initialize datepicker for dynamically added elements
-        $(this).datepicker({ dateFormat: "dd/mm/yy" });
-    });
+  $(".items-container").on("focus", ".datepicker", function () {
+    // Initialize datepicker for dynamically added elements
+    $(this).datepicker({ dateFormat: "dd/mm/yy" });
+  });
 }
 
 function setPriorityBackgroundColours() {
-    $(".items-container").on("change", ".priority-select", function () {
-        let selectedPriority = $(this).val().toLowerCase();
-        let selectedElement = $(this);
+  $(".items-container").on("change", ".priority-select", function () {
+    let selectedPriority = $(this).val().toLowerCase();
+    let selectedElement = $(this);
 
-        selectedElement.removeClass("high low medium");
+    selectedElement.removeClass("high low medium");
 
-        if (selectedPriority !== "none") {
-            selectedElement.addClass(selectedPriority);
-        }
-    });
+    if (selectedPriority !== "none") {
+      selectedElement.addClass(selectedPriority);
+    }
+  });
 }
 
 function toggleComplete() {
-    $(".items-container").on("click", ".tick", function () {
-        let parentDiv = $(this).closest(".item");
-        parentDiv.toggleClass("complete");
+  $(".items-container").on("click", ".tick", function () {
+    let parentDiv = $(this).closest(".item");
+    parentDiv.toggleClass("complete");
 
-        if (parentDiv.hasClass("complete")) {
-            let inputs = parentDiv.find("input, select, textarea");
-            inputs.prop("readonly", true).prop("disabled", true);
-        } else {
-            let inputs = parentDiv.find("input, select, textarea");
-            inputs.prop("readonly", false).prop("disabled", false);
-        }
-    });
+    if (parentDiv.hasClass("complete")) {
+      let inputs = parentDiv.find("input, select, textarea");
+      inputs.prop("readonly", true).prop("disabled", true);
+    } else {
+      let inputs = parentDiv.find("input, select, textarea");
+      inputs.prop("readonly", false).prop("disabled", false);
+    }
+  });
 }
-
-// function smallClassRemoved() {
-//     $(".item").each(function () {})
-// }
 
 function checkMediaQuery() {
-    $(window).on("resize"), function () {
-        let windowWidth = $(window).width();
+  $(window).on("resize"),
+    function () {
+      let windowWidth = $(window).width();
 
-        if (windowWidth <= 600) {
-            $(".header-due-date").hide();
+      if (windowWidth <= 600) {
+        $(".header-due-date").hide();
 
-            $(".header-task-name").css("width", "75%");
-            $(".header-priority").css("width", "25%");
+        $(".header-task-name").css("width", "75%");
+        $(".header-priority").css("width", "25%");
 
-            $(".task-name").css("width", "75%");
-            $(".priority").css("width", "25%");
+        $(".task-name").css("width", "75%");
+        $(".priority").css("width", "25%");
 
-            $(".due-date").each(function () {
-                parentDiv = $(this).parent().parent();
-                $(this).hide();
+        $(".due-date").each(function () {
+          parentDiv = $(this).parent().parent();
+          $(this).hide();
 
-                let dueDate = $(this).find("input").val();
-                let smallScreenDateInput = $(this).parent().siblings(".comments").find(".small-screen-date");
+          let dueDate = $(this).find("input").val();
+          let smallScreenDateInput = $(this)
+            .parent()
+            .siblings(".comments")
+            .find(".small-screen-date");
 
-                smallScreenDateInput.show();
-                smallScreenDateInput.val(dueDate);
-            });
-        }
+          smallScreenDateInput.show();
+          smallScreenDateInput.val(dueDate);
+        });
+      }
     };
 }
-
-// $(".due-date").each(function () {
-//     parentDiv = $(this).parent().parent();
-//     $(this).hide();
-//     console.log("HI");
-//     let dueDate = $(this).find("input").val();
-//     let smallScreenDateInput = $(this).parent().siblings(".comments").find(".small-screen-date");
-//     smallScreenDateInput.show();
-//     smallScreenDateInput.val(dueDate);
-// });
-
-// else {
-//     $(".item").removeClass("small");
-//     smallClassRemoved()
-//     $(".header-due-date").show();
-//     $(".due-date").show();
-// }
