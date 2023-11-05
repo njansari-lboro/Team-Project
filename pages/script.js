@@ -78,7 +78,7 @@ $(() => {
         })
 
         $("#hide-password-icon").hide()
-        checkIfEditProfileCanSave()
+        // checkIfEditProfileCanSave()
     })
 
     $("#invite-button").click(() => {
@@ -101,6 +101,8 @@ $(() => {
             $("#invite-link").val("")
             $("#copy-invite-link-button").prop("disabled", true)
         })
+
+        $("#invite-member-email").change($("#invite-member-button").click)
 
         $("#invite-member-button").click(() => {
             const email = $("#invite-member-email").val()
