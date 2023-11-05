@@ -20,23 +20,21 @@
 
     <body>
         <div class="to-do-container">
-            <div class="top-section">
-                <div class="headers">
-                    <div class="header header-task-name">
-                        <p>Task Name</p>
-                    </div>
-
-                    <div class="header header-due-date">
-                        <p>Due Date</p>
-                    </div>
-
-                    <div class="header header-priority">
-                        <p>Priority</p>
-                    </div>
-                </div>
-
-                <div class="items-container-wrapper">
+            <div class="items-container-wrapper">
                     <div class="items-container">
+                        <div class="headers">
+                            <div class="header header-task-name">
+                                <p>Task Name</p>
+                            </div>
+
+                            <div class="header header-due-date">
+                                <p>Due Date</p>
+                            </div>
+
+                            <div class="header header-priority">
+                                <p>Priority</p>
+                            </div>
+                        </div>
                         <form class="item">
                             <div class="inputs">
                                 <div class="task-name">
@@ -85,11 +83,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
 
             <div class="buttons-container">
-                <!-- <button class="save-list button">Save</button> -->
                 <button class="clear-list button">Clear list</button>
             </div>
         </div>
@@ -100,5 +96,3 @@
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     </body>
 </html>
-
-<!-- jQuery toggle for animation when clicking on to-do list item -->
