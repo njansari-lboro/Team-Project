@@ -1,19 +1,19 @@
 /* body {
     font-family: var(--font-family);
     background-color: var(--window-background);
-    color: var(--text-color); 
+    color: var(--text-color);
     margin-left: 50px;
-  } */
+} */
 
 h1 {
     font-size: var(--title-1);
     color: var(--placeholder-text-color);
-
 }
 
 #pname {
     border: 0;
     font-size: var(--title-2);
+    background-color: var(--window-background);
 }
 
 #pbrief {
@@ -21,7 +21,7 @@ h1 {
     font-size: var(--title-3);
     margin-right: 50px;
     border-radius: 5px;
-
+    background-color: var(--window-background);
 }
 
 #closebtn {
@@ -51,6 +51,12 @@ h1 {
     background-color: #FFC472;
 }
 
+#project-deadline {
+    color: var(--accent-color);
+    font-size: var(--title-3);
+    background-color: var(--window-background);
+}
+
 .container {
     border: solid;
     border-color: #0000001a;
@@ -60,16 +66,18 @@ h1 {
     overflow-y: scroll;
 }
 
-::placeholder {
-    color: var(--placeholder-text-color);
-}
-
 @media screen and (max-width:350px) {
     .container {
         width: 100%;
     }
 
     #pname {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #project-deadline {
         width: 100%;
     }
 }

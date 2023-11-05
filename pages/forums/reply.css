@@ -29,11 +29,9 @@
 .exit-btn {
     background: none;
     border: none;
-    font-size: 50px;
     cursor: pointer;
-    color: var(--secondary-label-color);
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,6 +47,7 @@
     flex: 2.2;
     font-size: var(--title-2);
     outline: none;
+    color: var(--text-color);
     background-color: var(--tertiary-fill-color);
 }
 
@@ -60,6 +59,7 @@
     border-radius: 5px;
     font-size: var(--body);
     resize: none;
+    color: var(--text-color);
     background-color: var(--quaternary-fill-color);
 }
 
@@ -69,18 +69,18 @@
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: var(--title-3);
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0px 5px 5px var(--shadow-color);
     position: absolute;
     right: 20px;
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 45px;
     margin-top: 45px;
 }
 
 .envelope-icon {
-    margin-right: 8px;
+    margin-right: 10px;
 }

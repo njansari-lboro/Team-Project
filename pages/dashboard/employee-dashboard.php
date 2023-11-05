@@ -1,3 +1,10 @@
+<?php
+    if (!isset($_SERVER["HTTP_REFERER"]) || empty($_SERVER["HTTP_REFERER"])) {
+        header("Location: /pages/?page=dashboard");
+        die();
+    }
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -129,8 +136,7 @@
                 })
 
                 $("#project-preview").click(() => {
-                    //ask what page to lead to
-                    // window.location.href = "?page=tasks"
+                    window.location.href = "?page=tasks"
                 })
 
                 $("#forums-preview").click(() => {

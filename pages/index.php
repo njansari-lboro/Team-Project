@@ -11,7 +11,7 @@
         $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
         break;
     case "Admin":
-        $pages = array("dashboard", "todo", "tutorials", "forums");
+        $pages = array("dashboard", "projects", "todo", "tutorials", "forums", "users");
         break;
     case "Manager":
         $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
@@ -19,7 +19,6 @@
     default:
         echo "Invalid role: {$_SESSION['user']['role']}";
         die();
-        break;
     }
 ?>
 
@@ -39,7 +38,7 @@
         <title>Make-It-All</title>
     </head>
 
-    <body>
+    <body class="sidebar-expanded">
         <div class="nav-bar">
             <load-svg id="sidebar-toggle" src="/assets/sidebarToggleIcon.svg">
                 <style shadowRoot>
@@ -215,6 +214,7 @@
                         <style shadowRoot>
                             svg {
                                 width: 2.4em;
+                                padding-bottom: 0.1em
                             }
 
                             .fill {
@@ -244,6 +244,25 @@
                 </a>
                 <?php } ?>
 
+                <?php function users_sidebar_item() { ?>
+                <a id="users-sidebar-item" class="sidebar-item" href="?page=users">
+                    <load-svg class="sidebar-item-icon" src="/assets/usersSidebarItemIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 3.2em;
+                                padding-bottom: 0.15em;
+                                margin-left: -0.4em
+                            }
+
+                            .fill {
+                                fill: var(--fill-color);
+                            }
+                        </style>
+                    </load-svg>
+                    <span class="sidebar-item-text">Users</span>
+                </a>
+                <?php } ?>
+
                 <?php
                     $sidebarItems = [
                         "dashboard" => "dashboard_sidebar_item",
@@ -252,6 +271,7 @@
                         "todo" => "todo_sidebar_item",
                         "tutorials" => "tutorials_sidebar_item",
                         "forums" => "forums_sidebar_item",
+                        "users" => "users_sidebar_item"
                     ];
 
                     foreach ($pages as $page) {
@@ -294,10 +314,9 @@
                     if (isset($_GET["page"]) && !empty($_GET["page"]) && in_array($_GET["page"], $pages)) {
                         $page = $_GET["page"];
                     } else {
-                        header("Location: ?page=dashboard");
-                        die();
+                        $page = "dashboard";
                     }
-
+                    
                     $dir = $page;
 
                     if ($page == "dashboard") {
@@ -311,14 +330,6 @@
                         }
                     }
 
-                    if ($page === "todo") {
-                        $page = "todo-php";
-                    }
-
-                    if ($page === "tasks") {
-                        $page = "assignments";
-                    }
-
                     include("$dir/$page.php")
                 ?>
             </div>
@@ -326,10 +337,7 @@
 
         <div id="edit-profile-modal">
             <script>
-                const firstName = "<?php echo $_SESSION['user']['firstName'] ?>"
-                const lastName = "<?php echo $_SESSION['user']['lastName'] ?>"
-                const emailAddress = "<?php echo $_SESSION['user']['email'] ?>"
-                const password = "<?php echo $_SESSION['user']['password'] ?>"
+                const user = <?php echo json_encode($_SESSION["user"]) ?>
             </script>
 
             <div class="dimmed-overlay"></div>
@@ -374,12 +382,12 @@
                             <load-svg id="show-password-icon" src="/assets/showIcon.svg">
                                 <style shadowRoot>
                                     svg {
-                                        /* width: var(--body); */
-                                        height: var(--body);
+                                        height: 1.25em;
+                                        padding-top: 0.2em
                                     }
 
                                     .fill {
-                                        fill: var(--secondary-label-color)
+                                        fill: var(--icon-color)
                                     }
                                 </style>
                             </load-svg>
@@ -387,12 +395,11 @@
                             <load-svg id="hide-password-icon" src="/assets/hideIcon.svg">
                                 <style shadowRoot>
                                     svg {
-                                        /* width: var(--body); */
                                         height: var(--body);
                                     }
 
                                     .fill {
-                                        fill: var(--secondary-label-color)
+                                        fill: var(--icon-color)
                                     }
                                 </style>
                             </load-svg>
@@ -437,7 +444,7 @@
                 <div>
                     <input id="invite-link" type="text" placeholder="Invite link" readonly>
 
-                    <button id="copy-invite-link-button">
+                    <button id="copy-invite-link-button" disabled>
                         <load-svg id="copy-invite-link-icon" src="/assets/copyIcon.svg">
                             <style shadowRoot>
                                 svg {

@@ -163,3 +163,7 @@ td.progress-bar.ui-progressbar.ui-corner-all.ui-widget.ui-widget-content {
     border-color: var(--accent-color);
     background-color: var(--accent-color);
 }
+
+#project-1-link:hover, #project-2-link:hover {
+    cursor: pointer;
+}

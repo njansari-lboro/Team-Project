@@ -1,0 +1,111 @@
+#user-list-app {
+    max-width: 1000px;
+    margin: auto;
+    background: var(--control-background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    text-align: center;
+}
+
+h1, h2 {
+    color: var(--header-text-color);
+}
+
+#users-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.user {
+    flex: 0 1 250px;
+    background: var(--control-color);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.user p {
+    margin: 5px 0;
+    color: var(--label-color);
+}
+
+#add-user-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#add-user-form input, #add-user-form select, #add-user-form label {
+    padding: 8px;
+    border: 1px solid var(--separator-color);
+    border-radius: 8px;
+    font-size: var(--sub-headline);
+    color: var(--control-text-color);
+    background: var(--control-color);
+}
+
+#add-user-form input[type="checkbox"] {
+    padding: 0;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+#add-user-form label {
+    display: flex;
+    align-items: center;
+    background: none;
+    box-shadow: none;
+    padding-left: 0;
+}
+
+#add-user-form button {
+    padding: 8px 16px;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 8px;
+    color: var(--control-color);
+    font-size: var(--sub-headline);
+    transition: background-color 0.3s ease;
+    grid-column: span 2;
+}
+
+#add-user-form button:hover:not(:disabled) {
+    background-color: var(--secondary-accent-color);
+}
+
+#add-user-form button:disabled {
+    background-color: var(--disabled-control-text-color);
+    color: var(--quaternary-label-color);
+}
+
+@media only screen and (max-width: 460px) {
+    #add-user-form {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #add-user-form input, #add-user-form select, #add-user-form label {
+        width: 90%;
+        box-sizing: border-box;
+    }
+
+    #add-user-form button {
+        width: 90%;
+        grid-column: 1 / -1;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #add-user-form select {
+        color: var(--selected-control-text-color);
+        background: var(--control-background-color);
+        border: 1px solid var(--separator-color);
+    }
+}

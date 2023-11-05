@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
     const body = $(document.body)
     body.addClass("no-transition")
 
@@ -8,9 +8,9 @@ $(document).ready(() => {
     const sidebarToggle = $("#sidebar-toggle")
 
     // Persist sidebar toggle between refreshes
-    if (localStorage.getItem("sidebarExpanded") === "true") {
-        body.toggleClass("sidebar-expanded")
-    }
+    // if (localStorage.getItem("sidebarExpanded") === "true") {
+    //     body.toggleClass("sidebar-expanded")
+    // }
 
     sidebarToggle.click(event => {
         event.preventDefault()
@@ -21,7 +21,7 @@ $(document).ready(() => {
     const page = params.get("page")
     $(`#${page}-sidebar-item`).addClass("selected")
 
-    $("#dimmed-overlay").click(toggleSidebar)
+    $("#sidebar-dim.dimmed-overlay").click(toggleSidebar)
 
     if (window.matchMedia("(max-width: 800px)").matches) {
         if ($(document.body).hasClass("sidebar-expanded")) {
@@ -43,16 +43,16 @@ $(document).ready(() => {
         dismissProfileMenu()
         $("#edit-profile-modal").fadeIn(500, "swing")
 
-        $("#edit-first-name-input").val(firstName)
-        $("#edit-last-name-input").val(lastName)
-        $("#edit-email-input").val(emailAddress)
-        $("#edit-password-input").val(password)
+        $("#edit-first-name-input").val(user["firstName"])
+        $("#edit-last-name-input").val(user["lastName"])
+        $("#edit-email-input").val(user["email"])
+        $("#edit-password-input").val(user["password"])
 
         $("#edit-first-name-input").change(checkIfEditProfileCanSave)
         $("#edit-last-name-input").change(checkIfEditProfileCanSave)
         $("#edit-email-input").change(checkIfEditProfileCanSave)
 
-        $("#edit-password-input").mouseout(() => {
+        $("#edit-password-input-container").mouseleave(() => {
             $("#edit-password-input").attr("type", "password")
             $("#show-password-icon").show()
             $("#hide-password-icon").hide()
@@ -69,10 +69,15 @@ $(document).ready(() => {
             }
         })
 
-        $(".dismiss-edit-profile-button").click(() => $("#edit-profile-modal").fadeOut())
+        $(".dismiss-edit-profile-button").click(() => {
+            $("#edit-profile-modal").fadeOut(() => {
+                $("#edit-password-input").attr("type", "password")
+                $("#show-password-icon").show()
+                $("#hide-password-icon").hide()
+            })
+        })
 
         $("#hide-password-icon").hide()
-        checkIfEditProfileCanSave()
     })
 
     $("#invite-button").click(() => {
@@ -92,9 +97,13 @@ $(document).ready(() => {
             }
 
             $("#invite-member-button").prop("disabled", inviteIsDisabled)
-            $("#copy-invite-link-button").prop("disabled", inviteIsDisabled)
-
             $("#invite-link").val("")
+            $("#copy-invite-link-button").prop("disabled", true)
+        })
+
+        $("#invite-member-email").change(function () {
+            $(this).blur()
+            $("#invite-member-button").click()
         })
 
         $("#invite-member-button").click(() => {
@@ -106,6 +115,7 @@ $(document).ready(() => {
             }
 
             $("#invite-link").val(`http://team02.sci-project.lboro.ac.uk/?invite_code=${btoa(name[1])}`)
+            $("#copy-invite-link-button").prop("disabled", false)
         })
 
         $("#copy-invite-link-button").click(() => {
@@ -138,7 +148,7 @@ function toggleSidebar() {
 
 function dismissProfileMenu() {
     $("#profile-menu-items").hide()
-    $("#profile-menu-button:not(:hover)").css("background-color", "var(--bar-background-color)")
+    $("#profile-menu-button:not(:hover)").css("background-color", "transparent")
 }
 
 function checkIfEditProfileCanSave() {

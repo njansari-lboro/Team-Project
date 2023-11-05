@@ -1,71 +1,65 @@
-$(document).ready(() => {
+$(() => {
     // filling select with options
-    const projectFilter = $("#projects-filter").get(0)
-    let filters = ["All", "Recent", "Oldest"]
+    const projectFilter = $("#projects-filter").get(0);
 
+    let filters = ["All", "Recent", "Oldest"];
     filters.forEach((filter) => {
-        let option = document.createElement("option")
-        option.text = filter
-        projectFilter.add(option)
-    })
+        let option = document.createElement("option");
+        option.text = filter;
+
+        projectFilter.add(option);
+    });
 
     // on clicking a project title dropdown
-    $(".dropdown").click(() => {
+    $(".dropdown").click(function () {
         // content = #project-n-content
-        let buttonId = "#" + $(this).attr("id")
-        let contentId = buttonId + "-content"
+        let buttonId = "#" + $(this).attr("id");
+        let contentId = buttonId + "-content";
 
-        $(buttonId).toggleClass("rotated")
-        $(contentId).slideToggle()
-    })
-
-    // bringing user to create-a-project page
-    $("#new-project-button").click(() => {
-        window.location.href = "/pages/projects/new-project.php"
-    })
+        $(buttonId).toggleClass("rotated");
+        $(contentId).slideToggle();
+    });
 
     // inserting JQuery progressbar into <td>
-    $(".progress-bar").each(() => {
-        let cell = $(this).get(0)
-        let progress = parseInt($(this).text(), 10)
+    $(".progress-bar").each(function () {
+        let cell = $(this).get(0);
+        let progress = parseInt($(this).text(), 10);
 
-        $(this).attr("data-value", progress + "%")
+        $(this).attr("data-value", progress + "%");
 
-        cell.textContent = ""
+        cell.textContent = "";
 
         $(this).progressbar({
             value: progress,
-            max: 100
-        })
-    })
-})
+            max: 100,
+        });
+    });
+
+    hideComments();
+    clearList();
+    datePicker();
+    setPriorityBackgroundColours();
+    toggleComplete();
+    addButton();
+    hideSmallScreenInputs();
+    checkMediaQuery();
+
+    $(".items-container").on("click", ".ellipsis", addToggles);
+});
 
 /* TODO-LIST JS */
 
-$(document).ready(() => {
-    hideComments()
-    clearList()
-    datePicker()
-    setPriorityBackgroundColours()
-    toggleComplete()
-    addButton()
-    hideSmallScreenInputs()
-    checkMediaQuery()
-
-    $(".items-container").on("click", ".ellipsis", addToggles)
-})
-
 function hideComments() {
-    $(".comments").hide()
+    $(".comments").hide();
 }
 
 function hideSmallScreenInputs() {
-    $(".small-screen-date").hide()
+    $(".small-screen-date").hide();
 }
 
 function addToggles() {
-    const comments = $(this).closest(".item").find(".comments")
-    comments.slideToggle()
+    const comments = $(this).closest(".item").find(".comments");
+    comments.slideToggle();
 }
 
 function addButton() {
@@ -80,11 +74,11 @@ function addButton() {
                     
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon ellipsis" viewBox="0 0 512 512"><circle cx="256" cy="256" r="32" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><circle cx="416" cy="256" r="32" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><circle cx="96" cy="256" r="32" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/></svg>
                 </div>
-                
+
                 <div class="due-date">
                     <input type="text" placeholder="Due date" class="due-date-input input datepicker">
                 </div>
-
+                
                 <div class="priority">
                     <select name="priority" class="priority-select priority-input input select-input">
                         <option value="none">None</option>
@@ -94,12 +88,12 @@ function addButton() {
                     </select>
                 </div>
             </div>
-            
+
             <div class="comments hidden">
                 <textarea name="comments-input" class="comments-input"></textarea>
             </div>
         </form>
-        `
+        `;
 
         const btnAddItemHtml = `
         <div class="new-item">
@@ -109,28 +103,26 @@ function addButton() {
                 </div>
             </div>
         </div>
-        `
+        `;
 
-        const container = $(".items-container")
+        const container = $(".items-container");
 
-        container.children().last().remove()
+        container.children().last().remove();
 
-        container.append(newItemHtml)
-        container.append(btnAddItemHtml)
+        container.append(newItemHtml);
+        container.append(btnAddItemHtml);
 
-        addButton()
-        hideComments()
-        datePicker()
-        addToggles()
-
-        // $(".ellipsis").click(addToggles)
-    })
+        addButton();
+        hideComments();
+        datePicker();
+        addToggles();
+    });
 }
 
 function clearList() {
     $(".clear-list").click(() => {
-        console.log("HI")
-        
+        console.log("HI");
+
         const btnAddItemHtml = `
         <div class="new-item">
             <div class="add-div-container">
@@ -139,101 +131,74 @@ function clearList() {
                 </div>
             </div>
         </div>
-        `
+        `;
 
-        const container = $(".items-container")
+        const container = $(".items-container");
 
-        container.children().remove()
-        container.append(btnAddItemHtml)
-        addButton()
-    })
+        container.children().remove();
+        container.append(btnAddItemHtml);
+        addButton();
+    });
 }
 
 function datePicker() {
-    $(".items-container").on("focus", ".datepicker", () => {
-        // Initialize datepicker for dynamically added elements
-        $(this).datepicker({ dateFormat: "dd/mm/yy" })
-    })
+    $(".items-container").on("focus", ".datepicker", function () {
+        $(this).datepicker({ dateFormat: "dd/mm/yy" });
+    });
 }
 
 function setPriorityBackgroundColours() {
-    $(".items-container").on("change", ".priority-select", () => {
-        let selectedPriority = $(this).val().toLowerCase()
-        let selectedElement = $(this)
+    $(".items-container").on("change", ".priority-select", function () {
+        let selectedPriority = $(this).val().toLowerCase();
+        let selectedElement = $(this);
 
-        selectedElement.removeClass("high low medium")
+        selectedElement.removeClass("high low medium");
 
         if (selectedPriority !== "none") {
-            selectedElement.addClass(selectedPriority)
+            selectedElement.addClass(selectedPriority);
         }
-    })
+    });
 }
 
 function toggleComplete() {
-    $(".items-container").on("click", ".tick", () => {
-        let parentDiv = $(this).closest(".item")
-        parentDiv.toggleClass("complete")
+    $(".items-container").on("click", ".tick", function () {
+        let parentDiv = $(this).closest(".item");
+        parentDiv.toggleClass("complete");
 
         if (parentDiv.hasClass("complete")) {
-            let inputs = parentDiv.find("input, select, textarea")
-            inputs.prop("readonly", true).prop("disabled", true)
+            let inputs = parentDiv.find("input, select, textarea");
+            inputs.prop("readonly", true).prop("disabled", true);
         } else {
-            let inputs = parentDiv.find("input, select, textarea")
-            inputs.prop("readonly", false).prop("disabled", false)
+            let inputs = parentDiv.find("input, select, textarea");
+            inputs.prop("readonly", false).prop("disabled", false);
         }
-    })
+    });
 }
-
-// function smallClassRemoved() {
-//     $(".item").each(() => {})
-// }
 
 function checkMediaQuery() {
     $(window).on("resize"), () => {
-        let windowWidth = $(window).width()
+        let windowWidth = $(window).width();
 
         if (windowWidth <= 600) {
-            $(".header-due-date").hide()
+            $(".header-due-date").hide();
 
-            $(".header-task-name").css("width", "75%")
-            $(".header-priority").css("width", "25%")
+            $(".header-task-name").css("width", "75%");
+            $(".header-priority").css("width", "25%");
 
-            $(".task-name").css("width", "75%")
-            $(".priority").css("width", "25%")
+            $(".task-name").css("width", "75%");
+            $(".priority").css("width", "25%");
 
-            $(".due-date").each(() => {
-                parentDiv = $(this).parent().parent()
-                $(this).hide()
-                
-                let dueDate = $(this).find("input").val()
+            $(".due-date").each(function () {
+                parentDiv = $(this).parent().parent();
 
-                let smallScreenDateInput = $(this)
-                    .parent()
-                    .siblings(".comments")
-                    .find(".small-screen-date")
-                smallScreenDateInput.show()
-                smallScreenDateInput.val(dueDate)
-            })
+                $(this).hide();
+
+                let dueDate = $(this).find("input").val();
+                let smallScreenDateInput = $(this).parent().siblings(".comments").find(".small-screen-date");
+
+                smallScreenDateInput.show();
+                smallScreenDateInput.val(dueDate);
+            });
         }
-    }
+    };
 }
-
-// $(".due-date").each(() => {
-//     parentDiv = $(this).parent().parent()
-//     $(this).hide()
-    
-//     console.log("HI")
-    
-//     let dueDate = $(this).find("input").val()
-//     let smallScreenDateInput = $(this).parent().siblings(".comments").find(".small-screen-date")
-    
-//     smallScreenDateInput.show()
-//     smallScreenDateInput.val(dueDate)
-// })
-
-// else {
-//     $(".item").removeClass("small")
-//     smallClassRemoved()
-//     $(".header-due-date").show()
-//     $(".due-date").show()
-// }

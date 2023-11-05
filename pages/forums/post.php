@@ -1,3 +1,10 @@
+<?php
+    if (!isset($_SERVER["HTTP_REFERER"]) || empty($_SERVER["HTTP_REFERER"])) {
+        header("Location: /pages/?page=forums");
+        die();
+    }
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -14,7 +21,20 @@
         <!-- Modal/Overlay Container -->
         <div class="modal-container">
             <div class="row flex-row">
-                <button class="exit-btn">×</button>
+                <button class="exit-btn">
+                    <load-svg src="/assets/closeIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: var(--title-1);
+                                height: var(--title-1);
+                            }
+
+                            .fill {
+                                fill: var(--secondary-label-color)
+                            }
+                        </style>
+                    </load-svg>
+                </button>
 
                 <select class="dropdown" id="topicDropdown">
                     <option value="default" disabled selected>Topic</option>
@@ -33,21 +53,49 @@
 
             <div class="row">
                 <button class="post-btn">
-                    <span class="envelope-icon">✉️</span> Post
+                    <span class="envelope-icon">
+                        <load-svg src="/assets/postIcon.svg">
+                            <style shadowRoot>
+                                svg {
+                                    height: 1.1em;
+                                    margin-top: 3px
+                                }
+
+                                .fill {
+                                    fill: white
+                                }
+                            </style>
+                        </load-svg>
+                    </span> Post
                 </button>
             </div>
         </div>
     </body>
 
     <script>
-        let exitButton = document.querySelector(".exit-btn")
-        exitButton.addEventListener("click", () => {
-            window.location.href = "index.php?page=forums"
-        })
-
         let postButton = document.querySelector(".post-btn")
         postButton.addEventListener("click", () => {
-            window.location.href = "index.php?page=forums"
+            let topicDropdown = document.getElementById("topicDropdown")
+            let titleInput = document.querySelector(".input")
+            let bodyTextarea = document.querySelector(".textarea")
+            
+            let post = {
+                topic: topicDropdown.value,
+                title: titleInput.value,
+                body: bodyTextarea.value
+            }
+
+            let posts = JSON.parse(localStorage.getItem("posts")) || []
+
+            posts.push(post)
+            
+            localStorage.setItem("posts", JSON.stringify(posts))
+            window.location.href = "?page=forums"
+        })
+
+        let exitButton = document.querySelector(".exit-btn")
+        exitButton.addEventListener("click", () => {
+            window.location.href = "?page=forums"
         })
     </script>
 </html>

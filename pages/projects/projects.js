@@ -1,9 +1,9 @@
-$(document).ready(function () {
+$(() => {
     // filling select with options
     const projectFilter = $("#projects-filter").get(0);
     let filters = ["All", "Recent", "Oldest"];
 
-    filters.forEach(function (filter) {
+    filters.forEach((filter) => {
         let option = document.createElement("option");
         option.text = filter;
         projectFilter.add(option);
@@ -20,8 +20,17 @@ $(document).ready(function () {
     });
 
     // bringing the user to create-a-project page
-    $("#new-project-button").click(function () {
+    $("#new-project-button").click(() => {
         window.location.href = "/pages/?page=projects&task=new_project";
+    });
+
+    // bringing user to edit a project page
+    $("#project-1-link").click(() => {
+        window.location.href = "/pages/?page=projects&task=new_project&projectName=Project%20%31";
+    });
+
+    $("#project-2-link").click(() => {
+        window.location.href = "/pages/?page=projects&task=new_project&projectName=Project%20%32";
     });
 
     // inserting JQuery progressbar into <td>

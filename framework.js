@@ -2,12 +2,11 @@
 
 $(() => {
     if (inviteCode) {
-        checkInviteCode(inviteCode);
+        checkInviteCode(inviteCode)
     }
-
-
     
-    $("#edit-email-input").val(inviteCode).prop('readonly', true);
+    $("#edit-email-input").val(inviteCode).prop("readonly", true)
+
     $("#emailForm").show()
     $("#emailDisplay").hide()
     $("#passwordInput").hide()
@@ -37,7 +36,6 @@ $(() => {
 
     $(".form-control").on("input", function (e) {
         e.preventDefault()
-
         $("#mainBtn").prop("disabled", $(this).val().length === 0)
     })
 
@@ -56,17 +54,17 @@ $(() => {
         restart()
     })
 
-    $('#save-button').click(function(event) {
-        event.preventDefault(); 
-        const password = $("#edit-password-input").val();
+    $("#save-button").click((event) => {
+        event.preventDefault()
+      
+        const password = $("#edit-password-input").val()
+        
         if (isValidPassword(password)) {
-            window.location = "pages/?page=dashboard";
+            window.location = "pages/?page=dashboard"
         } else {
-            alert("Password must be a minimum of 12 characters and contain a combination of uppercase letters, lowercase letters, numbers, and symbols.");
+            alert("Password must be a minimum of 12 characters and contain a combination of uppercase letters, lowercase letters, numbers, and symbols.")
         }
-    });
-
-
+    })
 })
 
 function validateAndDisplayEmail() {
@@ -150,7 +148,8 @@ function restart() {
     $("#tryAgain").hide()
     $("#mainBtn").show()
     $("#notRegistered").hide()
-    $('#passwordInput').val('')
+    $("#passwordInput").val("")
+
     $("#mainBtn").prop("disabled", $("#emailInput").val().length === 0)
 
     setTimeout(() => {
@@ -223,8 +222,7 @@ function register(){
 
 
     $("#hide-password-icon").hide()
-    checkIfEditProfileCanSave()
-
+//     checkIfEditProfileCanSave()
 }
 
 

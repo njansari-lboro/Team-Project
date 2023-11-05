@@ -1,6 +1,7 @@
-$(document).ready(() => {
+$(() => {
     let projectDropdown = $("#project-dropdown").get(0);
     let projectNames = ["Project 1", "Project 2"];
+
     projectNames.forEach((projectName) => {
         let option = document.createElement("option");
         option.text = projectName;
@@ -76,7 +77,7 @@ $(document).ready(() => {
     $("#date-picker").datepicker("setDate", deadline);
 
     let progressChart = new Chart(ctx, {
-        type: "doughnut",
+        type: "pie",
         data: {
             labels: ["In Progress", "Completed", "Overdue"],
             datasets: [
@@ -88,8 +89,8 @@ $(document).ready(() => {
             ],
         },
         options: {
-            responsive: true, 
-            maintainAspectRatio: true,
+            responsive: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     labels: {
@@ -103,6 +104,7 @@ $(document).ready(() => {
     $("#project-dropdown").change(() => {
         let selectedProject = $("#project-dropdown").val();
         selectedProject = selectedProject.split(" ").join("").toLowerCase();
+
         data = projectData[selectedProject].data;
         overdue = projectData[selectedProject].overdue;
         imminent = projectData[selectedProject].imminent;
@@ -116,15 +118,25 @@ $(document).ready(() => {
         progressChart.update();
     });
 
-    $(window).on('resize', function() {
-        progressChart.resize(); 
-        progressChart.update(); 
+    function resizeChart() {
+        progressChart.resize();
+        progressChart.update();
+    }
+
+    $(window).on("resize", resizeChart);
+
+    $("#sidebar-toggle").click(resizeChart);
+
+    $(document).on("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+            resizeChart();
+        }
     });
 
     // trying to add on-the-fly switching between themes, doesn't work...
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    isDarkMode.addEventListener("change", function() {
+    const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+
+    isDarkMode.addEventListener("change", () => {
         progressChart.data.datasets[0].borderColor = getComputedStyle(document.body).getPropertyValue("--window-background");
         progressChart.options.plugins.legend.labels.color = getComputedStyle(document.body).getPropertyValue("--text-color");
     });

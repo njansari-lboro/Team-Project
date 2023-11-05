@@ -14,10 +14,13 @@
     --quaternary-accent-color: rgba(255, 122, 0, 0.18);
 
     /* A red colour adapted to the current environment */
-    --red-colour: rgba(255, 59, 48, 1);
+    --red-color: rgba(255, 59, 48, 1);
 
     /* A green colour adapted to the current environment */
-    --green-colour: rgba(40, 205, 65, 1)
+    --green-color: rgba(40, 205, 65, 1);
+
+    /* A green colour in a reduced context adapted to the current environment */
+    --reduced-green-color: rgba(40, 205, 65, 0.2)
 }
 
 /* Label colours */
@@ -148,6 +151,7 @@
     :root {
         --red-colour: rgba(255, 69, 58, 1);
         --green-colour: rgba(50, 215, 75, 1);
+        --reduced-green-color: rgba(50, 215, 75, 0.2);
         --label-color: rgba(255, 255, 255, 0.85);
         --secondary-label-color: rgba(255, 255, 255, 0.55);
         --tertiary-label-color: rgba(255, 255, 255, 0.25);
@@ -201,17 +205,17 @@
 :root {
     font: 62.5% Arial, Helvetica, sans-serif;
 
-    --extra-large-title: 3.6em;
-    --large-title: 3.4em;
-    --title-1: 2.8em;
-    --title-2: 2.2em;
-    --title-3: 2em;
-    --body: 1.7em;
-    --callout: 1.6em;
-    --sub-headline: 1.5em;
-    --footnote: 1.3em;
-    --caption-1: 1.2em;
-    --caption-2: 1.1em
+    --extra-large-title: 3.6rem;
+    --large-title: 3.4rem;
+    --title-1: 2.8rem;
+    --title-2: 2.2rem;
+    --title-3: 2rem;
+    --body: 1.7rem;
+    --callout: 1.6rem;
+    --sub-headline: 1.5rem;
+    --footnote: 1.3rem;
+    --caption-1: 1.2rem;
+    --caption-2: 1.1rem
 }
 
 /* --- Implementations --- */
