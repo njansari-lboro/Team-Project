@@ -101,7 +101,7 @@ $(() => {
             $("#copy-invite-link-button").prop("disabled", true)
         })
 
-        $("#invite-member-email").on("submit", () => {
+        $("#invite-member-email").change(() => {
             console.log("submit")
             $("#invite-member-button").click()
         })
