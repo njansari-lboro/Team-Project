@@ -4,21 +4,21 @@
             "email" => "ben@make-it-all.co.uk",
             "firstName" => "Ben",
             "lastName" => "Hamblin",
-            "password" => "password123",
+            "password" => "EmployeeRole12345!",
             "role" => "Employee"
         ],
         [
             "email" => "admin@make-it-all.co.uk",
             "firstName" => "Alice",
             "lastName" => "Smith",
-            "password" => "password123",
+            "password" => "AdminRole12345!",
             "role" => "Admin"
         ],
         [
             "email" => "dilip@make-it-all.co.uk",
             "firstName" => "Dilip",
             "lastName" => "Patel",
-            "password" => "password123",
+            "password" => "ManagerRole12345!",
             "role" => "Manager"
         ],
     ];
