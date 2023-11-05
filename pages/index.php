@@ -11,7 +11,7 @@
         $pages = array("dashboard", "tasks", "todo", "tutorials", "forums");
         break;
     case "Admin":
-        $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
+        $pages = array("dashboard", "projects", "todo", "tutorials", "forums", "users");
         break;
     case "Manager":
         $pages = array("dashboard", "projects", "todo", "tutorials", "forums");
@@ -244,6 +244,23 @@
                 </a>
                 <?php } ?>
 
+                <?php function users_sidebar_item() { ?>
+                <a id="users-sidebar-item" class="sidebar-item" href="?page=users">
+                    <load-svg class="sidebar-item-icon" src="/assets/usersSidebarItemIcon.svg">
+                        <style shadowRoot>
+                            svg {
+                                width: 2.4em;
+                            }
+
+                            .fill {
+                                fill: var(--fill-color);
+                            }
+                        </style>
+                    </load-svg>
+                    <span class="sidebar-item-text">Forums</span>
+                </a>
+                <?php } ?>
+
                 <?php
                     $sidebarItems = [
                         "dashboard" => "dashboard_sidebar_item",
@@ -252,6 +269,7 @@
                         "todo" => "todo_sidebar_item",
                         "tutorials" => "tutorials_sidebar_item",
                         "forums" => "forums_sidebar_item",
+                        "users" => "users_sidebar_item"
                     ];
 
                     foreach ($pages as $page) {
