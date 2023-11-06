@@ -191,7 +191,7 @@ h2 {
     font-size: var(--callout);
     border-radius: 10px;
     /* border: 0.5em solid transparent; */
-    border: 0.5em solid rgba(209, 209, 214, 1);
+    border: 1px solid rgba(209, 209, 214, 1);
     color: rgba(0, 0, 0, 0.85);
     background-color: rgba(255, 255, 255, 0.85);
     width: 80%;
@@ -200,10 +200,10 @@ h2 {
 }
 
 /* .register-profile-detail input:focus { */
-    /* border: 0.5em solid transparent; */
-    /* width: 80%; */
-    /* padding: 0 10px; */
-    /* margin: auto; */
+/* border: 0.5em solid transparent; */
+/* width: 80%; */
+/* padding: 0 10px; */
+/* margin: auto; */
 /* } */
 
 #register-password-input-container {
