@@ -1,4 +1,8 @@
 $(() => {
+    $(".exit-btn").click(() => {
+        window.location.href = "?page=projects"
+    })
+
     const urlParams = new URLSearchParams(window.location.search);
     let project = "";
 

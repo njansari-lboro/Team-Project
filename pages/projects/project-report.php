@@ -18,8 +18,25 @@
     </head>
 
     <body>
-        <!-- project name from URL (JS) -->
-        <h2 id="project-name-report"></h2>
+        <div class="header">
+            <button class="exit-btn">
+                <load-svg src="/assets/closeIcon.svg">
+                    <style shadowRoot>
+                        svg {
+                            width: var(--title-2);
+                            height: var(--title-2);
+                        }
+
+                        .fill {
+                            fill: var(--secondary-label-color)
+                        }
+                    </style>
+                </load-svg>
+            </button>
+
+            <!-- project name from URL (JS) -->
+            <h2 id="project-name-report"></h2>
+        </div>
 
         <!-- rounded borders - like manager dashboard -->
         <div class="container" id="report-container">
