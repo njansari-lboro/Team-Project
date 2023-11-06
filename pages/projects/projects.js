@@ -47,4 +47,12 @@ $(() => {
             max: 100
         });
     });
+
+    $("#view-project-1-report-link").click(() => {
+        window.location.href = "/pages/?page=projects&task=view_project_report&project_name=Project%20%31";
+    });
+
+    $("#view-project-2-report-link").click(() => {
+        window.location.href = "/pages/?page=projects&task=view_project_report&project_name=Project%20%32";
+    });
 });

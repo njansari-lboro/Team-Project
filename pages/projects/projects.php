@@ -15,6 +15,9 @@
     case "new_project_tasks":
         new_project_tasks();
         break;
+    case "view_project_report":
+        view_project_report();
+        break;
     default:
         display_default();
     }
@@ -116,6 +119,8 @@
                     </tr>
                 </tbody>
             </table>
+
+            <span id="view-project-1-report-link" class="view-project-report-link">View Report</span>
         </div>
 
         <!-- to break inline display -->
@@ -177,6 +182,8 @@
                     </tr>
                 </tbody>
             </table>
+
+            <span id="view-project-2-report-link" class="view-project-report-link">View Report</span>
         </div>
 
         <div><hr></div>
@@ -194,5 +201,9 @@
 
     function new_project_tasks() {
         include "projects/add-project-tasks.php";
+    }
+
+    function view_project_report() {
+        include "projects/project-report.php";
     }
 ?>
