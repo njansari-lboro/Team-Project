@@ -43,7 +43,7 @@
                     Welcome <?php echo ucfirst($name) ?>
                 </h2>
                 
-                <form id="register-account-form">
+                <div id="register-inputs">
                     <div id="register-first-name" class="register-profile-detail">
                         <span id="register-first-name-label">First Name</span>
                         <input id="register-first-name-input" type="text">
@@ -101,11 +101,9 @@
                             <input id="register-confirm-password-input" type="password">
                         </div>
                     </div>
+                </div>
 
-                    <!-- <button id="register-button" disabled>Register</button> -->
-
-                    <input id="register-button" type="submit" disabled>Register</button>
-                </form>
+                <button id="register-button" disabled>Register</button>
             </div>
 
             <div class="centered-content">

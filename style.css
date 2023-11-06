@@ -159,6 +159,10 @@ input.form-control:focus {
     text-align: center;
 }
 
+#register-inputs {
+    overflow: auto;
+}
+
 .register-profile-detail {
     display: flex;
     flex-direction: column;
