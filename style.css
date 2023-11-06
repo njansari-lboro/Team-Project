@@ -227,42 +227,38 @@ h2 {
     width: 100%;
 }
 
+#register-button-container {
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+    z-index: 2;
+}
+
 #register-button {
     font-size: var(--body);
-    /* border-radius: 20px; */
-    padding: 10px 20px;
-    /* margin: 10px; */
     width: 75%;
-    bottom: 20px;
+    bottom: 25px;
     left: 0;
     right: 0;
     margin: 0 auto;
     position: fixed;
     font-weight: bold;
     color: var(--alt-selected-control-text-color);
-    /* background-color: var(--accent-color);
-    border: 2px solid var(--accent-color); */
-
-    /* font-size: 1.9em; */
     text-align: center;
     border-radius: 30px;
     display: block;
-    /* width: 100%; */
     background-color: var(--accent-color);
     border: 2px solid var(--accent-color);
     padding: 0.25em;
 }
 
 #register-button:hover {
-    /* background-color: var(--secondary-accent-color); */
     background-color: transparent;
     color: var(--accent-color);
     border: 2px solid var(--accent-color);
 }
 
 #register-button:disabled {
-    /* background-color: rgba(0, 0, 0, 0.25);
-    border-color: rgba(0, 0, 0, 0.25); */
     color: rgba(0, 0, 0, 0.25);
     background-color: rgba(0, 0, 0, 0.1);
     border: 2px solid transparent;

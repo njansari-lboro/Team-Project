@@ -100,9 +100,11 @@
                             <input id="register-confirm-password-input" type="password">
                         </div>
                     </div>
+                    
+                    <div id="register-button-container">
+                        <button id="register-button" disabled>Register</button>
+                    </div>
                 </div>
-
-                <button id="register-button" disabled>Register</button>
             </div>
 
             <div class="centered-content">
