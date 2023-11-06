@@ -57,7 +57,7 @@ $(() => {
         $("#hide-password-icon").hide()
     })
 
-    $("#invite-button", (event) => {
+    $("#invite-button").click((event) => {
         event.preventDefault()
 
         $("#invite-member-modal").fadeIn(500, "swing")
