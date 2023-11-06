@@ -44,7 +44,7 @@
                 
                 <h2><?php echo $email ?></h2>
                 
-                <div id="register-inputs">
+                <div id="register-form">
                     <div id="register-first-name" class="register-profile-detail">
                         <span id="register-first-name-label">First Name</span>
                         <input id="register-first-name-input" type="text">
@@ -101,9 +101,7 @@
                         </div>
                     </div>
                     
-                    <div id="register-button-container">
-                        <button id="register-button" disabled>Register</button>
-                    </div>
+                    <button id="register-button" disabled>Register</button>
                 </div>
             </div>
 

@@ -167,8 +167,9 @@ h2 {
     font-size: var(--title-2);
 }
 
-#register-inputs {
+#register-form {
     overflow: auto;
+    height: calc(100% - 160px);
 }
 
 .register-profile-detail {
@@ -225,25 +226,6 @@ h2 {
 
 #register-confirm-password-input-container {
     width: 100%;
-}
-
-#register-button-container {
-    width: 100%;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0);
-    z-index: 2;
-}
-
-#register-button-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    /* Adjust the RGBA values as needed (0.5 is the opacity) */
-    z-index: -1;
-    /* Position the pseudo-element behind the content */
 }
 
 #register-button {
