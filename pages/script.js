@@ -12,7 +12,7 @@ $(() => {
     //     body.toggleClass("sidebar-expanded")
     // }
 
-    sidebarToggle.click(event => {
+    sidebarToggle.click((event) => {
         event.preventDefault()
         toggleSidebar()
     })
@@ -36,6 +36,7 @@ $(() => {
 
     $("#profile-menu-button").click((event) => {
         event.preventDefault()
+        alert("I hate this")
         $("#profile-menu-items").show()
         $("#profile-menu-button").css("background-color", "var(--unemphasised-selected-content-background-color)")
     })
