@@ -81,7 +81,7 @@ $(() => {
         $("#hide-password-icon").hide()
     })
 
-    $("#invite-button").click((event) => {
+    $(document).on('click touchend', '#invite-button', function(event) {
         event.preventDefault()
 
         $("#invite-member-modal").fadeIn(500, "swing")
