@@ -43,65 +43,69 @@
                     Welcome <?php echo ucfirst($name) ?>
                 </h2>
                 
-                <div id="register-first-name" class="register-profile-detail">
-                    <span id="register-first-name-label">First Name</span>
-                    <input id="register-first-name-input" type="text">
-                </div>
-
-                <div id="register-last-name" class="register-profile-detail">
-                    <span id="register-last-name-label">Last Name</span>
-                    <input id="register-last-name-input" type="text">
-                </div>
-
-                <div id="register-email" class="register-profile-detail">
-                    <span id="register-email-label">Email Address</span>
-                    <input id="register-email-input" type="email">
-                </div>
-
-                <div id="register-password" class="register-profile-detail">
-                    <span id="register-password-label">Password</span>
-
-                    <div id="register-password-input-container">
-                        <input id="register-password-input" type="password">
-
-                        <button id="show-hide-password-button">
-                            <load-svg id="show-password-icon" src="/assets/showIcon.svg">
-                                <style shadowRoot>
-                                    svg {
-                                        height: 1.25em;
-                                        padding-top: 0.2em
-                                    }
-
-                                    .fill {
-                                        fill: var(--icon-color)
-                                    }
-                                </style>
-                            </load-svg>
-
-                            <load-svg id="hide-password-icon" src="/assets/hideIcon.svg">
-                                <style shadowRoot>
-                                    svg {
-                                        height: var(--body);
-                                    }
-
-                                    .fill {
-                                        fill: var(--icon-color)
-                                    }
-                                </style>
-                            </load-svg>
-                        </button>
+                <form id="register-account-form">
+                    <div id="register-first-name" class="register-profile-detail">
+                        <span id="register-first-name-label">First Name</span>
+                        <input id="register-first-name-input" type="text">
                     </div>
-                </div>
 
-                <div id="register-confirm-password" class="register-profile-detail">
-                    <span id="register-confirm-password-label">Confirm Password</span>
-
-                    <div id="register-confirm-password-input-container">
-                        <input id="register-confirm-password-input" type="password">
+                    <div id="register-last-name" class="register-profile-detail">
+                        <span id="register-last-name-label">Last Name</span>
+                        <input id="register-last-name-input" type="text">
                     </div>
-                </div>
 
-                <button id="register-button" disabled>Register</button>
+                    <div id="register-email" class="register-profile-detail">
+                        <span id="register-email-label">Email Address</span>
+                        <input id="register-email-input" type="email">
+                    </div>
+
+                    <div id="register-password" class="register-profile-detail">
+                        <span id="register-password-label">Password</span>
+
+                        <div id="register-password-input-container">
+                            <input id="register-password-input" type="password">
+
+                            <button id="show-hide-password-button">
+                                <load-svg id="show-password-icon" src="/assets/showIcon.svg">
+                                    <style shadowRoot>
+                                        svg {
+                                            height: 1.25em;
+                                            padding-top: 0.2em
+                                        }
+
+                                        .fill {
+                                            fill: var(--icon-color)
+                                        }
+                                    </style>
+                                </load-svg>
+
+                                <load-svg id="hide-password-icon" src="/assets/hideIcon.svg">
+                                    <style shadowRoot>
+                                        svg {
+                                            height: var(--body);
+                                        }
+
+                                        .fill {
+                                            fill: var(--icon-color)
+                                        }
+                                    </style>
+                                </load-svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="register-confirm-password" class="register-profile-detail">
+                        <span id="register-confirm-password-label">Confirm Password</span>
+
+                        <div id="register-confirm-password-input-container">
+                            <input id="register-confirm-password-input" type="password">
+                        </div>
+                    </div>
+
+                    <!-- <button id="register-button" disabled>Register</button> -->
+
+                    <input id="register-button" type="submit" disabled>Register</button>
+                </form>
             </div>
 
             <div class="centered-content">
@@ -155,7 +159,7 @@
             </div>
         </div>
 
-        <div style="position: fixed; left: 10px; bottom: 10px; opacity: 50%">
+        <div style="position: fixed; left: 10px; bottom: 10px; opacity: 25%">
             <img src="/img/ycsmLogo.png" width="100px">
         </div>
 
