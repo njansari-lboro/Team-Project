@@ -194,14 +194,28 @@
                     let article = document.createElement("article")
                     article.className = "forum-topic"
                     article.innerHTML = `
+                    <load-svg class="topic-avatar" src="/assets/profileIcon.svg">
+                        <style>
+                            svg {
+                                width: 50px;
+                                height: 50px;
+                            }
+                            .fill {
+                                fill: var(--label-color);
+                            }
+                        </style>
+                    </load-svg>
+
                     <div class="topic-content">
-                        <h2>${post.title}</h2>
-                        <h3><span class="topic-label">${post.topic}</span></h3>
-                        <p>${post.body}</p>
+                        <h2>${post.author || "John Cena"}</h2>
+                        
+                        <h3><span class="topic-label">${post.topic}</span> | <span class="question-title">${post.title}</span></h3>
+                        
+                        <p>${post.body} <a href="#" id="myLink" class="read-link">read more and view replies</a></p>
                     </div>
                     `
 
-                    forumTopics.appendChild(article)
+                    forumTopics.appendChild(article);
                 })
             })
 
