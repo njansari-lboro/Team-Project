@@ -1,37 +1,13 @@
 $(() => {
-    const body = $(document.body)
-    body.addClass("no-transition")
-
-    setTimeout(() => body.removeClass("no-transition"), 0)
-
     // Toggle the side navigation
     const sidebarToggle = $("#sidebar-toggle")
-
-    // Persist sidebar toggle between refreshes
-    // if (localStorage.getItem("sidebarExpanded") === "true") {
-    //     body.toggleClass("sidebar-expanded")
-    // }
 
     sidebarToggle.click((event) => {
         event.preventDefault()
         toggleSidebar()
     })
 
-    const params = new URLSearchParams(document.location.search)
-    const page = params.get("page")
-    $(`#${page}-sidebar-item`).addClass("selected")
-
     $("#sidebar-dim.dimmed-overlay").click(toggleSidebar)
-
-    if (window.matchMedia("(max-width: 800px)").matches) {
-        if ($(document.body).hasClass("sidebar-expanded")) {
-            body.removeClass("no-transition")
-            document.body.offsetHeight
-            toggleSidebar()
-        }
-    }
-
-    document.body.offsetHeight // Force reflow
 
     $("#profile-menu-button").click((event) => {
         event.preventDefault()
@@ -142,6 +118,31 @@ $(() => {
             dismissProfileMenu()
         }
     })
+
+    const body = $(document.body)
+
+    body.addClass("no-transition")
+    setTimeout(() => {
+        document.body.offsetHeight // Force reflow
+        body.removeClass("no-transition")
+    }, 0)
+
+    // Persist sidebar toggle between refreshes
+    // if (localStorage.getItem("sidebarExpanded") === "true") {
+    //     body.toggleClass("sidebar-expanded")
+    // }
+
+    const params = new URLSearchParams(document.location.search)
+    const page = params.get("page")
+    $(`#${page}-sidebar-item`).addClass("selected")
+
+    if (window.matchMedia("(max-width: 800px)").matches) {
+        if ($(document.body).hasClass("sidebar-expanded")) {
+            document.body.offsetHeight
+            body.removeClass("no-transition")
+            toggleSidebar()
+        }
+    }
 })
 
 function toggleSidebar() {
