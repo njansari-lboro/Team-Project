@@ -32,7 +32,7 @@ $(() => {
         }
     }
 
-    document.body.offsetHeight // Force reflow
+    // document.body.offsetHeight // Force reflow
 
     $("#profile-menu-button").on("click tap touchstart", (event) => {
         event.preventDefault()
