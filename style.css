@@ -230,7 +230,7 @@ h2 {
 #register-button-container {
     width: 100%;
     padding: 15px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
     z-index: 2;
 }
 
@@ -240,7 +240,7 @@ h2 {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
     /* Adjust the RGBA values as needed (0.5 is the opacity) */
     z-index: -1;
     /* Position the pseudo-element behind the content */
