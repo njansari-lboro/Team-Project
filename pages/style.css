@@ -341,6 +341,16 @@ body {
     }
 }
 
+.modal-card {
+    width: 525px;
+}
+
+@media screen and (max-width: 600px) {
+    .modal-card {
+        width: 80%;
+    }
+}
+
 #edit-profile-modal {
     display: none;
 }
@@ -354,9 +364,6 @@ body {
     border: 2px solid var(--separator-color);
     border-radius: 20px;
     padding: 20px;
-    width: 40%;
-    min-width: 300px;
-    max-width: 600px;
     height: 75%;
     text-align: center;
     box-shadow: 0 8px 16px 0 var(--shadow-color);
@@ -487,9 +494,6 @@ body {
     border: 2px solid var(--separator-color);
     border-radius: 20px;
     padding: 20px;
-    width: 40%;
-    min-width: 300px;
-    max-width: 600px;
     height: 25%;
     text-align: center;
     box-shadow: 0 8px 16px 0 var(--shadow-color);

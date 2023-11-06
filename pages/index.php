@@ -342,7 +342,7 @@
 
             <div class="dimmed-overlay"></div>
 
-            <div id="edit-profile-card" class="center">
+            <div id="edit-profile-card" class="modal-card center">
                 <div id="edit-profile-image">
                     <load-svg id="edit-profile-icon" src="/assets/profileIcon.svg">
                         <style shadowRoot>
@@ -417,7 +417,7 @@
         <div id="invite-member-modal">
             <div class="dimmed-overlay"></div>
 
-            <div id="invite-member-card" class="center">
+            <div id="invite-member-card" class="modal-card center">
                 <button id="close-invite-member-modal-button">
                     <load-svg id="close-invite-member-modal-icon" src="/assets/closeIcon.svg">
                         <style shadowRoot>
