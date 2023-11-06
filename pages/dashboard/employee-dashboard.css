@@ -49,8 +49,6 @@ h4 {
     border-color: var(--accent-color) !important;
 }
 
-#tasks-preview:hover .border, #project-preview:hover .border, #forums-preview:hover .border {}
-
 /* table styling */
 .table {
     font-size: var(--body);

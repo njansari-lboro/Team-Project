@@ -1,9 +1,9 @@
 $(() => {
     const urlParams = new URLSearchParams(window.location.search);
 
-    if (urlParams.has("projectName")) {
-        var projectName = urlParams.get("projectName");
-        $("#name").val(projectName);
+    if (urlParams.has("project_name")) {
+        var projectName = urlParams.get("project_name");
+        $("#pname").val(projectName);
     }
 
     $("#closebtn").click(() => {
