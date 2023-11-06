@@ -113,6 +113,7 @@ button {
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .progress-bar {
@@ -172,5 +173,4 @@ td.progress-bar.ui-progressbar.ui-corner-all.ui-widget.ui-widget-content {
 .view-project-report-link {
     font-size: var(--body);
     color: var(--accent-color);
-    margin-bottom: 20px;
 }
