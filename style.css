@@ -234,6 +234,18 @@ h2 {
     z-index: 2;
 }
 
+#register-button-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    /* Adjust the RGBA values as needed (0.5 is the opacity) */
+    z-index: -1;
+    /* Position the pseudo-element behind the content */
+}
+
 #register-button {
     font-size: var(--body);
     width: 75%;
