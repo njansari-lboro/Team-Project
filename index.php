@@ -155,8 +155,8 @@
             </div>
         </div>
 
-        <div style="position: fixed; right: 10; bottom: 10">
-            <img src="/img/ycsmLogo.png" width="50px">
+        <div style="position: fixed; left: 10px; bottom: 10px">
+            <img src="/img/ycsmLogo.png" width="100px">
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
