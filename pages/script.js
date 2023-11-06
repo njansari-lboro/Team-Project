@@ -34,9 +34,8 @@ $(() => {
 
     document.body.offsetHeight // Force reflow
 
-    $("#profile-menu-button").click((event) => {
+    $("#profile-menu-button").on("click tap touchstart", (event) => {
         event.preventDefault()
-        alert("I hate this")
         $("#profile-menu-items").show()
         $("#profile-menu-button").css("background-color", "var(--unemphasised-selected-content-background-color)")
     })
