@@ -46,8 +46,8 @@
 
                 <select id="user_type" required>
                     <option value="">Select user type...</option>
-                    <option value="User">Employee</option>
-                    <option value="Admin">Manager</option>
+                    <option value="Employee">Employee</option>
+                    <option value="Manager">Manager</option>
                     <option value="Admin">Admin</option>
                 </select>
 
