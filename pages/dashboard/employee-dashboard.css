@@ -49,7 +49,7 @@ h4 {
 }
 
 #tasks-preview:hover .border, #project-preview:hover .border, #forums-preview:hover .border {
-    border-color: var(--accent-color);
+    border-color: var(--accent-color) !important;
 }
 
 /* table styling */
