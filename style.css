@@ -159,6 +159,14 @@ input.form-control:focus {
     text-align: center;
 }
 
+h1 {
+    font-size: var(--title-1);
+}
+
+h2 {
+    font-size: var(--title-2);
+}
+
 #register-inputs {
     overflow: auto;
 }
@@ -167,7 +175,7 @@ input.form-control:focus {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 20px 0;
+    margin: 15px 0;
     width: 100%;
 }
 
@@ -182,20 +190,21 @@ input.form-control:focus {
 .register-profile-detail input {
     font-size: var(--callout);
     border-radius: 10px;
-    border: 0.5em solid transparent;
+    /* border: 0.5em solid transparent; */
+    border: 0.5em solid rgba(209, 209, 214, 1);
     color: rgba(0, 0, 0, 0.85);
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.85);
     width: 80%;
-    padding: 0 10px;
+    padding: 0.5em calc(0.5em + 10px);
     margin: auto;
 }
 
-.register-profile-detail input:focus {
-    border: 0.5em solid transparent;
-    width: 80%;
-    padding: 0 10px;
-    margin: auto;
-}
+/* .register-profile-detail input:focus { */
+    /* border: 0.5em solid transparent; */
+    /* width: 80%; */
+    /* padding: 0 10px; */
+    /* margin: auto; */
+/* } */
 
 #register-password-input-container {
     width: 100%;
@@ -208,8 +217,8 @@ input.form-control:focus {
     -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
     border: none;
-    height: 2.6em;
-    width: 2.8em;
+    height: 3em;
+    width: 3.4em;
     margin-left: -42px;
 }
 

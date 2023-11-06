@@ -4,6 +4,9 @@
 
     if (isset($_GET["invite_code"])) {
         $name = base64_decode($_GET["invite_code"]);
+
+        $email = "$name@make-it-all.co.uk";
+        $name = ucfirst($name);
     } else {
         $name = "";
     }
@@ -27,8 +30,8 @@
 
     <body>
         <script type="text/javascript">
-            const inviteName = "<?php echo ucfirst($name) ?>"
-            const inviteEmail = "<?php echo "$name@make-it-all.co.uk" ?>"
+            const inviteName = "<?php echo $name ?>"
+            const inviteEmail = "<?php echo $email ?>"
         </script>
 
         <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
@@ -54,10 +57,7 @@
                         <input id="register-last-name-input" type="text">
                     </div>
 
-                    <div id="register-email" class="register-profile-detail">
-                        <span id="register-email-label">Email Address</span>
-                        <input id="register-email-input" type="email">
-                    </div>
+                    <br>
 
                     <div id="register-password" class="register-profile-detail">
                         <span id="register-password-label">Password</span>
@@ -69,8 +69,8 @@
                                 <load-svg id="show-password-icon" src="/assets/showIcon.svg">
                                     <style shadowRoot>
                                         svg {
-                                            height: 1.25em;
-                                            padding-top: 0.2em
+                                            height: 1.3em;
+                                            padding-top: 0.4em
                                         }
 
                                         .fill {
@@ -82,7 +82,8 @@
                                 <load-svg id="hide-password-icon" src="/assets/hideIcon.svg">
                                     <style shadowRoot>
                                         svg {
-                                            height: var(--body);
+                                            height: 1.6em;
+                                            padding-top: 0.2em
                                         }
 
                                         .fill {
