@@ -258,3 +258,11 @@ input.form-control:focus {
     background-color: rgba(0, 0, 0, 0.1);
     border: 2px solid transparent;
 }
+
+#ycsm-logo {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 100px;
+    opacity: 50%;
+}
