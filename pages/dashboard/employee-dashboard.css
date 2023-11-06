@@ -46,11 +46,10 @@ h4 {
 
 #tasks-preview:hover, #project-preview:hover, #forums-preview:hover {
     cursor: pointer;
-}
-
-#tasks-preview:hover .border, #project-preview:hover .border, #forums-preview:hover .border {
     border-color: var(--accent-color) !important;
 }
+
+#tasks-preview:hover .border, #project-preview:hover .border, #forums-preview:hover .border {}
 
 /* table styling */
 .table {
