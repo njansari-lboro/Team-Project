@@ -34,7 +34,8 @@ $(() => {
 
     document.body.offsetHeight // Force reflow
 
-    $("#profile-menu-button").click(() => {
+    $("#profile-menu-button").click((event) => {
+        event.preventDefault()
         $("#profile-menu-items").show()
         $("#profile-menu-button").css("background-color", "var(--unemphasised-selected-content-background-color)")
     })
@@ -80,7 +81,9 @@ $(() => {
         $("#hide-password-icon").hide()
     })
 
-    $("#invite-button").click(() => {
+    $("#invite-button").click((event) => {
+        event.preventDefault()
+
         $("#invite-member-modal").fadeIn(500, "swing")
 
         const emailMatch = /^(.+)@make-it-all\.co\.uk$/
