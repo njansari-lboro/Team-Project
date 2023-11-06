@@ -7,9 +7,9 @@
         
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="/global.css">
-        <link rel="stylesheet" href="/projects/projects.css">
-        <link rel="stylesheet" href="/dashboard/manager-dashboard.css">
-        <link rel="stylesheet" href="/projects/project-report.css">
+        <link rel="stylesheet" href="/pages/projects/projects.css">
+        <link rel="stylesheet" href="/pages/dashboard/manager-dashboard.css">
+        <link rel="stylesheet" href="/pages/projects/project-report.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
@@ -61,6 +61,6 @@
             </div>
         </div>
 
-        <script src="/projects/project-report.js"></script>
+        <script src="/pages/projects/project-report.js"></script>
     </body>
 </html>
