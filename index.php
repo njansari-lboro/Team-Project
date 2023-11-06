@@ -42,9 +42,7 @@
                 
                 <br>
                 
-                <h2>
-                    Welcome <?php echo ucfirst($name) ?>
-                </h2>
+                <h2><?php echo $email ?></h2>
                 
                 <div id="register-inputs">
                     <div id="register-first-name" class="register-profile-detail">

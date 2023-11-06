@@ -196,7 +196,6 @@ function register() {
 
     $("#register-first-name-input").change(checkIfAccountProfileCanRegister)
     $("#register-last-name-input").change(checkIfAccountProfileCanRegister)
-    $("#register-email-input").change(checkIfAccountProfileCanRegister)
     $("#register-password-input").change(checkIfAccountProfileCanRegister)
     $("#register-confirm-password-input").change(checkIfAccountProfileCanRegister)
 
@@ -246,13 +245,12 @@ function checkInviteEmail(email) {
 function checkIfAccountProfileCanRegister() {
     const firstName = $("#register-first-name-input").val().trim()
     const lastName = $("#register-last-name-input").val().trim()
-    const email = $("#register-email-input").val().trim()
     const password = $("#register-password-input").val().trim()
     const confirmPassword = $("#register-confirm-password-input").val().trim()
 
-    let saveIsDisabled = firstName.length === 0 || lastName.length === 0 || email.length === 0 || password.length === 0 || confirmPassword.length === 0
+    let registerIsDisabled = firstName.length === 0 || lastName.length === 0 || password.length === 0 || confirmPassword.length === 0
 
-    setTimeout(() => $("#register-button").prop("disabled", saveIsDisabled), 0)
+    $("#register-button").prop("disabled", registerIsDisabled)
 }
 
 function isValidPassword(password) {
