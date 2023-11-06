@@ -172,4 +172,5 @@ td.progress-bar.ui-progressbar.ui-corner-all.ui-widget.ui-widget-content {
 .view-project-report-link {
     font-size: var(--body);
     color: var(--accent-color);
+    margin-bottom: 20px;
 }
