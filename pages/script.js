@@ -28,14 +28,14 @@ $(() => {
             body.removeClass("no-transition")
             document.body.offsetHeight
             toggleSidebar()
-            return
         }
     }
 
-    // document.body.offsetHeight // Force reflow
+    document.body.offsetHeight // Force reflow
 
-   $(document).on('click', '#profile-menu-button', function(event) {
+    $("#profile-menu-button").click((event) => {
         event.preventDefault()
+
         $("#profile-menu-items").show()
         $("#profile-menu-button").css("background-color", "var(--unemphasised-selected-content-background-color)")
     })
@@ -81,7 +81,7 @@ $(() => {
         $("#hide-password-icon").hide()
     })
 
-    $(document).on('click touchend', '#invite-button', function(event) {
+    $("#invite-button", (event) => {
         event.preventDefault()
 
         $("#invite-member-modal").fadeIn(500, "swing")
