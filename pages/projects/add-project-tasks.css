@@ -484,7 +484,7 @@ form button:hover {
 }
 
 .ui-state-default {
-/*     background-color: var(--accent-color); */
+    /* background-color: var(--accent-color); */
     color: var(--window-background);
     border: 0px;
     color: var(--text-color);
@@ -512,7 +512,7 @@ form button:hover {
 
 .ui-datepicker-calendar .ui-state-default {
     border: none;
-/*     background-color: var(--control-color); */
+    /* background-color: var(--control-color); */
     color: var(--label-color);
 }
 

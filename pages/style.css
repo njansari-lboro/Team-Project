@@ -376,6 +376,11 @@ body {
     }
 }
 
+#edit-profile-form {
+    overflow: auto;
+    height: calc(100% - 160px);
+}
+
 #edit-profile-image {
     height: 10em;
 }

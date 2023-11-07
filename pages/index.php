@@ -356,59 +356,61 @@
                     </load-svg>
                 </div>
 
-                <div id="edit-first-name" class="edit-profile-detail">
-                    <span id="edit-first-name-label">First Name</span>
-                    <input id="edit-first-name-input" type="text">
-                </div>
-
-                <div id="edit-last-name" class="edit-profile-detail">
-                    <span id="edit-last-name-label">Last Name</span>
-                    <input id="edit-last-name-input" type="text">
-                </div>
-
-                <div id="edit-email" class="edit-profile-detail">
-                    <span id="edit-email-label">Email Address</span>
-                    <input id="edit-email-input" type="email" readonly>
-                </div>
-
-                <div id="edit-password" class="edit-profile-detail">
-                    <span id="edit-password-label">Password</span>
-
-                    <div id="edit-password-input-container">
-                        <input id="edit-password-input" type="password" readonly>
-
-                        <button id="show-hide-password-button">
-                            <load-svg id="show-password-icon" src="/assets/showIcon.svg">
-                                <style shadowRoot>
-                                    svg {
-                                        height: 1.25em;
-                                        padding-top: 0.2em
-                                    }
-
-                                    .fill {
-                                        fill: var(--icon-color)
-                                    }
-                                </style>
-                            </load-svg>
-
-                            <load-svg id="hide-password-icon" src="/assets/hideIcon.svg">
-                                <style shadowRoot>
-                                    svg {
-                                        height: var(--body);
-                                    }
-
-                                    .fill {
-                                        fill: var(--icon-color)
-                                    }
-                                </style>
-                            </load-svg>
-                        </button>
+                <div id="edit-profile-form">
+                    <div id="edit-first-name" class="edit-profile-detail">
+                        <span id="edit-first-name-label">First Name</span>
+                        <input id="edit-first-name-input" type="text">
                     </div>
-                </div>
 
-                <div id="dismiss-buttons">
-                    <button id="cancel-button" class="dismiss-edit-profile-button">Cancel</button>
-                    <button id="save-button" class="dismiss-edit-profile-button" disabled>Save</button>
+                    <div id="edit-last-name" class="edit-profile-detail">
+                        <span id="edit-last-name-label">Last Name</span>
+                        <input id="edit-last-name-input" type="text">
+                    </div>
+
+                    <div id="edit-email" class="edit-profile-detail">
+                        <span id="edit-email-label">Email Address</span>
+                        <input id="edit-email-input" type="email" readonly>
+                    </div>
+
+                    <div id="edit-password" class="edit-profile-detail">
+                        <span id="edit-password-label">Password</span>
+
+                        <div id="edit-password-input-container">
+                            <input id="edit-password-input" type="password" readonly>
+
+                            <button id="show-hide-password-button">
+                                <load-svg id="show-password-icon" src="/assets/showIcon.svg">
+                                    <style shadowRoot>
+                                        svg {
+                                            height: 1.25em;
+                                            padding-top: 0.2em
+                                        }
+
+                                        .fill {
+                                            fill: var(--icon-color)
+                                        }
+                                    </style>
+                                </load-svg>
+
+                                <load-svg id="hide-password-icon" src="/assets/hideIcon.svg">
+                                    <style shadowRoot>
+                                        svg {
+                                            height: var(--body);
+                                        }
+
+                                        .fill {
+                                            fill: var(--icon-color)
+                                        }
+                                    </style>
+                                </load-svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="dismiss-buttons">
+                        <button id="cancel-button" class="dismiss-edit-profile-button">Cancel</button>
+                        <button id="save-button" class="dismiss-edit-profile-button" disabled>Save</button>
+                    </div>
                 </div>
             </div>
         </div>
