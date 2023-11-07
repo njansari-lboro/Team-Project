@@ -378,7 +378,7 @@ body {
 
 #edit-profile-form {
     overflow: auto;
-    height: calc(100% - 160px);
+    height: calc(100% - 175px);
 }
 
 #edit-profile-image {
