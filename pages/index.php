@@ -306,6 +306,11 @@
         </div>
 
         <script>
+            function toggleSidebar() {
+                $(document.body).toggleClass("sidebar-expanded")
+                localStorage.setItem("sidebarExpanded", $(document.body).hasClass("sidebar-expanded"))
+            }
+
             const body = $(document.body)
 
             body.addClass("no-transition")

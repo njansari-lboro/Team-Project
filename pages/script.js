@@ -120,11 +120,6 @@ $(() => {
     })
 })
 
-function toggleSidebar() {
-    $(document.body).toggleClass("sidebar-expanded")
-    localStorage.setItem("sidebarExpanded", $(document.body).hasClass("sidebar-expanded"))
-}
-
 function dismissProfileMenu() {
     $("#profile-menu-items").hide()
     $("#profile-menu-button:not(:hover)").css("background-color", "transparent")
