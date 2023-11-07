@@ -38,7 +38,7 @@
         <title>Make-It-All</title>
     </head>
 
-    <body class="sidebar-expanded">
+    <body>
         <div class="nav-bar">
             <load-svg id="sidebar-toggle" src="/assets/sidebarToggleIcon.svg">
                 <style shadowRoot>
@@ -304,6 +304,33 @@
                 </button>
             </div>
         </div>
+
+        <script>
+            const body = $(document.body)
+
+            body.addClass("no-transition")
+            setTimeout(() => {
+                document.body.offsetHeight // Force reflow
+                body.removeClass("no-transition")
+            }, 0)
+
+            // Persist sidebar toggle between refreshes
+            if (localStorage.getItem("sidebarExpanded") === "true") {
+                body.toggleClass("sidebar-expanded")
+            }
+
+            const params = new URLSearchParams(document.location.search)
+            const page = params.get("page")
+            $(`#${page}-sidebar-item`).addClass("selected")
+
+            if (window.matchMedia("(max-width: 800px)").matches) {
+                if ($(document.body).hasClass("sidebar-expanded")) {
+                    document.body.offsetHeight
+                    body.removeClass("no-transition")
+                    toggleSidebar()
+                }
+            }
+        </script>
 
         <div id="sidebar-dim" class="dimmed-overlay"></div>
 
