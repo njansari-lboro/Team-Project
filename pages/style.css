@@ -42,7 +42,7 @@ body {
     box-sizing: border-box !important;
     border-bottom: 1px solid var(--separator-color);
     position: fixed;
-    z-index: 3;
+    z-index: 4;
     top: 0;
     width: 100%;
 }
@@ -145,7 +145,7 @@ body {
     margin-top: 5px;
     padding: 8px;
     right: 0;
-    z-index: 4;
+    z-index: 3;
 }
 
 .menu-item {
