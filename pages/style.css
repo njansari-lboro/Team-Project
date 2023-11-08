@@ -293,13 +293,14 @@ body {
     /* background-color: var(--background-material); */
     top: 5.6em;
     right: 0;
+    /* width: 100%; */
     transition: width 0.5s;
 }
 
 @media screen and (max-width: 800px) {
     .sidebar-expanded #sidebar-dim.dimmed-overlay {
         /* display: block; */
-        width: calc(100% - 250px);
+        /* width: calc(100% - 250px); */
         transition: width 0.5s;
     }
 }

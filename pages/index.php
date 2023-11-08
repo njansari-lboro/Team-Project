@@ -313,6 +313,7 @@
                 if (window.matchMedia("(max-width: 800px)").matches) {
                     if ($(document.body).hasClass("sidebar-expanded")) {
                         $("#sidebar-dim.dimmed-overlay").fadeIn(500)
+                        $("#sidebar-dim.dimmed-overlay").css("width", "calc(100% - 250px)")
                     } else {
                         $("#sidebar-dim.dimmed-overlay").fadeOut(500)
                     }
