@@ -12,8 +12,12 @@ $(() => {
     $("#profile-menu-button").click((event) => {
         event.preventDefault()
 
-        $("#profile-menu-items").show()
-        $("#profile-menu-button").css("background-color", "var(--unemphasised-selected-content-background-color)")
+        if ($("#profile-menu-items").is(":visible")) {
+            dismissProfileMenu()
+        } else {
+            $("#profile-menu-items").show()
+            $("#profile-menu-button").css("background-color", "var(--unemphasised-selected-content-background-color)")
+        }
     })
 
     $("#edit-profile-button").click(() => {
