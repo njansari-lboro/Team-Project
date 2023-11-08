@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="user">
-                    <p>Name: Admin</p>
+                    <p>Name: Alice Smith</p>
                     <p>Email: admin@make-it-all.co.uk</p>
                     <p>Registered: Yes</p>
                     <p>User Type: Admin</p>
