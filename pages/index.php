@@ -316,6 +316,7 @@
                         $("#sidebar-dim.dimmed-overlay").css("width", "calc(100% - 250px)")
                     } else {
                         $("#sidebar-dim.dimmed-overlay").fadeOut(500)
+                        $("#sidebar-dim.dimmed-overlay").css("width", "100%")
                     }
                 }
             }
