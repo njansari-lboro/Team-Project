@@ -306,17 +306,18 @@
         </div>
 
         <script>
-            window.matchMedia("(max-width: 800px)").addListener(handleSidebarDimOverlay)
+            const compactWidthMediaQuery = window.matchMedia("(max-width: 800px)")
+            compactWidthMediaQuery.addListener(handleSidebarDimOverlay)
 
-            function handleSidebarDimOverlay() {
-                if (window.matchMedia("(max-width: 800px)").matches) {
+            function handleSidebarDimOverlay(mediaQuery) {
+                if (mediaQuery.matches) {
                     if ($(document.body).hasClass("sidebar-expanded")) {
                         $("#sidebar-dim.dimmed-overlay").fadeIn(500)
                         $("#sidebar-dim.dimmed-overlay").css("width", "calc(100% - 250px)")
                         return
                     }
                 }
-                
+
                 $("#sidebar-dim.dimmed-overlay").fadeOut(500)
                 $("#sidebar-dim.dimmed-overlay").css("width", "100%")
             }
@@ -325,7 +326,7 @@
                 $(document.body).toggleClass("sidebar-expanded")
                 localStorage.setItem("sidebarExpanded", $(document.body).hasClass("sidebar-expanded"))
 
-                handleSidebarDimOverlay()
+                handleSidebarDimOverlay(compactWidthMediaQuery)
             }
 
             const body = $(document.body)
@@ -344,7 +345,7 @@
             document.body.offsetHeight // Force reflow
             body.removeClass("no-transition")
             
-            if (window.matchMedia("(max-width: 800px)").matches) {
+            if (compactWidthMediaQuery.matches) {
                 if ($(document.body).hasClass("sidebar-expanded")) {
                     toggleSidebar()
                 }
