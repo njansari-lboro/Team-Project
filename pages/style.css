@@ -292,7 +292,7 @@ body {
     z-index: 2;
     top: 5.6em;
     right: 0;
-    /* transition: width 0.5s; */
+    transition: width 0.5s;
 }
 
 #main-content-wrapper {
