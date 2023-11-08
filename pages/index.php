@@ -306,10 +306,9 @@
         </div>
 
         <script>
-            function toggleSidebar() {
-                $(document.body).toggleClass("sidebar-expanded")
-                localStorage.setItem("sidebarExpanded", $(document.body).hasClass("sidebar-expanded"))
+            window.matchMedia("(max-width: 800px)").addListener(handleSidebarDimOverlay)
 
+            function handleSidebarDimOverlay() {
                 if (window.matchMedia("(max-width: 800px)").matches) {
                     if ($(document.body).hasClass("sidebar-expanded")) {
                         $("#sidebar-dim.dimmed-overlay").fadeIn(500)
@@ -319,6 +318,13 @@
                         $("#sidebar-dim.dimmed-overlay").css("width", "100%")
                     }
                 }
+            }
+
+            function toggleSidebar() {
+                $(document.body).toggleClass("sidebar-expanded")
+                localStorage.setItem("sidebarExpanded", $(document.body).hasClass("sidebar-expanded"))
+
+                handleSidebarDimOverlay()
             }
 
             const body = $(document.body)
