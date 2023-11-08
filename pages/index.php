@@ -313,11 +313,12 @@
                     if ($(document.body).hasClass("sidebar-expanded")) {
                         $("#sidebar-dim.dimmed-overlay").fadeIn(500)
                         $("#sidebar-dim.dimmed-overlay").css("width", "calc(100% - 250px)")
-                    } else {
-                        $("#sidebar-dim.dimmed-overlay").fadeOut(500)
-                        $("#sidebar-dim.dimmed-overlay").css("width", "100%")
+                        return
                     }
                 }
+                
+                $("#sidebar-dim.dimmed-overlay").fadeOut(500)
+                $("#sidebar-dim.dimmed-overlay").css("width", "100%")
             }
 
             function toggleSidebar() {
