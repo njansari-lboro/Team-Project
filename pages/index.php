@@ -309,6 +309,14 @@
             function toggleSidebar() {
                 $(document.body).toggleClass("sidebar-expanded")
                 localStorage.setItem("sidebarExpanded", $(document.body).hasClass("sidebar-expanded"))
+
+                if (window.matchMedia("(max-width: 800px)").matches) {
+                    if ($(document.body).hasClass("sidebar-expanded")) {
+                        $("#sidebar-dim.dimmed-overlay").fadeIn(500)
+                    } else {
+                        $("#sidebar-dim.dimmed-overlay").fadeOut(500)
+                    }
+                }
             }
 
             const body = $(document.body)
