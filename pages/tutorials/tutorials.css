@@ -8,6 +8,10 @@ body {
     color: var(--text-color);
 }
 
+.tutHeaderSection {
+    margin: 10px auto
+}
+
 .tutHeader {
     font-size: var(--title-2);
     display: inline;
@@ -253,7 +257,7 @@ a.plus-icon-link {
     line-height: 25px;
     vertical-align: middle;
     transition: background-color 0.3s ease;
-    margin: 10px 5px;
+    margin: auto 5px;
 }
 
 a.plus-icon-link:hover {
