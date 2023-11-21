@@ -37,6 +37,14 @@
     </head>
 
     <body class="customBody">
+	<div class="search-bar">
+            <form action="" method="">
+                <div class="search-box">
+                    <input type="text" name="search" placeholder="Search tutorials...">
+                    <span class="clear-search">x</span>
+                </div>
+            </form>
+        </div>
         <div class="tutHeaderSection">
             <h1 class="tutHeader">Technical Information</h1>
 
@@ -135,11 +143,18 @@
             ],
         ];
 
-        if (!isset($tutorials[$tutorialId])) {
-            echo "Tutorial not found.";
-        }
+        if (isset($_GET['search']) && trim($_GET['search']) != '') {
+        $searchTerm = strtolower($_GET['search']);
+        $tutorials = array_filter($tutorials, function ($tutorial) use ($searchTerm) {
+            return strpos(strtolower($tutorial['text']), $searchTerm) !== false;
+        });
+    	}
 
-        $tutorial = $tutorials[$tutorialId];
+    	if (!isset($tutorials[$tutorialId])) {
+     	   echo "Tutorial not found.";
+   	 } else {
+        	$tutorial = $tutorials[$tutorialId];
+   	 }
 ?>
 
 <!DOCTYPE html>
