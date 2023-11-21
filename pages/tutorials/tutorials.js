@@ -2,6 +2,61 @@ $(document).on("click", ".handle", function () {
     handleClicked($(this));
 });
 
+$('[name="search"]').on('input', function() {
+    var searchTerm = $(this).val().toLowerCase();
+    var visibleItemsCount = 0;
+    var hadNoVisibleItems = $('.slider .image-container:visible').length === 0;
+
+    $('.slider .image-container').each(function() {
+        var text = $(this).find('.tutspan').text().toLowerCase();
+        if (text.includes(searchTerm)) {
+            $(this).show();
+            visibleItemsCount++;
+        } else {
+            $(this).hide();
+        }
+    });
+
+    if (visibleItemsCount === 0 || searchTerm === '') {
+        $('.slider').css("--slider-index", 0);
+    } else if (hadNoVisibleItems && visibleItemsCount > 0) {
+        $('.slider').css("--slider-index", 0);
+    }
+
+    updateHandleVisibility();
+    $(".progress-bar").each(updateProgressBar); 
+});
+
+$(document).ready(function() {
+    $('.clear-search').on('click', function() {
+        $(this).prev('input[type="text"]').val('').trigger('input').focus();
+    });
+
+    $('.search-bar form').on('keyup keypress', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) { 
+            e.preventDefault();
+            return false;
+        }
+    });
+});
+
+
+
+function adjustSliderIndex(visibleItemsCount) {
+    const $sliderElem = $('.slider');
+    const itemsInView = parseInt($sliderElem.css("--items-per-screen"), 10);
+    let currentSliderIndex = parseInt($sliderElem.css("--slider-index"), 10);
+
+    if (currentSliderIndex * itemsInView >= visibleItemsCount) {
+        // Adjust index to bring visible items into view
+        $sliderElem.css("--slider-index", Math.max(0, Math.ceil(visibleItemsCount / itemsInView) - 1));
+    }
+}
+
+
+
+
 $(document).on("touchstart", ".slider", function (event) {
     const touchStartX = event.originalEvent.touches[0].pageX;
     $(this).data('touchStartX', touchStartX);
@@ -39,10 +94,10 @@ function updateProgressBar() {
     $pBar.empty();
 
     const $sliderElem = $pBar.closest(".row").find(".slider");
-    const totalItems = $sliderElem.children().length;
+    const visibleItems = $sliderElem.children(':visible').length; 
     const itemsInView = parseInt($sliderElem.css("--items-per-screen"), 10);
     let currentSliderIndex = parseInt($sliderElem.css("--slider-index"), 10);
-    const barItemsCount = Math.ceil(totalItems / itemsInView);
+    const barItemsCount = Math.ceil(visibleItems / itemsInView); 
 
     if (currentSliderIndex >= barItemsCount) {
         $sliderElem.css("--slider-index", barItemsCount - 1);
@@ -59,6 +114,20 @@ function updateProgressBar() {
         $pBar.append($indicator);
     }
 }
+
+function updateHandleVisibility() {
+    const $sliderElem = $('.slider');
+    const visibleItemsCount = $sliderElem.find('.image-container:visible').length;
+    const itemsInView = parseInt($sliderElem.css("--items-per-screen"), 10);
+
+    if (visibleItemsCount > itemsInView) {
+        $('.left-handle, .right-handle').show();
+    } else {
+        $('.left-handle, .right-handle').hide();
+    }
+}
+
+
 
 function handleClicked($detectedHandle) {
     const $pBar = $detectedHandle.closest(".row").find(".progress-bar");
