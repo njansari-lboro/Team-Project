@@ -23,6 +23,7 @@ foreach ($users as $user) {
         $_SESSION["user"] = $user;
         $_SESSION["user"]["firstName"] = $user['first_name'];
         $_SESSION["user"]["lastName"] = $user['last_name'];
+        $_SESSION["user"]["id"] = $user['id'];
         switch ($user['role']) {
             case 0:
                 $_SESSION["user"]["role"] = 'Employee';
