@@ -1,67 +1,72 @@
 <?php
-    $users = [
-        [
-            "email" => "ben@make-it-all.co.uk",
-            "firstName" => "Ben",
-            "lastName" => "Hamblin",
-            "password" => "EmployeeRole12345!",
-            "role" => "Employee"
-        ],
-        [
-            "email" => "admin@make-it-all.co.uk",
-            "firstName" => "Alice",
-            "lastName" => "Smith",
-            "password" => "AdminRole12345!",
-            "role" => "Admin"
-        ],
-        [
-            "email" => "dilip@make-it-all.co.uk",
-            "firstName" => "Dilip",
-            "lastName" => "Patel",
-            "password" => "ManagerRole12345!",
-            "role" => "Manager"
-        ],
-    ];
 
-    session_start();
-    // include("db-conn.php");  
-    $username = $_POST["email"];
-    $password = $_POST["password"];
+include('../pages/database.php');
+include('../pages/global.php');
 
-    $isValidUser = false;
+if (!connect_to_database()) {
+    echo ("Unable to connect to database. Please try later.");
+    exit;
+}
 
-    foreach ($users as $user) {
-        if ($user["email"] == $username && $user["password"] == $password) {
-            $isValidUser = true;
-            $_SESSION["user"] = $user;
-            break;
+
+$users = get_records_sql('select * from user');
+// echo password_hash('EmployeeRole12345!', PASSWORD_DEFAULT);
+session_start();
+
+$username = $_POST["email"];
+$password = $_POST["password"];
+$isValidUser = false;
+
+foreach ($users as $user) {
+    if ($user["email"] == $username && password_verify($password, $user["password_hash"])) {
+        $isValidUser = true;
+        $_SESSION["user"] = $user;
+        $_SESSION["user"]["firstName"] = $user['first_name'];
+        $_SESSION["user"]["lastName"] = $user['last_name'];
+        switch ($user['role']) {
+            case 0:
+                $_SESSION["user"]["role"] = 'Employee';
+                break;
+            case 1:
+                $_SESSION["user"]["role"] = 'Manager';
+                break;
+            case 2:
+                $_SESSION["user"]["role"] = 'Admin';
+                break;
+            default:
+                echo "Invalid role";
+                die();
         }
+        break;
     }
+}
 
-    if ($isValidUser) {
-        echo "true";
-    } else {
-        echo "false";
-    }
-    
-    session_regenerate_id();
-    $_SESSION["email"] = $username;
+// $_SESSION['role'] = 'Employee';
+if ($isValidUser) {
+    echo "true";
+} else {
+    echo "false";
+}
 
-    // $_SESSION["NAME"] = $username;
 
-    //CONNECT TO DB HERE WHEN WE ARE ALLOWED FOR NOW JUST ALLOW ANY USER
-    // echo "true";
-    // SET $_SESSION VARIABLES I.E. ID, USER TYPE AND NAME
-    // $sql = "";
-    // $query = mysqli_query($conn, $sql);
-    // $count = mysqli_num_rows($query);
-    // while ($row = mysqli_fetch_assoc($query)) {
-    //     if ($count > 0) {
-    //         session_regenerate_id();
-    //         $name = $row["firstname"] . " " . $row["lastname"];
-    //         $_SESSION["ID"] = $row["id"];
-    //         $_SESSION["TYPE"] = $row["user_type"];
-    //         $_SESSION["NAME"] = $name;
-    //     }
-    // }
-?>
+
+session_regenerate_id();
+$_SESSION["email"] = $username;
+
+// $_SESSION["NAME"] = $username;
+
+//CONNECT TO DB HERE WHEN WE ARE ALLOWED FOR NOW JUST ALLOW ANY USER
+// echo "true";
+// SET $_SESSION VARIABLES I.E. ID, USER TYPE AND NAME
+// $sql = "";
+// $query = mysqli_query($conn, $sql);
+// $count = mysqli_num_rows($query);
+// while ($row = mysqli_fetch_assoc($query)) {
+//     if ($count > 0) {
+//         session_regenerate_id();
+//         $name = $row["firstname"] . " " . $row["lastname"];
+//         $_SESSION["ID"] = $row["id"];
+//         $_SESSION["TYPE"] = $row["user_type"];
+//         $_SESSION["NAME"] = $name;
+//     }
+// }

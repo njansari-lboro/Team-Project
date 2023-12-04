@@ -21,16 +21,16 @@ $(() => {
 
     // bringing the user to create-a-project page
     $("#new-project-button").click(() => {
-        window.location.href = "/pages/?page=projects&task=new_project";
+        window.location.href = "?page=projects&task=new_project";
     });
 
     // bringing user to edit a project page
     $("#project-1-link").click(() => {
-        window.location.href = "/pages/?page=projects&task=new_project&project_name=Project%20%31";
+        window.location.href = "?page=projects&task=new_project&project_name=Project%20%31";
     });
 
     $("#project-2-link").click(() => {
-        window.location.href = "/pages/?page=projects&task=new_project&project_name=Project%20%32";
+        window.location.href = "?page=projects&task=new_project&project_name=Project%20%32";
     });
 
     // inserting JQuery progressbar into <td>
@@ -49,10 +49,10 @@ $(() => {
     });
 
     $("#view-project-1-report-link").click(() => {
-        window.location.href = "/pages/?page=projects&task=view_project_report&project_name=Project%20%31";
+        window.location.href = "?page=projects&task=view_project_report&project_name=Project%20%31";
     });
 
     $("#view-project-2-report-link").click(() => {
-        window.location.href = "/pages/?page=projects&task=view_project_report&project_name=Project%20%32";
+        window.location.href = "?page=projects&task=view_project_report&project_name=Project%20%32";
     });
 });

@@ -7,7 +7,8 @@ $(() => {
     }
 
     $("#closebtn").click(() => {
-        window.location.href = "/pages/?page=projects"
+        console.log('hello');
+        window.location.href = "?page=projects"
     });
 
     $("#project-deadline").datepicker({ dateFormat: "dd/mm/yy" });

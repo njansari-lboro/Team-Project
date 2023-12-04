@@ -109,3 +109,8 @@ h1, h2 {
         border: 1px solid var(--separator-color);
     }
 }
+
+.subtext {
+    font-size: var(--caption-2);
+    color: var(--sub-headline);
+}

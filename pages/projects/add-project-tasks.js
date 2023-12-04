@@ -41,7 +41,7 @@ $(() => {
     });
 
     $(document).on("click", ".btn-complete", () => {
-        window.location.href = "/pages/?page=projects"
+        window.location.href = "?page=projects"
     });
 
     // deletes a task

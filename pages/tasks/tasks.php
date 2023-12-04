@@ -15,7 +15,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-        <link rel="stylesheet" href="/pages/tasks/tasks.css">
+        <link rel="stylesheet" href="tasks/tasks.css">
     </head>
 
     <body>
@@ -668,6 +668,6 @@
 
         <div><hr></div>
 
-        <script src="/pages/tasks/tasks.js"></script>
+        <script src="tasks/tasks.js"></script>
     </body>
 </html>

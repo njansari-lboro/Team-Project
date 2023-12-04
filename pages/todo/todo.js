@@ -1,4 +1,5 @@
 $(() => {
+    console.log('hello');
     hideComments();
     clearList();
     datePicker();

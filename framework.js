@@ -67,7 +67,37 @@ $(() => {
         }
 
         if (isValidPassword(password)) {
-            window.location = "/"
+            const formData = {
+                firstName: $("#register-first-name-input").val().trim(),
+                lastName: $("#register-last-name-input").val().trim(),
+                email: $("#emailInput").val().trim(), 
+                password: $("#register-password-input").val(),
+                confirmPassword: $("#register-confirm-password-input").val(),
+                userId: $("#hiddenUserId").val()
+            };
+        
+            $.ajax({
+                type: 'POST',
+                url: 'helpers/register.php',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        // Handle successful registration
+                        // For example, redirect to a login page or show a success message
+                        console.log('ss');
+                        alert('Registered!')
+                        restart();
+                    } else {
+                        console.log('fail');
+                        // Handle registration failure
+                        // Show an error message based on response.message
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log("AJAX Error: ", status, error);
+                }
+            });
         } else {
             alert("Password must be a minimum of 12 characters and contain a combination of uppercase letters, lowercase letters, numbers, and symbols.")
         }
@@ -89,7 +119,8 @@ function validateAndDisplayEmail() {
             email: email,
         },
         success: (response) => {
-            if (response == "true") {
+            let data = JSON.parse(response);
+            if (data.status === "registered") {
                 console.log("success")
                 $("#emailInput").hide()
                 $("#displayedEmail").text(email)
@@ -105,9 +136,11 @@ function validateAndDisplayEmail() {
                     $("#passwordInput").focus()
                     setTimeout(() => $("#passwordInput").click(), 100)
                 }, 100)
-            } else {
-                console.log("false")
-                notRecognised(email) // Call the function if the email is not recognized
+            } else if (data.status === "unregistered") {
+                register(data.userId)
+            } else{
+                console.log("not registered")
+                notRecognised(email)
             }
         },
         error: (jqXHR, textStatus, errorThrown) => {
@@ -145,6 +178,7 @@ function validatePasswordAndLogin() {
 }
 
 function restart() {
+    $(".centered-content").show()
     $("#emailForm").show()
     $("#emailInput").show()
     $("#passwordField").hide()
@@ -156,6 +190,7 @@ function restart() {
     $("#mainBtn").show()
     $("#notRegistered").hide()
     $("#passwordInput").val("")
+    $("#register-account-card").hide()
 
     $("#mainBtn").prop("disabled", $("#emailInput").val().length === 0)
 
@@ -190,7 +225,9 @@ function showResetPassword() {
     $("#tryAgain").show()
 }
 
-function register() {
+function register(id) {
+    $("#hiddenUserId").val(id);
+
     $(".centered-content").hide()
     $("#register-account-card").show()
 
@@ -233,8 +270,9 @@ function checkInviteEmail(email) {
         url: "helpers/emailcheck.php",
         data: { email: email },
         success: (response) => {
-            if (response == "true") {
-                register()
+            let data = JSON.parse(response);
+            if (data.status == "unregistered") {
+                register(data.userId)
             } else {
                 restart()
             }

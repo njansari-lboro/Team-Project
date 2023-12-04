@@ -1,14 +1,14 @@
 <?php
-    if (!isset($_SERVER["HTTP_REFERER"]) || empty($_SERVER["HTTP_REFERER"])) {
-        header("Location: /pages/?page=projects");
-        die();
-    }
+if (!isset($_SERVER["HTTP_REFERER"]) || empty($_SERVER["HTTP_REFERER"])) {
+    header("Location: /pages/?page=projects");
+    die();
+}
 ?>
 
 <?php
-    $task = isset($_GET["task"]) ? $_GET["task"] : "dashboard";
+$task = isset($_GET["task"]) ? $_GET["task"] : "dashboard";
 
-    switch ($task) {
+switch ($task) {
     case "new_project":
         new_project();
         break;
@@ -20,16 +20,18 @@
         break;
     default:
         display_default();
-    }
+}
 ?>
 
 <?php
-    function display_default() {
+function display_default()
+{
 ?>
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
-<html lang="en">
+    <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,18 +42,18 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/global.css">
-        <link rel="stylesheet" href="/pages/projects/projects.css">
+        <link rel="stylesheet" href="../../global.css">
+        <link rel="stylesheet" href="projects/projects.css">
     </head>
 
     <body>
         <!-- heading row -->
         <div>
             <h2 id="projects-header">Projects - </h2>
-            
+
             <!-- currently will do nothing   -->
             <select type="text" id="projects-filter"></select>
-            
+
             <!-- brings user to project creation page - ask Aaron what this is called -->
             <button id="new-project-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 512 512">
@@ -59,20 +61,22 @@
                 </svg>
             </button>
         </div>
-        
-        <div><hr></div>
-        
+
+        <div>
+            <hr>
+        </div>
+
         <!-- projects to be generated from backend data - filters affect order of retrieval? -->
         <div id="dropdown-div">
             <span class="dropdown" id="project-1-link">Project 1</span>
-            
+
             <button class="dropdown" id="project-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                 </svg>
             </button>
         </div>
-        
+
         <!-- toggle-able dropdown -->
         <div class="dropdown-content" id="project-1-content">
             <table>
@@ -124,11 +128,13 @@
         </div>
 
         <!-- to break inline display -->
-        <div><hr></div>
-        
+        <div>
+            <hr>
+        </div>
+
         <div id="dropdown-div">
             <span class="dropdown" id="project-2-link">Project 2</span>
-            
+
             <button class="dropdown" id="project-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
@@ -186,24 +192,30 @@
             <span id="view-project-2-report-link" class="view-project-report-link">View Report</span>
         </div>
 
-        <div><hr></div>
-        
-        <script src="/pages/projects/projects.js"></script>
+        <div>
+            <hr>
+        </div>
+
+        <script src="projects/projects.js"></script>
     </body>
-</html>
+
+    </html>
 
 <?php
-    }
+}
 
-    function new_project() {
-        include "projects/create-project.php";
-    }
+function new_project()
+{
+    include "projects/create-project.php";
+}
 
-    function new_project_tasks() {
-        include "projects/add-project-tasks.php";
-    }
+function new_project_tasks()
+{
+    include "projects/add-project-tasks.php";
+}
 
-    function view_project_report() {
-        include "projects/project-report.php";
-    }
+function view_project_report()
+{
+    include "projects/project-report.php";
+}
 ?>
